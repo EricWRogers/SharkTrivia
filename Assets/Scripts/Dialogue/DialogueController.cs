@@ -11,6 +11,8 @@ public class DialogueController : MonoBehaviour
     public GameObject dialoguePanel;
     public Image portraitImage;
     public TMP_Text dialogueText, nameText;
+    public Transform choiceContainer;
+    public GameObject choiceButtonPrefab;
 
 
     void Awake()
@@ -38,5 +40,18 @@ public class DialogueController : MonoBehaviour
         dialogueText.text = text; 
     }
 
+    //choices
+    public void ClearChoices()
+    {
+        foreach(Transform child in choiceContainer) Destroy(child.gameObject);
+    }
+    
+    public GameObject CreateChoiceButton(string choiceText, UnityEngine.Events.UnityAction onClick)
+    {
+        GameObject choiceButton = Instantiate(choiceButtonPrefab, choiceContainer);
+        choiceButton.GetComponentInChildren<TMP_Text>().text = choiceText;
+        choiceButton.GetComponent<Button>().onClick.AddListener(onClick);
+        return choiceButton;
+    }
 }
 

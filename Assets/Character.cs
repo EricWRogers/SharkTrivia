@@ -42,26 +42,51 @@ public class Character : MonoBehaviour, IInteractable
 
     public void StartDialogue()
     {
+        Debug.Log("Start Dialogue");
         isDialogueActive = true;
         dialogueIndex = 0;
 
         dialogueController.SetCharInfo(dialogueData.charName, dialogueData.charPortrait);
         dialogueController.ShowDialogueUI(true);
 
-        StartCoroutine(TypeLine());
+        DisplayCurrentLine();
     }
 
     void NextLine()
     {
-        if(isTyping)
+        //Debug.Log("Current index: " + dialogueIndex);
+        Debug.Log("Next line");
+
+        if (isTyping)
         {
+            //skip typing animation and show the full line
             StopAllCoroutines();
             dialogueController.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
         }
-        else if (++dialogueIndex < dialogueData.dialogueLines.Length)
+
+        //Clear existing choices
+        dialogueController.ClearChoices();
+
+        //Check endDialogueLines
+        if(dialogueData.endDialogueLines.Length > dialogueIndex && dialogueData.endDialogueLines[dialogueIndex])
         {
-            StartCoroutine(TypeLine());
+            EndDialogue();
+            return;
+        }
+        //Check if choices exist & if true display them
+        foreach(DialogueChoice dialogueChoice in dialogueData.choices)
+        {
+            if(dialogueChoice.dialogueIndex == dialogueIndex)
+            {
+                //display choices
+                DisplayChoices(dialogueChoice);
+            }
+        }
+
+        if (++dialogueIndex < dialogueData.dialogueLines.Length)
+        {
+            DisplayCurrentLine();
         }
         else
         {
@@ -71,6 +96,8 @@ public class Character : MonoBehaviour, IInteractable
 
     IEnumerator TypeLine()
     {
+        Debug.Log("type line");
+
         isTyping = true;
         dialogueController.SetDialogueText("");
 
@@ -88,8 +115,36 @@ public class Character : MonoBehaviour, IInteractable
         }
     }
 
+    void DisplayChoices(DialogueChoice choice)
+    {
+        Debug.Log("Display Choices");
+
+        for (int i = 0; i < choice.choices.Length; i++)
+        {
+            int nextIndex = choice.nextDialogueIndexes[i];
+            dialogueController.CreateChoiceButton(choice.choices[i], () => ChooseOption(nextIndex));
+        }
+    }
+
+    void ChooseOption(int nextIndex)
+    {
+        dialogueIndex = nextIndex;
+        dialogueController.ClearChoices();
+        DisplayCurrentLine();
+    }
+
+    void DisplayCurrentLine()
+    {
+        Debug.Log("Display current line");
+        Debug.Log("Current index: " + dialogueIndex);
+
+        StopAllCoroutines();
+        StartCoroutine(TypeLine());
+    }
+
     public void EndDialogue()
     {
+        Debug.Log("end dialogue");
         StopAllCoroutines();
         isDialogueActive = false;
         dialogueController.SetDialogueText("");
