@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Dirt
+  - Ball
   layers:
   - Default
   - TransparentFX
