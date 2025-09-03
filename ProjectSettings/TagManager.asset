@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dirt
   - Ball
+  - Pin
   layers:
   - Default
   - TransparentFX
