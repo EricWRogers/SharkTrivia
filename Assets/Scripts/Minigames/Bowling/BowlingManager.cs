@@ -11,15 +11,15 @@ public class BowlingManager : MonoBehaviour
     public int score = 0;
     int turnCounter = 0;
     GameObject[] pins;
-    public  TMP_Text scoreUI;
-    public TMP_Text roundsUI;
+    public TMP_Text scoreUI;
+    public TMP_Text roundsUI; // W.I.P
     public CameraSwitch cameraSwitch;
 
     Vector3[] positions;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Tracks game objs with pin tag for the ball to hit in their current positions
         pins = GameObject.FindGameObjectsWithTag("Pin");
         positions = new Vector3[pins.Length];
 
@@ -29,13 +29,12 @@ public class BowlingManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         MoveBall();
 
         // Launch the ball
-            if (Input.GetKeyDown(KeyCode.Space) || ball.transform.position.y < -20) // Default is Left Mouse Button or Ctrl
+        if (Input.GetKeyDown(KeyCode.Space) || ball.transform.position.y < -20) // Default is Left Mouse Button or Ctrl
         {
             CountPinsDown();
             turnCounter++;
@@ -54,6 +53,7 @@ public class BowlingManager : MonoBehaviour
 
     void CountPinsDown()
     {
+        // Tracks pins knocked down for scoring
         for (int i = 0; i < pins.Length; i++)
         {
             if (pins[i].transform.eulerAngles.z > 5 && pins[i].transform.eulerAngles.z < 355 && pins[i].activeSelf)
@@ -68,6 +68,7 @@ public class BowlingManager : MonoBehaviour
 
     void ResetPins()
     {
+        // Resets the pins into their original spots & resets the collision motion
         for (int i = 0; i < pins.Length; i++)
         {
             pins[i].SetActive(true);
@@ -77,12 +78,28 @@ public class BowlingManager : MonoBehaviour
             pins[i].transform.rotation = Quaternion.identity;
         }
 
+        // Resets ball into original position + resets motion
         ball.transform.position = new Vector3(0, 0.108f, -4f);
         ball.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         ball.transform.rotation = Quaternion.identity;
 
+        // Swaps cameras on and off after reset
         cameraSwitch.camera1.SetActive(true);
         cameraSwitch.camera2.SetActive(false);
+
+        cameraSwitch.gameObject.SetActive(true);
     }
+    
+    /*
+    void NewRound() //WIP new round script.
+    {
+        if (!ball.gameObject.activeInHierarchy && rounds != 3) 
+        {
+            Instantiate(ball);
+            ball.gameObject.SetActive(true);
+        }
+        roundsUI.text = rounds.ToString();
+    }
+    */
 }
