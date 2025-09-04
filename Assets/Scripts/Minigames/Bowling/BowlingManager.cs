@@ -9,8 +9,10 @@ public class BowlingManager : MonoBehaviour
 
     public GameObject ball;
     public int score = 0;
+    public int rounds = 0;
     GameObject[] pins;
     public  TMP_Text scoreUI;
+    public TMP_Text roundsUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +30,11 @@ public class BowlingManager : MonoBehaviour
             {
                 CountPinsDown();
             }
+            else if(ball.transform.position.z < -30)
+            {
+                ball.SetActive(false);
+            }
+        
     }
 
     void MoveBall()
@@ -52,4 +59,15 @@ public class BowlingManager : MonoBehaviour
 
         scoreUI.text = score.ToString();
     }
+    /*
+    void NewRound() //WIP new round script.
+    {
+        if (!ball.gameObject.activeInHierarchy && rounds != 3) 
+        {
+            Instantiate(ball);
+            ball.gameObject.SetActive(true);
+        }
+        roundsUI.text = rounds.ToString();
+    }
+    */
 }
