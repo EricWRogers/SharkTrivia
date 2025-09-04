@@ -11,7 +11,8 @@ public class BowlingManager : MonoBehaviour
     public int score = 0;
     int turnCounter = 0;
     GameObject[] pins;
-    public TMP_Text scoreUI;
+    public  TMP_Text scoreUI;
+    public TMP_Text roundsUI;
     public CameraSwitch cameraSwitch;
 
     Vector3[] positions;
@@ -34,7 +35,7 @@ public class BowlingManager : MonoBehaviour
         MoveBall();
 
         // Launch the ball
-        if (Input.GetKeyDown(KeyCode.Space) || ball.transform.position.y < -20) // Default is Left Mouse Button or Ctrl
+            if (Input.GetKeyDown(KeyCode.Space) || ball.transform.position.y < -20) // Default is Left Mouse Button or Ctrl
         {
             CountPinsDown();
             turnCounter++;
