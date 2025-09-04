@@ -166,6 +166,7 @@ MonoBehaviour:
   ball: {fileID: 179956231}
   score: 0
   scoreUI: {fileID: 560921989}
+  cameraSwitch: {fileID: 545498851}
 --- !u!1001 &87581273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2575,7 +2576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148424742980491047, guid: 63bff86375ea7e34c82c3e6bfdc2178a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.9
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 9148424742980491047, guid: 63bff86375ea7e34c82c3e6bfdc2178a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2595,11 +2596,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148424742980491047, guid: 63bff86375ea7e34c82c3e6bfdc2178a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9148424742980491047, guid: 63bff86375ea7e34c82c3e6bfdc2178a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.09829255
+      value: 0.108
       objectReference: {fileID: 0}
     - target: {fileID: 9148424742980491047, guid: 63bff86375ea7e34c82c3e6bfdc2178a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
