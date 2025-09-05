@@ -8,9 +8,14 @@ public class InteractionPrompt : MonoBehaviour
 
     public RectTransform root;
     public TextMeshProUGUI label;
-    public Vector3 screenOffset = new Vector3(0, 40, 0);
+    public Vector2 screenOffset = new Vector2(0, 40);
 
     Camera cam;
+
+    // current state to show dialogue
+    bool visible;
+    string cachedText;
+    Vector3 cachedWorldPos;
 
     void Awake()
     {
@@ -20,14 +25,28 @@ public class InteractionPrompt : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void SetVisible(bool visible, string text, Vector3 worldPos)
+    public void SetVisible(bool show, string text, Vector3 worldPos)
     {
-        if (!visible) { gameObject.SetActive(false); return; }
+        visible = show;
+        cachedText = text;
+        cachedWorldPos = worldPos;
+
+        if (!visible)
+        {
+            if (gameObject.activeSelf) gameObject.SetActive(false);
+            return;
+        }
+
         if (!gameObject.activeSelf) gameObject.SetActive(true);
+        if (label) label.text = $"E - {cachedText}";
+    }
 
-        if (label) label.text = text.Length > 0 ? $"E - {text}" : "E - Interact";
+    void LateUpdate()
+    {
+        if (!visible) return;
+        if (!cam) cam = Camera.main;
 
-        Vector3 screen = cam.WorldToScreenPoint(worldPos) + screenOffset;
+        Vector3 screen = RectTransformUtility.WorldToScreenPoint(cam, cachedWorldPos) + screenOffset;
         root.position = screen;
     }
 }
