@@ -28,6 +28,15 @@ public class CharDialogue : ScriptableObject
     public AudioClip voiceSound;
     public float voicePitch = 1f;
 
+    public ScriptableObject[] lineNode;
+
+
+    public void LoadAllDialogueChildren()
+    {
+        
+        lineNode = Resources.LoadAll<LinesNode>("Resources");
+        Debug.Log("Calling all children" + lineNode.Length);
+    }
 }
 
 [System.Serializable]

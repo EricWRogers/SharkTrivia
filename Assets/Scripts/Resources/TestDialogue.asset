@@ -32,3 +32,5 @@ MonoBehaviour:
   typingSpeed: 0.02
   voiceSound: {fileID: 8300000, guid: 3a66302d4f79ace40a73c2bbe56f3dfa, type: 3}
   voicePitch: 1
+  lineNode:
+  - {fileID: 11400000, guid: 1d42b763a0a7a2a4d899ff4a89999fcc, type: 2}
