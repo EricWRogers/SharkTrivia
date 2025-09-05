@@ -17,8 +17,18 @@ MonoBehaviour:
   dialogueLines:
   - Oh boy! Dialogue!
   - This is so exciting, almost as exciting as being on a gameshow!
-  autoProgressLines: 0100
-  autoProgressDelay: 1.5
-  typingSpeed: 0.05
+  - Are you as excited as me?
+  - Me too!
+  - Aw, don't be scared, this will be fun!
+  autoProgressLines: 0101000101
+  autoProgressDelay: 1
+  endDialogueLines: 0000000101
+  choices:
+  - dialogueIndex: 1
+    choices:
+    - Yes, I'm thrilled!
+    - No, I'm terrified!
+    nextDialogueIndexes: 0300000004000000
+  typingSpeed: 0.02
   voiceSound: {fileID: 8300000, guid: 3a66302d4f79ace40a73c2bbe56f3dfa, type: 3}
   voicePitch: 1

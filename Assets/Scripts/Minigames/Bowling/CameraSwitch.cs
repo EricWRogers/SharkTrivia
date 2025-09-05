@@ -12,7 +12,9 @@ public class CameraSwitch : MonoBehaviour
         {
             camera1.SetActive(false);
             camera2.SetActive(true);
-            Destroy(gameObject);
+
+            // Disable this until reset
+            gameObject.SetActive(false);
         }
     }
 }
