@@ -62,10 +62,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7b320597dda20419045d38c2f8f4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UISlider: {fileID: 0}
   powerSlider: {fileID: 0}
   fillImage: {fileID: 0}
   percentageText: {fileID: 0}
   minPower: 5
   maxPower: 20
-  chargeSpeed: 20
+  chargeSpeed: 100
   bowlingBall: {fileID: 0}

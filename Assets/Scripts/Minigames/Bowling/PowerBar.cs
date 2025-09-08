@@ -40,13 +40,6 @@ public class PowerBar : MonoBehaviour
     {
         if (isLocked) return;
 
-        // Space to lock power
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            LockPower();
-            return;
-        }
-
         // Ping-pong charging
         if (isChargingUp)
         {
@@ -73,8 +66,6 @@ public class PowerBar : MonoBehaviour
 
         if (percentageText != null)
             percentageText.text = Mathf.RoundToInt(currentPower * 100f) + "%";
-        if (UISlider != null)
-            UISlider.SetActive(false); // hide while ball rolls
 
         UpdateColor();
     }
@@ -91,19 +82,13 @@ public class PowerBar : MonoBehaviour
             fillImage.color = Color.red;
     }
 
-    void LockPower()
+    // Called from BowlingBall when launching
+    public void LockPower()
     {
         isLocked = true;
 
-        // Convert percentage (0-1) to actual force power
-        float appliedForce = Mathf.Lerp(minPower, maxPower, currentPower);
-
-        // Apply force to bowling ball
-        if (bowlingBall != null)
-        {
-            Vector3 forwardForce = transform.forward * appliedForce;
-            bowlingBall.AddForce(forwardForce, ForceMode.Impulse);
-        }
+        if (UISlider != null)
+            UISlider.SetActive(false); // hide while ball rolls
 
         // Resets % to 0 to stop moving while ball rolls
         currentPower = 0f;

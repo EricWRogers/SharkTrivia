@@ -31,10 +31,13 @@ public class BowlingManager : MonoBehaviour
 
     void Update()
     {
-        MoveBall();
+        if (!ball.GetComponent<BowlingBall>().hasLaunched) // Only move before launch
+            MoveBall();
 
         // Launch the ball
-        if (Input.GetKeyDown(KeyCode.Space) || ball.transform.position.y < -20) // Default is Left Mouse Button or Ctrl
+        Rigidbody rb = ball.GetComponent<Rigidbody>();
+
+        if (ball.GetComponent<BowlingBall>().hasLaunched && (ball.transform.position.y < -20 || rb.IsSleeping()))
         {
             CountPinsDown();
             turnCounter++;

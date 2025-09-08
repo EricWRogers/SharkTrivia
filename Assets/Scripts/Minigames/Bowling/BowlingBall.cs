@@ -5,7 +5,7 @@ public class BowlingBall : MonoBehaviour
     Rigidbody rb;
     [SerializeField]
     float maxPower = 800f; // max force
-    private bool hasLaunched = false;
+    public bool hasLaunched = false;
     private PowerBar powerBar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,6 +30,10 @@ public class BowlingBall : MonoBehaviour
             rb.AddForce(Vector3.forward * launchPower, ForceMode.Impulse);
 
             hasLaunched = true;
+
+            // Lock/hide power bar
+            if (powerBar != null)
+                powerBar.LockPower();
         }
     }
 
