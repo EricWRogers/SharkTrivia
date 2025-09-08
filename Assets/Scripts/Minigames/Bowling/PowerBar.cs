@@ -5,6 +5,7 @@ using TMPro;
 public class PowerBar : MonoBehaviour
 {
     [Header("UI Elements")]
+    public GameObject UISlider; // parent GameObject containing slider & text
     public Slider powerSlider;
     public Image fillImage;
     public TMP_Text percentageText;
@@ -30,6 +31,9 @@ public class PowerBar : MonoBehaviour
             powerSlider.value = 0f;
         }
         currentPower = 0f;
+
+        if (UISlider != null)
+            UISlider.SetActive(true); // show UI at start
     }
 
     void Update()
@@ -69,6 +73,8 @@ public class PowerBar : MonoBehaviour
 
         if (percentageText != null)
             percentageText.text = Mathf.RoundToInt(currentPower * 100f) + "%";
+        if (UISlider != null)
+            UISlider.SetActive(false); // hide while ball rolls
 
         UpdateColor();
     }
@@ -98,5 +104,33 @@ public class PowerBar : MonoBehaviour
             Vector3 forwardForce = transform.forward * appliedForce;
             bowlingBall.AddForce(forwardForce, ForceMode.Impulse);
         }
+
+        // Resets % to 0 to stop moving while ball rolls
+        currentPower = 0f;
+        if (powerSlider != null)
+            powerSlider.value = 0f;
+        if (percentageText != null)
+            percentageText.text = "0%";
+    }
+
+    public void ResetBar()
+    {
+        currentPower = 0f;
+        isLocked = false;
+        isChargingUp = true;
+
+        if (powerSlider != null)
+            powerSlider.value = 0f;
+
+        if (percentageText != null)
+            percentageText.text = "0%";
+
+        if (UISlider != null)
+            UISlider.SetActive(true); // show UI again for next throw
+    }
+
+    public float GetPowerPercent()
+    {
+        return currentPower;
     }
 }

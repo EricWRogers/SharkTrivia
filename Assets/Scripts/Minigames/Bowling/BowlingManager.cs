@@ -84,11 +84,24 @@ public class BowlingManager : MonoBehaviour
         ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         ball.transform.rotation = Quaternion.identity;
 
+        BowlingBall bowlingBall = ball.GetComponent<BowlingBall>();
+        if (bowlingBall != null)
+        {
+            bowlingBall.ResetBall();
+        }
+
         // Swaps cameras on and off after reset
         cameraSwitch.camera1.SetActive(true);
         cameraSwitch.camera2.SetActive(false);
 
         cameraSwitch.gameObject.SetActive(true);
+
+        // Resets Power bar for next throw
+        PowerBar powerBar = FindAnyObjectByType<PowerBar>();
+        if (powerBar != null)
+        {
+            powerBar.ResetBar();
+        }
     }
     
     /*
