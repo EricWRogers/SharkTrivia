@@ -2015,18 +2015,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 280251669063887354, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1945516079142161484, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.16161032
-      objectReference: {fileID: 0}
-    - target: {fileID: 1945516079142161484, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.3336885
-      objectReference: {fileID: 0}
     - target: {fileID: 1945516079142161484, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2067,37 +2055,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6423601494667036429, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 9.803829
-      objectReference: {fileID: 0}
-    - target: {fileID: 6423601494667036429, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0074348
-      objectReference: {fileID: 0}
-    - target: {fileID: 6423601494667036429, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.60637
-      objectReference: {fileID: 0}
-    - target: {fileID: 6423601494667036429, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.017
-      objectReference: {fileID: 0}
-    - target: {fileID: 6423601494667036429, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.696
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484934669971839083, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9203434991748759502, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
       propertyPath: m_Name
       value: Plane
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7484934669971839083, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
