@@ -119,6 +119,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &103705851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 103705853}
+  - component: {fileID: 103705852}
+  m_Layer: 0
+  m_Name: usrDecode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &103705852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103705851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111928fdb025f3d4a939385bb20458a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  englishChar: 0
+  cipherButtonChar: 0
+  keys: 7900
+  values: 7800
+--- !u!4 &103705853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103705851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 541.19684, y: 243.809, z: -2.8553605}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &306418305
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +501,7 @@ MonoBehaviour:
   text: {fileID: 1570483973}
   str: row row row your boat gently down the stream
   keys: 72006f007700
+  usrDecode: {fileID: 103705851}
 --- !u!1 &1570483972
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,3 +645,4 @@ SceneRoots:
   - {fileID: 612180315}
   - {fileID: 1370749635}
   - {fileID: 306418308}
+  - {fileID: 103705853}
