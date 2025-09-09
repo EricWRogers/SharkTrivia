@@ -148,9 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111928fdb025f3d4a939385bb20458a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  englishChar: 0
-  cipherButtonChar: 0
-  keys: 7900
+  keys: 6400
   values: 7800
 --- !u!4 &103705853
 Transform:
@@ -500,7 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1570483973}
   str: row row row your boat gently down the stream
-  keys: 72006f007700
+  keys: 770068006f006100740065007200790061006e00
   usrDecode: {fileID: 103705851}
 --- !u!1 &1570483972
 GameObject:

@@ -11,9 +11,6 @@ using JetBrains.Annotations;
 public class CipherDecode : MonoBehaviour
 {
 
-    public char englishChar;
-    public char cipherButtonChar;
-
     public List<char> keys;
     public List<char> values;
 
