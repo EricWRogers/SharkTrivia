@@ -14,6 +14,9 @@ public class CipherDecode : MonoBehaviour
     public char englishChar;
     public char cipherButtonChar;
 
+    public List<char> keys;
+    public List<char> values;
+
     public Dictionary<char, char> charAssignments = new Dictionary<char, char>
     {
         //tilde represents an english character which has not been assigned a ciphertext equivalent 
@@ -26,27 +29,17 @@ public class CipherDecode : MonoBehaviour
         {'y', '~'},{'z', '~'}
     };
 
+    //KEYS AND VALUES MUST BE THE SAME LENGTH!!!
     public void CharAssignment()
     {
-        //Debug.Log(cipherButtonID, cipherButtonGroup);
 
-        int englishCharIndex = 0;
-        //englishCharIndex = WhoAmI(cipherButtonGroup.transform.parent.gameObject);
-        //0-25 corresponds to letters
-
-        englishChar = 'a';
-        cipherButtonChar = '~';
-
-        //this if else block handles assigning the characters in the dictionary or resetting them to '~' if the button is hit again
-        if(charAssignments[cipherButtonChar] != englishChar)
+        for (int i = 0; i < keys.Count; i++)
         {
-            charAssignments[cipherButtonChar] = englishChar;
+            if (charAssignments.ContainsKey(keys[i]))
+            {
+                charAssignments[keys[i]] = values[i];
+            }
         }
-        else {
-            charAssignments[cipherButtonChar] = '~';
-        }
-
-        Debug.Log(cipherButtonChar);
 
     }
 }
