@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,11 @@ public class ProgressBar : MonoBehaviour
 
     private Camera mainCamera;
 
+    public SpriteRenderer dirtyTeeth;
+    public SpriteRenderer cleanTeeth;
+
+
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -25,6 +31,14 @@ public class ProgressBar : MonoBehaviour
         {
             progressBar.maxValue = swipesAmount;
             progressBar.value = 0;
+        }
+        if (dirtyTeeth != null)
+        {
+            SetAlpha(dirtyTeeth, 1f);
+        }
+        if (cleanTeeth != null)
+        {
+            SetAlpha(cleanTeeth, 1f);
         }
     }
     void Update()
@@ -58,6 +72,23 @@ public class ProgressBar : MonoBehaviour
         {
             isSwiping = false;
         }
+        UpdateTeethFade();
+    }
+    private void UpdateTeethFade()
+    {
+        if (dirtyTeeth != null && progressBar != null && progressBar.maxValue > 0)
+        {
+            float normalized = progressBar.value / progressBar.maxValue;
+            float alpha = 1f - normalized;
+            SetAlpha(dirtyTeeth, alpha);
+        }
+
+    }
+    private void SetAlpha(SpriteRenderer sprite, float alpha)
+    {
+        Color c = sprite.color;
+        c.a = Mathf.Clamp01(alpha);
+        sprite.color = c;
     }
     private bool IsMouseOver(Vector2 mouseWorldPos)
     {
@@ -78,6 +109,7 @@ public class ProgressBar : MonoBehaviour
         //calculates percentage progress
         float percentage = ((float)swipeCount / swipesAmount) * 100;
         int roundedPercentage = Mathf.RoundToInt(percentage);
+      
 
         if(roundedPercentage > lastPercentage)
         {
