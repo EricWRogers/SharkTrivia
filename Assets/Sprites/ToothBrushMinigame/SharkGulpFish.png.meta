@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SharkGulpFish_0: -6629151354205151915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
