@@ -2,6 +2,8 @@ using UnityEngine;
 
 /// One selectable option in a dialogue node.
 /// Selecting this will advance the conversation to <see cref="nextNode"/>.
+
+[System.Serializable]   
 public class BackstageDialogueChoice
 {
     public string choiceText; /// The text shown on the choice button

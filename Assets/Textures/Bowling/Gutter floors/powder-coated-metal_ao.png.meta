@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      powder-coated-metal_ao_0: 6454396670584135256
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

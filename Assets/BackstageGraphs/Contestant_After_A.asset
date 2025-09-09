@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49b99562a74a1274fab9d42a68ad4217, type: 3}
-  m_Name: Contestant_Line_1
+  m_Name: Contestant_After_A
   m_EditorClassIdentifier: 
-  speakerLine: Welcome backstage, Shark
+  speakerLine: Okay!
   speakerName: Contestant 1
-  choices:
-  - choiceText: I'm Ready
-    nextNode: {fileID: 11400000, guid: 25c86bd7f76b28847b9b275dea313f9e, type: 2}
-  - choiceText: I'm Not Ready
-    nextNode: {fileID: 11400000, guid: 8bdb1b4600b6e054393ddc93403972d0, type: 2}
-  nextIfNoChoices: {fileID: 11400000, guid: 25c86bd7f76b28847b9b275dea313f9e, type: 2}
+  choices: []
+  nextIfNoChoices: {fileID: 0}
