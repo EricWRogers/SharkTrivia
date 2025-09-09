@@ -9,10 +9,11 @@ public class BowlingManager : MonoBehaviour
 
     public GameObject ball;
     public int score = 0;
-    int turnCounter = 0;
+    public int rounds = 0;
+    private bool pinsUp = true;
     GameObject[] pins;
     public TMP_Text scoreUI;
-    public TMP_Text roundsUI; // W.I.P
+    public TMP_Text roundsUI;
     public CameraSwitch cameraSwitch;
 
     Vector3[] positions;
@@ -40,7 +41,7 @@ public class BowlingManager : MonoBehaviour
         if (ball.GetComponent<BowlingBall>().hasLaunched && (ball.transform.position.y < -20 || rb.IsSleeping()))
         {
             CountPinsDown();
-            turnCounter++;
+            NewRound();
             ResetPins();
         }
     }
@@ -63,7 +64,9 @@ public class BowlingManager : MonoBehaviour
             {
                 score++;
                 pins[i].SetActive(false);
+
             }
+            pinsUp = false;
         }
 
         scoreUI.text = score.ToString();
@@ -80,7 +83,6 @@ public class BowlingManager : MonoBehaviour
             pins[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             pins[i].transform.rotation = Quaternion.identity;
         }
-
         // Resets ball into original position + resets motion
         ball.transform.position = new Vector3(0, 0.108f, -4f);
         ball.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
@@ -107,15 +109,13 @@ public class BowlingManager : MonoBehaviour
         }
     }
     
-    /*
-    void NewRound() //WIP new round script.
+    
+    void NewRound() //Updates the round counter
     {
-        if (!ball.gameObject.activeInHierarchy && rounds != 3) 
+        if (pinsUp == false && rounds != 3)// If the pins are up and the round is not 3, the game continues.
         {
-            Instantiate(ball);
-            ball.gameObject.SetActive(true);
+            rounds++;
         }
         roundsUI.text = rounds.ToString();
     }
-    */
 }
