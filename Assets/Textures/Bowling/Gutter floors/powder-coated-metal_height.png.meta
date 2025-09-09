@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      powder-coated-metal_height_0: -97233636399393107
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

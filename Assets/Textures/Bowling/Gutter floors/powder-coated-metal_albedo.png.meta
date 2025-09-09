@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      powder-coated-metal_albedo_0: -6107001855356901238
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
