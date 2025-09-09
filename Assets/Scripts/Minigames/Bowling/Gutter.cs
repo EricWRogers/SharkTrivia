@@ -21,8 +21,13 @@ public class Gutter : MonoBehaviour
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
 
-            // Drops ball below lane so Manager detects it
-            rb.AddForce(Vector3.down * 10f, ForceMode.VelocityChange);
+            // Call manager to handle round + reset
+            if (manager != null)
+            {
+                manager.CountPinsDown();
+                manager.NewRound();
+                manager.ResetPins();
+            }
         }
     }
 }

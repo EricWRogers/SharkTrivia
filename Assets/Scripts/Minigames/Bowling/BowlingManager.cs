@@ -55,7 +55,7 @@ public class BowlingManager : MonoBehaviour
         ball.transform.position = pos;
     }
 
-    void CountPinsDown()
+    public void CountPinsDown()
     {
         // Tracks pins knocked down for scoring
         for (int i = 0; i < pins.Length; i++)
@@ -72,7 +72,7 @@ public class BowlingManager : MonoBehaviour
         scoreUI.text = score.ToString();
     }
 
-    void ResetPins()
+    public void ResetPins()
     {
         // Resets the pins into their original spots & resets the collision motion
         for (int i = 0; i < pins.Length; i++)
@@ -110,7 +110,7 @@ public class BowlingManager : MonoBehaviour
     }
     
     
-    void NewRound() //Updates the round counter
+    public void NewRound() //Updates the round counter
     {
         if (pinsUp == false && rounds != 3)// If the pins are up and the round is not 3, the game continues.
         {
