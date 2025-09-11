@@ -42,8 +42,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: CleanTeeth
+    uniqueID: 4155858159
+    locked: 0
+  - name: DirtyTeeth
+    uniqueID: 1457845843
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ToothBrush
+    uniqueID: 824807525
     locked: 0
   m_RenderingLayers:
   - Default
