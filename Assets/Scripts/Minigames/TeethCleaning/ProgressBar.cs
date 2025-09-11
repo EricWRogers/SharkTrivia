@@ -9,6 +9,7 @@ public class ProgressBar : MonoBehaviour
 
     private int swipeCount = 0;
     private bool isSwiping = false;
+    private int lastPercentage = 0;
     
     private Vector2 mousePosition;
 
@@ -74,6 +75,16 @@ public class ProgressBar : MonoBehaviour
         {
             progressBar.value = swipeCount;
         }
+        //calculates percentage progress
+        float percentage = ((float)swipeCount / swipesAmount) * 100;
+        int roundedPercentage = Mathf.RoundToInt(percentage);
+
+        if(roundedPercentage > lastPercentage)
+        {
+            int pointsToAward = roundedPercentage - lastPercentage;
+            ScoreManager.instance.AddPoints(pointsToAward);
+            lastPercentage = roundedPercentage;
+        }
         if(swipeCount>= swipesAmount)
         {
             OnSwipeGoalReached();
@@ -88,7 +99,12 @@ public class ProgressBar : MonoBehaviour
             timer.StopTimer();
         }
         
-        //possibly points awarded here or exits back to main game?
+        //bonus points for 100% clean
+        if(lastPercentage == 100)
+        {
+            Debug.Log("Perfect clean, bonus awarded");
+            ScoreManager.instance.AddPoints(10);
+        }
     }
 
 }

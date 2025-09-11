@@ -18,4 +18,5 @@ public class Toothbrush : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);    //very important
         transform.position = Vector2.Lerp(transform.position, mousePos, moveSpeed);
     }
+
 }
