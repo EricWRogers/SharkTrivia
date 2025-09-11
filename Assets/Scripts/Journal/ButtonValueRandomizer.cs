@@ -1,9 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ButtonPicker : MonoBehaviour
+public class ButtonValueRandomizer : MonoBehaviour
 {
-    public GameObject GuessButton;    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
