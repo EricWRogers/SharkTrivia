@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b99562a74a1274fab9d42a68ad4217, type: 3}
-  m_Name: Shark_Reply_A
+  m_Script: {fileID: 11500000, guid: b6174fe4a7d4998478b926a21e26dff7, type: 3}
+  m_Name: Backstage_Intro
   m_EditorClassIdentifier: 
-  speakerLine: I'm ready
-  speakerName: Shark
-  choices: []
-  nextIfNoChoices: {fileID: 11400000, guid: 11fb0f5dfec206145ad0bcacfa5a6e85, type: 2}
+  entry: {fileID: 0}

@@ -21,7 +21,6 @@ public class Translator : MonoBehaviour
      List<char> usrKeys = new List<char>();
     //END SCOTT ADDED
 
-    int offset = 20; //total characters being added every loop
     void Start()
     {
         //SCOTT ADDED
