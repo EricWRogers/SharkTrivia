@@ -314,10 +314,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 1051212104590117536, guid: 63bff86375ea7e34c82c3e6bfdc2178a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9148424742980491047, guid: 63bff86375ea7e34c82c3e6bfdc2178a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -628,6 +624,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8040045644457489836, guid: cd3a9e6b8bd24be418cb7b4e3520fb30, type: 3}
   m_PrefabInstance: {fileID: 727681393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &753707534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9203434991748759502, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
+  m_PrefabInstance: {fileID: 1598006195}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &837351488
 PrefabInstance:
@@ -1518,11 +1519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9203434991748759502, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
       propertyPath: m_Name
-      value: Plane
-      objectReference: {fileID: 0}
-    - target: {fileID: 9203434991748759502, guid: 9b2ed9de3f38eae43bd212ea84600b8a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: Lane
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1682,24 +1679,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8040045644457489836, guid: cd3a9e6b8bd24be418cb7b4e3520fb30, type: 3}
   m_PrefabInstance: {fileID: 1679948319}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1732275458 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5500229512548195426, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
+--- !u!114 &1732275462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2758989283787746013, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
   m_PrefabInstance: {fileID: 134005147735805288}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1732275462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732275458}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22b73771fa76833408cf0e48e05e45ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goUI: {fileID: 1876116827898917848}
 --- !u!1 &1741925088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,7 +1962,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 2055783817}
-  totalTime: 60
+  totalTime: 5
+  gameOverManager: {fileID: 1732275462}
 --- !u!114 &2081044038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2115,6 +2106,22 @@ PrefabInstance:
       propertyPath: cameraSwitch
       value: 
       objectReference: {fileID: 1083135080}
+    - target: {fileID: 2758989283787746013, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 286272548}
+    - target: {fileID: 2758989283787746013, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
+      propertyPath: goUI
+      value: 
+      objectReference: {fileID: 1876116827898917848}
+    - target: {fileID: 2758989283787746013, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
+      propertyPath: lane
+      value: 
+      objectReference: {fileID: 753707534}
+    - target: {fileID: 2758989283787746013, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
+      propertyPath: pins
+      value: 
+      objectReference: {fileID: 195409620}
     - target: {fileID: 4044471872658943733, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
       propertyPath: UISlider
       value: 
@@ -2182,10 +2189,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5500229512548195426, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1732275462}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
 --- !u!1001 &1876116827898917847
 PrefabInstance:
@@ -2580,10 +2584,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 926805723}
     m_Modifications:
-    - target: {fileID: 1023652429963926152, guid: 6690bd965dc78b5438c88f33996c6d60, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3723359352828799204, guid: 6690bd965dc78b5438c88f33996c6d60, type: 3}
       propertyPath: m_Name
       value: RoundsManager
