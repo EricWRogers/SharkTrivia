@@ -6,6 +6,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float totalTime = 60f;
 
+    public GameOverManager gameOverManager;
+
     private float timeRemaining;
     private bool timeRunning = true;
 
@@ -42,5 +44,6 @@ public class Timer : MonoBehaviour
     {
         Debug.Log("Timer ended");
         //whatever loser concequences we want to add later
+        gameOverManager.GameOverShow();
     }
 }

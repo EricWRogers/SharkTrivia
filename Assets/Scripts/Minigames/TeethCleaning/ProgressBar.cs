@@ -1,10 +1,11 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
     [Header("Progress Settings")]
-    public int swipesAmount = 15;
+    public int swipesAmount = 0;
     public Slider progressBar;
 
     private int swipeCount = 0;
@@ -17,14 +18,31 @@ public class ProgressBar : MonoBehaviour
 
     private Camera mainCamera;
 
+    public SpriteRenderer dirtyTeeth;
+    public SpriteRenderer cleanTeeth;
+    public SpriteRenderer toothBrush;
+
+
+
     void Start()
     {
         mainCamera = Camera.main;
+        dirtyTeeth.sortingOrder = 1; 
+        cleanTeeth.sortingOrder = 0;
+        toothBrush.sortingOrder = 3;
 
         if (progressBar != null)
         {
             progressBar.maxValue = swipesAmount;
             progressBar.value = 0;
+        }
+        if (dirtyTeeth != null)
+        {
+            SetAlpha(dirtyTeeth, 1f);
+        }
+        if (cleanTeeth != null)
+        {
+            SetAlpha(cleanTeeth, 1f);
         }
     }
     void Update()
@@ -46,7 +64,7 @@ public class ProgressBar : MonoBehaviour
             float distance = Vector2.Distance(mousePosition, mouseWorldPos);
             Debug.Log($"LastPos: {mousePosition} CurrentPos: {mouseWorldPos} Distance: {distance}");
             Debug.Log("Distance moved " + distance);
-            if(distance > 5f)
+            if(distance > 1f)
             {
                 RegisterSwipe();
                 mousePosition = mouseWorldPos;
@@ -58,6 +76,25 @@ public class ProgressBar : MonoBehaviour
         {
             isSwiping = false;
         }
+        UpdateTeethFade();
+    }
+    private void UpdateTeethFade()
+    {
+        if (dirtyTeeth != null && progressBar != null && progressBar.maxValue > 0)
+        {
+            float normalized = progressBar.value / progressBar.maxValue;
+
+            Color c = dirtyTeeth.color;
+            c.a = 1f - normalized;
+            dirtyTeeth.color = c;
+        }
+
+    }
+    private void SetAlpha(SpriteRenderer sprite, float alpha)
+    {
+        Color c = sprite.color;
+        c.a = Mathf.Clamp01(alpha);
+        sprite.color = c;
     }
     private bool IsMouseOver(Vector2 mouseWorldPos)
     {
@@ -78,6 +115,7 @@ public class ProgressBar : MonoBehaviour
         //calculates percentage progress
         float percentage = ((float)swipeCount / swipesAmount) * 100;
         int roundedPercentage = Mathf.RoundToInt(percentage);
+      
 
         if(roundedPercentage > lastPercentage)
         {
