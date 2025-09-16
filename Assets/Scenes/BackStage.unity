@@ -612,7 +612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3522,15 +3522,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2751574254855479563, guid: dc6a8f6f28d831249b7e95792bf6c423, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.12730896
+      value: 0.9899806
       objectReference: {fileID: 0}
     - target: {fileID: 2751574254855479563, guid: dc6a8f6f28d831249b7e95792bf6c423, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.12730896
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2751574254855479563, guid: dc6a8f6f28d831249b7e95792bf6c423, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.98742133
+      value: 0.87106913
       objectReference: {fileID: 0}
     - target: {fileID: 7422091271843086418, guid: dc6a8f6f28d831249b7e95792bf6c423, type: 3}
       propertyPath: m_Name
