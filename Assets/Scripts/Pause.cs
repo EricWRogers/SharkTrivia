@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,7 @@ public class Pause : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public Animator animator;
 
     void Update()
     {
@@ -42,6 +44,14 @@ public class Pause : MonoBehaviour
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene(0);
+
+        StartCoroutine(LoadLevel(0));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        animator.SetTrigger("Start");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(levelIndex);
     }
 }
