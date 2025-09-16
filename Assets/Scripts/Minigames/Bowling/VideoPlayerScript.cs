@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
+using System.IO;
 
 public class VideoPlayerScript : MonoBehaviour
 {
@@ -42,7 +43,7 @@ public class VideoPlayerScript : MonoBehaviour
 
         // Prepare the video player
         videoPlayer.Prepare();
-        videoPlayer.prepareCompleted += OnVideoPrepared; // Subscribe to the prepare completed event
+        videoPlayer.prepareCompleted += OnVideoPrepared; 
     }
 
     void OnVideoPrepared(VideoPlayer vp)
@@ -51,6 +52,13 @@ public class VideoPlayerScript : MonoBehaviour
         videoPlayer.Play();
     }
 
+    public void SelectVideo()
+    {
+        if (videoPlayer.isPrepared)
+        {
+            
+        }
+    }
     // Example functions for controlling playback
     public void PlayVideo()
     {

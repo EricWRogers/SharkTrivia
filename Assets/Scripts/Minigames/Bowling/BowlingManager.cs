@@ -15,6 +15,7 @@ public class BowlingManager : MonoBehaviour
     public TMP_Text scoreUI;
     public TMP_Text roundsUI;
     public CameraSwitch cameraSwitch;
+    public GameOverManager gameOverManager;
 
     Vector3[] positions;
 
@@ -112,9 +113,13 @@ public class BowlingManager : MonoBehaviour
     
     public void NewRound() //Updates the round counter
     {
-        if (pinsUp == false && rounds != 3)// If the pins are up and the round is not 3, the game continues.
+        if (pinsUp == false && rounds < 3)// If the pins are up and the round is not 3, the game continues.
         {
             rounds++;
+        }
+        else
+        {
+            gameOverManager.GameOverShow();
         }
         roundsUI.text = rounds.ToString();
     }
