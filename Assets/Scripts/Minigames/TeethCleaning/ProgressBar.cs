@@ -143,6 +143,11 @@ public class ProgressBar : MonoBehaviour
             Debug.Log("Perfect clean, bonus awarded");
             ScoreManager.instance.AddPoints(10);
         }
+        
+        if(TotalScore.instance != null){
+            int finalPoints = ScoreManager.instance.GetScore();
+            TotalScore.instance.AddPoints(finalPoints);
+        }
     }
 
 }
