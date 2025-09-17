@@ -54,4 +54,7 @@ public class ScoreManager : MonoBehaviour
     {
         highScoreText.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
     }
+    public int GetScore(){
+        return score;
+    }
 }

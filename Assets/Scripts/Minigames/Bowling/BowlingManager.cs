@@ -117,5 +117,11 @@ public class BowlingManager : MonoBehaviour
             rounds++;
         }
         roundsUI.text = rounds.ToString();
+
+        if(rounds >= 3){
+            if(TotalScore.instance != null){
+                TotalScore.instance.AddPoints(score);
+            }
+        }
     }
 }
