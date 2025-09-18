@@ -8,6 +8,12 @@ public class Pause : MonoBehaviour
     public GameObject pauseMenuUI;
     public Animator animator;
 
+    void Start()
+    {
+        if(animator != null)
+            animator.SetTrigger("End");
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -43,15 +49,18 @@ public class Pause : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
-        Time.timeScale = 1.0f;
 
         StartCoroutine(LoadLevel(0));
+        Time.timeScale = 1.0f;
     }
 
     IEnumerator LoadLevel(int levelIndex)
     {
-        animator.SetTrigger("Start");
-        yield return new WaitForSeconds(1);
+        if (animator != null)
+        {
+            animator.SetTrigger("Start");
+            yield return new WaitForSeconds(1);
+        }
         SceneManager.LoadScene(levelIndex);
     }
 }
