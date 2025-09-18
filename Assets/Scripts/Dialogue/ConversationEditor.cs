@@ -8,8 +8,6 @@ using System.Collections.Generic;
 public class ConversationEditor : Editor
 {
     Conversation convo;
-
-    // temp field        to pick a parent node in the inspector
     DNode parentForChild;
 
     void OnEnable() => convo = (Conversation)target;
@@ -27,13 +25,13 @@ public class ConversationEditor : Editor
         {
             if (GUILayout.Button("Add Root Node"))
             {
-                var node = CreateNode("Root");
+                var node = CreateNodeWithNumber("Rn");   //auto numbered
                 convo.entry = node;
                 EditorUtility.SetDirty(convo);
             }
             if (GUILayout.Button("Add Orphan Node"))
             {
-                CreateNode("Node");
+                CreateNodeWithNumber("N");                  //auto numbered
             }
         }
 
@@ -44,7 +42,8 @@ public class ConversationEditor : Editor
 
         if (parentForChild && GUILayout.Button("Add Choice + Child Node"))
         {
-            var child = CreateNode(parentForChild.name + "_Child");
+            // children are based on the parent name and numbered
+            var child = CreateNodeWithNumber(parentForChild.name + "_Child");
 
             var list = (parentForChild.choices != null)
                 ? parentForChild.choices.ToList()
@@ -60,22 +59,38 @@ public class ConversationEditor : Editor
         EditorGUILayout.Space(8);
         if (GUILayout.Button("Ping All Nodes"))
         {
-            foreach (var n in AssetDatabase.LoadAllAssetsAtPath(
-                         AssetDatabase.GetAssetPath(convo)).OfType<DNode>())
-                EditorGUIUtility.PingObject(n);
+            foreach (var n in GetAllNodes()) EditorGUIUtility.PingObject(n);
         }
 
         serializedObject.ApplyModifiedProperties();
     }
 
-    DNode CreateNode(string nameHint)
+    // ---------- helpers ----------
+
+    IEnumerable<DNode> GetAllNodes()
+    {
+        var path = AssetDatabase.GetAssetPath(convo);
+        return AssetDatabase.LoadAllAssetsAtPath(path).OfType<DNode>();
+    }
+
+    string GetUniqueName(string prefix)
+    {
+        var existing = new HashSet<string>(GetAllNodes().Select(n => n.name));
+        int i = 1;
+        string candidate = prefix + i;
+        while (existing.Contains(candidate)) { i++; candidate = prefix + i; }
+        return candidate;
+    }
+
+    DNode CreateNodeWithNumber(string prefix)
     {
         var node = ScriptableObject.CreateInstance<DNode>();
-        node.name = nameHint;
+        node.name = GetUniqueName(prefix);              // key line
 
-        AssetDatabase.AddObjectToAsset(node, convo); // sub-asset in the same file
-        AssetDatabase.ImportAsset(AssetDatabase.GetAssetPath(convo));
+        AssetDatabase.AddObjectToAsset(node, convo);    // save as sub-asset
+        AssetDatabase.SaveAssets();
         EditorUtility.SetDirty(node);
+        Selection.activeObject = node;                  
         return node;
     }
 }
