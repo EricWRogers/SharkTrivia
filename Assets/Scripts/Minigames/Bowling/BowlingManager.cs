@@ -119,6 +119,9 @@ public class BowlingManager : MonoBehaviour
         }
         else
         {
+            cameraSwitch.camera2.SetActive(false);
+            cameraSwitch.camera1.SetActive(true);
+            if (gameOverManager == null) { Debug.Log("NNNNN"); }
             gameOverManager.GameOverShow();
         }
         roundsUI.text = rounds.ToString();

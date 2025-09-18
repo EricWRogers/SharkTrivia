@@ -1,18 +1,21 @@
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
-using System.IO;
+using System.Collections.Generic;
+
 
 public class VideoPlayerScript : MonoBehaviour
 {
     public VideoClip videoToPlay;
     public RawImage rawImageDisplay;
+    public List<VideoClip> videoClips; // Assign VideoClip assets here
+    private List<string> videoNames; // For ease of referencing the videos
     private VideoPlayer videoPlayer;
     private RenderTexture renderTexture;
+    private int currentVideoIndex = 0;
 
     void Start()
     {
-        // Get or add the VideoPlayer component
         videoPlayer = GetComponent<VideoPlayer>();
         if (videoPlayer == null)
         {
@@ -35,10 +38,7 @@ public class VideoPlayerScript : MonoBehaviour
         }
         else // If not using RawImage, render to a material on a 3D object
         {
-            // Ensure the VideoPlayer is set to render to a Mesh Renderer
             videoPlayer.renderMode = VideoRenderMode.MaterialOverride;
-            // You would typically assign a material to a MeshRenderer on this GameObject
-            // and the VideoPlayer would automatically update its texture.
         }
 
         // Prepare the video player
@@ -54,21 +54,21 @@ public class VideoPlayerScript : MonoBehaviour
 
     public void SelectVideo()
     {
-        if (videoPlayer.isPrepared)
-        {
-            
-        }
+        
     }
-    // Example functions for controlling playback
-    public void PlayVideo()
+    //Select the video to play
+    public void PlayVideoClip(int index)
     {
-        if (videoPlayer.isPrepared)
+        if (index >= 0 && index < videoClips.Count)
         {
+            videoPlayer.source = VideoSource.VideoClip;
+            videoPlayer.clip = videoClips[index];
             videoPlayer.Play();
+            currentVideoIndex = index;
         }
         else
         {
-            videoPlayer.Prepare(); // Prepare if not already
+            Debug.LogWarning("Invalid video clip index.");
         }
     }
 

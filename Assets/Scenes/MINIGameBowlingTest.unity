@@ -1185,6 +1185,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoToPlay: {fileID: 0}
   rawImageDisplay: {fileID: 0}
+  videoClips:
+  - {fileID: 32900000, guid: 2106205ff3ceb09469c66cd6f0d3e670, type: 3}
+  - {fileID: 32900000, guid: c9f8442e12a04d34a9a8ab4a5a4ab43d, type: 3}
+  - {fileID: 32900000, guid: cbc884216c56bc644ad14c38944e5309, type: 3}
+  - {fileID: 32900000, guid: 6226aa7317b45b14bae5919bad0fee19, type: 3}
+  - {fileID: 32900000, guid: 821d8ca52b96c5840b1fbeb5b6a16736, type: 3}
+  - {fileID: 32900000, guid: c0fa205b4f05bd54e977b7726319b220, type: 3}
+  - {fileID: 32900000, guid: 0423fd0d57a0ebf4091610468938b502, type: 3}
+  - {fileID: 32900000, guid: bedb2438b42e0fe4b95430bb4eb5583e, type: 3}
+  - {fileID: 32900000, guid: 6c44445dc7ec8904eb0453f8ecac2b6b, type: 3}
+  - {fileID: 32900000, guid: 01aa2c640abe0c842bdbf39a4e7cc597, type: 3}
+  - {fileID: 32900000, guid: ce5722164c249a440941e49913942978, type: 3}
+  - {fileID: 32900000, guid: af8600732b7db314b9c8246ac851c81c, type: 3}
+  - {fileID: 32900000, guid: 8b5011f5d25532d45aab8fc0804a955c, type: 3}
+  - {fileID: 32900000, guid: 13103675db2adcb4d9aab503c976b991, type: 3}
+  - {fileID: 32900000, guid: 8f95bc24acffab140a5602db6e6984e8, type: 3}
+  streamingAssetVideoNames:
+  - GutterBallReturn
+  - Four
+  - Six
+  - Seven
+  - Eight
+  - GutterBallSquish
+  - One
+  - BungeeStrike
+  - DivingFour
+  - SharkStrike
+  - FivePins
+  - DoubleStrike
+  - GutterBallSubmarine
+  - WaterSkiXX
+  - WaveStrike
 --- !u!1 &1019029691 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6941191281157022066, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
@@ -1427,6 +1459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoToPlay: {fileID: 0}
   rawImageDisplay: {fileID: 0}
+  videoClips: []
+  streamingAssetVideoNames: []
 --- !u!1001 &1455465612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1653,6 +1687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1019029691}
+  animator: {fileID: 0}
 --- !u!114 &1645746300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1955,7 +1990,7 @@ Transform:
   m_GameObject: {fileID: 1821264151}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6373315, y: -6.6416936, z: 12.249013}
+  m_LocalPosition: {x: 1.98, y: 0.62, z: 0.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2234,6 +2269,10 @@ PrefabInstance:
       propertyPath: cameraSwitch
       value: 
       objectReference: {fileID: 1083135080}
+    - target: {fileID: 887584905543431456, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
+      propertyPath: gameOverManager
+      value: 
+      objectReference: {fileID: 1732275462}
     - target: {fileID: 2758989283787746013, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
       propertyPath: ball
       value: 
@@ -2789,7 +2828,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7428077789204603852, guid: 25f8c02578d875640876de7de2a9a2b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 984795420}
   m_SourcePrefab: {fileID: 100100000, guid: 25f8c02578d875640876de7de2a9a2b4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -2806,4 +2848,5 @@ SceneRoots:
   - {fileID: 1598006195}
   - {fileID: 286272547}
   - {fileID: 7854137969002173006}
+  - {fileID: 1821264153}
   - {fileID: 1645746303}
