@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
     [Header("Progress Settings")]
-    public int swipesAmount = 15;
+    public int swipesAmount = 0;
     public Slider progressBar;
 
     private int swipeCount = 0;
@@ -20,12 +20,16 @@ public class ProgressBar : MonoBehaviour
 
     public SpriteRenderer dirtyTeeth;
     public SpriteRenderer cleanTeeth;
+    public SpriteRenderer toothBrush;
 
 
 
     void Start()
     {
         mainCamera = Camera.main;
+        dirtyTeeth.sortingOrder = 1; 
+        cleanTeeth.sortingOrder = 0;
+        toothBrush.sortingOrder = 3;
 
         if (progressBar != null)
         {
@@ -60,7 +64,7 @@ public class ProgressBar : MonoBehaviour
             float distance = Vector2.Distance(mousePosition, mouseWorldPos);
             Debug.Log($"LastPos: {mousePosition} CurrentPos: {mouseWorldPos} Distance: {distance}");
             Debug.Log("Distance moved " + distance);
-            if(distance > 5f)
+            if(distance > 1f)
             {
                 RegisterSwipe();
                 mousePosition = mouseWorldPos;
@@ -79,8 +83,10 @@ public class ProgressBar : MonoBehaviour
         if (dirtyTeeth != null && progressBar != null && progressBar.maxValue > 0)
         {
             float normalized = progressBar.value / progressBar.maxValue;
-            float alpha = 1f - normalized;
-            SetAlpha(dirtyTeeth, alpha);
+
+            Color c = dirtyTeeth.color;
+            c.a = 1f - normalized;
+            dirtyTeeth.color = c;
         }
 
     }
@@ -136,6 +142,11 @@ public class ProgressBar : MonoBehaviour
         {
             Debug.Log("Perfect clean, bonus awarded");
             ScoreManager.instance.AddPoints(10);
+        }
+        
+        if(TotalScore.instance != null){
+            int finalPoints = ScoreManager.instance.GetScore();
+            TotalScore.instance.AddPoints(finalPoints);
         }
     }
 
