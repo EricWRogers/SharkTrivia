@@ -1,6 +1,7 @@
 using UnityEngine;
-using UnityEngine.Video;
 using UnityEngine.UI;
+using UnityEngine.Video;
+using System.Collections;
 using System.Collections.Generic;
 
 
@@ -8,10 +9,9 @@ public class VideoPlayerScript : MonoBehaviour
 {
     public VideoClip videoToPlay;
     public RawImage rawImageDisplay;
+    public float playDuration = 5f; // Set the desired duration in seconds
     public List<VideoClip> videoClips; // Assign VideoClip assets here
-    private List<string> videoNames; // For ease of referencing the videos
     private VideoPlayer videoPlayer;
-    private RenderTexture renderTexture;
     private int currentVideoIndex = 0;
 
     void Start()
@@ -24,37 +24,6 @@ public class VideoPlayerScript : MonoBehaviour
 
         // Set the video clip
         videoPlayer.clip = videoToPlay;
-
-        // If displaying on a RawImage, set up the Render Texture
-        if (rawImageDisplay != null)
-        {
-            // Create a new Render Texture if one doesn't exist
-            if (renderTexture == null)
-            {
-                renderTexture = new RenderTexture(1920, 1080, 24); // Adjust resolution as needed
-            }
-            videoPlayer.targetTexture = renderTexture;
-            rawImageDisplay.texture = renderTexture;
-        }
-        else // If not using RawImage, render to a material on a 3D object
-        {
-            videoPlayer.renderMode = VideoRenderMode.MaterialOverride;
-        }
-
-        // Prepare the video player
-        videoPlayer.Prepare();
-        videoPlayer.prepareCompleted += OnVideoPrepared; 
-    }
-
-    void OnVideoPrepared(VideoPlayer vp)
-    {
-        // Start playing the video once prepared
-        videoPlayer.Play();
-    }
-
-    public void SelectVideo()
-    {
-        
     }
     //Select the video to play
     public void PlayVideoClip(int index)
@@ -63,7 +32,7 @@ public class VideoPlayerScript : MonoBehaviour
         {
             videoPlayer.source = VideoSource.VideoClip;
             videoPlayer.clip = videoClips[index];
-            videoPlayer.Play();
+            PlayVideoAndStop();
             currentVideoIndex = index;
         }
         else
@@ -71,7 +40,6 @@ public class VideoPlayerScript : MonoBehaviour
             Debug.LogWarning("Invalid video clip index.");
         }
     }
-
     public void PauseVideo()
     {
         videoPlayer.Pause();
@@ -79,6 +47,12 @@ public class VideoPlayerScript : MonoBehaviour
 
     public void StopVideo()
     {
+        videoPlayer.Stop();
+    }
+    IEnumerator PlayVideoAndStop()
+    {
+        videoPlayer.Play();
+        yield return new WaitForSeconds(playDuration);
         videoPlayer.Stop();
     }
 }

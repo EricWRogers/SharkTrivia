@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "SharkTrivia.sln"
+    "dotnet.defaultSolution": "SharkTrivia(1).sln"
 }
