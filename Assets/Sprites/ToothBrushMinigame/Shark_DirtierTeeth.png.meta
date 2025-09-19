@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shark_DirtierTeeth_0: 6358332967685187088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
