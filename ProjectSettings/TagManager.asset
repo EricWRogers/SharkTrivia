@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 367021023
+    locked: 0
   - name: CleanTeeth
     uniqueID: 4155858159
     locked: 0

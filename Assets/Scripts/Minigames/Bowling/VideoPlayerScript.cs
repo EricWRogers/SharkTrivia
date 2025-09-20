@@ -1,17 +1,21 @@
 using UnityEngine;
-using UnityEngine.Video;
 using UnityEngine.UI;
+using UnityEngine.Video;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class VideoPlayerScript : MonoBehaviour
 {
     public VideoClip videoToPlay;
     public RawImage rawImageDisplay;
+    public float playDuration = 5f; // Set the desired duration in seconds
+    public List<VideoClip> videoClips; // Assign VideoClip assets here
     private VideoPlayer videoPlayer;
-    private RenderTexture renderTexture;
+    private int currentVideoIndex = 0;
 
     void Start()
     {
-        // Get or add the VideoPlayer component
         videoPlayer = GetComponent<VideoPlayer>();
         if (videoPlayer == null)
         {
@@ -20,50 +24,22 @@ public class VideoPlayerScript : MonoBehaviour
 
         // Set the video clip
         videoPlayer.clip = videoToPlay;
-
-        // If displaying on a RawImage, set up the Render Texture
-        if (rawImageDisplay != null)
-        {
-            // Create a new Render Texture if one doesn't exist
-            if (renderTexture == null)
-            {
-                renderTexture = new RenderTexture(1920, 1080, 24); // Adjust resolution as needed
-            }
-            videoPlayer.targetTexture = renderTexture;
-            rawImageDisplay.texture = renderTexture;
-        }
-        else // If not using RawImage, render to a material on a 3D object
-        {
-            // Ensure the VideoPlayer is set to render to a Mesh Renderer
-            videoPlayer.renderMode = VideoRenderMode.MaterialOverride;
-            // You would typically assign a material to a MeshRenderer on this GameObject
-            // and the VideoPlayer would automatically update its texture.
-        }
-
-        // Prepare the video player
-        videoPlayer.Prepare();
-        videoPlayer.prepareCompleted += OnVideoPrepared; // Subscribe to the prepare completed event
     }
-
-    void OnVideoPrepared(VideoPlayer vp)
+    //Select the video to play
+    public void PlayVideoClip(int index)
     {
-        // Start playing the video once prepared
-        videoPlayer.Play();
-    }
-
-    // Example functions for controlling playback
-    public void PlayVideo()
-    {
-        if (videoPlayer.isPrepared)
+        if (index >= 0 && index < videoClips.Count)
         {
-            videoPlayer.Play();
+            videoPlayer.source = VideoSource.VideoClip;
+            videoPlayer.clip = videoClips[index];
+            PlayVideoAndStop();
+            currentVideoIndex = index;
         }
         else
         {
-            videoPlayer.Prepare(); // Prepare if not already
+            Debug.LogWarning("Invalid video clip index.");
         }
     }
-
     public void PauseVideo()
     {
         videoPlayer.Pause();
@@ -71,6 +47,12 @@ public class VideoPlayerScript : MonoBehaviour
 
     public void StopVideo()
     {
+        videoPlayer.Stop();
+    }
+    IEnumerator PlayVideoAndStop()
+    {
+        videoPlayer.Play();
+        yield return new WaitForSeconds(playDuration);
         videoPlayer.Stop();
     }
 }

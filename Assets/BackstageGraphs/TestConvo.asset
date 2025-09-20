@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
   m_Name: N1
   m_EditorClassIdentifier: 
-  speakerName: ???
+  speakerName: Contestant
   portrait: {fileID: 0}
-  speakerLine: 
+  speakerLine: Are you ready shark?
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
-  choices: []
+  choices:
+  - choiceText: Yes
+    next: {fileID: 380490068634013866}
+  - choiceText: No
+    next: {fileID: 7764030827503490809}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,7 +35,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6174fe4a7d4998478b926a21e26dff7, type: 3}
   m_Name: TestConvo
   m_EditorClassIdentifier: 
-  entry: {fileID: 7764030827503490809}
+  entry: {fileID: -1457638737176035783}
 --- !u!114 &380490068634013866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,9 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
   m_Name: Rn1
   m_EditorClassIdentifier: 
-  speakerName: ???
+  speakerName: Contestant
   portrait: {fileID: 0}
-  speakerLine: 
+  speakerLine: Great to hear!
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
@@ -65,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: ???
   portrait: {fileID: 0}
-  speakerLine: 
+  speakerLine: Sorry to hear that
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
