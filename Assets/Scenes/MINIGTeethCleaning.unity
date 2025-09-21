@@ -198,6 +198,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &83001140 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6784445052061296723, guid: 015b35fb87a380d4fad0257bf84b3621, type: 3}
+  m_PrefabInstance: {fileID: 7854848991485347314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &92836889
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de57f2e0108d074181e6d0e50308710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 2
 --- !u!50 &163684428
 Rigidbody2D:
   serializedVersion: 5
@@ -468,7 +472,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3825824650304845192, guid: 17b8ec37a2e5baa459525fb8925720f3, type: 3}
+  m_Sprite: {fileID: 6358332967685187088, guid: 3bdf792b08487d945871789b256ce850, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2438,11 +2442,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3906874329319976160, guid: 015b35fb87a380d4fad0257bf84b3621, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.5
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 3906874329319976160, guid: 015b35fb87a380d4fad0257bf84b3621, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 3906874329319976160, guid: 015b35fb87a380d4fad0257bf84b3621, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2476,6 +2480,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3998024483395565337, guid: 015b35fb87a380d4fad0257bf84b3621, type: 3}
+      propertyPath: dirt
+      value: 
+      objectReference: {fileID: 83001140}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

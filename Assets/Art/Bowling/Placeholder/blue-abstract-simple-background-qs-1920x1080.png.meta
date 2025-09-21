@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3bdf792b08487d945871789b256ce850
+guid: d13b7cf83abcaf8408bc8ae6b5b9f299
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6358332967685187088
-    second: Shark_DirtierTeeth_0
+      213: 6669533885131038193
+    second: blue-abstract-simple-background-qs-1920x1080_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shark_DirtierTeeth_0
+      name: blue-abstract-simple-background-qs-1920x1080_0
       rect:
         serializedVersion: 2
-        x: 176
+        x: 0
         y: 0
-        width: 1824
-        height: 1946
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 016e78e65265d3850800000000000000
-      internalID: 6358332967685187088
+      spriteID: 1fd9aa85bb1fe8c50800000000000000
+      internalID: 6669533885131038193
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Shark_DirtierTeeth_0: 6358332967685187088
+      blue-abstract-simple-background-qs-1920x1080_0: 6669533885131038193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -16,6 +16,7 @@ public class BowlingManager : MonoBehaviour
     public TMP_Text roundsUI;
     public CameraSwitch cameraSwitch;
     public GameOverManager gameOverManager;
+    public VideoPlayerScript videoPlayerScript;
 
     Vector3[] positions;
 
@@ -69,7 +70,7 @@ public class BowlingManager : MonoBehaviour
             }
             pinsUp = false;
         }
-
+        videoPlayerScript.PlayVideoClip(0); // Plays the video for 5 seconds
         scoreUI.text = score.ToString();
     }
 
