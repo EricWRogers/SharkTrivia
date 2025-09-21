@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: efd50d720f0ccdf4da5216b0704ea0e2
+guid: bcfbad5d84cad3840ba31ad739781943
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1178008083097451239
-    second: PlaceholderTriviaFloor_0
+      213: 2949175592732082242
+    second: Shark_DirtiestTeeth_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlaceholderTriviaFloor_0
+      name: Shark_DirtiestTeeth_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 68
         y: 0
-        width: 1115
-        height: 693
+        width: 719
+        height: 767
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7eaff873c10295010800000000000000
-      internalID: 1178008083097451239
+      spriteID: 2404c0183939de820800000000000000
+      internalID: 2949175592732082242
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      PlaceholderTriviaFloor_0: 1178008083097451239
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
