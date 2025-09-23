@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3_4HostSpriteColoredTransParent_0: 4517551861036174037
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
