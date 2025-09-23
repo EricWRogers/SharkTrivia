@@ -9,12 +9,15 @@ public class BowlingManager : MonoBehaviour
 
     public GameObject ball;
     public int score = 0;
+    public int realScore = 0;
     public int rounds = 0;
     private bool pinsUp = true;
     GameObject[] pins;
     public TMP_Text scoreUI;
     public TMP_Text roundsUI;
     public CameraSwitch cameraSwitch;
+    public GameOverManager gameOverManager;
+    public VideoPlayerScript videoPlayerScript;
 
     Vector3[] positions;
 
@@ -64,12 +67,15 @@ public class BowlingManager : MonoBehaviour
             {
                 score++;
                 pins[i].SetActive(false);
-
+                realScore = score;
             }
             pinsUp = false;
         }
-
+        realScore = score % 10; // Resets score to 0 after 10 for video purposes
+        videoPlayerScript.SelectVideoClip(realScore);
+        StartCoroutine(videoPlayerScript.PlayVideoAndStop());
         scoreUI.text = score.ToString();
+        
     }
 
     public void ResetPins()
@@ -112,9 +118,16 @@ public class BowlingManager : MonoBehaviour
     
     public void NewRound() //Updates the round counter
     {
-        if (pinsUp == false && rounds != 3)// If the pins are up and the round is not 3, the game continues.
+        if (pinsUp == false && rounds < 3)// If the pins are up and the round is not 3, the game continues.
         {
             rounds++;
+        }
+        else
+        {
+            cameraSwitch.camera2.SetActive(false);
+            cameraSwitch.camera1.SetActive(true);
+            if (gameOverManager == null) { Debug.Log("NNNNN"); }
+            gameOverManager.GameOverShow();
         }
         roundsUI.text = rounds.ToString();
     }

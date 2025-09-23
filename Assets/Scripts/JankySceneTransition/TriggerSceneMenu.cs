@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class TriggerSceneMenu : MonoBehaviour
 {
     public GameObject menu;
+    public Animator animator;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,11 +18,20 @@ public class TriggerSceneMenu : MonoBehaviour
 
     public void TeethCleaningScene()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(LoadLevel("MINIGTeethCleaning"));
     }
 
     public void BowlingScene()
     {
-        SceneManager.LoadScene(2);
+        StartCoroutine(LoadLevel("BowlingTest"));;
+    }
+    IEnumerator LoadLevel(string levelName)
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Start");
+            yield return new WaitForSeconds(1);
+        }
+        SceneManager.LoadScene(levelName);
     }
 }
