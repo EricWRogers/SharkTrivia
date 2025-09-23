@@ -3,6 +3,8 @@ using UnityEditor;
 using UnityEngine;
 using System.Linq;
 
+
+//written by Aidan M.
 [CustomEditor(typeof(DNode))]
 public class DNodeEditor : Editor
 {
