@@ -5,6 +5,8 @@ public class Choice
 {
     public string choiceText = "…";
     public DNode next;                      // child node stored as sub-asset
+    public bool isCorrect = false;     // mark correct answers
+    public string loadSceneOnSelect;  //optional load scene name when chosen
 }
 
 [CreateAssetMenu(menuName = "BackstageDialogue/Node")] 

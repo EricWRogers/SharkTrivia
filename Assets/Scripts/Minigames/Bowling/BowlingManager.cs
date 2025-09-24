@@ -9,6 +9,7 @@ public class BowlingManager : MonoBehaviour
 
     public GameObject ball;
     public int score = 0;
+    public int realScore = 0;
     public int rounds = 0;
     private bool pinsUp = true;
     GameObject[] pins;
@@ -66,12 +67,15 @@ public class BowlingManager : MonoBehaviour
             {
                 score++;
                 pins[i].SetActive(false);
-
+                realScore = score;
             }
             pinsUp = false;
         }
-        videoPlayerScript.PlayVideoClip(0); // Plays the video for 5 seconds
+        realScore = score % 10; // Resets score to 0 after 10 for video purposes
+        videoPlayerScript.SelectVideoClip(realScore);
+        StartCoroutine(videoPlayerScript.PlayVideoAndStop());
         scoreUI.text = score.ToString();
+        
     }
 
     public void ResetPins()
