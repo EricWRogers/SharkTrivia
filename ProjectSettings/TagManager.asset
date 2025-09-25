@@ -17,9 +17,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Suimono_Water
+  - Suimono_Depth
+  - Suimono_Screen
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 367021023
+    locked: 0
+  - name: Dirt
+    uniqueID: 1490271899
     locked: 0
   - name: CleanTeeth
     uniqueID: 4155858159

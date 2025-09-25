@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DialogueManagerIntegrated : MonoBehaviour
 {
@@ -24,8 +25,21 @@ public class DialogueManagerIntegrated : MonoBehaviour
         var ui = DialogueController.Instance;
         ui.ShowDialogueUI(true);
         ui.SetCharInfo(node.speakerName, node.portrait);
-        ui.SetDialogueText(node.speakerLine);
+        ui.SetDialogueText(TempCipherEncoder.Apply(node.speakerLine)); //temp change to encode
         ui.ClearChoices();
+
+        if (node.choices != null && node.choices.Length > 0)
+        {
+            foreach (var c in node.choices)
+            {
+                var choiceCopy = c; 
+                ui.CreateChoiceButton(
+                    TempCipherEncoder.Apply(choiceCopy.choiceText), // cipher choices too
+                    () => OnChoiceSelected(choiceCopy)
+                );
+            }
+            return;
+        }
 
         // Branching
         if (node.choices != null && node.choices.Length > 0)
@@ -52,6 +66,41 @@ public class DialogueManagerIntegrated : MonoBehaviour
             if (node.nextIfNoChoices) ShowNode(node.nextIfNoChoices);
             else EndConversation();
         });
+    }
+
+    void OnChoiceSelected(Choice c)
+    {
+        //tell player if correct or incorrect first
+        if (c.isCorrect)
+        {
+            // Show a quick correct
+            DialogueController.Instance.ClearChoices();
+            DialogueController.Instance.SetDialogueText("Correct!");
+            
+            // Load a scene if needed
+            if (!string.IsNullOrEmpty(c.loadSceneOnSelect))
+            {
+                StopAllCoroutines();
+                StartCoroutine(AutoLoadScene(c.loadSceneOnSelect, 1.0f));
+                return;
+            }
+        }
+        else
+        {
+            //show as incorrect
+            DialogueController.Instance.ClearChoices();
+            DialogueController.Instance.SetDialogueText("Incorrect.");
+        }
+
+        // Continue to next node if present; otherwise end
+        if (c.next != null) ShowNode(c.next);
+        else EndConversation();
+    }
+
+    System.Collections.IEnumerator AutoLoadScene(string sceneName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
     }
 
     IEnumerator AutoNext(DNode next, float delay)

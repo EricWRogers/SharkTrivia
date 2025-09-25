@@ -23,7 +23,7 @@ public class TriggerSceneMenu : MonoBehaviour
 
     public void BowlingScene()
     {
-        StartCoroutine(LoadLevel("BowlingTest"));;
+        StartCoroutine(LoadLevel("Bowling"));
     }
     IEnumerator LoadLevel(string levelName)
     {
