@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEditor.Animations;
 using JetBrains.Annotations;
 using System.Collections;
+using TMPro;
 
 public class ChangeDictionaryValue : MonoBehaviour
 {
@@ -25,9 +26,4 @@ public class ChangeDictionaryValue : MonoBehaviour
     }; 
 
     // Update is called once per frame
-    public void OnButtonClick()
-        {
-            Debug.Log("A Button");
-            
-        }
 }

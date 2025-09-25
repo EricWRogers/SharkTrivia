@@ -6,23 +6,24 @@ using TMPro;
 
 public class ButtonValueRandomizer : MonoBehaviour
 {
+    public CipherDecode cipherDecode;
+    public char buttonTextB;
+    public char keyToUpdate = 'a';
+    public char newKeyValue;
     
-    public TMP_Text buttonText;
-    
-    void Start()
-    {
-
-    }
-    
-    
-    void Update()
-    {
-
-    }
-
     public void NewText()
     {
-        buttonText.text += " B";
+        buttonTextB = 'B';
+        newKeyValue = buttonTextB;
+    }
+
+    public void DictUpdate()
+    {
+        if (cipherDecode.charAssignments.ContainsKey(keyToUpdate))
+        {
+            cipherDecode.charAssignments[keyToUpdate] = newKeyValue; 
+            
+        }
     }
 
 }
