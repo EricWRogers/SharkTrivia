@@ -9,6 +9,7 @@ public class VideoPlayerScript : MonoBehaviour
 {
     public VideoClip videoToPlay;
     public RawImage rawImageDisplay;
+    public BowlingManager bowlingManager;
     public float playDuration = 5f; // Set the desired duration in seconds
     public List<VideoClip> videoClips;
     private VideoPlayer videoPlayer;
