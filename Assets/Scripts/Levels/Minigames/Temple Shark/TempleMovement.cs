@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TempleMovement : MonoBehaviour
 {
+    [Header("Movement")]
     public float runSpeed = 2f;
     public float movementSpeed = 5f;
     public float rightLimit = 5.5f;
