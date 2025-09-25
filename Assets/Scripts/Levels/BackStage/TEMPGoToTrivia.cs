@@ -11,7 +11,7 @@ public class TEMPGoToTrivia : MonoBehaviour
         //Debug.Log("Working");
         if(other.tag == "Player"){
             //Debug.Log("Player working");
-            SceneManager.LoadScene("TriviaFloorTest");  //trivial floor test dosn't work for some reason but everything else is fine
+            SceneManager.LoadScene("AidanTestTrivia");  //trivial floor test dosn't work for some reason but everything else is fine
         }
     }
 }

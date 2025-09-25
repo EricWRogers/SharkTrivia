@@ -1,16 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ButtonValueRandomizer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public CipherDecode cipherDecode;
+    public char buttonTextB;
+    public char keyToUpdate = 'a';
+    public char newKeyValue;
+    
+    public void NewText()
     {
-        
+        buttonTextB = 'B';
+        newKeyValue = buttonTextB;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DictUpdate()
     {
-        
+        if (cipherDecode.charAssignments.ContainsKey(keyToUpdate))
+        {
+            cipherDecode.charAssignments[keyToUpdate] = newKeyValue; 
+            
+        }
     }
+
 }

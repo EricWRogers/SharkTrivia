@@ -15,7 +15,6 @@ public class GameOverManager : MonoBehaviour
         ball.SetActive(false);
         pins.SetActive(false);
         lane.SetActive(false);
-        Time.timeScale = 0f; // Pause the game
     }
     public void Restart()
     {
