@@ -1987,19 +1987,15 @@ MonoBehaviour:
   videoClips:
   - {fileID: 32900000, guid: 2106205ff3ceb09469c66cd6f0d3e670, type: 3}
   - {fileID: 32900000, guid: 0423fd0d57a0ebf4091610468938b502, type: 3}
-  - {fileID: 32900000, guid: c9f8442e12a04d34a9a8ab4a5a4ab43d, type: 3}
-  - {fileID: 32900000, guid: cbc884216c56bc644ad14c38944e5309, type: 3}
   - {fileID: 32900000, guid: 6c44445dc7ec8904eb0453f8ecac2b6b, type: 3}
-  - {fileID: 32900000, guid: ce5722164c249a440941e49913942978, type: 3}
-  - {fileID: 32900000, guid: af8600732b7db314b9c8246ac851c81c, type: 3}
-  - {fileID: 32900000, guid: 8b5011f5d25532d45aab8fc0804a955c, type: 3}
   - {fileID: 32900000, guid: 13103675db2adcb4d9aab503c976b991, type: 3}
-  - {fileID: 32900000, guid: 6226aa7317b45b14bae5919bad0fee19, type: 3}
-  - {fileID: 32900000, guid: 01aa2c640abe0c842bdbf39a4e7cc597, type: 3}
+  - {fileID: 32900000, guid: c9f8442e12a04d34a9a8ab4a5a4ab43d, type: 3}
   - {fileID: 32900000, guid: 8f95bc24acffab140a5602db6e6984e8, type: 3}
+  - {fileID: 32900000, guid: cbc884216c56bc644ad14c38944e5309, type: 3}
+  - {fileID: 32900000, guid: 6226aa7317b45b14bae5919bad0fee19, type: 3}
   - {fileID: 32900000, guid: 821d8ca52b96c5840b1fbeb5b6a16736, type: 3}
-  - {fileID: 32900000, guid: c0fa205b4f05bd54e977b7726319b220, type: 3}
   - {fileID: 32900000, guid: bedb2438b42e0fe4b95430bb4eb5583e, type: 3}
+  - {fileID: 32900000, guid: 01aa2c640abe0c842bdbf39a4e7cc597, type: 3}
   currentVideoIndex: 0
 --- !u!1001 &1950393228
 PrefabInstance:

@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MINIGTeethCleaning.unity
     guid: bd183e1e9c2d3a842988388946e5c171
   - enabled: 1
+    path: Assets/Scenes/Bowling.unity
+    guid: c3c48ede767fd254d813fcb64624f7b8
+  - enabled: 1
     path: Assets/Scenes/BowlingTest.unity
     guid: b2efd40e4770ac342a91bade894e6fee
   m_configObjects:

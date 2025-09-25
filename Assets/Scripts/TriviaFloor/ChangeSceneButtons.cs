@@ -43,7 +43,7 @@ public class ChangeSceneButtons : MonoBehaviour
         //Debug.Log(game);
 
         if (game == 1){
-            SceneManager.LoadScene("BowlingTest");   //load the bowling minigame
+            SceneManager.LoadScene("Bowling");   //load the bowling minigame
         } 
         if (game == 2){
             SceneManager.LoadScene("MINIGTeethCleaning");   //load the Teethcleaning game
