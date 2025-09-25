@@ -53,7 +53,7 @@ public class DialogueController : MonoBehaviour
     public void SetDialogueText(string text)
     {
         //SCOTT ADDED
-        text = translator.Translate(text, new List<char> { 'w', 'h', 'o', 'a', 'y','e' });
+        //text = translator.Translate(text, new List<char> { 'w', 'h', 'o', 'a', 'y','e' });
         //END SCOTT ADDED
 
         dialogueText.text = text; 

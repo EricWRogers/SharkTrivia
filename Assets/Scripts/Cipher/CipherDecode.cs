@@ -29,12 +29,11 @@ public class CipherDecode : MonoBehaviour
     //KEYS AND VALUES MUST BE THE SAME LENGTH!!!
     public void CharAssignment()
     {
-
-        for (int i = 0; i < keys.Count; i++)
+        for (int i = 97; i < 122; i++)
         {
-            if (charAssignments.ContainsKey(keys[i]))
+            if (charAssignments.ContainsKey((char)i))
             {
-                charAssignments[keys[i]] = values[i];
+                
             }
         }
 
