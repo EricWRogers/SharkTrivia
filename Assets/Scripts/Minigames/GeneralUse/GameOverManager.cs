@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
-    public GameObject goUI;
     public GameObject ball;
     public GameObject pins;
     public GameObject lane;
     
     public void GameOverShow()
     {
-        goUI.SetActive(true); // Activate the Game Over UI
+        SceneManager.LoadScene("BackStage");
         ball.SetActive(false);
         pins.SetActive(false);
         lane.SetActive(false);

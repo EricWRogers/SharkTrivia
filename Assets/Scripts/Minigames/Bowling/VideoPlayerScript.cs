@@ -1,76 +1,63 @@
 using UnityEngine;
-using UnityEngine.Video;
 using UnityEngine.UI;
+using UnityEngine.Video;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class VideoPlayerScript : MonoBehaviour
 {
     public VideoClip videoToPlay;
     public RawImage rawImageDisplay;
+    public float playDuration = 5f; // Set the desired duration in seconds
+    public List<VideoClip> videoClips;
     private VideoPlayer videoPlayer;
-    private RenderTexture renderTexture;
+    private bool isPlaying = false;
+    public int currentVideoIndex = 0;
 
     void Start()
     {
-        // Get or add the VideoPlayer component
+        // Initialize VideoPlayer component if one doesn't exist
         videoPlayer = GetComponent<VideoPlayer>();
         if (videoPlayer == null)
         {
             videoPlayer = gameObject.AddComponent<VideoPlayer>();
+            Debug.Log("VideoPlayer component added.");
         }
-
-        // Set the video clip
-        videoPlayer.clip = videoToPlay;
-
-        // If displaying on a RawImage, set up the Render Texture
-        if (rawImageDisplay != null)
-        {
-            // Create a new Render Texture if one doesn't exist
-            if (renderTexture == null)
-            {
-                renderTexture = new RenderTexture(1920, 1080, 24); // Adjust resolution as needed
-            }
-            videoPlayer.targetTexture = renderTexture;
-            rawImageDisplay.texture = renderTexture;
-        }
-        else // If not using RawImage, render to a material on a 3D object
-        {
-            // Ensure the VideoPlayer is set to render to a Mesh Renderer
-            videoPlayer.renderMode = VideoRenderMode.MaterialOverride;
-            // You would typically assign a material to a MeshRenderer on this GameObject
-            // and the VideoPlayer would automatically update its texture.
-        }
-
-        // Prepare the video player
-        videoPlayer.Prepare();
-        videoPlayer.prepareCompleted += OnVideoPrepared; // Subscribe to the prepare completed event
     }
-
-    void OnVideoPrepared(VideoPlayer vp)
+    //Select the video to play
+    public void SelectVideoClip(int index)
     {
-        // Start playing the video once prepared
-        videoPlayer.Play();
-    }
-
-    // Example functions for controlling playback
-    public void PlayVideo()
-    {
-        if (videoPlayer.isPrepared)
+        // Ensure the index is within bounds
+        if (index >= 0 && index < videoClips.Count)
         {
-            videoPlayer.Play();
+            videoPlayer.source = VideoSource.VideoClip;
+            videoPlayer.clip = videoClips[index];
+            currentVideoIndex = index;
+            Debug.Log("Video Clip" + index + "Loaded");
         }
         else
         {
-            videoPlayer.Prepare(); // Prepare if not already
+            Debug.LogWarning("Invalid video clip index.");
         }
     }
-
-    public void PauseVideo()
+    // Play the video for a set duration then reset to clear texture
+    public IEnumerator PlayVideoAndStop()
     {
-        videoPlayer.Pause();
-    }
-
-    public void StopVideo()
-    {
+        rawImageDisplay.gameObject.SetActive(true);
+        isPlaying = true;
+        videoPlayer.Play();
+        yield return new WaitForSeconds(playDuration);
         videoPlayer.Stop();
+        Debug.Log("Video Stopped");
+        isPlaying = false;
+        // Clear the RenderTexture when the object is disabled
+        if (isPlaying == false)
+        {
+            rawImageDisplay.gameObject.SetActive(false);
+            GL.Clear(true, true, Color.black);
+            RenderTexture.active = null;
+            Debug.Log("RenderTexture cleared.");
+        }
     }
 }
