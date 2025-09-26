@@ -10,7 +10,7 @@ public class CipherDecode : MonoBehaviour
     public List<char> keys = new List<char>();
     public List<char> values = new List<char>();
 
-    private Dictionary<char, char> charAssignments = new Dictionary<char, char>
+    public Dictionary<char, char> charAssignments = new Dictionary<char, char>
     {
         //tilde represents an english character which has not been assigned a ciphertext equivalent 
         {'a', '~'},{'b', '~'},{'c', '~'},{'d', '~'},
