@@ -10,20 +10,20 @@ public class ButtonValueRandomizer : MonoBehaviour
     public char buttonTextB;
     public char keyToUpdate = 'a';
     public char newKeyValue;
-    
+
     public void NewText()
     {
         buttonTextB = 'B';
         newKeyValue = buttonTextB;
     }
 
-    public void DictUpdate()
-    {
-        if (cipherDecode.charAssignments.ContainsKey(keyToUpdate))
-        {
-            cipherDecode.charAssignments[keyToUpdate] = newKeyValue; 
-            
-        }
-    }
+    // public void DictUpdate()
+    // {
+    //     if (cipherDecode.charAssignments.ContainsKey(keyToUpdate))
+    //     {
+    //         cipherDecode.charAssignments[keyToUpdate] = newKeyValue; 
+
+    //     }
+    // }
 
 }
