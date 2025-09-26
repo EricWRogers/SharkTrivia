@@ -70,6 +70,11 @@ public class CipherDecode : MonoBehaviour
                 // charAssignments[firstKey] = '~';
                 // charAssignments[key] = value;
             }
+            //This handles the case where the player hits a letter they already did for this cipher character, so it'll just dissasociate it and go back to being blank
+            else if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value) && charAssignments[key] == value)
+            {
+                charAssignments[key] = '~';
+            }
 
         }
         return 0;
