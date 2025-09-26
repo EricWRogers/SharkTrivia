@@ -5,7 +5,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor;
 
+[CustomEditor(typeof(Translator))]
+public class TranslatorEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+
+        Translator tr = (Translator)target;
+
+        if (GUILayout.Button("Translate"))
+        {
+            tr.usrValues = tr.cipherDecode.GetUsrValues();
+            tr.valuesAssigned = tr.cipherDecode.GetValuesAssigned();
+            tr.text.text = tr.Translate("the quick brown fox jumps over the lazy dog", tr.keys);
+        }
+    }
+}
 
 public class Translator : MonoBehaviour
 {
@@ -20,21 +38,20 @@ public class Translator : MonoBehaviour
 
     //public string str;
     public List<char> keys = new List<char> { 'w' };
-    List<char> usrKeys;
+    public List<char> usrValues;
+    public List<bool> valuesAssigned;
 
-    private CipherDecode cipherDecode;
+    public CipherDecode cipherDecode;
 
     void Start()
     {
-        // UPDATED
         gameObject.AddComponent<CipherDecode>();
         cipherDecode = gameObject.GetComponent<CipherDecode>();
-        // 
 
-        usrKeys = new List<char>();
+        //usrValues = new List<char>();
 
-
-        usrKeys = cipherDecode.keys;
+        usrValues = cipherDecode.GetUsrValues();
+        valuesAssigned = cipherDecode.GetValuesAssigned();
 
         //string str = text.text;
 
@@ -45,32 +62,62 @@ public class Translator : MonoBehaviour
     {
         //changing the message to a StringBuilder to adjust based on index and putting all the characters into an array
         StringBuilder message = new StringBuilder(text);
+        text.ToLower();
         char[] characters = text.ToCharArray();
 
-        string exitBlackCode = exitCode + confirmedColor;
         string exitRedCode = exitCode + usrColor;
+        string exitBlackCode = exitCode + confirmedColor;
         string colorCode = code + "<color=#FFFFFF>";
 
         //keeps track of how many times something has been inserted into the message
         int hit = 0;
+        //keeps track of how many characters have been added to the message
+        int adjust = 0;
+
+        usrValues = cipherDecode.GetUsrValues();
+        valuesAssigned = cipherDecode.GetValuesAssigned();
+
         //looping through the total characters
         for (int i = 0; i < characters.Length; i++)
         {
 
+            //a = 0 and z = 25
+            if (characters[i] >= 'a' && characters[i] <= 'z' && characters[i] - 'a' < 25 && valuesAssigned[characters[i] - 'a'])
+            {
+                message[i + adjust] = usrValues[characters[i] - 'a'];
+
+                message.Insert(i + (hit * (exitBlackCode.Length + colorCode.Length)), exitRedCode);
+                adjust += exitRedCode.Length;
+
+                Debug.Log("Message adjusted!");
+                //message[i + adjust] = usrValues[(char)(characters[i] - 'a' + 1)];
+
+                message.Insert(i + (exitBlackCode.Length + 1) + (hit * (exitBlackCode.Length + colorCode.Length)), colorCode);
+                adjust += colorCode.Length;
+
+                hit++;
+
+            }
+
             //adding the index where a letter matches one of the keys
-            if (keys.Contains(characters[i]) || usrKeys.Contains(characters[i]))
+            else if (keys.Contains(characters[i]))
             {
                 //inserting exitCode and Code at the adjusted indexes
-                if (usrKeys.Contains(characters[i]))
-                {
-                    message.Insert(i + (hit * (exitBlackCode.Length + colorCode.Length)), exitRedCode);
-                    message.Insert(i + (exitBlackCode.Length + 1) + (hit * (exitBlackCode.Length + colorCode.Length)), colorCode);
-                }
-                else
-                {
-                    message.Insert(i + (hit * (exitBlackCode.Length + colorCode.Length)), exitBlackCode);
-                    message.Insert(i + (exitBlackCode.Length + 1) + (hit * (exitBlackCode.Length + colorCode.Length)), colorCode);
-                }
+                //if (usrValues.Contains(characters[i]))
+
+
+                // {
+                //     message.Insert(i + (hit * (exitBlackCode.Length + colorCode.Length)), exitRedCode);
+                //     message.Insert(i + (exitBlackCode.Length + 1) + (hit * (exitBlackCode.Length + colorCode.Length)), colorCode);
+                // }
+                //else
+                //{
+                message.Insert(i + (hit * (exitBlackCode.Length + colorCode.Length)), exitBlackCode);
+                adjust += exitBlackCode.Length;
+
+                message.Insert(i + (exitBlackCode.Length + 1) + (hit * (exitBlackCode.Length + colorCode.Length)), colorCode);
+                adjust += colorCode.Length;
+                //}
 
 
                 //increment to keep up with how many times an item was added 

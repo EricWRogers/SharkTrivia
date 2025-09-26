@@ -22,10 +22,44 @@ public class CipherDecode : MonoBehaviour
         {'y', '~'},{'z', '~'}
     };
 
+    public List<char> GetUsrValues()
+    {
+        List<char> usrValues = new List<char>();
+
+        for (int i = 'a'; i < 'z'; i++)
+        {
+            usrValues.Add(charAssignments[(char)i]);
+        }
+
+
+        return usrValues;
+    }
+
+    public List<bool> GetValuesAssigned()
+    {
+        List<bool> valsAssigned = new List<bool>();
+
+        for (int i = 97; i < 122; i++)
+        {
+            if (charAssignments[(char)i] != '~')
+            {
+                valsAssigned.Add(true);
+            }
+            else
+            {
+                valsAssigned.Add(false);
+            }
+        }
+
+        return valsAssigned;
+    }
+
     //pass in the key and value you are trying to edit
     public int CharAssignment(char key, char value)
     {
-        for (int i = 97; i < 122; i++)
+        int returnCode = 0;
+
+        for (int i = 'a'; i < 'z'; i++)
         {
             Debug.Log("Checking character: " + (char)i);
 
@@ -33,6 +67,7 @@ public class CipherDecode : MonoBehaviour
             if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value))
             {
                 charAssignments[key] = value;
+                break;
             }
 
             //This if handles the case where the value that goes to the key in question is not blank but the new value also isn't found anywhere else in the journal
@@ -40,11 +75,12 @@ public class CipherDecode : MonoBehaviour
             {
                 //Return an error code (some negative number) if you want this operation to be illegal, elsewise just overwrite the value if you're ok with it
 
-                // return -1;
+                // returnCode = -1;
 
                 //OR
 
                 // charAssignments[key] = value;
+                break;
             }
 
             //This if handles the case where the new value is already used somehwere else in the journal with some subcases
@@ -55,13 +91,13 @@ public class CipherDecode : MonoBehaviour
                 //Case where the value that goes to the key in question is blank
                 // if (charAssignments[(char)i] == '~')
                 // {
-                //     // return -2;
+                //     // returnCode = -2;
                 // }
 
                 //Case where the value that goes to the key in question is blank
                 // if (charAssignments[(char)i] != '~')
                 // {
-                //     // return -3;
+                //     // returnCode = -3;
                 // }
 
                 //OR
@@ -69,15 +105,21 @@ public class CipherDecode : MonoBehaviour
                 // var firstKey = charAssignments.FirstOrDefault(kvp => kvp.Value == value).Key;
                 // charAssignments[firstKey] = '~';
                 // charAssignments[key] = value;
+
+                break;
             }
             //This handles the case where the player hits a letter they already did for this cipher character, so it'll just dissasociate it and go back to being blank
             else if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value) && charAssignments[key] == value)
             {
                 charAssignments[key] = '~';
+                break;
             }
 
         }
-        return 0;
+
+
+
+        return returnCode;
 
     }
 }
