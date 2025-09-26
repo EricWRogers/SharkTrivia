@@ -6,29 +6,49 @@ public class TempleMovement : MonoBehaviour
     [Header("Movement")]
     public float runSpeed = 2f;
     public float movementSpeed = 5f;
-    public float rightLimit = 5.5f;
-    public float leftLimit = -5.5f;
+    public float laneOffset = 5.5f;
 
-    // Update is called once per frame
+    private Vector3 moveDirection = Vector3.forward; // Current running direction
+    private Vector3 sideAxis = Vector3.right; // Axis for lane shifting
+
     void Update()
     {
-        float input = Input.GetAxisRaw("Horizontal"); // A & D or Left & Right
-        transform.Translate(Vector3.forward * Time.deltaTime * runSpeed, Space.World);
+        // Always move forward in current direction
+        transform.Translate(moveDirection * runSpeed * Time.deltaTime, Space.World);
+
+        // Handle side movement
+        Vector3 side = Vector3.zero;
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            if (this.gameObject.transform.position.x > leftLimit)
-            {
-                transform.Translate(Vector3.left * Time.deltaTime * movementSpeed);
-            }
+            side = -sideAxis;
+        }
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            side = sideAxis;
         }
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        // Calculate new position
+        Vector3 newPos = transform.position + side * movementSpeed * Time.deltaTime;
+
+        // Keep within lane limits (relative to current side axis)
+        float distanceFromCenter = Vector3.Dot(newPos, sideAxis);
+        if (Mathf.Abs(distanceFromCenter) <= laneOffset)
         {
-            if (this.gameObject.transform.position.x < rightLimit)
-            {
-                transform.Translate(Vector3.right * Time.deltaTime * movementSpeed);
-            }
+            transform.position = newPos;
         }
+    }
+
+    public void TurnPlayer(int direction) // -1 = left, 1 = right
+    {
+        // Rotate the movement direction vector
+        moveDirection = Quaternion.Euler(0, 90 * direction, 0) * moveDirection;
+
+        // Rotate the player visually
+        transform.rotation = Quaternion.LookRotation(moveDirection);
+
+        // Update the side axis (always perpendicular to moveDirection)
+        sideAxis = Quaternion.Euler(0, 90, 0) * moveDirection;
+        sideAxis.Normalize(); // Keep clean
     }
 }
