@@ -1,20 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
 public class GameOverManager : MonoBehaviour
 {
-    public GameObject ball;
-    public GameObject pins;
-    public GameObject lane;
-    
+    public UnityEvent ActiveSwitch;
+    public GameObject LoseScreen;
+
     public void GameOverShow()
     {
-        SceneManager.LoadScene("BackStage");
-        ball.SetActive(false);
-        pins.SetActive(false);
-        lane.SetActive(false);
+        LoseScreen.SetActive(true);
+        ActiveState();
+    }
+
+    public void ActiveState()
+    {
+        ActiveSwitch.Invoke();
     }
     public void Restart()
     {
@@ -24,7 +27,12 @@ public class GameOverManager : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f; 
-        SceneManager.LoadScene("TopScreen"); // Loads the main menu
+        SceneManager.LoadScene("MainMenu"); // Loads the main menu
+    }
+    public void BackStage()
+    {
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene("BackStage"); // Loads the backstage
     }
     public void Quit()
     {
