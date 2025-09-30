@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  bulletPrefab: {fileID: 3573838711101186988, guid: 8ad0b2ea52f919d4d8c3e35b2795bbff, type: 3}
+  bulletPrefab: {fileID: 3573838711101186988, guid: cb28aa524dbeeb34b87ec4d9df2f06d1, type: 3}
   firingPoint: {fileID: 1704157309}
   fireRate: 0.5
 --- !u!212 &1690244416
