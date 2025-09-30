@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3700902d5a3e9d749b7c7ef92e59de07
+  - enabled: 1
     path: Assets/Scenes/BackStage.unity
     guid: 4753b7f814068ea419a89a6e171f3cbd
   - enabled: 1
     path: Assets/Scenes/MINIGTeethCleaning.unity
     guid: bd183e1e9c2d3a842988388946e5c171
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Bowling.unity
+    guid: c3c48ede767fd254d813fcb64624f7b8
   - enabled: 1
     path: Assets/Scenes/BowlingTest.unity
     guid: b2efd40e4770ac342a91bade894e6fee

@@ -1,11 +1,20 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class DialogueManagerIntegrated : MonoBehaviour
 {
     public static DialogueManagerIntegrated Instance { get; private set; }
-    void Awake() { Instance = this; }
+    public static Translator translator;
+    void Awake()
+    {
+        Instance = this;
+        gameObject.AddComponent<Translator>();
+        translator = gameObject.GetComponent<Translator>();
+    }
+
+    
 
     Conversation active;
     DNode current;
@@ -25,16 +34,18 @@ public class DialogueManagerIntegrated : MonoBehaviour
         var ui = DialogueController.Instance;
         ui.ShowDialogueUI(true);
         ui.SetCharInfo(node.speakerName, node.portrait);
-        ui.SetDialogueText(TempCipherEncoder.Apply(node.speakerLine)); //temp change to encode
+        Debug.Log(node.speakerLine);
+        ui.SetDialogueText(translator.Translate(node.speakerLine ,new List<char> { 'w', 'h', 'o', 'a', 'y','e' })); //temp change to encode
         ui.ClearChoices();
 
         if (node.choices != null && node.choices.Length > 0)
         {
             foreach (var c in node.choices)
             {
-                var choiceCopy = c; 
+                var choiceCopy = c;
                 ui.CreateChoiceButton(
-                    TempCipherEncoder.Apply(choiceCopy.choiceText), // cipher choices too
+                    translator.Translate(choiceCopy.choiceText ,new List<char> { 'w', 'h', 'o', 'a', 'y','e' }),
+                    //TempCipherEncoder.Apply(choiceCopy.choiceText), // cipher choices too
                     () => OnChoiceSelected(choiceCopy)
                 );
             }
