@@ -13,31 +13,42 @@ public class Translator : MonoBehaviour
     string code = "<style=Code>"; //char= 12
     string exitCode = "</style>"; // char = 8
     public TMP_Text text;
-    public string str;
-    public List<char> keys = new List<char>();
 
-    //SCOTT ADDED
-    public GameObject usrDecode;
-     List<char> usrKeys = new List<char>();
-    //END SCOTT ADDED
+    public string confirmedColor = "<color=#000000>";
+
+    public string usrColor = "<color=#FF0000>";
+
+    //public string str;
+    public List<char> keys = new List<char> { 'w' };
+    List<char> usrKeys;
+
+    private CipherDecode cipherDecode;
 
     void Start()
     {
-        //SCOTT ADDED
-        usrKeys = usrDecode.GetComponent<CipherDecode>().keys;
-        //END SCOTT ADDED
-        
-        text.text = Translate(str, keys);
+        // UPDATED
+        gameObject.AddComponent<CipherDecode>();
+        cipherDecode = gameObject.GetComponent<CipherDecode>();
+        // 
+
+        usrKeys = new List<char>();
+
+
+        usrKeys = cipherDecode.keys;
+
+        //string str = text.text;
+
+        //text.text = Translate(str, keys);
     }
 
-    String Translate(string text, List<char> keys)
+    public String Translate(string text, List<char> keys)
     {
         //changing the message to a StringBuilder to adjust based on index and putting all the characters into an array
         StringBuilder message = new StringBuilder(text);
         char[] characters = text.ToCharArray();
 
-        string exitBlackCode = exitCode + "<color=#000000>";
-        string exitRedCode = exitCode + "<color=#FF0000>";
+        string exitBlackCode = exitCode + confirmedColor;
+        string exitRedCode = exitCode + usrColor;
         string colorCode = code + "<color=#FFFFFF>";
 
         //keeps track of how many times something has been inserted into the message
@@ -71,6 +82,7 @@ public class Translator : MonoBehaviour
         hit = 0;
         // adding code to the begining so everything is "encrypted"
         message.Insert(0, code);
+        Debug.Log(keys);
         return message.ToString();
     }
 
