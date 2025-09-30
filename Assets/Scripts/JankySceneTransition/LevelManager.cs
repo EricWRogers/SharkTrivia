@@ -1,12 +1,31 @@
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
-public class Pause : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
+    private static LevelManager Instance;
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI;
+    public string[] miniGameLevels = { "Bowling", "Temple Shark" };
+    public static GameObject pauseMenuUI;
     public Animator animator;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else{ Destroy(gameObject); }
+    }
+
+    public static void LoadRandMiniGame()
+    {
+        
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
