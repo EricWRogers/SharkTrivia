@@ -1,0 +1,78 @@
+using UnityEngine.SceneManagement;
+using System.Collections;
+using UnityEngine;
+using System.Collections.Generic;
+
+public class LevelManager : MonoBehaviour
+{
+    private static LevelManager Instance;
+    public static bool GameIsPaused = false;
+    public string[] miniGameLevels = { "Bowling", "Temple Shark" };
+    public static GameObject pauseMenuUI;
+    public Animator animator;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else{ Destroy(gameObject); }
+    }
+
+    public static void LoadRandMiniGame()
+    {
+        
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Paused();
+            }
+        }
+    }
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        GameIsPaused = false;
+        Time.timeScale = 1.0f;
+    }
+    void Paused()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0.0f;
+        GameIsPaused = true;
+    }
+
+    public void Quite()
+    {
+        Application.Quit();
+    }
+    public void ReturnToMenu()
+    {
+        pauseMenuUI.SetActive(false);
+        GameIsPaused = false;
+
+        StartCoroutine(LoadLevel("BackStage"));
+        Time.timeScale = 1.0f;
+    }
+
+    IEnumerator LoadLevel(string levelName)
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Start");
+            yield return new WaitForSeconds(1);
+        }
+        SceneManager.LoadScene(levelName);
+    }
+}
