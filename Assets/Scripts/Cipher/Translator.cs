@@ -37,7 +37,7 @@ public class Translator : MonoBehaviour
     public string usrColor = "<color=#FF0000>";
 
     //public string str;
-    public List<char> keys = new List<char> { 'w' };
+    public List<char> keys = new List<char> {};
     public List<char> usrValues;
     public List<bool> valuesAssigned;
 
