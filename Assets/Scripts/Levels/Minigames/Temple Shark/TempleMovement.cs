@@ -10,6 +10,12 @@ public class TempleMovement : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.forward; // Current running direction
     private Vector3 sideAxis = Vector3.right; // Axis for lane shifting
+    private Vector3 laneCenter;
+
+    void Start()
+    {
+        laneCenter = transform.position; // whereever the player starts is the lane center
+    }
 
     void Update()
     {
@@ -28,14 +34,18 @@ public class TempleMovement : MonoBehaviour
             side = sideAxis;
         }
 
-        // Calculate new position
-        Vector3 newPos = transform.position + side * movementSpeed * Time.deltaTime;
-
-        // Keep within lane limits (relative to current side axis)
-        float distanceFromCenter = Vector3.Dot(newPos, sideAxis);
-        if (Mathf.Abs(distanceFromCenter) <= laneOffset)
+        if (side != Vector3.zero)
         {
-            transform.position = newPos;
+            // Calculate new position
+            Vector3 newPos = transform.position + side * movementSpeed * Time.deltaTime;
+
+            // Measure distance from the lane center
+            float distanceFromCenter = Vector3.Dot(newPos - laneCenter, sideAxis);
+
+            if (Mathf.Abs(distanceFromCenter) <= laneOffset)
+            {
+                transform.position = newPos;
+            }
         }
     }
 
@@ -48,7 +58,9 @@ public class TempleMovement : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(moveDirection);
 
         // Update the side axis (always perpendicular to moveDirection)
-        sideAxis = Quaternion.Euler(0, 90, 0) * moveDirection;
-        sideAxis.Normalize(); // Keep clean
+        sideAxis = Vector3.Cross(Vector3.up, moveDirection).normalized;
+
+        // Reset lane center after turning
+        laneCenter = transform.position;
     }
 }
