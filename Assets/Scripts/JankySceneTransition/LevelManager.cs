@@ -2,12 +2,13 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class LevelManager : MonoBehaviour
 {
     private static LevelManager Instance;
     public static bool GameIsPaused = false;
-    public string[] miniGameLevels = { "Bowling", "Temple Shark" };
+    public static string[] miniGameLevels = { "Bowling", "Temple Shark" };
     public static GameObject pauseMenuUI;
     public Animator animator;
 
@@ -18,13 +19,31 @@ public class LevelManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else{ Destroy(gameObject); }
+        else { Destroy(gameObject); }
+        pauseMenuUI = transform.GetChild(0).gameObject;
     }
-
+    public static void LoadBackStage()
+    {
+        StaticResume();
+        Instance.StartCoroutine(Instance.LoadLevel("BackStage"));
+    }
+    public static void LoadMainMenu()
+    {
+        StaticResume();
+        Instance.StartCoroutine(Instance.LoadLevel("MainMenu"));
+    }
     public static void LoadRandMiniGame()
     {
-        
+        StaticResume();
+        string newGame = miniGameLevels[Random.Range(0, miniGameLevels.Length)];
+        Instance.StartCoroutine(Instance.LoadLevel(newGame));
     }
+    public static void LoadSpecificScene(string newScene)
+    {
+        StaticResume();
+        Instance.StartCoroutine(Instance.LoadLevel(newScene));
+    }
+
 
     void Update()
     {
@@ -39,6 +58,12 @@ public class LevelManager : MonoBehaviour
                 Paused();
             }
         }
+    }
+    public static void StaticResume()
+    {
+        pauseMenuUI.SetActive(false);
+        GameIsPaused = false;
+        Time.timeScale = 1.0f;
     }
     public void Resume()
     {
@@ -57,12 +82,12 @@ public class LevelManager : MonoBehaviour
     {
         Application.Quit();
     }
-    public void ReturnToMenu()
+    public static void ReturnToMenu()
     {
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
 
-        StartCoroutine(LoadLevel("BackStage"));
+        Instance.StartCoroutine(Instance.LoadLevel("BackStage"));
         Time.timeScale = 1.0f;
     }
 
@@ -74,5 +99,6 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         SceneManager.LoadScene(levelName);
+        animator.SetTrigger("End");
     }
 }

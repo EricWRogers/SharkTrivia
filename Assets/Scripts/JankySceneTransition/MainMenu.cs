@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 
     public void TheMagicButton()
     {
-        
+        LevelManager.LoadBackStage();
     }
 
     public void TheLoserButton()
