@@ -56,14 +56,14 @@ public class ProgressBar : MonoBehaviour
             {
                 isSwiping = true;
                 mousePosition = mouseWorldPos;
-                Debug.Log("Started swipe");
+                //Debug.Log("Started swipe");
             }
         }
         if (Input.GetMouseButton(0) && isSwiping)
         {
             float distance = Vector2.Distance(mousePosition, mouseWorldPos);
-            Debug.Log($"LastPos: {mousePosition} CurrentPos: {mouseWorldPos} Distance: {distance}");
-            Debug.Log("Distance moved " + distance);
+            //Debug.Log($"LastPos: {mousePosition} CurrentPos: {mouseWorldPos} Distance: {distance}");
+            //Debug.Log("Distance moved " + distance);
             if(distance > 1f)
             {
                 RegisterSwipe();
@@ -106,7 +106,7 @@ public class ProgressBar : MonoBehaviour
         if (swipeCount >= swipesAmount) return;
 
         swipeCount++;
-        Debug.Log("Swipe detected " + swipeCount);
+        //Debug.Log("Swipe detected " + swipeCount);
 
         if(progressBar != null)
         {
@@ -131,7 +131,7 @@ public class ProgressBar : MonoBehaviour
 
     private void OnSwipeGoalReached()
     {
-        Debug.Log("Swipe goal reached!");
+        //Debug.Log("Swipe goal reached!");
         if (timer != null)
         {
             timer.StopTimer();
