@@ -95,6 +95,7 @@ public class Translator : MonoBehaviour
                 message.Insert(i + (exitBlackCode.Length + 1) + (hit * (exitBlackCode.Length + colorCode.Length)), colorCode);
                 adjust += colorCode.Length;
 
+
                 hit++;
 
             }
