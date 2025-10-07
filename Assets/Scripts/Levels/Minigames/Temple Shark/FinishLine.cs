@@ -5,6 +5,7 @@ using TMPro;
 public class FinishLine : MonoBehaviour
 {
     public GameObject WinScreen;
+    public Timer timer;
 
     [Header("Text Elements")]
     public TMP_Text timerText;
@@ -38,17 +39,17 @@ public class FinishLine : MonoBehaviour
         }
 
         // Stop the timer
-        //timer.GetComponent<Timer>().enabled = false;
+        timer.GetComponent<Timer>().enabled = false;
 
         // Update TMPro text with final time
-        /*if (timerText != null && timer != null)
+        if (timerText != null && timer != null)
         {
             var timerScript = timer.GetComponent<Timer>();
             if (timerScript != null)
             {
-                timerText.text = $"Time: {timerScript.GetCurrentTimeString()}";
+                timerText.text = $"Time: {timer}";
             }
-        }*/
+        }
 
         // Update stats text
         /*if (statsText != null)
