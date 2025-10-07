@@ -19,6 +19,6 @@ public class MainMenu : MonoBehaviour
 
     public void TheGearButton()
     {
-        LevelManager.LoadSettingsMenu();
+        //LevelManager.LoadSettingsMenu();
     }
 }
