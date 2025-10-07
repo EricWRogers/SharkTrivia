@@ -8,10 +8,15 @@ public class LevelManager : MonoBehaviour
 {
     private static LevelManager Instance;
     public static bool GameIsPaused = false;
-    public static string[] miniGameLevels = { "Bowling", "Temple Shark" };
+    [SerializeField] public static string[] miniGameLevels = { "Bowling", "Temple Shark", "MINIGTeethCleaning" };
     public static GameObject pauseMenuUI;
     public Animator animator;
 
+/*if youre here because its not loading the right scene copy paste whichever you need
+to load the back stage do -- LevelManager.LoadBackStage();
+to load the main menu do -- LevelManager.LoadMainMenu();
+to load a Random MiniGame do -- LevelManager.LoadRandMiniGame();
+to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("SceneName");*/
     void Awake()
     {
         if (Instance == null)
@@ -20,7 +25,7 @@ public class LevelManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else { Destroy(gameObject); }
-        pauseMenuUI = transform.GetChild(0).gameObject;
+        pauseMenuUI = Instance.transform.GetChild(0).gameObject;
     }
     public static void LoadBackStage()
     {

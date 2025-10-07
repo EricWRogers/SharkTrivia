@@ -10,10 +10,19 @@ public class DialogueController : MonoBehaviour
 {
     public static DialogueController Instance { get; private set; }
 
+    [Tooltip("Game object textbox")]
     public GameObject dialoguePanel;
+
+    [Tooltip("speaking character's portrait")]
     public Image portraitImage;
+
+    [Tooltip("TMP text")]
     public TMP_Text dialogueText, nameText;
+
+    [Tooltip("Container object for the choices")]
     public Transform choiceContainer;
+
+    [Tooltip("Prefab for the choice buttons themselves")]
     public GameObject choiceButtonPrefab;
 
 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BowlingUI_0: 347466557007229295
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
