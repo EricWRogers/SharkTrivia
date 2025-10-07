@@ -39,7 +39,7 @@ public class FinishLine : MonoBehaviour
         }
 
         // Stop the timer
-        timer.GetComponent<Timer>().enabled = false;
+        timer.StopTimer();
 
         // Update TMPro text with final time
         if (timerText != null && timer != null)
@@ -47,7 +47,7 @@ public class FinishLine : MonoBehaviour
             var timerScript = timer.GetComponent<Timer>();
             if (timerScript != null)
             {
-                timerText.text = $"Time: {timer}";
+                timerText.text = $"Time: {timer.GetComponentInChildren<TextMeshProUGUI>().text}" ;
             }
         }
 
