@@ -1,15 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;  
 
-[System.Serializable]                       // a single button in the UI
+[System.Serializable]                       
 public class Choice
 {
     public string choiceText = "…";
-    public DNode next;                      // child node stored as sub-asset
-    public bool isCorrect = false;     // mark correct answers
-    public string loadSceneOnSelect;  //optional load scene name when chosen
+    public DNode next;
+    public bool isCorrect = false;
+    public string loadSceneOnSelect;
+
+    //per-choice event 
+    public UnityEvent onSelected;
 }
 
-[CreateAssetMenu(menuName = "BackstageDialogue/Node")] 
+[CreateAssetMenu(menuName = "BackstageDialogue/Node")]
 public class DNode : ScriptableObject
 {
     [Header("Speaker")]
@@ -20,10 +24,14 @@ public class DNode : ScriptableObject
     [TextArea(2, 6)] public string speakerLine;
 
     [Header("Flow")]
-    public bool autoProgress = false;       // if true and no choices, auto-continue
-    public float autoDelay = 0.75f;         // delay before auto-continue
-    public DNode nextIfNoChoices;           // fallback
+    public bool autoProgress = false;
+    public float autoDelay = 0.75f;
+    public DNode nextIfNoChoices;
 
     [Header("Branching")]
-    public Choice[] choices;                // children 
+    public Choice[] choices;
+
+    [Header("Events")]
+    public UnityEvent onEnter;      // drag functions here to run when this node shows
+    
 }
