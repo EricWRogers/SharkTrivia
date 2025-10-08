@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: Z
 --- !u!114 &6412610
 MonoBehaviour:
@@ -344,6 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: R
 --- !u!114 &42247235
 MonoBehaviour:
@@ -652,6 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: J
 --- !u!114 &57605367
 MonoBehaviour:
@@ -771,6 +774,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57605364}
   m_CullTransparentMesh: 1
+--- !u!1001 &57639917
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 723049374}
+    m_Modifications:
+    - target: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 47.94684
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5590057
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.8553605
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054880452131744966, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: m_Name
+      value: usrDecode
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
 --- !u!1 &60355074
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: P
 --- !u!114 &69243398
 MonoBehaviour:
@@ -1271,6 +1332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: G
 --- !u!114 &134558820
 MonoBehaviour:
@@ -1443,6 +1505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: V
 --- !u!114 &165878952
 MonoBehaviour:
@@ -2465,6 +2528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: A
 --- !u!1001 &439057989
 PrefabInstance:
@@ -2825,6 +2889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: T
 --- !u!114 &498960269
 MonoBehaviour:
@@ -3606,6 +3671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: D
 --- !u!114 &690344097
 MonoBehaviour:
@@ -3783,6 +3849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: S
 --- !u!114 &706982768
 MonoBehaviour:
@@ -4037,6 +4104,7 @@ RectTransform:
   - {fileID: 725102311}
   - {fileID: 710113232}
   - {fileID: 1947770861}
+  - {fileID: 1715936130}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4051,13 +4119,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723049370}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 111928fdb025f3d4a939385bb20458a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keys: 
-  values: 
+  charAssignmentDisplay: []
 --- !u!1 &725102310
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,6 +5129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: W
 --- !u!114 &856095372
 MonoBehaviour:
@@ -5234,6 +5302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: C
 --- !u!114 &873156963
 MonoBehaviour:
@@ -5572,6 +5641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: K
 --- !u!114 &911250902
 MonoBehaviour:
@@ -6182,6 +6252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: X
 --- !u!114 &1073087644
 MonoBehaviour:
@@ -6792,6 +6863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: E
 --- !u!114 &1196394485
 MonoBehaviour:
@@ -6964,6 +7036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: O
 --- !u!114 &1220474516
 MonoBehaviour:
@@ -7272,6 +7345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: H
 --- !u!114 &1233408511
 MonoBehaviour:
@@ -8889,6 +8963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: F
 --- !u!114 &1576656580
 MonoBehaviour:
@@ -9215,6 +9290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: Y
 --- !u!114 &1678723480
 MonoBehaviour:
@@ -9387,6 +9463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: B
 --- !u!114 &1713302499
 MonoBehaviour:
@@ -9506,6 +9583,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713302496}
   m_CullTransparentMesh: 1
+--- !u!4 &1715936130 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1252759965034531008, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+  m_PrefabInstance: {fileID: 57639917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724387702
 GameObject:
   m_ObjectHideFlags: 0
@@ -9861,6 +9943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: N
 --- !u!114 &1730461797
 MonoBehaviour:
@@ -10550,6 +10633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: L
 --- !u!114 &1858677157
 MonoBehaviour:
@@ -10722,6 +10806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: M
 --- !u!114 &1875598398
 MonoBehaviour:
@@ -11693,6 +11778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: Q
 --- !u!114 &2011330939
 MonoBehaviour:
@@ -11865,6 +11951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 1947770862}
+  translator: {fileID: 0}
   letter: U
 --- !u!114 &2054372944
 MonoBehaviour:

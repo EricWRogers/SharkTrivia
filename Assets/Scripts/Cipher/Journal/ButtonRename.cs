@@ -20,6 +20,7 @@ public class ButtonRename : MonoBehaviour
 
     public void Open(GameObject _text, string _c)
     {
+        newKeyValue = _c[0];
         returnText = _text.GetComponent<TMP_Text>();
         titleText.text = "guess letter \"" + _c + "\""; 
     }
@@ -27,6 +28,10 @@ public class ButtonRename : MonoBehaviour
     public void Close(string _c)
     {
         returnText.text = _c;
+
+        if (CipherDecode.instance == null)
+            Debug.Log("Cipher is null");
+        CipherDecode.instance.CharAssignment(newKeyValue, _c[0]);
     }
 
 }
