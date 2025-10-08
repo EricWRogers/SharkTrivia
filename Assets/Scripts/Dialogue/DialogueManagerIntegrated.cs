@@ -41,11 +41,15 @@ public class DialogueManagerIntegrated : MonoBehaviour
         ui.ShowDialogueUI(true);
         ui.SetCharInfo(node.speakerName, node.portrait);
 
-        // encode line with your translator
-        ui.SetDialogueText(translator.Translate(
-            node.speakerLine,
-            new List<char> { 'w', 'h', 'o', 'a', 'y', 'e' }
-        ));
+        // encode line with translator
+        if (CipherDecode.instance.encoding) // if encoding = true, then encode the text into cipher-glyphs, else just set it normally
+        {
+            ui.SetDialogueText(translator.Translate(node.speakerLine));
+        }
+        else
+        {
+            ui.SetDialogueText(node.speakerLine);
+        }
         ui.ClearChoices();
 
         // Branching – create choices once
@@ -53,11 +57,21 @@ public class DialogueManagerIntegrated : MonoBehaviour
         {
             foreach (var c in node.choices)
             {
-                var choiceCopy = c; 
-                ui.CreateChoiceButton(
-                    translator.Translate(choiceCopy.choiceText, new List<char> { 'w', 'h', 'o', 'a', 'y', 'e' }),
-                    () => OnChoiceSelected(choiceCopy)
-                );
+                var choiceCopy = c;
+                if (CipherDecode.instance.encoding)
+                {
+                    ui.CreateChoiceButton(
+                        translator.Translate(choiceCopy.choiceText),
+                        () => OnChoiceSelected(choiceCopy)
+                    );
+                }
+                else
+                {
+                    ui.CreateChoiceButton(
+                        choiceCopy.choiceText,
+                        () => OnChoiceSelected(choiceCopy)
+                    );  
+                }
             }
             return;
         }

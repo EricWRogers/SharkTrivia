@@ -509,9 +509,9 @@ MonoBehaviour:
   confirmedColor: <color=#000000>
   usrColor: <color=#FF0000>
   keys: 
-  usrValues: 
-  valuesAssigned: 
-  cipherDecode: {fileID: 0}
+  usrValues: 7e007e007e007e007e007e007e007e007e007e007e007e007e007e007e007e007e007e007e007e007e007e007e007e007e00
+  valuesAssigned: 00000000000000000000000000000000000000000000000000
+  cipherDecode: {fileID: 103705852}
 --- !u!114 &1370749637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: row row row your boat gently down the stream
+  m_text: <style=Code>the quick brown fox jumps over the lazy dog
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -7,7 +7,7 @@ public class Collectibles : MonoBehaviour
     [SerializeField] int rotationSpeed = 5;
     public int value = 1;
     public TMP_Text scoreText; // Temporary
-    private int currentScore = 0;
+    public int currentScore = 0;
 
     void Start()
     {

@@ -36,6 +36,14 @@ public class Timer : MonoBehaviour
         int seconds = Mathf.FloorToInt(timeRemaining % 60f);
         timerText.text = $"{minutes:0}:{seconds:00}";
     }
+
+    public string GetFormattedTime()
+    {
+        int minutes = Mathf.FloorToInt(timeRemaining / 60f);
+        int seconds = Mathf.FloorToInt(timeRemaining % 60f);
+        return $"{minutes:0}:{seconds:00}";
+    }
+
     public void StopTimer()
     {
         timeRunning = false;
