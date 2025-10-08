@@ -18,9 +18,9 @@ public class TranslatorEditor : Editor
 
         if (GUILayout.Button("Translate"))
         {
-            tr.usrValues = tr.cipherDecode.GetUsrValues();
-            tr.valuesAssigned = tr.cipherDecode.GetValuesAssigned();
-            tr.text.text = tr.Translate("the quick brown fox jumps over the lazy dog", tr.keys);
+            tr.usrValues = CipherDecode.instance.GetUsrValues();
+            tr.valuesAssigned = CipherDecode.instance.GetUsrValuesAssigned();
+            tr.text.text = tr.Translate("the quick brown fox jumps over the lazy dog");
         }
     }
 }
@@ -41,25 +41,27 @@ public class Translator : MonoBehaviour
     public List<char> usrValues;
     public List<bool> valuesAssigned;
 
-    public CipherDecode cipherDecode;
+    //public CipherDecode cipherDecode;
 
     void Start()
     {
         gameObject.AddComponent<CipherDecode>();
-        cipherDecode = gameObject.GetComponent<CipherDecode>();
+        //cipherDecode = gameObject.GetComponent<CipherDecode>();
 
         //usrValues = new List<char>();
 
-        usrValues = cipherDecode.GetUsrValues();
-        valuesAssigned = cipherDecode.GetValuesAssigned();
+        usrValues = CipherDecode.instance.GetUsrValues();
+        valuesAssigned = CipherDecode.instance.GetUsrValuesAssigned();
 
-        string str = text.text;
+        //string str = text.text;
 
-        text.text = Translate(str, keys);
+        //text.text = Translate(str, keys);
     }
 
-    public String Translate(string text, List<char> keys)
+    public String Translate(string text)
     {
+        List<char> keys = CipherDecode.instance.GetConfirmedChars();
+        
         //changing the message to a StringBuilder to adjust based on index and putting all the characters into an array
         StringBuilder message = new StringBuilder(text);
         text.ToLower();
@@ -74,8 +76,8 @@ public class Translator : MonoBehaviour
         //keeps track of how many characters have been added to the message
         int adjust = 0;
 
-        usrValues = cipherDecode.GetUsrValues();
-        valuesAssigned = cipherDecode.GetValuesAssigned();
+        usrValues = CipherDecode.instance.GetUsrValues();
+        valuesAssigned = CipherDecode.instance.GetUsrValuesAssigned();
 
         //looping through the total characters
         for (int i = 0; i < characters.Length; i++)
