@@ -1,27 +1,24 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 
 public class MainMenu : MonoBehaviour
 {
-    public Animator animator;
+
     public void TheMagicButton()
     {
-        StartCoroutine(LoadLevel("BackStage"));
+        LevelManager.LoadBackStage();
     }
 
     public void TheLoserButton()
     {
         Application.Quit();
     }
-    IEnumerator LoadLevel(string levelName)
+
+    public void TheGearButton()
     {
-        if (animator != null)
-        {
-            animator.SetTrigger("Start");
-            yield return new WaitForSeconds(1);
-        }
-        SceneManager.LoadScene(levelName);
+        //LevelManager.LoadSettingsMenu();
     }
 }

@@ -1,10 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public class EnemySpaawner : MonoBehaviour
 {
-    [System.Serializable]
+[System.Serializable]
     public class SpawnableEnemy
     {
         public string name;

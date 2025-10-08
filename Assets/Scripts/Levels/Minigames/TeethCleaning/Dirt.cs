@@ -12,14 +12,14 @@ public class Dirt : MonoBehaviour
             ScoreManager.instance.AddPoint();
             FadeOut();
             Destroy(gameObject);
+
         }
     }
 
     public void FadeOut(){
         Color c = dirt.color;
         c.a = 1f;
-        while(c.a > 0f)
-        {
+        while(c.a > 0f){
             c.a -= 0.2f;
             dirt.color = c;
         }

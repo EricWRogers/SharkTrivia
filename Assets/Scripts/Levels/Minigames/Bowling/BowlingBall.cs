@@ -35,13 +35,6 @@ public class BowlingBall : MonoBehaviour
     private void LaunchBall()
     {
         {
-            // Play roll sound
-            if (AudioManager.instance != null)
-            {
-                AudioManager.instance.sfxSource.loop = true; // make roll sound loop
-                AudioManager.instance.PlaySFX(rollSfx);
-            }
-
             // Get the power % from the power bar
             float percent = (powerBar != null) ? powerBar.GetPowerPercent() : 1f;
 
@@ -93,26 +86,5 @@ public class BowlingBall : MonoBehaviour
     {
         hasLaunched = false; // allows launch again
         spinDirection = 0f;
-    }
-
-    //SFX for the Bowling Game
-    [Header("SFX Names")]
-    public string rollSfx = "BallRoll";
-    public string hitSfx = "PinHit";
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Pin"))
-        {
-            if (AudioManager.instance != null)
-            {
-                // Stop rolling
-                AudioManager.instance.sfxSource.loop = false;
-                AudioManager.instance.StopSFX();
-
-                // Play pin hit sound (one-shot)
-                AudioManager.instance.PlaySFX(hitSfx);
-            }
-        }
     }
 }

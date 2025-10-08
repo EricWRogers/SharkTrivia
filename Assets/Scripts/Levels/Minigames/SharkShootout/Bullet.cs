@@ -15,11 +15,12 @@ public class Bullet : MonoBehaviour
         transform.position += transform.right * Time.deltaTime * Speed;
     }
 
-    // Update is called once per frame
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.gameObject.CompareTag("Fish"))
+        {
         Destroy(collision.gameObject);
         Destroy(gameObject);
+        } 
     }
 }

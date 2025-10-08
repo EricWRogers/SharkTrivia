@@ -7,14 +7,13 @@ public class DialogueManagerIntegrated : MonoBehaviour
 {
     public static DialogueManagerIntegrated Instance { get; private set; }
     public static Translator translator;
+
     void Awake()
     {
         Instance = this;
         gameObject.AddComponent<Translator>();
         translator = gameObject.GetComponent<Translator>();
     }
-
-    
 
     Conversation active;
     DNode current;
@@ -28,37 +27,37 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
     void ShowNode(DNode node)
     {
+        if (node == null) { Debug.LogError("ShowNode called with null node."); return; }
+
         current = node;
+
+        // per-node inspector event
+        node.onEnter?.Invoke();
 
         // UI on
         var ui = DialogueController.Instance;
+        if (ui == null) { Debug.LogError("DialogueController.Instance is null"); return; }
+
         ui.ShowDialogueUI(true);
         ui.SetCharInfo(node.speakerName, node.portrait);
-        Debug.Log(node.speakerLine);
-        ui.SetDialogueText(translator.Translate(node.speakerLine ,new List<char> { 'w', 'h', 'o', 'a', 'y','e' })); //temp change to encode
+
+        // encode line with your translator
+        ui.SetDialogueText(translator.Translate(
+            node.speakerLine,
+            new List<char> { 'w', 'h', 'o', 'a', 'y', 'e' }
+        ));
         ui.ClearChoices();
 
+        // Branching – create choices once
         if (node.choices != null && node.choices.Length > 0)
         {
             foreach (var c in node.choices)
             {
-                var choiceCopy = c;
+                var choiceCopy = c; 
                 ui.CreateChoiceButton(
-                    translator.Translate(choiceCopy.choiceText ,new List<char> { 'w', 'h', 'o', 'a', 'y','e' }),
-                    //TempCipherEncoder.Apply(choiceCopy.choiceText), // cipher choices too
+                    translator.Translate(choiceCopy.choiceText, new List<char> { 'w', 'h', 'o', 'a', 'y', 'e' }),
                     () => OnChoiceSelected(choiceCopy)
                 );
-            }
-            return;
-        }
-
-        // Branching
-        if (node.choices != null && node.choices.Length > 0)
-        {
-            foreach (var c in node.choices)
-            {
-                var next = c.next; // capture
-                ui.CreateChoiceButton(c.choiceText, () => ShowNode(next));
             }
             return;
         }
@@ -81,14 +80,11 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
     void OnChoiceSelected(Choice c)
     {
-        //tell player if correct or incorrect first
         if (c.isCorrect)
         {
-            // Show a quick correct
             DialogueController.Instance.ClearChoices();
             DialogueController.Instance.SetDialogueText("Correct!");
-            
-            // Load a scene if needed
+
             if (!string.IsNullOrEmpty(c.loadSceneOnSelect))
             {
                 StopAllCoroutines();
@@ -98,17 +94,15 @@ public class DialogueManagerIntegrated : MonoBehaviour
         }
         else
         {
-            //show as incorrect
             DialogueController.Instance.ClearChoices();
             DialogueController.Instance.SetDialogueText("Incorrect.");
         }
 
-        // Continue to next node if present; otherwise end
         if (c.next != null) ShowNode(c.next);
         else EndConversation();
     }
 
-    System.Collections.IEnumerator AutoLoadScene(string sceneName, float delay)
+    IEnumerator AutoLoadScene(string sceneName, float delay)
     {
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneName);

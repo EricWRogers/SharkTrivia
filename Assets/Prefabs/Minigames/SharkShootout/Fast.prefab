@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7738818419891961852}
   - component: {fileID: 346408805815774493}
   - component: {fileID: 8963706373274037275}
-  - component: {fileID: 1792239853203753253}
+  - component: {fileID: 2816598964104598859}
   m_Layer: 0
-  m_Name: Enemy 2
-  m_TagString: Untagged
+  m_Name: Fast
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1792239853203753253
+--- !u!114 &2816598964104598859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

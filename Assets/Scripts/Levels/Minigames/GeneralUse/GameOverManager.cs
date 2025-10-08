@@ -1,42 +1,43 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 
 public class GameOverManager : MonoBehaviour
 {
-    public UnityEvent ActiveSwitch;
-    public GameObject LoseScreen;
+    public GameObject ball;
+    public GameObject pins;
+    public GameObject lane;
+
+    public GameObject loseScreen;
 
     public void GameOverShow()
     {
-        LoseScreen.SetActive(true);
-        ActiveState();
-    }
-
-    public void ActiveState()
-    {
-        ActiveSwitch.Invoke();
+        LoseScreen();
+        ball.SetActive(false);
+        pins.SetActive(false);
+        lane.SetActive(false);
     }
     public void Restart()
     {
         Time.timeScale = 1f; // Resume game time
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reload current scene
     }
-    public void MainMenu()
-    {
-        Time.timeScale = 1f; 
-        SceneManager.LoadScene("MainMenu"); // Loads the main menu
-    }
     public void BackStage()
     {
-        Time.timeScale = 1f; 
-        SceneManager.LoadScene("BackStage"); // Loads the backstage
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("BackStage"); // Loads the main menu
     }
     public void Quit()
     {
         Application.Quit(); // Quits the build application
+    }
+
+    public void LoseScreen()
+    {
+        loseScreen.SetActive(true);
+        Time.timeScale = 0f; // Pause the game
+        Cursor.visible = true;
     }
 }
 //WIP

@@ -9,6 +9,7 @@ TagManager:
   - Pin
   - Toothbrush
   - Sprite
+  - Fish
   layers:
   - Default
   - TransparentFX
