@@ -53,9 +53,9 @@ public class Translator : MonoBehaviour
         usrValues = cipherDecode.GetUsrValues();
         valuesAssigned = cipherDecode.GetValuesAssigned();
 
-        //string str = text.text;
+        string str = text.text;
 
-        //text.text = Translate(str, keys);
+        text.text = Translate(str, keys);
     }
 
     public String Translate(string text, List<char> keys)

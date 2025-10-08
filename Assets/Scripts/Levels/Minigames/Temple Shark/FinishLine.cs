@@ -6,10 +6,11 @@ public class FinishLine : MonoBehaviour
 {
     public GameObject WinScreen;
     public Timer timer;
+    public Collectibles collectibles;
 
     [Header("Text Elements")]
-    public TMP_Text timerText;
-    public TMP_Text statsText;
+    public TMP_Text winTimerText; // Text element to display the final time
+    public TMP_Text winScoreText; // Text element to display the final score
 
     [Header("Objects To Deactivate")]
     public MonoBehaviour[] objectsToDeactivate;
@@ -42,20 +43,20 @@ public class FinishLine : MonoBehaviour
         timer.StopTimer();
 
         // Update TMPro text with final time
-        if (timerText != null && timer != null)
+        if (winTimerText != null && timer != null)
         {
             var timerScript = timer.GetComponent<Timer>();
             if (timerScript != null)
             {
-                timerText.text = $"Time: {timer.GetComponentInChildren<TextMeshProUGUI>().text}" ;
+                winTimerText.text = $"Time: {timer.GetFormattedTime()}" ;
             }
         }
 
         // Update stats text
-        /*if (statsText != null)
+        if (winScoreText != null)
         {
-            var acornCount = FindObjectOfType<AcornCounter>()?.GetAcornCount() ?? 0;
-            statsText.text = $"Acorns Collected: {acornCount}";
-        }*/
+            var collectCount = collectibles.currentScore;
+            winScoreText.text = $"Coins Collected: {collectCount}";
+        }
     }
 }
