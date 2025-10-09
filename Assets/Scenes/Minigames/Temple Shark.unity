@@ -2177,6 +2177,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 214661378360196284, guid: af18de1db51f32b4d9ada8dafdc84e7e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1310296484067866787, guid: af18de1db51f32b4d9ada8dafdc84e7e, type: 3}
       propertyPath: m_Name
       value: Segment (3)
