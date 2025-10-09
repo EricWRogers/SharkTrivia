@@ -502,7 +502,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530735335}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -759,7 +759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -158, y: 261.13}
+  m_AnchoredPosition: {x: 294, y: 208.87}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326105028
@@ -782,7 +782,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score:'
+  m_text: 'Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 0'
+  m_text: 'Timer: 60'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1427,7 +1427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -306, y: -30}
+  m_AnchoredPosition: {x: -308, y: -23}
   m_SizeDelta: {x: 147.5375, y: 41.2564}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1793793985
@@ -1714,16 +1714,17 @@ MonoBehaviour:
     enemiesInWave:
     - name: 
       enemyPrefab: {fileID: 7044823683029345317, guid: d12f41f533cde2d479542f7b9feb15f1, type: 3}
-      count: 12
+      count: 55
       interval: 1
       pointValue: 5
     - name: 
       enemyPrefab: {fileID: 1085524407653634129, guid: c73a529a4680a0144993dedc5389d760, type: 3}
-      count: 12
+      count: 20
       interval: 2
+      pointValue: 10
     - name: 
       enemyPrefab: {fileID: 4666793668752257710, guid: 5fbf56e7ffcbdee419225b74f2e41a23, type: 3}
-      count: 12
+      count: 50
       interval: 1
       pointValue: 15
     - name: 
