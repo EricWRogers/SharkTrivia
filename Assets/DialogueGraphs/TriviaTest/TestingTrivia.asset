@@ -26,12 +26,15 @@ MonoBehaviour:
   m_Name: N1
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
   speakerLine: That's Correct
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4168688763223590288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,12 +48,15 @@ MonoBehaviour:
   m_Name: N2
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 1046629060553489229, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
   speakerLine: That's incorrect!
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7339726388979353499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,9 +70,9 @@ MonoBehaviour:
   m_Name: Rn1
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 4517551861036174037, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: What color is the ocean?
-  autoProgress: 0
+  autoProgress: 1
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices:
@@ -74,15 +80,30 @@ MonoBehaviour:
     next: {fileID: 508371345919939232}
     isCorrect: 0
     loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
   - choiceText: Red
     next: {fileID: 4168688763223590288}
     isCorrect: 0
     loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
   - choiceText: Orange
     next: {fileID: 4168688763223590288}
     isCorrect: 0
     loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
   - choiceText: Green
     next: {fileID: 4168688763223590288}
     isCorrect: 0
     loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []

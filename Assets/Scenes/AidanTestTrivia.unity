@@ -775,7 +775,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Body Text Will Go Here
+  m_text: Body text will go here
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2201,7 +2201,7 @@ GameObject:
   - component: {fileID: 1787656652}
   - component: {fileID: 1787656651}
   - component: {fileID: 1787656654}
-  - component: {fileID: 1787656653}
+  - component: {fileID: 1787656655}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -2236,7 +2236,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1787656653
+--- !u!114 &1787656654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2245,7 +2245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1787656650}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5362a039d6fe4814898b2e807d69d031, type: 3}
+  m_Script: {fileID: 11500000, guid: 111928fdb025f3d4a939385bb20458a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
@@ -2263,7 +2263,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1787656650}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111928fdb025f3d4a939385bb20458a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5362a039d6fe4814898b2e807d69d031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   charAssignmentDisplay: []
