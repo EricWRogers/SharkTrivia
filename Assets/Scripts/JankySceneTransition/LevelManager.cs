@@ -37,6 +37,16 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
         StaticResume();
         Instance.StartCoroutine(Instance.LoadLevel("MainMenu"));
     }
+    public static void LoadSettingMenu()
+    {
+        StaticResume();
+        Instance.StartCoroutine(Instance.LoadLevel("Settings"));
+    }
+    public static void LoadAudioMenu()
+    {
+        StaticResume();
+        Instance.StartCoroutine(Instance.LoadLevel("AudioSettings"));
+    }
     public static void LoadRandMiniGame()
     {
         StaticResume();

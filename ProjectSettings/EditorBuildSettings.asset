@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Scenes/BowlingTest.unity
     guid: b2efd40e4770ac342a91bade894e6fee
+  - enabled: 1
+    path: Assets/Scenes/Menus/Settings.unity
+    guid: dd350f6aad654ce48a7684922a15c39e
+  - enabled: 1
+    path: Assets/Scenes/Menus/AudioSettings.unity
+    guid: 289a40019e3efb34790c30fa948a04fe
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
