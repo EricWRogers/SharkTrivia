@@ -1713,14 +1713,11 @@ MonoBehaviour:
   - waveName: 
     enemiesInWave:
     - name: 
-<<<<<<< HEAD
-=======
       enemyPrefab: {fileID: 7044823683029345317, guid: d12f41f533cde2d479542f7b9feb15f1, type: 3}
       count: 12
       interval: 1
       pointValue: 5
     - name: 
->>>>>>> origin/main
       enemyPrefab: {fileID: 1085524407653634129, guid: c73a529a4680a0144993dedc5389d760, type: 3}
       count: 12
       interval: 2
@@ -1732,12 +1729,8 @@ MonoBehaviour:
     - name: 
       enemyPrefab: {fileID: 7044823683029345317, guid: d12f41f533cde2d479542f7b9feb15f1, type: 3}
       count: 8
-<<<<<<< HEAD
-      interval: 3
-=======
       interval: 1
       pointValue: 0
->>>>>>> origin/main
   spawnPointA: {fileID: 777350207}
   spawnPointB: {fileID: 1264154901}
   timeBetweenWaves: 5
