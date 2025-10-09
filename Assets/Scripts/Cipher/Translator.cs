@@ -45,7 +45,7 @@ public class Translator : MonoBehaviour
 
     void Start()
     {
-        gameObject.AddComponent<CipherDecode>();
+        //gameObject.AddComponent<CipherDecode>();
         //cipherDecode = gameObject.GetComponent<CipherDecode>();
 
         //usrValues = new List<char>();
