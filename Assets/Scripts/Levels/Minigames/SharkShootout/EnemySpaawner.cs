@@ -12,6 +12,8 @@ public class EnemySpaawner : MonoBehaviour
         public GameObject enemyPrefab;
         public int count;
         public float interval;
+
+        public int pointValue;
     }
 
     [System.Serializable]
@@ -67,15 +69,17 @@ public class EnemySpaawner : MonoBehaviour
 
         foreach (var enemy in spawnQueue)
         {
-            SpawnEnemy(enemy.enemyPrefab);
+            SpawnEnemy(enemy);
             yield return new WaitForSeconds(enemy.interval);
         }
     }
 
-    void SpawnEnemy(GameObject prefab)
+    void SpawnEnemy(SpawnableEnemy enemyData)
     {
         Vector3 spawnPos = GetRandomSpawnPosition();
-        Instantiate(prefab, spawnPos, Quaternion.identity);
+        GameObject spawnedEnemy = Instantiate(enemyData.enemyPrefab, spawnPos, Quaternion.identity);
+        PointsOnDeath pod = spawnedEnemy.AddComponent<PointsOnDeath>();
+        pod.points = enemyData.pointValue;
     }
 
     Vector3 GetRandomSpawnPosition()
