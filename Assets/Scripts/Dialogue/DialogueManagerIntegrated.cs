@@ -8,6 +8,8 @@ public class DialogueManagerIntegrated : MonoBehaviour
     public static DialogueManagerIntegrated Instance { get; private set; }
     public static Translator translator;
 
+    public bool isFinished = false;
+
     void Awake()
     {
         Instance = this;
@@ -23,6 +25,8 @@ public class DialogueManagerIntegrated : MonoBehaviour
         if (!convo || !convo.entry) return;
         active = convo;
         ShowNode(convo.entry);
+
+        isFinished = false;
     }
 
     void ShowNode(DNode node)
@@ -134,5 +138,8 @@ public class DialogueManagerIntegrated : MonoBehaviour
         active = null;
         current = null;
         StopAllCoroutines();
+
+
+        isFinished = true;
     }
 }
