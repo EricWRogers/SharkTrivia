@@ -2,21 +2,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class GameOverManager : MonoBehaviour
 {
-    public GameObject ball;
-    public GameObject pins;
-    public GameObject lane;
+    public GameObject[] objectsToDisable; // Assign ball, pins, lane in Inspector (or anything else you want to disable)
 
     public GameObject loseScreen;
 
     public void GameOverShow()
     {
         LoseScreen();
-        ball.SetActive(false);
-        pins.SetActive(false);
-        lane.SetActive(false);
+        foreach (var obj in objectsToDisable)
+        {
+            if (obj != null)
+                obj.SetActive(false);
+        }
     }
     public void Restart()
     {
@@ -26,7 +25,7 @@ public class GameOverManager : MonoBehaviour
     public void BackStage()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("BackStage"); // Loads the main menu
+        LevelManager.LoadBackStage();// Loads the main menu
     }
     public void Quit()
     {

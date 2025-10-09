@@ -28,6 +28,6 @@ public class EndGame : MonoBehaviour
     void Lose()
     {
         Debug.Log("Game Over!");
-        SceneManager.LoadScene(endSceneName);
+        LevelManager.LoadBackStage();
     }
 }
