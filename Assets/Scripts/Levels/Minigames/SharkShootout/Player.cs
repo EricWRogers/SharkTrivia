@@ -34,9 +34,10 @@ public class Player : MonoBehaviour
             Shoot();
         }
         
-         void Shoot() 
-         {
-        Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
+         void Shoot()
+        {
+            Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
+            
          }
     }
 }

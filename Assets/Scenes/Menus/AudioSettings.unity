@@ -613,6 +613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 267665649}
   - component: {fileID: 267665650}
+  - component: {fileID: 267665651}
   m_Layer: 5
   m_Name: Master
   m_TagString: Untagged
@@ -686,16 +687,16 @@ MonoBehaviour:
   m_FillRect: {fileID: 1034335549}
   m_HandleRect: {fileID: 789296173}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7076654319186419445}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+      - m_Target: {fileID: 267665651}
+        m_TargetAssemblyTypeName: MixerController, Assembly-CSharp
+        m_MethodName: SetMasterVolume
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -705,6 +706,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &267665651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267665648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ff73976c974e448a68e1f6da0c2f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 935460f5d99823c45ac31652d183b7e3, type: 2}
 --- !u!1 &282162349
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 362593163}
   - component: {fileID: 362593164}
+  - component: {fileID: 362593165}
   m_Layer: 5
   m_Name: Music
   m_TagString: Untagged
@@ -961,15 +976,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 1083625129}
   m_HandleRect: {fileID: 1869222793}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7076654319186419445}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 362593165}
+        m_TargetAssemblyTypeName: MixerController, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 4
         m_Arguments:
@@ -980,6 +995,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &362593165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362593162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ff73976c974e448a68e1f6da0c2f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 935460f5d99823c45ac31652d183b7e3, type: 2}
 --- !u!1001 &527843362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2637,6 +2665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2041596008}
   - component: {fileID: 2041596009}
+  - component: {fileID: 2041596010}
   m_Layer: 5
   m_Name: SFX
   m_TagString: Untagged
@@ -2710,16 +2739,16 @@ MonoBehaviour:
   m_FillRect: {fileID: 1958826361}
   m_HandleRect: {fileID: 1132803258}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7076654319186419445}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+      - m_Target: {fileID: 2041596010}
+        m_TargetAssemblyTypeName: MixerController, Assembly-CSharp
+        m_MethodName: SetSFXVolume
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2729,6 +2758,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2041596010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041596007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ff73976c974e448a68e1f6da0c2f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 935460f5d99823c45ac31652d183b7e3, type: 2}
 --- !u!1 &2110513170
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,17 +3086,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c0c01ae1d42b14a9b625f220937058, type: 3}
---- !u!114 &7076654319186419445 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
-  m_PrefabInstance: {fileID: 4572955235923208893}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb30816d9c7cd14d8d2d5ec8222b9ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

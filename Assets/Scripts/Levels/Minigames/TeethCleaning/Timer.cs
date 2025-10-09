@@ -52,6 +52,6 @@ public class Timer : MonoBehaviour
     {
         Debug.Log("Timer ended");
         //whatever loser concequences we want to add later
-        gameOverManager.GameOverShow();
+        LevelManager.LoadBackStage();
     }
 }
