@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
@@ -27,9 +25,6 @@ public class AudioManager : MonoBehaviour
     [Header("SFX")]
     public AudioSource sfxSource;
     public Sound[] sfxClips;
-
-    [Header("Mixer")]
-    public AudioMixer masterMixer;
 
     private void Awake()
     {
@@ -123,54 +118,6 @@ public class AudioManager : MonoBehaviour
         if (sfxSource.isPlaying)
         {
             sfxSource.Stop();
-        }
-    }
-
-    //Called when Slider is moved
-    void musicVolume(float sliderValue)
-    {
-        musicSource.volume = sliderValue;
-    }
-
-    // Change the music volumes
-    public void SetMasterVolume(float volume)
-    {
-        masterMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
-    }
-    public void SetMusicVolume(float volume)
-    {
-        masterMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
-    }
-
-    public void SetSFXVolume(float volume)
-    {
-        masterMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
-    }
-    // Mute button
-    public void ToggleMusicMute(bool isMuted)
-    {
-        if (isMuted)
-        {
-            masterMixer.SetFloat("MusicVolume", -80f); // Mute
-        }
-        else
-        {
-            // Set to a default or previously saved volume
-            masterMixer.SetFloat("MusicVolume", 0f);
-        }
-    }
-
-    // Mute button
-    public void ToggleSFXMute(bool isMuted)
-    {
-        if (isMuted)
-        {
-            masterMixer.SetFloat("SFXVolume", -80f); // Mute
-        }
-        else
-        {
-            // Set to a default or previously saved volume
-            masterMixer.SetFloat("SFXVolume", 0f);
         }
     }
 }
