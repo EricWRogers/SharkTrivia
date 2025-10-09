@@ -19,6 +19,10 @@ public class MainMenu : MonoBehaviour
 
     public void TheGearButton()
     {
-        //LevelManager.LoadSettingsMenu();
+        LevelManager.LoadSettingMenu();
+    }
+    public void TheEarButton()
+    {
+        LevelManager.LoadAudioMenu();
     }
 }
