@@ -5,6 +5,7 @@ using TMPro;
 public class ScoreAndLives : MonoBehaviour
 {
     public static ScoreAndLives Instance { get; private set; }
+    public GameOverManager GOM;
 
     [Header("Gameplay")]
     public int startingLives = 3;
@@ -48,10 +49,8 @@ public class ScoreAndLives : MonoBehaviour
         UpdateHearts();
         if (Lives <= 0)
         {
-           //call gameover later
-            UnityEngine.SceneManagement.SceneManager.LoadScene(
-                UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
-            );
+            //call gameover later
+            GOM.GameOverShow();
             return;
         }
         // respawn pop
