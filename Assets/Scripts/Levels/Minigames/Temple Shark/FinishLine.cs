@@ -17,7 +17,7 @@ public class FinishLine : MonoBehaviour
 
     public void ReturnToMain()
     {
-        SceneManager.LoadScene("Kaden's Scene");
+        SceneManager.LoadScene("Backstage");
         Cursor.visible = true;
         Time.timeScale = 1f; // Resume the game
     }

@@ -10,8 +10,8 @@ public class CipherDecode : MonoBehaviour
     [System.Serializable]
     public class CipherNode { public char key; public char value; }
     public static CipherDecode instance = null;
-
     public List<CipherNode> charAssignmentDisplay;
+    public bool encoding = true;
 
     private Dictionary<char, char> charAssignments = new Dictionary<char, char>
     {
@@ -64,7 +64,7 @@ public class CipherDecode : MonoBehaviour
         return usrValues;
     }
 
-    public List<bool> GetValuesAssigned()
+    public List<bool> GetUsrValuesAssigned()
     {
         List<bool> valsAssigned = new List<bool>();
 
@@ -81,6 +81,21 @@ public class CipherDecode : MonoBehaviour
         }
 
         return valsAssigned;
+    }
+
+    public List<char> GetConfirmedChars()
+    {
+        List<char> confirmedChars = new List<char>();
+
+        for (int i = 'a'; i < 'z'; i++)
+        {
+            if (confirmedCharAssignments[(char)i] != '~')
+            {
+                confirmedChars.Add(confirmedCharAssignments[(char)i]);
+            }
+        }
+
+        return confirmedChars;
     }
 
     //pass in the key and value you are trying to edit
@@ -125,7 +140,7 @@ public class CipherDecode : MonoBehaviour
                     returnCode = -2;
                 }
 
-                //Case where the value that goes to the key in question is blank
+                //Case where the value that goes to the key in question is not blank
                 if (charAssignments[(char)i] != '~')
                 {
                     returnCode = -3;
