@@ -10,12 +10,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
     public static DialogueManagerIntegrated Instance { get; private set; }
     public static Translator translator;
 
-    // Track current node’s choice buttons/labels so other systems (Journal) can edit them
-    private readonly List<TMP_Text> _choiceLabels = new List<TMP_Text>();
-
-    // If true, also mutate the underlying node data when SetChoiceText is called
-    private bool _mutateNodeChoiceTextOnSet = true;
-
+    public bool isFinished = false;
     void Awake()
     {
         Instance = this;
@@ -31,6 +26,8 @@ public class DialogueManagerIntegrated : MonoBehaviour
         if (!convo || !convo.entry) return;
         active = convo;
         ShowNode(convo.entry);
+
+        isFinished = false;
     }
 
     void ShowNode(DNode node)
@@ -196,6 +193,9 @@ public class DialogueManagerIntegrated : MonoBehaviour
         active = null;
         current = null;
         StopAllCoroutines();
+
+
+        isFinished = true;
     }
 }
 

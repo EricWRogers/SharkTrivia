@@ -125,15 +125,26 @@ public class AudioManager : MonoBehaviour
             sfxSource.Stop();
         }
     }
+
+    //Called when Slider is moved
+    void musicVolume(float sliderValue)
+    {
+        musicSource.volume = sliderValue;
+    }
+
     // Change the music volumes
+    public void SetMasterVolume(float volume)
+    {
+        masterMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+    }
     public void SetMusicVolume(float volume)
     {
-        masterMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+        masterMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
     }
 
     public void SetSFXVolume(float volume)
     {
-        masterMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+        masterMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
     }
     // Mute button
     public void ToggleMusicMute(bool isMuted)

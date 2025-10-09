@@ -3,8 +3,8 @@ using TMPro;
 using System.Text;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
+
+#if UNITY_EDITOR
 using UnityEditor;
 
 [CustomEditor(typeof(Translator))]
@@ -25,6 +25,8 @@ public class TranslatorEditor : Editor
     }
 }
 
+#endif
+
 public class Translator : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,7 +39,7 @@ public class Translator : MonoBehaviour
     public string usrColor = "<color=#FF0000>";
 
     //public string str;
-    public List<char> keys = new List<char> {};
+    public List<char> keys = new List<char> { };
     public List<char> usrValues;
     public List<bool> valuesAssigned;
 
@@ -61,7 +63,7 @@ public class Translator : MonoBehaviour
     public String Translate(string text)
     {
         List<char> keys = CipherDecode.instance.GetConfirmedChars();
-        
+
         //changing the message to a StringBuilder to adjust based on index and putting all the characters into an array
         StringBuilder message = new StringBuilder(text);
         text.ToLower();
