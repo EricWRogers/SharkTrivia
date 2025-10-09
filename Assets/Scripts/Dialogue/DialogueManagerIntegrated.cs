@@ -2,17 +2,25 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using TMPro;
+using System.Linq;
 
 public class DialogueManagerIntegrated : MonoBehaviour
 {
     public static DialogueManagerIntegrated Instance { get; private set; }
     public static Translator translator;
 
+    // Track current node’s choice buttons/labels so other systems (Journal) can edit them
+    private readonly List<TMP_Text> _choiceLabels = new List<TMP_Text>();
+
+    // If true, also mutate the underlying node data when SetChoiceText is called
+    private bool _mutateNodeChoiceTextOnSet = true;
+
     void Awake()
     {
         Instance = this;
         gameObject.AddComponent<Translator>();
-        translator = gameObject.GetComponent<Translator>();
+        translator = GetComponent<Translator>();
     }
 
     Conversation active;
@@ -41,36 +49,31 @@ public class DialogueManagerIntegrated : MonoBehaviour
         ui.ShowDialogueUI(true);
         ui.SetCharInfo(node.speakerName, node.portrait);
 
-        // encode line with translator
-        if (CipherDecode.instance.encoding) // if encoding = true, then encode the text into cipher-glyphs, else just set it normally
-        {
-            ui.SetDialogueText(translator.Translate(node.speakerLine));
-        }
-        else
-        {
-            ui.SetDialogueText(node.speakerLine);
-        }
+        // encode line with translator (guard for CipherDecode.instance)
+        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
+        ui.SetDialogueText(encode ? translator.Translate(node.speakerLine) : node.speakerLine);
+
         ui.ClearChoices();
+        _choiceLabels.Clear();
 
         // Branching – create choices once
         if (node.choices != null && node.choices.Length > 0)
         {
             foreach (var c in node.choices)
             {
-                var choiceCopy = c;
-                if (CipherDecode.instance.encoding)
+                var choiceCopy = c; // capture for closure
+
+                // Create the button (encoded or plain)
+                GameObject choiceButtonGO = ui.CreateChoiceButton(
+                    encode ? translator.Translate(choiceCopy.choiceText) : choiceCopy.choiceText,
+                    () => OnChoiceSelected(choiceCopy)
+                );
+
+                // cache the label so we can edit it later
+                if (choiceButtonGO != null)
                 {
-                    ui.CreateChoiceButton(
-                        translator.Translate(choiceCopy.choiceText),
-                        () => OnChoiceSelected(choiceCopy)
-                    );
-                }
-                else
-                {
-                    ui.CreateChoiceButton(
-                        choiceCopy.choiceText,
-                        () => OnChoiceSelected(choiceCopy)
-                    );  
+                    var label = choiceButtonGO.GetComponentInChildren<TMP_Text>(true);
+                    if (label != null) _choiceLabels.Add(label);
                 }
             }
             return;
@@ -85,11 +88,70 @@ public class DialogueManagerIntegrated : MonoBehaviour
         }
 
         // Manual continue
-        ui.CreateChoiceButton("Continue", () =>
+        GameObject continueButtonGO = ui.CreateChoiceButton("Continue", () =>
         {
             if (node.nextIfNoChoices) ShowNode(node.nextIfNoChoices);
             else EndConversation();
         });
+        if (continueButtonGO != null)
+        {
+            var label = continueButtonGO.GetComponentInChildren<TMP_Text>(true);
+            if (label != null) _choiceLabels.Add(label);
+        }
+    }
+
+    /// <summary>
+    /// Change the displayed text of a choice by index (0-based).
+    /// Optionally run it through the translator to match current encoding.
+    /// Example: DialogueManagerIntegrated.Instance.SetChoiceText(1, journalText);
+    /// </summary>
+    public void SetChoiceText(int index, string newText, bool encode = true)
+    {
+        if (current == null) return;
+        if (index < 0 || index >= _choiceLabels.Count) return;
+
+        // update the underlying data so you know what's underneath (optional)
+        if (_mutateNodeChoiceTextOnSet &&
+            current.choices != null &&
+            index < current.choices.Length &&
+            current.choices[index] != null)
+        {
+            current.choices[index].choiceText = newText;
+        }
+
+        bool doEncode = encode && CipherDecode.instance != null && CipherDecode.instance.encoding;
+        var final = doEncode ? translator.Translate(newText) : newText;
+
+        _choiceLabels[index].text = final;
+    }
+
+    /// <summary>
+    /// Replace all visible choice texts in one call.
+    /// </summary>
+    public void SetAllChoiceTexts(IList<string> newTexts, bool encode = true)
+    {
+        if (current == null || newTexts == null) return;
+        int count = Mathf.Min(_choiceLabels.Count, newTexts.Count);
+        for (int i = 0; i < count; i++)
+            SetChoiceText(i, newTexts[i], encode);
+    }
+
+    /// <summary>
+    /// Re-translate the currently shown choice labels using the latest cipher state.
+    /// Call after the Journal updates mappings.
+    /// </summary>
+    public void RefreshChoiceTexts()
+    {
+        if (current == null || current.choices == null) return;
+
+        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
+
+        for (int i = 0; i < _choiceLabels.Count && i < current.choices.Length; i++)
+        {
+            var raw = current.choices[i]?.choiceText ?? "";
+            var final = encode ? translator.Translate(raw) : raw;
+            _choiceLabels[i].text = final;
+        }
     }
 
     void OnChoiceSelected(Choice c)
@@ -136,3 +198,4 @@ public class DialogueManagerIntegrated : MonoBehaviour
         StopAllCoroutines();
     }
 }
+
