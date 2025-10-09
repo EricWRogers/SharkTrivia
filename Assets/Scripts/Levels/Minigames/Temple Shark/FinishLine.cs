@@ -17,8 +17,7 @@ public class FinishLine : MonoBehaviour
 
     public void ReturnToMain()
     {
-        SceneManager.LoadScene("Backstage");
-        Cursor.visible = true;
+        LevelManager.LoadBackStage();
         Time.timeScale = 1f; // Resume the game
     }
 
