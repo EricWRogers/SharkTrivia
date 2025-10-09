@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 
     public void TheMagicButton()
     {
-        LevelManager.LoadBackStage();
+        LevelManager.LoadSpecificScene("IntroCutscene");
     }
 
     public void TheLoserButton()
