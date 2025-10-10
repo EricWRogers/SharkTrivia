@@ -34,9 +34,11 @@ public class Translator : MonoBehaviour
     string exitCode = "</style>"; // char = 8
     public TMP_Text text;
 
-    public string confirmedColor = "<color=#000000>";
+    public string confirmedColor = "<color=#0000FF>";
 
     public string usrColor = "<color=#FF0000>";
+
+    public string defaultColor = "<color=#000000>";
 
     //public string str;
     public List<char> keys = new List<char> { };
@@ -65,13 +67,13 @@ public class Translator : MonoBehaviour
         List<char> keys = CipherDecode.instance.GetConfirmedChars();
 
         //changing the message to a StringBuilder to adjust based on index and putting all the characters into an array
-        StringBuilder message = new StringBuilder(text);
+        StringBuilder message = new StringBuilder(text.ToLower());
         text.ToLower();
         char[] characters = text.ToCharArray();
 
         string exitRedCode = exitCode + usrColor;
         string exitBlackCode = exitCode + confirmedColor;
-        string colorCode = code + "<color=#FFFFFF>";
+        string colorCode = code + defaultColor;
 
         //keeps track of how many times something has been inserted into the message
         int hit = 0;
