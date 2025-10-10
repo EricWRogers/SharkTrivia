@@ -25,6 +25,18 @@ public class TriggerSceneMenu : MonoBehaviour
     {
         StartCoroutine(LoadLevel("Bowling"));
     }
+    public void SharkShoot()
+    {
+        LevelManager.LoadSpecificScene("SharkShootout");
+    }
+    public void TempShark()
+    {
+        LevelManager.LoadSpecificScene("Temple Shark");
+    }
+    public void RandMiniGame()
+    {
+        LevelManager.LoadRandMiniGame();
+    }
     IEnumerator LoadLevel(string levelName)
     {
         if (animator != null)
