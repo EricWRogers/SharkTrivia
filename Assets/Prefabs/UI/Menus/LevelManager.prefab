@@ -250,6 +250,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3555587560324363812}
     m_Modifications:
+    - target: {fileID: 378891035105801074, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 378891035105801074, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
+      propertyPath: m_isOrthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 378891035105801074, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 378891035105801074, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281479730
+      objectReference: {fileID: 0}
+    - target: {fileID: 378891035105801074, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 378891035105801074, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 548660410536430436, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -262,6 +286,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: LevelManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 939932194499369208, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1467303069967459247}
     - target: {fileID: 5795072561624351970, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -360,7 +388,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6941191281157022066, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988550704333539371, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1467303069967459247}
+    - target: {fileID: 7988550704333539371, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadBackStage
       objectReference: {fileID: 0}
     - target: {fileID: 8119774242728139116, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -373,6 +409,10 @@ PrefabInstance:
     - target: {fileID: 8119774242728139116, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: LevelManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456790205283634241, guid: 06d9e71218a951e4aaa6e0dceea5d4ec, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

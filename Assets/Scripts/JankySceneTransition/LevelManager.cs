@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     private static LevelManager Instance;
     public static bool GameIsPaused = false;
-    [SerializeField] public static string[] miniGameLevels = { "Bowling", "Temple Shark", "MINIGTeethCleaning" };
+    [SerializeField] public static string[] miniGameLevels = { "Bowling", "Temple Shark", "MINIGTeethCleaning", "SharkShootout" };
     public static GameObject pauseMenuUI;
     public Animator animator;
 

@@ -2,105 +2,130 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using TMPro;
+using System.Linq;
 
 public class DialogueManagerIntegrated : MonoBehaviour
 {
     public static DialogueManagerIntegrated Instance { get; private set; }
     public static Translator translator;
 
+    // Track current node’s choice buttons/labels so others can edit them
+    private readonly List<TMP_Text> _choiceLabels = new List<TMP_Text>();
+
+    // If true, also mutate the underlying node data when SetChoiceText is called
+    [SerializeField] private bool _mutateNodeChoiceTextOnSet = true;
+
+    public bool isFinished { get; private set; } = false;
+
+    private Conversation active;
+    private DNode current;
+
     void Awake()
     {
         Instance = this;
-        gameObject.AddComponent<Translator>();
-        translator = gameObject.GetComponent<Translator>();
-    }
 
-    Conversation active;
-    DNode current;
+        // Ensure we have a Translator on the same GameObject
+        translator = GetComponent<Translator>();
+        if (translator == null) translator = gameObject.AddComponent<Translator>();
+    }
 
     public void StartConversation(Conversation convo)
     {
-        if (!convo || !convo.entry) return;
+        if (convo == null || convo.entry == null) return;
+        isFinished = false; 
         active = convo;
         ShowNode(convo.entry);
     }
 
-    void ShowNode(DNode node)
+    private void ShowNode(DNode node)
     {
-        if (node == null) { Debug.LogError("ShowNode called with null node."); return; }
+        if (node == null)
+        {
+            Debug.LogError("ShowNode called with null node.");
+            return;
+        }
 
         current = node;
 
-        // per-node inspector event
+        // Fire per-node inspector event
         node.onEnter?.Invoke();
 
-        // UI on
+        // UI
         var ui = DialogueController.Instance;
-        if (ui == null) { Debug.LogError("DialogueController.Instance is null"); return; }
+        if (ui == null)
+        {
+            Debug.LogError("DialogueController.Instance is null");
+            return;
+        }
 
         ui.ShowDialogueUI(true);
         ui.SetCharInfo(node.speakerName, node.portrait);
 
-        // encode line with translator
-        if (CipherDecode.instance.encoding) // if encoding = true, then encode the text into cipher-glyphs, else just set it normally
-        {
-            ui.SetDialogueText(translator.Translate(node.speakerLine));
-        }
-        else
-        {
-            ui.SetDialogueText(node.speakerLine);
-        }
-        ui.ClearChoices();
+        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
+        ui.SetDialogueText(encode ? translator.Translate(node.speakerLine) : node.speakerLine);
 
-        // Branching – create choices once
+        ui.ClearChoices();
+        _choiceLabels.Clear();
+
+        // Branching: create choice buttons once
         if (node.choices != null && node.choices.Length > 0)
         {
-            foreach (var c in node.choices)
+            foreach (var choice in node.choices)
             {
-                var choiceCopy = c;
-                if (CipherDecode.instance.encoding)
+                var choiceCopy = choice; 
+
+                GameObject choiceButtonGO = ui.CreateChoiceButton(
+                    encode ? translator.Translate(choiceCopy.choiceText) : choiceCopy.choiceText,
+                    () => OnChoiceSelected(choiceCopy)
+                );
+
+                // Cache label for live editing via Journal
+                if (choiceButtonGO != null)
                 {
-                    ui.CreateChoiceButton(
-                        translator.Translate(choiceCopy.choiceText),
-                        () => OnChoiceSelected(choiceCopy)
-                    );
-                }
-                else
-                {
-                    ui.CreateChoiceButton(
-                        choiceCopy.choiceText,
-                        () => OnChoiceSelected(choiceCopy)
-                    );  
+                    var label = choiceButtonGO.GetComponentInChildren<TMP_Text>(true);
+                    if (label != null) _choiceLabels.Add(label);
                 }
             }
             return;
         }
 
-        // Linear
-        if (node.autoProgress && node.nextIfNoChoices)
+        // Linear: auto-advance or show Continue
+        if (node.autoProgress && node.nextIfNoChoices != null)
         {
             StopAllCoroutines();
             StartCoroutine(AutoNext(node.nextIfNoChoices, node.autoDelay));
             return;
         }
 
-        // Manual continue
-        ui.CreateChoiceButton("Continue", () =>
+        GameObject continueButtonGO = ui.CreateChoiceButton("Continue", () =>
         {
-            if (node.nextIfNoChoices) ShowNode(node.nextIfNoChoices);
+            if (node.nextIfNoChoices != null) ShowNode(node.nextIfNoChoices);
             else EndConversation();
         });
+
+        if (continueButtonGO != null)
+        {
+            var label = continueButtonGO.GetComponentInChildren<TMP_Text>(true);
+            if (label != null) _choiceLabels.Add(label);
+        }
     }
 
-    void OnChoiceSelected(Choice c)
+    private void OnChoiceSelected(Choice c)
     {
+        if (c == null) { EndConversation(); return; }
+
+        var ui = DialogueController.Instance;
+        if (ui == null) { EndConversation(); return; }
+
         if (c.isCorrect)
         {
-            DialogueController.Instance.ClearChoices();
-            DialogueController.Instance.SetDialogueText("Correct!");
+            ui.ClearChoices();
+            ui.SetDialogueText("Correct!");
 
             if (!string.IsNullOrEmpty(c.loadSceneOnSelect))
             {
+                isFinished = true;  
                 StopAllCoroutines();
                 StartCoroutine(AutoLoadScene(c.loadSceneOnSelect, 1.0f));
                 return;
@@ -108,21 +133,21 @@ public class DialogueManagerIntegrated : MonoBehaviour
         }
         else
         {
-            DialogueController.Instance.ClearChoices();
-            DialogueController.Instance.SetDialogueText("Incorrect.");
+            ui.ClearChoices();
+            ui.SetDialogueText("Incorrect.");
         }
 
         if (c.next != null) ShowNode(c.next);
         else EndConversation();
     }
 
-    IEnumerator AutoLoadScene(string sceneName, float delay)
+    private IEnumerator AutoLoadScene(string sceneName, float delay)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(Mathf.Max(0f, delay));
         SceneManager.LoadScene(sceneName);
     }
 
-    IEnumerator AutoNext(DNode next, float delay)
+    private IEnumerator AutoNext(DNode next, float delay)
     {
         yield return new WaitForSeconds(Mathf.Max(0f, delay));
         ShowNode(next);
@@ -130,9 +155,69 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
     public void EndConversation()
     {
-        DialogueController.Instance.ShowDialogueUI(false);
+        var ui = DialogueController.Instance;
+        if (ui != null) ui.ShowDialogueUI(false);
         active = null;
         current = null;
         StopAllCoroutines();
+        isFinished = true; 
+    }
+
+    // -------------------------
+    // Journal
+    // -------------------------
+
+    /// <summary>
+    /// Change the displayed text of a choice by index.
+    /// </summary>
+    public void SetChoiceText(int index, string newText, bool encode = true)
+    {
+        if (current == null) return;
+        if (index < 0 || index >= _choiceLabels.Count) return;
+
+        // Optionally update underlying data so it persists during this conversation
+        if (_mutateNodeChoiceTextOnSet &&
+            current.choices != null &&
+            index < current.choices.Length &&
+            current.choices[index] != null)
+        {
+            current.choices[index].choiceText = newText;
+        }
+
+        bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
+        string final = doEncode ? translator.Translate(newText) : newText;
+
+        _choiceLabels[index].text = final;
+    }
+
+    /// <summary>
+    /// Replace all visible choice texts in one call.
+    /// </summary>
+    public void SetAllChoiceTexts(IList<string> newTexts, bool encode = true)
+    {
+        if (current == null || newTexts == null) return;
+        int count = Mathf.Min(_choiceLabels.Count, newTexts.Count);
+        for (int i = 0; i < count; i++)
+            SetChoiceText(i, newTexts[i], encode);
+    }
+
+    /// <summary>
+    /// Re-translate currently shown choice labels using the latest cipher state.
+    /// Call after the Journal updates mappings.
+    /// </summary>
+    public void RefreshChoiceTexts()
+    {
+        if (current == null || current.choices == null) return;
+
+        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
+
+        for (int i = 0; i < _choiceLabels.Count && i < current.choices.Length; i++)
+        {
+            string raw = current.choices[i]?.choiceText ?? "";
+            string final = encode ? translator.Translate(raw) : raw;
+            _choiceLabels[i].text = final;
+        }
     }
 }
+
+
