@@ -578,6 +578,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2868603006033015494, guid: 3a9dd285ec78a1040b115c33c362bc93, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868603006033015494, guid: 3a9dd285ec78a1040b115c33c362bc93, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3555587560324363812, guid: 3a9dd285ec78a1040b115c33c362bc93, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1715,22 +1723,27 @@ MonoBehaviour:
     - name: 
       enemyPrefab: {fileID: 7044823683029345317, guid: d12f41f533cde2d479542f7b9feb15f1, type: 3}
       count: 55
-      interval: 1
-      pointValue: 5
+      interval: 0.1
+      pointValue: 15
     - name: 
       enemyPrefab: {fileID: 1085524407653634129, guid: c73a529a4680a0144993dedc5389d760, type: 3}
       count: 20
-      interval: 2
-      pointValue: 10
+      interval: 0.5
+      pointValue: 20
     - name: 
       enemyPrefab: {fileID: 4666793668752257710, guid: 5fbf56e7ffcbdee419225b74f2e41a23, type: 3}
       count: 50
-      interval: 1
-      pointValue: 15
+      interval: 0.7
+      pointValue: 30
     - name: 
       enemyPrefab: {fileID: 7044823683029345317, guid: d12f41f533cde2d479542f7b9feb15f1, type: 3}
-      count: 8
+      count: 55
       interval: 1
+      pointValue: 0
+    - name: 
+      enemyPrefab: {fileID: 1085524407653634129, guid: c73a529a4680a0144993dedc5389d760, type: 3}
+      count: 50
+      interval: 0.5
       pointValue: 0
   spawnPointA: {fileID: 777350207}
   spawnPointB: {fileID: 1264154901}
