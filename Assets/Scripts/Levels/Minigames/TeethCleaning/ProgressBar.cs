@@ -28,7 +28,7 @@ public class ProgressBar : MonoBehaviour
     {
         mainCamera = Camera.main;
         dirtyTeeth.sortingOrder = 1; 
-        cleanTeeth.sortingOrder = 0;
+        cleanTeeth.sortingOrder = 1;
         toothBrush.sortingOrder = 3;
 
         if (progressBar != null)

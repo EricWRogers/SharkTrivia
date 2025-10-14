@@ -765,11 +765,17 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1793793989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 294, y: 208.87}
+=======
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 21, y: -9.5}
+>>>>>>> origin/main
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1326105028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,7 +1346,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
   m_text: 'Timer: 60'
+=======
+  m_text: '0:00
+
+'
+>>>>>>> origin/main
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1435,7 +1447,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -308, y: -23}
+=======
+  m_AnchoredPosition: {x: 60.3, y: -13.995}
+>>>>>>> origin/main
   m_SizeDelta: {x: 147.5375, y: 41.2564}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1793793985
@@ -1722,8 +1738,23 @@ MonoBehaviour:
     enemiesInWave:
     - name: 
       enemyPrefab: {fileID: 7044823683029345317, guid: d12f41f533cde2d479542f7b9feb15f1, type: 3}
+<<<<<<< HEAD
       count: 55
       interval: 0.1
+=======
+      count: 12
+      interval: 1
+      pointValue: 5
+    - name: 
+      enemyPrefab: {fileID: 1085524407653634129, guid: c73a529a4680a0144993dedc5389d760, type: 3}
+      count: 12
+      interval: 2
+      pointValue: 0
+    - name: 
+      enemyPrefab: {fileID: 4666793668752257710, guid: 5fbf56e7ffcbdee419225b74f2e41a23, type: 3}
+      count: 12
+      interval: 1
+>>>>>>> origin/main
       pointValue: 15
     - name: 
       enemyPrefab: {fileID: 1085524407653634129, guid: c73a529a4680a0144993dedc5389d760, type: 3}
