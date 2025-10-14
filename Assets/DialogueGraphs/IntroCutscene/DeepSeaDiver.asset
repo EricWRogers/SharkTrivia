@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Deep Sea Diver
   portrait: {fileID: 0}
-  speakerLine: "\u201CBut you can learn English right? Right?"
+  speakerLine: But you can learn English right? Right?
   autoProgress: 1
   autoDelay: 1.5
   nextIfNoChoices: {fileID: -9027565762034768634}
@@ -185,8 +185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Deep Sea Diver
   portrait: {fileID: 0}
-  speakerLine: "Deepsea Diver: \u201CNow, as you can clearly tell, I am currently
-    speaking fluent Sharklish, however, trying to teach our host\u2026\u201D\r\n"
+  speakerLine: "Now, as you can clearly tell, I am currently speaking fluent Sharklish,
+    however, trying to teach our host\u2026\r\n"
   autoProgress: 1
   autoDelay: 3
   nextIfNoChoices: {fileID: 3556799558460718537}
@@ -212,26 +212,7 @@ MonoBehaviour:
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
-  choices:
-  - choiceText: 
-    next: {fileID: 0}
-    isCorrect: 0
-    loadSceneOnSelect: 
-    onSelected:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 11500000, guid: 5fd873d36604d3c4f96c350ce48835a4, type: 3}
-          m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  choices: []
   onEnter:
     m_PersistentCalls:
       m_Calls: []

@@ -543,6 +543,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1822420063}
     m_Modifications:
+    - target: {fileID: 966961502051744554, guid: 3a9dd285ec78a1040b115c33c362bc93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1012217543226369536, guid: 3a9dd285ec78a1040b115c33c362bc93, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -859,7 +863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c598e364e0dae0b43ae5be212f1b1ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFinished: 0
+  _mutateNodeChoiceTextOnSet: 1
 --- !u!114 &1210517779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc4303a604bf314582a914119652e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: BackStage
+  nextLevel: AidanTestTrivia
   dm: {fileID: 1210517778}
 --- !u!4 &1804251846
 Transform:
