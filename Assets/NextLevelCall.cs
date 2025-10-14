@@ -23,7 +23,7 @@ public class NextLevelCall : MonoBehaviour
     {
         sceneName = nextLevel;
 
-        LevelManager.LoadSpecificScene(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void CallBackstage()
