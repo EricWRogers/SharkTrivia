@@ -218,6 +218,46 @@ public class DialogueManagerIntegrated : MonoBehaviour
             _choiceLabels[i].text = final;
         }
     }
+
+
+   
+//Set the current node's body text (speaker line).
+
+
+public void SetBodyText(string newText, bool encode = true, bool mutateNode = true)
+{
+    if (DialogueController.Instance == null) return;
+
+    if (mutateNode && current != null)
+        current.speakerLine = newText;
+
+    bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
+    string final = doEncode ? translator.Translate(newText) : newText;
+
+    DialogueController.Instance.SetDialogueText(final);
+}
+
+    //call after cipher mappings change to 
+    public void RefreshBodyText()
+    {
+        if (DialogueController.Instance == null || current == null) return;
+
+        string raw = current.speakerLine ?? "";
+        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
+        string final = encode ? translator.Translate(raw) : raw;
+
+        DialogueController.Instance.SetDialogueText(final);
+    }
+
+    //journal can call this: DialogueManagerIntegrated.Instance.RefreshAllTexts();
+
+    //refresh both
+    public void RefreshAllTexts()
+    {
+        RefreshBodyText();
+        RefreshChoiceTexts();
+    }
+
 }
 
 
