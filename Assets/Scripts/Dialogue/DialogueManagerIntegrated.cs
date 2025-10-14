@@ -60,10 +60,17 @@ public class DialogueManagerIntegrated : MonoBehaviour
         }
 
         ui.ShowDialogueUI(true);
-        ui.SetCharInfo(node.speakerName, node.portrait);
 
         bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
-        ui.SetDialogueText(encode ? translator.Translate(node.speakerLine) : node.speakerLine);
+
+        // Encode speaker name and line
+        string nameOut = encode ? translator.Translate(node.speakerName) : node.speakerName;
+        string lineOut = encode ? translator.Translate(node.speakerLine)  : node.speakerLine;
+
+        // Push to UI
+        ui.SetCharInfo(nameOut, node.portrait);
+        ui.SetDialogueText(lineOut);
+
 
         ui.ClearChoices();
         _choiceLabels.Clear();
@@ -201,6 +208,41 @@ public class DialogueManagerIntegrated : MonoBehaviour
             SetChoiceText(i, newTexts[i], encode);
     }
 
+            /// <summary>
+        /// Set the current node's speaker name
+        /// </summary>
+        public void SetSpeakerName(string newName, bool encode = true, bool mutateNode = true)
+        {
+            var ui = DialogueController.Instance;
+            if (ui == null) return;
+
+            if (mutateNode && current != null)
+                current.speakerName = newName;
+
+            bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
+            string final = doEncode ? translator.Translate(newName) : newName;
+
+            // update name text
+            ui.SetCharInfo(final, current != null ? current.portrait : null);
+        }
+
+        /// <summary>
+        /// Re-apply encoding to the current node's existing speaker name.
+        /// Call this after cipher mappings change.
+        /// </summary>
+        public void RefreshSpeakerName()
+        {
+            var ui = DialogueController.Instance;
+            if (ui == null || current == null) return;
+
+            string raw = current.speakerName ?? "";
+            bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
+            string final = encode ? translator.Translate(raw) : raw;
+
+            ui.SetCharInfo(final, current.portrait);
+        }
+
+
     /// <summary>
     /// Re-translate currently shown choice labels using the latest cipher state.
     /// Call after the Journal updates mappings.
@@ -217,6 +259,13 @@ public class DialogueManagerIntegrated : MonoBehaviour
             string final = encode ? translator.Translate(raw) : raw;
             _choiceLabels[i].text = final;
         }
+    }
+
+
+    public void RefreshAllTexts()
+    {
+        RefreshSpeakerName();
+        RefreshChoiceTexts();
     }
 }
 
