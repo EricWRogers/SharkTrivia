@@ -26,5 +26,13 @@ public class ObstacleDamage : MonoBehaviour
         ScoreAndLives.Instance?.TakeHit(damage);
         if (destroyOnHit) Destroy(gameObject);
     }
+
+    void OnParticleCollision(GameObject other)
+    {
+        if (!other.CompareTag("Player")) return;
+        ScoreAndLives.Instance?.TakeHit(damage);
+        if (destroyOnHit) Destroy(gameObject);
+    } 
+    
 }
 
