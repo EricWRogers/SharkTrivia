@@ -690,7 +690,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -979,7 +979,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2742,7 +2742,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2920,13 +2920,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3727117838484520451, guid: 7da5956825a0d694c92effb00114126e, type: 3}
+      propertyPath: m_Volume
+      value: 0.502
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727117838484520451, guid: 7da5956825a0d694c92effb00114126e, type: 3}
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: 15c6fba3fc862854f81bcd7e802e81ce, type: 3}
     - target: {fileID: 3727117838484520451, guid: 7da5956825a0d694c92effb00114126e, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 15c6fba3fc862854f81bcd7e802e81ce, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5955817364571304135, guid: 7da5956825a0d694c92effb00114126e, type: 3}
       propertyPath: m_Name
       value: BGMusic
