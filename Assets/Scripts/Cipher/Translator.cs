@@ -3,6 +3,7 @@ using TMPro;
 using System.Text;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -41,7 +42,7 @@ public class Translator : MonoBehaviour
     public string defaultColor = "<color=#000000>";
 
     //public string str;
-    public List<char> keys = new List<char> { };
+    //public List<char> keys = new List<char> { };
     public List<char> usrValues;
     public List<bool> valuesAssigned;
 
@@ -65,11 +66,22 @@ public class Translator : MonoBehaviour
     public String Translate(string text)
     {
         List<char> keys = CipherDecode.instance.GetConfirmedChars();
+        usrValues = CipherDecode.instance.GetUsrValues();
+
+
+        valuesAssigned = CipherDecode.instance.GetUsrValuesAssigned();
 
         //changing the message to a StringBuilder to adjust based on index and putting all the characters into an array
         StringBuilder message = new StringBuilder(text.ToLower());
-        text.ToLower();
-        char[] characters = text.ToCharArray();
+
+        //Sets letters equal to their second order associations before translating (turning this off is handled with a public Bool in CipherDecode.cs)
+        for (int i = 0; i < message.Length; i++)
+        {
+            if (char.IsLetter(message[i]))
+                message[i] = CipherDecode.instance.secondOrderAssoc[message[i]];
+        }
+
+        char[] characters = text.ToLower().ToCharArray();
 
         string exitRedCode = exitCode + usrColor;
         string exitBlackCode = exitCode + confirmedColor;
@@ -80,8 +92,7 @@ public class Translator : MonoBehaviour
         //keeps track of how many characters have been added to the message
         int adjust = 0;
 
-        usrValues = CipherDecode.instance.GetUsrValues();
-        valuesAssigned = CipherDecode.instance.GetUsrValuesAssigned();
+
 
         //looping through the total characters
         for (int i = 0; i < characters.Length; i++)
@@ -95,7 +106,7 @@ public class Translator : MonoBehaviour
                 message.Insert(i + (hit * (exitBlackCode.Length + colorCode.Length)), exitRedCode);
                 adjust += exitRedCode.Length;
 
-                Debug.Log("Message adjusted!");
+                //Debug.Log("Message adjusted!");
                 //message[i + adjust] = usrValues[(char)(characters[i] - 'a' + 1)];
 
                 message.Insert(i + (exitBlackCode.Length + 1) + (hit * (exitBlackCode.Length + colorCode.Length)), colorCode);
@@ -136,8 +147,73 @@ public class Translator : MonoBehaviour
         hit = 0;
         // adding code to the begining so everything is "encrypted"
         message.Insert(0, code);
-        Debug.Log(keys);
+        //Debug.Log(keys);
+
+        message = TransformStyledColorText(message);
+
         return message.ToString();
     }
+
+    public StringBuilder TransformStyledColorText(StringBuilder sb)
+    {
+        string input = sb.ToString();
+        var output = new StringBuilder();
+
+        // Match <style=Code>...</style> blocks
+        string stylePattern = @"<style=Code>(.*?)</style>";
+        var styleMatches = Regex.Matches(input, stylePattern, RegexOptions.Singleline);
+
+        int lastIndex = 0;
+
+        foreach (Match styleMatch in styleMatches)
+        {
+            int start = styleMatch.Index;
+            int end = styleMatch.Index + styleMatch.Length;
+
+            // Append everything before this style block
+            if (start > lastIndex)
+                output.Append(input.Substring(lastIndex, start - lastIndex));
+
+            string styledContent = styleMatch.Groups[1].Value;
+
+            // Match <color=#XXXXXX> followed by non-tag text
+            string colorPattern = $@"<color=({Regex.Escape(confirmedColor)}|{Regex.Escape(usrColor)})>([^<]*)";
+            var transformed = Regex.Replace(styledContent, colorPattern, match =>
+            {
+                string color = match.Groups[1].Value;
+                string text = match.Groups[2].Value;
+
+                var map = color.Equals(confirmedColor, StringComparison.OrdinalIgnoreCase)
+                    ? CipherDecode.instance.confirmedCharAssignments
+                    : CipherDecode.instance.charAssignments;
+
+                var transformedText = new StringBuilder();
+                foreach (char c in text)
+                {
+                    if (char.IsLetter(c) && map.ContainsKey(c))
+                    {
+                        transformedText.Append(map[c]);
+                    }
+                    else
+                        transformedText.Append(c);
+                }
+
+                return $"<color={color}>{transformedText}";
+            });
+
+            output.Append($"<style=Code>{transformed}</style>");
+            lastIndex = end;
+        }
+
+        // Append any remaining content after the last style block
+        if (lastIndex < input.Length)
+            output.Append(input.Substring(lastIndex));
+
+        return output;
+    }
+
+
+
+
 
 }
