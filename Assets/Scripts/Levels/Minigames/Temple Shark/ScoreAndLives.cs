@@ -56,29 +56,40 @@ public class ScoreAndLives : MonoBehaviour
         // respawn pop
         StartCoroutine(IFrames());
         var player = GameObject.FindGameObjectWithTag("Player");
-        if (player) player.transform.position = respawnPoint;
-    }
-
-    System.Collections.IEnumerator IFrames()
-    {
-        invincible = true;
-        yield return new WaitForSeconds(invincibleDuration);
-        invincible = false;
-    }
-
-    void UpdateScore()
-    {
-        if (scoreText) scoreText.text = Score.ToString();
-    }
-
-    void UpdateHearts()
-    {
-        if (heartImages == null) return;
-        for (int i = 0; i < heartImages.Length; i++)
+        if (player)
         {
-            if (!heartImages[i]) continue;
-            heartImages[i].sprite = (i < Lives) ? fullHeart : emptyHeart;
+            // reset position
+            player.transform.position = respawnPoint;
+
+            // reset rotation so player faces forward again
+            player.transform.rotation = Quaternion.identity;
+
+            // also reset TempleMovement direction if needed
+            TempleMovement move = player.GetComponent<TempleMovement>();
+            if (move != null) move.ResetTurn();
+        }
+
+            System.Collections.IEnumerator IFrames()
+            {
+                invincible = true;
+                yield return new WaitForSeconds(invincibleDuration);
+                invincible = false;
+            }
+        }
+    
+        void UpdateScore()
+        {
+            if (scoreText) scoreText.text = Score.ToString();
+        }
+    
+        void UpdateHearts()
+        {
+            if (heartImages == null) return;
+            for (int i = 0; i < heartImages.Length; i++)
+            {
+                if (!heartImages[i]) continue;
+                heartImages[i].sprite = (i < Lives) ? fullHeart : emptyHeart;
+            }
         }
     }
-}
 

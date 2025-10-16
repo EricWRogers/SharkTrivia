@@ -25,4 +25,8 @@ public class MainMenu : MonoBehaviour
     {
         LevelManager.LoadAudioMenu();
     }
+    public void TheMainButton()
+    {
+        LevelManager.LoadMainMenu();
+    }
 }

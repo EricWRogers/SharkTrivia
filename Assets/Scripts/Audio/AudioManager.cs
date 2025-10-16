@@ -84,6 +84,14 @@ public class AudioManager : MonoBehaviour
             musicSource.pitch = sound.pitch;
             musicSource.loop = true;
             musicSource.Play();
+            if (musicSource.loop == true)
+            {
+                Debug.LogWarning("Looping");
+            }
+            else
+            { 
+                Debug.LogWarning("Not Looping"); 
+            }
         }
         else
         {
