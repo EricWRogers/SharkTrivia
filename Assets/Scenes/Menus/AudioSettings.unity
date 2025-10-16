@@ -1190,7 +1190,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1601759393}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: TheMagicButton
+        m_MethodName: TheMainButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2915,6 +2915,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3727117838484520451, guid: 7da5956825a0d694c92effb00114126e, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3727117838484520451, guid: 7da5956825a0d694c92effb00114126e, type: 3}
       propertyPath: m_Resource
       value: 

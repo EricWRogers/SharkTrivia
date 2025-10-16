@@ -22,28 +22,6 @@ MonoBehaviour:
   onEnter:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-6783926380648746088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
-  m_Name: Rn11
-  m_EditorClassIdentifier: 
-  speakerName: Deep Sea Diver
-  portrait: {fileID: 0}
-  speakerLine: Come on my Shark friend, it's time to go!
-  autoProgress: 1
-  autoDelay: 1.5
-  nextIfNoChoices: {fileID: 1228565072472785672}
-  choices: []
-  onEnter:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &-6271818480616688484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +63,7 @@ MonoBehaviour:
     our budget will still be valuable to you."
   autoProgress: 1
   autoDelay: 4
-  nextIfNoChoices: {fileID: -6783926380648746088}
+  nextIfNoChoices: {fileID: 1228565072472785672}
   choices: []
   onEnter:
     m_PersistentCalls:
@@ -208,11 +186,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Shark
   portrait: {fileID: 0}
-  speakerLine: It doesn't seem like I have much of a choice...
+  speakerLine: Come on my Shark friend, it's time to go!
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
-  choices: []
+  choices:
+  - choiceText: I guess I don't have a choice...
+    next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7901379826495602195, guid: 104dc1ef508ea8641a9f96d88a7fafa9, type: 3}
+          m_TargetAssemblyTypeName: NextLevelCall, Assembly-CSharp
+          m_MethodName: NextLevel
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: AidenTestTrivia
+            m_BoolArgument: 0
+          m_CallState: 2
   onEnter:
     m_PersistentCalls:
       m_Calls: []

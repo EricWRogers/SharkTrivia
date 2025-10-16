@@ -60,17 +60,10 @@ public class DialogueManagerIntegrated : MonoBehaviour
         }
 
         ui.ShowDialogueUI(true);
+        ui.SetCharInfo(node.speakerName, node.portrait);
 
         bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
-
-        // Encode speaker name and line
-        string nameOut = encode ? translator.Translate(node.speakerName) : node.speakerName;
-        string lineOut = encode ? translator.Translate(node.speakerLine)  : node.speakerLine;
-
-        // Push to UI
-        ui.SetCharInfo(nameOut, node.portrait);
-        ui.SetDialogueText(lineOut);
-
+        ui.SetDialogueText(encode ? translator.Translate(node.speakerLine) : node.speakerLine);
 
         ui.ClearChoices();
         _choiceLabels.Clear();
@@ -125,23 +118,31 @@ public class DialogueManagerIntegrated : MonoBehaviour
         var ui = DialogueController.Instance;
         if (ui == null) { EndConversation(); return; }
 
-        if (c.isCorrect)
+        if (c.isTriviaQuestion)
         {
-            ui.ClearChoices();
-            ui.SetDialogueText("Correct!");
-
-            if (!string.IsNullOrEmpty(c.loadSceneOnSelect))
+            if (c.isCorrect)
             {
-                isFinished = true;  
-                StopAllCoroutines();
-                StartCoroutine(AutoLoadScene(c.loadSceneOnSelect, 1.0f));
-                return;
+                ui.ClearChoices();
+                ui.SetDialogueText("Correct!");
+
+                if (!string.IsNullOrEmpty(c.loadSceneOnSelect))
+                {
+                    isFinished = true;
+                    StopAllCoroutines();
+                    StartCoroutine(AutoLoadScene(c.loadSceneOnSelect, 1.0f));
+                    return;
+                }
+            }
+            else
+            {
+                ui.ClearChoices();
+                ui.SetDialogueText("Incorrect.");
             }
         }
         else
         {
-            ui.ClearChoices();
-            ui.SetDialogueText("Incorrect.");
+            //run unity event
+            c.onSelected.Invoke();
         }
 
         if (c.next != null) ShowNode(c.next);
@@ -208,41 +209,6 @@ public class DialogueManagerIntegrated : MonoBehaviour
             SetChoiceText(i, newTexts[i], encode);
     }
 
-            /// <summary>
-        /// Set the current node's speaker name
-        /// </summary>
-        public void SetSpeakerName(string newName, bool encode = true, bool mutateNode = true)
-        {
-            var ui = DialogueController.Instance;
-            if (ui == null) return;
-
-            if (mutateNode && current != null)
-                current.speakerName = newName;
-
-            bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
-            string final = doEncode ? translator.Translate(newName) : newName;
-
-            // update name text
-            ui.SetCharInfo(final, current != null ? current.portrait : null);
-        }
-
-        /// <summary>
-        /// Re-apply encoding to the current node's existing speaker name.
-        /// Call this after cipher mappings change.
-        /// </summary>
-        public void RefreshSpeakerName()
-        {
-            var ui = DialogueController.Instance;
-            if (ui == null || current == null) return;
-
-            string raw = current.speakerName ?? "";
-            bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
-            string final = encode ? translator.Translate(raw) : raw;
-
-            ui.SetCharInfo(final, current.portrait);
-        }
-
-
     /// <summary>
     /// Re-translate currently shown choice labels using the latest cipher state.
     /// Call after the Journal updates mappings.
@@ -262,11 +228,44 @@ public class DialogueManagerIntegrated : MonoBehaviour
     }
 
 
+   
+//Set the current node's body text (speaker line).
+
+
+public void SetBodyText(string newText, bool encode = true, bool mutateNode = true)
+{
+    if (DialogueController.Instance == null) return;
+
+    if (mutateNode && current != null)
+        current.speakerLine = newText;
+
+    bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
+    string final = doEncode ? translator.Translate(newText) : newText;
+
+    DialogueController.Instance.SetDialogueText(final);
+}
+
+    //call after cipher mappings change to 
+    public void RefreshBodyText()
+    {
+        if (DialogueController.Instance == null || current == null) return;
+
+        string raw = current.speakerLine ?? "";
+        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
+        string final = encode ? translator.Translate(raw) : raw;
+
+        DialogueController.Instance.SetDialogueText(final);
+    }
+
+    //journal can call this: DialogueManagerIntegrated.Instance.RefreshAllTexts();
+
+    //refresh both
     public void RefreshAllTexts()
     {
-        RefreshSpeakerName();
+        RefreshBodyText();
         RefreshChoiceTexts();
     }
+
 }
 
 

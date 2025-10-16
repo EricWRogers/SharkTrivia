@@ -4,23 +4,11 @@ using UnityEngine.SceneManagement;
 public class NextLevelCall : MonoBehaviour
 {
     public string nextLevel;
-    public DialogueManagerIntegrated dm;
-
-    public void Awake()
-    {
-        //dm = GetComponent<DialogueManagerIntegrated>();
-    }
-
-    public void Update()
-    {
-        if (dm.isFinished)
-        {
-            NextLevel(nextLevel);
-        }
-    }
 
     public void NextLevel(string sceneName)
     {
+        Debug.Log("Calling new level: " + sceneName);
+
         sceneName = nextLevel;
 
         SceneManager.LoadScene(sceneName);

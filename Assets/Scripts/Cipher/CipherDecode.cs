@@ -1,9 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Schema;
 
-// //Originally Programmed by Samuel (Scott)
+//Originally Programmed by Samuel (Scott)
 
 public class CipherDecode : MonoBehaviour
 {
@@ -11,9 +10,12 @@ public class CipherDecode : MonoBehaviour
     public class CipherNode { public char key; public char value; }
     public static CipherDecode instance = null;
     public List<CipherNode> charAssignmentDisplay;
+    public List<CipherNode> secondOrderDisplay;
+    public List<CipherNode> confirmedAssignmentDisplay;
     public bool encoding = true;
+    public bool isRandomizing = false;
 
-    private Dictionary<char, char> charAssignments = new Dictionary<char, char>
+    public Dictionary<char, char> charAssignments = new Dictionary<char, char>
     {
         //tilde represents an english character which has not been assigned a ciphertext equivalent 
         {'a', '~'},{'b', '~'},{'c', '~'},{'d', '~'},
@@ -37,25 +39,102 @@ public class CipherDecode : MonoBehaviour
         {'y', '~'},{'z', '~'}
     };
 
+    public Dictionary<char, char> secondOrderAssoc = new Dictionary<char, char>
+    {
+        //tilde represents an english character which has not been assigned a ciphertext equivalent 
+        {'a', '~'},{'b', '~'},{'c', '~'},{'d', '~'},
+        {'e', '~'},{'f', '~'},{'g', '~'},{'h', '~'},
+        {'i', '~'},{'j', '~'},{'k', '~'},{'l', '~'},
+        {'m', '~'},{'n', '~'},{'o', '~'},{'p', '~'},
+        {'q', '~'},{'r', '~'},{'s', '~'},{'t', '~'},
+        {'u', '~'},{'v', '~'},{'w', '~'},{'x', '~'},
+        {'y', '~'},{'z', '~'}
+    };
+
     void Awake()
     {
         if (instance == null)
         {
+            if (isRandomizing)
+                RandomizeLetters();
+            else
+                UnRandomizeLetters();
+
+
             instance = this;
             DontDestroyOnLoad(gameObject);
+
         }
         else
         {
             Destroy(this);
             return;
         }
+
+    }
+
+    void updateDisplays()
+    {
+        charAssignmentDisplay.Clear();
+
+        foreach (char k in charAssignments.Keys)
+        {
+            charAssignmentDisplay.Add(new CipherNode { key = k, value = charAssignments[k] });
+        }
+
+
+        secondOrderDisplay.Clear();
+
+        foreach (char k in secondOrderAssoc.Keys)
+        {
+            secondOrderDisplay.Add(new CipherNode { key = k, value = secondOrderAssoc[k] });
+        }
+
+        confirmedAssignmentDisplay.Clear();
+
+        foreach (char k in confirmedCharAssignments.Keys)
+        {
+            confirmedAssignmentDisplay.Add(new CipherNode { key = k, value = confirmedCharAssignments[k] });
+        }
+    }
+
+    void RandomizeLetters()
+    {
+        List<char> letters = new List<char> {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+                                             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        int n = letters.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = Random.Range(0, n + 1); // UnityEngine.Random
+            (letters[k], letters[n]) = (letters[n], letters[k]);
+        }
+
+        for (int i = 'a'; i <= 'z'; i++)
+        {
+            secondOrderAssoc[(char)i] = letters[i - 97];
+        }
+
+        updateDisplays();
+
+    }
+
+    void UnRandomizeLetters()
+    {
+        for (int i = 'a'; i <= 'z'; i++)
+        {
+            secondOrderAssoc[(char)i] = (char)i;
+        }
+
+
+        updateDisplays();
     }
 
     public List<char> GetUsrValues()
     {
         List<char> usrValues = new List<char>();
 
-        for (int i = 'a'; i < 'z'; i++)
+        for (int i = 'a'; i <= 'z'; i++)
         {
             usrValues.Add(charAssignments[(char)i]);
         }
@@ -68,7 +147,7 @@ public class CipherDecode : MonoBehaviour
     {
         List<bool> valsAssigned = new List<bool>();
 
-        for (int i = 97; i < 122; i++)
+        for (int i = 'a'; i <= 'z'; i++)
         {
             if (charAssignments[(char)i] != '~')
             {
@@ -87,7 +166,7 @@ public class CipherDecode : MonoBehaviour
     {
         List<char> confirmedChars = new List<char>();
 
-        for (int i = 'a'; i < 'z'; i++)
+        for (int i = 'a'; i <= 'z'; i++)
         {
             if (confirmedCharAssignments[(char)i] != '~')
             {
@@ -107,7 +186,7 @@ public class CipherDecode : MonoBehaviour
 
         for (int i = 'a'; i <= 'z'; i++)
         {
-            Debug.Log("Checking character: " + (char)i);
+            //Debug.Log("Checking character: " + (char)i);
 
             //This if handles the case where the value that goes to the key in question is blank ('~') and the new value is not already found elsehwere
             if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value))
@@ -121,11 +200,11 @@ public class CipherDecode : MonoBehaviour
             {
                 //Return an error code (some negative number) if you want this operation to be illegal, elsewise just overwrite the value if you're ok with it
 
-                returnCode = -1;
+                //returnCode = -1;
 
                 //OR
 
-                // charAssignments[key] = value;
+                charAssignments[key] = value;
                 break;
             }
 
@@ -155,7 +234,7 @@ public class CipherDecode : MonoBehaviour
                 break;
             }
             //This handles the case where the player hits a letter they already did for this cipher character, so it'll just dissasociate it and go back to being blank
-            else if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value) && charAssignments[key] == value)
+            else if (charAssignments[(char)i] != '~' && (char)i == key && !charAssignments.ContainsValue(value) && charAssignments[key] == value)
             {
                 charAssignments[key] = '~';
                 break;
@@ -164,13 +243,7 @@ public class CipherDecode : MonoBehaviour
         }
 
 
-        charAssignmentDisplay.Clear();
-
-        foreach (char k in charAssignments.Keys)
-        {
-            charAssignmentDisplay.Add(new CipherNode { key = k, value = charAssignments[k] });
-        }
-
+        updateDisplays();
 
         return returnCode;
 
@@ -178,6 +251,7 @@ public class CipherDecode : MonoBehaviour
     public int ConfirmedCharAssignment(char key, char value)
     {
         confirmedCharAssignments[key] = value;
+        updateDisplays();
         return 1;
 
     }

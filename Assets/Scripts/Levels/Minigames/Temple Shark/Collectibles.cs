@@ -7,7 +7,8 @@ public class Collectibles : MonoBehaviour
     [SerializeField] int rotationSpeed = 5;
     public int value = 1;
     public TMP_Text scoreText; // Temporary
-    public int currentScore = 0;
+    public static int totalScore = 0; // Shared score across all coins
+    [SerializeField] AudioClip collectSound; // Sound to play on collection
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class Collectibles : MonoBehaviour
 
     public void AddScore(int points)
     {
-        currentScore += points;
+        totalScore += points;
         UpdateScoreDisplay();
     }
 
@@ -29,7 +30,7 @@ public class Collectibles : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = currentScore.ToString();
+            scoreText.text = totalScore.ToString();
         }
     }
 
@@ -37,13 +38,17 @@ public class Collectibles : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            AddScore(value); // Temporary
-            
+            AddScore(value); // Adds this coin's value to totalScore (temporary)
+
             // Call something to add the collectible's value
             // Example: ScoreManager.Instance.AddScore(value);
 
+            // Play collection sound
+            AudioSource.PlayClipAtPoint(collectSound, transform.position);
+            
             // Destroy object after collected
             Destroy(gameObject);
         }
     }
+
 }
