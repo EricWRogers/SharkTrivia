@@ -62,7 +62,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c17cd9a180e86fe4cb19c220f81057d2, type: 3}
     volume: 1
     pitch: 0
-  masterMixer: {fileID: 24100000, guid: 935460f5d99823c45ac31652d183b7e3, type: 2}
 --- !u!1 &2904660072689405551
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +266,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5817947404325066785, guid: 935460f5d99823c45ac31652d183b7e3, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0823a37038e58964c9110632aa63c2f1, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 0823a37038e58964c9110632aa63c2f1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -396,12 +395,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5817947404325066785, guid: 935460f5d99823c45ac31652d183b7e3, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 15c6fba3fc862854f81bcd7e802e81ce, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 15c6fba3fc862854f81bcd7e802e81ce, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
