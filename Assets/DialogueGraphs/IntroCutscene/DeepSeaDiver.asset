@@ -216,7 +216,7 @@ MonoBehaviour:
   - choiceText: I guess I don't have a choice...
     next: {fileID: 0}
     isCorrect: 0
-    loadSceneOnSelect: 
+    loadSceneOnSelect: AidanTestTrivia
     onSelected:
       m_PersistentCalls:
         m_Calls:
@@ -229,7 +229,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: AidanTestTrivia
+            m_StringArgument: AidenTestTrivia
             m_BoolArgument: 0
           m_CallState: 2
   onEnter:
