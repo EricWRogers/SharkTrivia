@@ -7,15 +7,16 @@ using System.Collections.Generic;
 
 public class VideoPlayerScript : MonoBehaviour
 {
-    public VideoClip videoToPlay;
-    public RawImage rawImageDisplay;
-    public BowlingManager bowlingManager;
+    public VideoClip videoToPlay; 
+    public RawImage rawImageDisplay; //Call in the raw image set in the unity editor from the bowling screen 
+    public BowlingManager bowlingManager; // Call in bowling manager
     public float playDuration = 5f; // Set the desired duration in seconds
-    public List<VideoClip> videoClips;
+    public List<VideoClip> videoClips; // List of Video Clips
+    public int currentVideoIndex = 0;
+    public GameObject[] objectsToDisable;
     private VideoPlayer videoPlayer;
     private bool isPlaying = false;
-    public int currentVideoIndex = 0;
-
+    
     void Start()
     {
         // Initialize VideoPlayer component if one doesn't exist
@@ -59,6 +60,14 @@ public class VideoPlayerScript : MonoBehaviour
             GL.Clear(true, true, Color.black);
             RenderTexture.active = null;
             Debug.Log("RenderTexture cleared.");
+        }
+    }
+    public void DisableElements()
+    {
+        foreach (var obj in objectsToDisable)
+        {
+            if (obj != null)
+                obj.SetActive(false);
         }
     }
 }
