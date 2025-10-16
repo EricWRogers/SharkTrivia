@@ -18,12 +18,12 @@ public class TriggerSceneMenu : MonoBehaviour
 
     public void TeethCleaningScene()
     {
-        StartCoroutine(LoadLevel("MINIGTeethCleaning"));
+        LevelManager.LoadSpecificScene("MINIGTeethCleaning");
     }
 
     public void BowlingScene()
     {
-        StartCoroutine(LoadLevel("Bowling"));
+        LevelManager.LoadSpecificScene("Bowling");
     }
     public void SharkShoot()
     {
@@ -36,14 +36,5 @@ public class TriggerSceneMenu : MonoBehaviour
     public void RandMiniGame()
     {
         LevelManager.LoadRandMiniGame();
-    }
-    IEnumerator LoadLevel(string levelName)
-    {
-        if (animator != null)
-        {
-            animator.SetTrigger("Start");
-            yield return new WaitForSeconds(1);
-        }
-        SceneManager.LoadScene(levelName);
     }
 }
