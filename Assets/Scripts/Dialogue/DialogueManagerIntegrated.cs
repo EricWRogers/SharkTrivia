@@ -118,23 +118,31 @@ public class DialogueManagerIntegrated : MonoBehaviour
         var ui = DialogueController.Instance;
         if (ui == null) { EndConversation(); return; }
 
-        if (c.isCorrect)
+        if (c.isTriviaQuestion)
         {
-            ui.ClearChoices();
-            ui.SetDialogueText("Correct!");
-
-            if (!string.IsNullOrEmpty(c.loadSceneOnSelect))
+            if (c.isCorrect)
             {
-                isFinished = true;  
-                StopAllCoroutines();
-                StartCoroutine(AutoLoadScene(c.loadSceneOnSelect, 1.0f));
-                return;
+                ui.ClearChoices();
+                ui.SetDialogueText("Correct!");
+
+                if (!string.IsNullOrEmpty(c.loadSceneOnSelect))
+                {
+                    isFinished = true;
+                    StopAllCoroutines();
+                    StartCoroutine(AutoLoadScene(c.loadSceneOnSelect, 1.0f));
+                    return;
+                }
+            }
+            else
+            {
+                ui.ClearChoices();
+                ui.SetDialogueText("Incorrect.");
             }
         }
         else
         {
-            ui.ClearChoices();
-            ui.SetDialogueText("Incorrect.");
+            //run unity event
+            c.onSelected.Invoke();
         }
 
         if (c.next != null) ShowNode(c.next);

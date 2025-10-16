@@ -7,6 +7,8 @@ public class NextLevelCall : MonoBehaviour
 
     public void NextLevel(string sceneName)
     {
+        Debug.Log("Calling new level: " + sceneName);
+
         sceneName = nextLevel;
 
         SceneManager.LoadScene(sceneName);

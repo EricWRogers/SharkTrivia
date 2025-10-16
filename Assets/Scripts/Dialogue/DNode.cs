@@ -7,6 +7,7 @@ public class Choice
     public string choiceText = "…";
     public DNode next;
     public bool isCorrect = false;
+    public bool isTriviaQuestion = false;
     public string loadSceneOnSelect;
 
     //per-choice event 
