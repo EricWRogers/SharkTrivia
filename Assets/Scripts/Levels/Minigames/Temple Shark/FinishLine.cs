@@ -17,7 +17,7 @@ public class FinishLine : MonoBehaviour
 
     public void ReturnToMain()
     {
-        LevelManager.LoadBackStage();
+        LevelManager.LoadBackStage(); // Loads the main menu
         Time.timeScale = 1f; // Resume the game
     }
 
@@ -54,7 +54,7 @@ public class FinishLine : MonoBehaviour
         // Update stats text
         if (winScoreText != null)
         {
-            var collectCount = collectibles.currentScore;
+            var collectCount = Collectibles.totalScore;
             winScoreText.text = $"Coins Collected: {collectCount}";
         }
     }

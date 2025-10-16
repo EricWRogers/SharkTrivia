@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111928fdb025f3d4a939385bb20458a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keys: 64006500
-  values: 78006500
+  charAssignmentDisplay: []
+  secondOrderDisplay: []
+  confirmedAssignmentDisplay: []
+  encoding: 1
+  isRandomizing: 0

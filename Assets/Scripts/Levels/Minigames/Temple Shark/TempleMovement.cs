@@ -63,4 +63,18 @@ public class TempleMovement : MonoBehaviour
         // Reset lane center after turning
         laneCenter = transform.position;
     }
+
+    public void ResetTurn()
+    {
+        // Reset your internal direction variable (example)
+        moveDirection = Vector3.forward;
+        transform.rotation = Quaternion.identity;
+        
+        // Recalculate side axis so A/D movement works again
+        sideAxis = Vector3.right;
+
+        // Reset lane center to current spawn point
+        laneCenter = transform.position;
+    }
+
 }
