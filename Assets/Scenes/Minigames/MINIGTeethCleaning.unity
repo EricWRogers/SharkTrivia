@@ -214,7 +214,6 @@ GameObject:
   - component: {fileID: 163684424}
   - component: {fileID: 163684425}
   - component: {fileID: 163684426}
-  - component: {fileID: 163684427}
   - component: {fileID: 163684428}
   m_Layer: 0
   m_Name: brushHead
@@ -339,18 +338,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &163684427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163684423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2de57f2e0108d074181e6d0e50308710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &163684428
 Rigidbody2D:
   serializedVersion: 5
@@ -903,6 +890,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704286519}
   m_CullTransparentMesh: 1
+--- !u!114 &717322390 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5927513835968544406, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+  m_PrefabInstance: {fileID: 1618356807}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &857535209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,6 +1291,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959096468}
   m_CullTransparentMesh: 1
+--- !u!1 &964783729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3434199554366433572, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+  m_PrefabInstance: {fileID: 1618356807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1058189571 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
@@ -1541,6 +1544,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a9dd285ec78a1040b115c33c362bc93, type: 3}
+--- !u!114 &1219649898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6543575844664519713, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+  m_PrefabInstance: {fileID: 1618356807}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1262430500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 959096470}
   highScoreText: {fileID: 704286521}
+  score: 0
 --- !u!1 &1428495347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3434199554366433572, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6835481328159916693, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
       propertyPath: m_Pivot.x
@@ -2010,13 +2025,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3434199554366433572, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1618356809}
   m_SourcePrefab: {fileID: 100100000, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
 --- !u!224 &1618356808 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6835481328159916693, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
   m_PrefabInstance: {fileID: 1618356807}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1618356809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964783729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62761679f59f5b841b81e7b2238e0305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 1058189571}
+  totalScore: {fileID: 1351132316}
+  winThreshold: 100
+  winScreen: {fileID: 964783729}
+  winText: {fileID: 717322390}
+  winTime: {fileID: 1726397483}
+  winStat: {fileID: 1219649898}
+--- !u!114 &1726397483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4683876421585217054, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+  m_PrefabInstance: {fileID: 1618356807}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1998961819
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,6 +2188,7 @@ MonoBehaviour:
   dirtyTeeth: {fileID: 282737028}
   cleanTeeth: {fileID: 1262430502}
   toothBrush: {fileID: 1614910838}
+  winScreen: {fileID: 1618356809}
 --- !u!61 &2058059310
 BoxCollider2D:
   m_ObjectHideFlags: 0
