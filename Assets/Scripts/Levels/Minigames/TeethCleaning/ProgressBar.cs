@@ -22,6 +22,9 @@ public class ProgressBar : MonoBehaviour
     public SpriteRenderer cleanTeeth;
     public SpriteRenderer toothBrush;
 
+    //connecting to win screen
+    public WinScreen winScreen;
+
 
 
     void Start()
@@ -148,6 +151,9 @@ public class ProgressBar : MonoBehaviour
             int finalPoints = ScoreManager.instance.GetScore();
             TotalScore.instance.AddPoints(finalPoints);
         }
+
+        //display winscreen when minigame is over
+        winScreen.DisplayWinResults();
     }
 
 }
