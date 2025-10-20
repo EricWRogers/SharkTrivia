@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: Rn1
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 4517551861036174037, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
+  portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: What color is the ocean?
   autoProgress: 1
   autoDelay: 0.75
@@ -79,6 +79,7 @@ MonoBehaviour:
   - choiceText: Blue
     next: {fileID: 508371345919939232}
     isCorrect: 0
+    isTriviaQuestion: 0
     loadSceneOnSelect: 
     onSelected:
       m_PersistentCalls:
@@ -86,6 +87,7 @@ MonoBehaviour:
   - choiceText: Red
     next: {fileID: 4168688763223590288}
     isCorrect: 0
+    isTriviaQuestion: 0
     loadSceneOnSelect: 
     onSelected:
       m_PersistentCalls:
@@ -93,6 +95,7 @@ MonoBehaviour:
   - choiceText: Orange
     next: {fileID: 4168688763223590288}
     isCorrect: 0
+    isTriviaQuestion: 0
     loadSceneOnSelect: 
     onSelected:
       m_PersistentCalls:
@@ -100,6 +103,7 @@ MonoBehaviour:
   - choiceText: Green
     next: {fileID: 4168688763223590288}
     isCorrect: 0
+    isTriviaQuestion: 0
     loadSceneOnSelect: 
     onSelected:
       m_PersistentCalls:

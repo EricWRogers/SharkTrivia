@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: Rn1
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 4517551861036174037, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
+  portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: I hope that you've been paying attention, because we've got our first
     question up next!
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 3263208263639140426}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,7 +49,7 @@ MonoBehaviour:
   m_Name: N1
   m_EditorClassIdentifier: 
   speakerName: 'Question 1:'
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: What is a shark?
   autoProgress: 0
   autoDelay: 0.75
@@ -54,9 +57,36 @@ MonoBehaviour:
   choices:
   - choiceText: An aquatic animal
     next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
   - choiceText: A powerful beast
     next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
   - choiceText: ' A handsome geller'
     next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
   - choiceText: A great guest!
     next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
