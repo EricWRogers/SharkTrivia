@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] public static string[] miniGameLevels = { "Bowling", "Temple Shark", "MINIGTeethCleaning", "SharkShootout" };
     public static GameObject pauseMenuUI;
     public Animator animator;
+    static int oldMinigameNum = 0;
+    static string oldSceneName;
 
 /*if youre here because its not loading the right scene copy paste whichever you need
 to load the back stage do -- LevelManager.LoadBackStage();
@@ -50,13 +52,24 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
     public static void LoadRandMiniGame()
     {
         StaticResume();
-        string newGame = miniGameLevels[Random.Range(0, miniGameLevels.Length)];
+        int newMinigameNum = Random.Range(0, miniGameLevels.Length);
+        while (newMinigameNum == oldMinigameNum)
+        {
+            newMinigameNum = Random.Range(0, miniGameLevels.Length);
+        }
+        string newGame = miniGameLevels[newMinigameNum];
+        oldMinigameNum = newMinigameNum;
         Instance.StartCoroutine(Instance.LoadLevel(newGame));
     }
     public static void LoadSpecificScene(string newScene)
     {
         StaticResume();
         Instance.StartCoroutine(Instance.LoadLevel(newScene));
+    }
+    public static void ReturnPrevScene()
+    {
+        StaticResume();
+        Instance.StartCoroutine(Instance.LoadLevel(oldSceneName));
     }
 
 
@@ -108,6 +121,7 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
 
     IEnumerator LoadLevel(string levelName)
     {
+        oldSceneName = SceneManager.GetActiveScene().name;
         if (animator != null)
         {
             animator.SetTrigger("Start");

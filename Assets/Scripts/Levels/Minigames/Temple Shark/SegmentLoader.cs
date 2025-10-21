@@ -8,7 +8,7 @@ public class SegmentLoader : MonoBehaviour
     public List<GameObject> segments;
 
     [Header("Loading time")]
-    public int seconds = 3;
+    public float seconds = 3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
