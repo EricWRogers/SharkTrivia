@@ -151,6 +151,7 @@ public class Translator : MonoBehaviour
 
         message = TransformStyledColorText(message);
 
+        //Debug.Log(message.ToString());
         return message.ToString();
     }
 
