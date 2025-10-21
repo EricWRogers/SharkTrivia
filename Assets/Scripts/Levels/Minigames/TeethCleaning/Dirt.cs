@@ -7,7 +7,7 @@ public class Dirt : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Toothbrush"))
+        if (other.CompareTag("Toothbrush") && Input.GetMouseButtonDown(0))
         {
             ScoreManager.instance.AddPoint();
             FadeOut();
