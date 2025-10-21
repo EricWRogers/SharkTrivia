@@ -2723,6 +2723,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartSegment
       objectReference: {fileID: 0}
+    - target: {fileID: 5894823180654765415, guid: 73173f3738f6a5649a61fef35f9b7eaa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.68235296
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894823180654765415, guid: 73173f3738f6a5649a61fef35f9b7eaa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894823180654765415, guid: 73173f3738f6a5649a61fef35f9b7eaa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
     - target: {fileID: 8744670628567716529, guid: 73173f3738f6a5649a61fef35f9b7eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
