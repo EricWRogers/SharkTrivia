@@ -123,4 +123,7 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
         SceneManager.LoadScene(levelName);
         animator.SetTrigger("End");
     }
+
+
+    // Im adding a function to store and load the privious scene
 }

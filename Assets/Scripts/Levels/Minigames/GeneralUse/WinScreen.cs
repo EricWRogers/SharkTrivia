@@ -7,6 +7,7 @@ public class WinScreen : MonoBehaviour
 {
     public Timer timer; 
     public ScoreManager totalScore;
+    //public LevelManager levelManager;
 
     public int winThreshold = 100; //change this to be whatever the minimum anount of points needed to win
 
@@ -45,6 +46,12 @@ public class WinScreen : MonoBehaviour
         winTime.text = "The timer ran out!";
         winStat.text = ("Score - " + points);
         ShowWinScreen();    //show the win screen when the minigame is over
+    }
+
+    public void ReturnButton(){
+        LevelManager.LoadBackStage();   //temp for now
+
+        //send player back to what ever scene they entered from.
     }
 
     void HideWinScreen(){   //hide the win screen
