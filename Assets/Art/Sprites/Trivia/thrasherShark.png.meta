@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 6de10afbb60cdcd43b64a7a885441617
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4891355719130896046
+    second: thrasherShark_0
+  - first:
+      213: -2890781734785662120
+    second: thrasherShark_1
+  - first:
+      213: -7717164913282767854
+    second: thrasherShark_2
+  - first:
+      213: -1101503776408474101
+    second: thrasherShark_3
+  - first:
+      213: -7432661821052741224
+    second: thrasherShark_4
+  - first:
+      213: -8832695890267054111
+    second: thrasherShark_5
+  - first:
+      213: 490530797996056683
+    second: thrasherShark_6
+  - first:
+      213: 3765769384291892550
+    second: thrasherShark_7
+  - first:
+      213: -1857322059011097969
+    second: thrasherShark_8
+  - first:
+      213: -4770320934959614829
+    second: thrasherShark_9
+  - first:
+      213: 113324669765776927
+    second: thrasherShark_10
+  - first:
+      213: 473622510809940800
+    second: thrasherShark_11
+  - first:
+      213: 3045231300477501887
+    second: thrasherShark_12
+  - first:
+      213: -138663231743700042
+    second: thrasherShark_13
+  - first:
+      213: -4308081170145650860
+    second: thrasherShark_14
+  - first:
+      213: 1154579749070275257
+    second: thrasherShark_15
+  - first:
+      213: 3511527774466169785
+    second: thrasherShark_16
+  - first:
+      213: -8687102337350327967
+    second: thrasherShark_17
+  - first:
+      213: -6736295239243404510
+    second: thrasherShark_18
+  - first:
+      213: -4074898133889331971
+    second: thrasherShark_19
+  - first:
+      213: 4206665830806281206
+    second: thrasherShark_20
+  - first:
+      213: 8678551273845059371
+    second: thrasherShark_21
+  - first:
+      213: 8275118905641907617
+    second: thrasherShark_22
+  - first:
+      213: -5779346652941513615
+    second: thrasherShark_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: thrasherShark_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 4229
+        width: 1831
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea65fdc6c1691e340800000000000000
+      internalID: 4891355719130896046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_1
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 4229
+        width: 1831
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853c9e60451e1e7d0800000000000000
+      internalID: -2890781734785662120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_2
+      rect:
+        serializedVersion: 2
+        x: 4072
+        y: 4229
+        width: 1831
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2142cae066f17e490800000000000000
+      internalID: -7717164913282767854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_3
+      rect:
+        serializedVersion: 2
+        x: 6072
+        y: 4229
+        width: 1831
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0eeb60c62ca6b0f0800000000000000
+      internalID: -1101503776408474101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_4
+      rect:
+        serializedVersion: 2
+        x: 8073
+        y: 4229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8991b842471e9d890800000000000000
+      internalID: -7432661821052741224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_5
+      rect:
+        serializedVersion: 2
+        x: 10073
+        y: 4229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef549ba2e5fb6580800000000000000
+      internalID: -8832695890267054111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_6
+      rect:
+        serializedVersion: 2
+        x: 12073
+        y: 4229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60a1fd6927bec600800000000000000
+      internalID: 490530797996056683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_7
+      rect:
+        serializedVersion: 2
+        x: 14073
+        y: 4229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64d72c89d43b24430800000000000000
+      internalID: 3765769384291892550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_8
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 2229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a75278d677936e0800000000000000
+      internalID: -1857322059011097969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_9
+      rect:
+        serializedVersion: 2
+        x: 2073
+        y: 2229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3947f17426a6ccdb0800000000000000
+      internalID: -4770320934959614829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_10
+      rect:
+        serializedVersion: 2
+        x: 4073
+        y: 2229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f167dadcf2c929100800000000000000
+      internalID: 113324669765776927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_11
+      rect:
+        serializedVersion: 2
+        x: 6073
+        y: 2229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043847a0a25a29600800000000000000
+      internalID: 473622510809940800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_12
+      rect:
+        serializedVersion: 2
+        x: 8073
+        y: 2229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb1ccd3cbb5d24a20800000000000000
+      internalID: 3045231300477501887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_13
+      rect:
+        serializedVersion: 2
+        x: 10073
+        y: 2229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b35280868e531ef0800000000000000
+      internalID: -138663231743700042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_14
+      rect:
+        serializedVersion: 2
+        x: 12072
+        y: 2229
+        width: 1831
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4575bed300f9634c0800000000000000
+      internalID: -4308081170145650860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_15
+      rect:
+        serializedVersion: 2
+        x: 14072
+        y: 2229
+        width: 1831
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b281302a24e50010800000000000000
+      internalID: 1154579749070275257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 229
+        width: 1831
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb59ffe7e37bb030800000000000000
+      internalID: 3511527774466169785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_17
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 229
+        width: 1831
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161a4ce4376317780800000000000000
+      internalID: -8687102337350327967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_18
+      rect:
+        serializedVersion: 2
+        x: 4073
+        y: 229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22bedba9b2fd382a0800000000000000
+      internalID: -6736295239243404510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_19
+      rect:
+        serializedVersion: 2
+        x: 6073
+        y: 229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfccf99acbd0377c0800000000000000
+      internalID: -4074898133889331971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_20
+      rect:
+        serializedVersion: 2
+        x: 8073
+        y: 229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb5bf50944116a30800000000000000
+      internalID: 4206665830806281206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_21
+      rect:
+        serializedVersion: 2
+        x: 10073
+        y: 229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2f6c821768607870800000000000000
+      internalID: 8678551273845059371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_22
+      rect:
+        serializedVersion: 2
+        x: 12073
+        y: 229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a5b7ec1dc027d270800000000000000
+      internalID: 8275118905641907617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thrasherShark_23
+      rect:
+        serializedVersion: 2
+        x: 14073
+        y: 229
+        width: 1830
+        height: 1585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c0495e6d2abcfa0800000000000000
+      internalID: -5779346652941513615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      thrasherShark_0: 4891355719130896046
+      thrasherShark_1: -2890781734785662120
+      thrasherShark_10: 113324669765776927
+      thrasherShark_11: 473622510809940800
+      thrasherShark_12: 3045231300477501887
+      thrasherShark_13: -138663231743700042
+      thrasherShark_14: -4308081170145650860
+      thrasherShark_15: 1154579749070275257
+      thrasherShark_16: 3511527774466169785
+      thrasherShark_17: -8687102337350327967
+      thrasherShark_18: -6736295239243404510
+      thrasherShark_19: -4074898133889331971
+      thrasherShark_2: -7717164913282767854
+      thrasherShark_20: 4206665830806281206
+      thrasherShark_21: 8678551273845059371
+      thrasherShark_22: 8275118905641907617
+      thrasherShark_23: -5779346652941513615
+      thrasherShark_3: -1101503776408474101
+      thrasherShark_4: -7432661821052741224
+      thrasherShark_5: -8832695890267054111
+      thrasherShark_6: 490530797996056683
+      thrasherShark_7: 3765769384291892550
+      thrasherShark_8: -1857322059011097969
+      thrasherShark_9: -4770320934959614829
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
