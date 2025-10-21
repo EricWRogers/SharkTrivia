@@ -156,8 +156,8 @@ MonoBehaviour:
   - {fileID: 1446490361}
   - {fileID: 2040468397}
   - {fileID: 348740040}
-  fullHeart: {fileID: 1333519080542840503, guid: 775c2b63b23783d4084203ac23192d3b, type: 3}
-  emptyHeart: {fileID: 0}
+  fullHeart: {fileID: 21300000, guid: 775c2b63b23783d4084203ac23192d3b, type: 3}
+  emptyHeart: {fileID: 7482667652216324306, guid: ad1f450235f213647bf67011445bf0f6, type: 3}
 --- !u!4 &51404789
 Transform:
   m_ObjectHideFlags: 0
@@ -1611,6 +1611,9 @@ MonoBehaviour:
   runSpeed: 10
   movementSpeed: 5
   laneOffset: 5.5
+  useSmoothTurn: 1
+  turnDuration: 0.5
+  cameraRig: {fileID: 0}
 --- !u!4 &1660213161
 Transform:
   m_ObjectHideFlags: 0
@@ -2719,6 +2722,18 @@ PrefabInstance:
     - target: {fileID: 4579924681767310249, guid: 73173f3738f6a5649a61fef35f9b7eaa, type: 3}
       propertyPath: m_Name
       value: StartSegment
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894823180654765415, guid: 73173f3738f6a5649a61fef35f9b7eaa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.68235296
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894823180654765415, guid: 73173f3738f6a5649a61fef35f9b7eaa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894823180654765415, guid: 73173f3738f6a5649a61fef35f9b7eaa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9607843
       objectReference: {fileID: 0}
     - target: {fileID: 8744670628567716529, guid: 73173f3738f6a5649a61fef35f9b7eaa, type: 3}
       propertyPath: m_LocalPosition.x
