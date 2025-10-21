@@ -3,17 +3,27 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using TMPro;
-using System.Linq;
 
 public class DialogueManagerIntegrated : MonoBehaviour
 {
     public static DialogueManagerIntegrated Instance { get; private set; }
     public static Translator translator;
 
-    // Track current node’s choice buttons/labels so others can edit them
+   
+    [Header("Typewriter")]
+    [SerializeField] private float charsPerSecond = 45f;      // typing speed
+    [SerializeField] private KeyCode advanceKey = KeyCode.Space;
+    [SerializeField] private KeyCode altAdvanceKey = KeyCode.Return;
+    [SerializeField] private bool clickAdvances = true;
+
+    private bool isTyping;
+    private Coroutine typingRoutine;
+    private Coroutine autoNextRoutine;
+
+    // Track current node’s choice buttons/labels so journal can edit if needed
     private readonly List<TMP_Text> _choiceLabels = new List<TMP_Text>();
 
-    // If true, also mutate the underlying node data when SetChoiceText is called
+    
     [SerializeField] private bool _mutateNodeChoiceTextOnSet = true;
 
     public bool isFinished { get; private set; } = false;
@@ -30,10 +40,46 @@ public class DialogueManagerIntegrated : MonoBehaviour
         if (translator == null) translator = gameObject.AddComponent<Translator>();
     }
 
+    void Update()
+    {
+        if (active == null) return;
+
+        bool advancePressed =
+            Input.GetKeyDown(advanceKey) ||
+            Input.GetKeyDown(altAdvanceKey) ||
+            (clickAdvances && Input.GetMouseButtonDown(0));
+
+        if (!advancePressed) return;
+
+        // If still typing, finish current line instantly
+        if (isTyping)
+        {
+            FinishTypingNow();
+            return;
+        }
+
+        // If choices exist, player must click a choice; don't auto-advance
+        if (current != null && current.choices != null && current.choices.Length > 0)
+            return;
+
+        // Linear advance (or end)
+        if (current != null)
+        {
+            if (autoNextRoutine != null)
+            {
+                StopCoroutine(autoNextRoutine);
+                autoNextRoutine = null;
+            }
+
+            if (current.nextIfNoChoices != null) ShowNode(current.nextIfNoChoices);
+            else EndConversation();
+        }
+    }
+
     public void StartConversation(Conversation convo)
     {
         if (convo == null || convo.entry == null) return;
-        isFinished = false; 
+        isFinished = false;
         active = convo;
         ShowNode(convo.entry);
     }
@@ -60,63 +106,139 @@ public class DialogueManagerIntegrated : MonoBehaviour
         }
 
         ui.ShowDialogueUI(true);
-        ui.SetCharInfo(node.speakerName, node.portrait);
 
         bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
-        ui.SetDialogueText(encode ? translator.Translate(node.speakerLine) : node.speakerLine);
 
+        // Encode speaker name & line
+        string nameOut = encode ? translator.Translate(node.speakerName) : node.speakerName;
+        string lineOut = encode ? translator.Translate(node.speakerLine)  : node.speakerLine;
+
+        // Push name + portrait
+        ui.SetCharInfo(nameOut, node.portrait);
+
+        // Clear prior buttons, reset cache
         ui.ClearChoices();
         _choiceLabels.Clear();
 
-        // Branching: create choice buttons once
+        // Prepare and start typewriter for the body text
+        var body = ui.dialogueText; // ensure DialogueController exposes this TMP_Text
+        if (body == null)
+        {
+            Debug.LogError("DialogueController.dialogueText is not assigned.");
+            return;
+        }
+
+        // Stop any previous routines
+        if (typingRoutine != null) { StopCoroutine(typingRoutine); typingRoutine = null; }
+        if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
+
+        typingRoutine = StartCoroutine(TypeLine(body, lineOut, node));
+    }
+
+    private IEnumerator TypeLine(TMP_Text label, string fullText, DNode node)
+    {
+        isTyping = true;
+
+        label.text = fullText;
+        label.ForceMeshUpdate();
+        int total = Mathf.Max(0, label.textInfo.characterCount);
+
+        // Hide all characters, reveal over time
+        label.maxVisibleCharacters = 0;
+
+        if (charsPerSecond <= 0f)
+        {
+            label.maxVisibleCharacters = 999999;
+        }
+        else
+        {
+            float t = 0f;
+            while (label.maxVisibleCharacters < total)
+            {
+                t += Time.unscaledDeltaTime * charsPerSecond;
+                int visible = Mathf.Clamp(Mathf.FloorToInt(t), 0, total);
+                label.maxVisibleCharacters = visible;
+                yield return null;
+            }
+            label.maxVisibleCharacters = 999999;
+        }
+
+        isTyping = false;
+        typingRoutine = null;
+
+        // After typing finishes:
         if (node.choices != null && node.choices.Length > 0)
         {
-            foreach (var choice in node.choices)
+            BuildChoices(node);
+        }
+        else if (node.autoProgress && node.nextIfNoChoices != null)
+        {
+            // Start auto-next (click/space will cancel and advance immediately)
+            autoNextRoutine = StartCoroutine(AutoNext(node.nextIfNoChoices, node.autoDelay));
+        }
+        else
+        {
+            // Also provide a Continue button just in case
+            var go = DialogueController.Instance.CreateChoiceButton("Continue", () =>
             {
-                var choiceCopy = choice; 
-
-                GameObject choiceButtonGO = ui.CreateChoiceButton(
-                    encode ? translator.Translate(choiceCopy.choiceText) : choiceCopy.choiceText,
-                    () => OnChoiceSelected(choiceCopy)
-                );
-
-                // Cache label for live editing via Journal
-                if (choiceButtonGO != null)
-                {
-                    var label = choiceButtonGO.GetComponentInChildren<TMP_Text>(true);
-                    if (label != null) _choiceLabels.Add(label);
-                }
+                if (node.nextIfNoChoices != null) ShowNode(node.nextIfNoChoices);
+                else EndConversation();
+            });
+            if (go != null)
+            {
+                var lbl = go.GetComponentInChildren<TMP_Text>(true);
+                if (lbl != null) _choiceLabels.Add(lbl);
             }
-            return;
+        }
+    }
+
+    private void BuildChoices(DNode node)
+    {
+        var ui = DialogueController.Instance;
+        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
+
+        foreach (var c in node.choices)
+        {
+            var choiceCopy = c; // capture for closure
+            GameObject choiceButtonGO = ui.CreateChoiceButton(
+                encode ? translator.Translate(choiceCopy.choiceText) : choiceCopy.choiceText,
+                () => OnChoiceSelected(choiceCopy)
+            );
+
+            if (choiceButtonGO != null)
+            {
+                var label = choiceButtonGO.GetComponentInChildren<TMP_Text>(true);
+                if (label != null) _choiceLabels.Add(label);
+            }
+        }
+    }
+
+    private void FinishTypingNow()
+    {
+        isTyping = false;
+        if (typingRoutine != null)
+        {
+            StopCoroutine(typingRoutine);
+            typingRoutine = null;
         }
 
-        // Linear: auto-advance or show Continue
-        if (node.autoProgress && node.nextIfNoChoices != null)
-        {
-            StopAllCoroutines();
-            StartCoroutine(AutoNext(node.nextIfNoChoices, node.autoDelay));
-            return;
-        }
-
-        GameObject continueButtonGO = ui.CreateChoiceButton("Continue", () =>
-        {
-            if (node.nextIfNoChoices != null) ShowNode(node.nextIfNoChoices);
-            else EndConversation();
-        });
-
-        if (continueButtonGO != null)
-        {
-            var label = continueButtonGO.GetComponentInChildren<TMP_Text>(true);
-            if (label != null) _choiceLabels.Add(label);
-        }
+        var body = DialogueController.Instance?.dialogueText;
+        if (body != null) body.maxVisibleCharacters = 999999;
     }
 
     private void OnChoiceSelected(Choice c)
     {
-        if (c == null) { EndConversation(); return; }
-
         var ui = DialogueController.Instance;
         if (ui == null) { EndConversation(); return; }
+
+        // Cancel pending auto-next
+        if (autoNextRoutine != null)
+        {
+            StopCoroutine(autoNextRoutine);
+            autoNextRoutine = null;
+        }
+
+        if (c == null) { EndConversation(); return; }
 
         if (c.isTriviaQuestion)
         {
@@ -141,7 +263,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
         }
         else
         {
-            //run unity event
+            // run unity event
             c.onSelected.Invoke();
         }
 
@@ -157,7 +279,21 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
     private IEnumerator AutoNext(DNode next, float delay)
     {
-        yield return new WaitForSeconds(Mathf.Max(0f, delay));
+        float t = Mathf.Max(0f, delay);
+        while (t > 0f)
+        {
+            bool advancePressed =
+                Input.GetKeyDown(advanceKey) ||
+                Input.GetKeyDown(altAdvanceKey) ||
+                (clickAdvances && Input.GetMouseButtonDown(0));
+
+            if (advancePressed) break;
+
+            t -= Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        autoNextRoutine = null;
         ShowNode(next);
     }
 
@@ -165,25 +301,28 @@ public class DialogueManagerIntegrated : MonoBehaviour
     {
         var ui = DialogueController.Instance;
         if (ui != null) ui.ShowDialogueUI(false);
+
+        // stop any pending routines
+        if (typingRoutine != null) { StopCoroutine(typingRoutine); typingRoutine = null; }
+        if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
+
         active = null;
         current = null;
+        isTyping = false;
+        isFinished = true;
         StopAllCoroutines();
-        isFinished = true; 
     }
 
     // -------------------------
-    // Journal
+    // Journal-facing API
     // -------------------------
 
-    /// <summary>
-    /// Change the displayed text of a choice by index.
-    /// </summary>
+    //Change visible choice text by index (0-based). Optionally encode & mutate node data
     public void SetChoiceText(int index, string newText, bool encode = true)
     {
         if (current == null) return;
         if (index < 0 || index >= _choiceLabels.Count) return;
 
-        // Optionally update underlying data so it persists during this conversation
         if (_mutateNodeChoiceTextOnSet &&
             current.choices != null &&
             index < current.choices.Length &&
@@ -198,9 +337,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
         _choiceLabels[index].text = final;
     }
 
-    /// <summary>
-    /// Replace all visible choice texts in one call.
-    /// </summary>
+    //Replace all visible choice texts
     public void SetAllChoiceTexts(IList<string> newTexts, bool encode = true)
     {
         if (current == null || newTexts == null) return;
@@ -209,10 +346,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
             SetChoiceText(i, newTexts[i], encode);
     }
 
-    /// <summary>
-    /// Re-translate currently shown choice labels using the latest cipher state.
-    /// Call after the Journal updates mappings.
-    /// </summary>
+    //Re-translate visible choice labels using current cipher
     public void RefreshChoiceTexts()
     {
         if (current == null || current.choices == null) return;
@@ -227,45 +361,70 @@ public class DialogueManagerIntegrated : MonoBehaviour
         }
     }
 
+    //Set current node's body text. Optionally encode & mutate node data
+    public void SetBodyText(string newText, bool encode = true, bool mutateNode = true)
+    {
+        var ui = DialogueController.Instance;
+        if (ui == null) return;
 
-   
-//Set the current node's body text (speaker line).
+        if (mutateNode && current != null)
+            current.speakerLine = newText;
 
+        bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
+        string final = doEncode ? translator.Translate(newText) : newText;
 
-public void SetBodyText(string newText, bool encode = true, bool mutateNode = true)
-{
-    if (DialogueController.Instance == null) return;
+        ui.SetDialogueText(final);
 
-    if (mutateNode && current != null)
-        current.speakerLine = newText;
+        // ensure full visibility if in middle of typing
+        FinishTypingNow();
+    }
 
-    bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
-    string final = doEncode ? translator.Translate(newText) : newText;
-
-    DialogueController.Instance.SetDialogueText(final);
-}
-
-    //call after cipher mappings change to 
+    //Re-apply encoding to the current node's body text
     public void RefreshBodyText()
     {
-        if (DialogueController.Instance == null || current == null) return;
+        var ui = DialogueController.Instance;
+        if (ui == null || current == null) return;
 
         string raw = current.speakerLine ?? "";
         bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
         string final = encode ? translator.Translate(raw) : raw;
 
-        DialogueController.Instance.SetDialogueText(final);
+        ui.SetDialogueText(final);
+        FinishTypingNow();
     }
 
-    //journal can call this: DialogueManagerIntegrated.Instance.RefreshAllTexts();
+   
+    public void SetSpeakerName(string newName, bool encode = true, bool mutateNode = true)
+    {
+        var ui = DialogueController.Instance;
+        if (ui == null) return;
 
-    //refresh both
+        if (mutateNode && current != null)
+            current.speakerName = newName;
+
+        bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
+        string final = doEncode ? translator.Translate(newName) : newName;
+
+        ui.SetCharInfo(final, current != null ? current.portrait : null);
+    }
+
+    
+    public void RefreshSpeakerName()
+    {
+        var ui = DialogueController.Instance;
+        if (ui == null || current == null) return;
+
+        string raw = current.speakerName ?? "";
+        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
+        string final = encode ? translator.Translate(raw) : raw;
+
+        ui.SetCharInfo(final, current.portrait);
+    }
+
+    //refresh all
     public void RefreshAllTexts()
     {
         RefreshBodyText();
         RefreshChoiceTexts();
     }
-
 }
-
-
