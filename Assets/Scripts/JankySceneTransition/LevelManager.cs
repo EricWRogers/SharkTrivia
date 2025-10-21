@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public static GameObject pauseMenuUI;
     public Animator animator;
     static int oldMinigameNum = 0;
+    static string oldSceneName;
 
 /*if youre here because its not loading the right scene copy paste whichever you need
 to load the back stage do -- LevelManager.LoadBackStage();
@@ -65,6 +66,11 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
         StaticResume();
         Instance.StartCoroutine(Instance.LoadLevel(newScene));
     }
+    public static void ReturnPrevScene()
+    {
+        StaticResume();
+        Instance.StartCoroutine(Instance.LoadLevel(oldSceneName));
+    }
 
 
     void Update()
@@ -115,6 +121,7 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
 
     IEnumerator LoadLevel(string levelName)
     {
+        oldSceneName = SceneManager.GetActiveScene().name;
         if (animator != null)
         {
             animator.SetTrigger("Start");
@@ -123,7 +130,4 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
         SceneManager.LoadScene(levelName);
         animator.SetTrigger("End");
     }
-
-
-    // Im adding a function to store and load the privious scene
 }
