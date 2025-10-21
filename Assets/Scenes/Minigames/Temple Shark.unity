@@ -1611,6 +1611,9 @@ MonoBehaviour:
   runSpeed: 10
   movementSpeed: 5
   laneOffset: 5.5
+  useSmoothTurn: 1
+  turnDuration: 0.5
+  cameraRig: {fileID: 0}
 --- !u!4 &1660213161
 Transform:
   m_ObjectHideFlags: 0
@@ -2703,7 +2706,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5989231490523744932, guid: af18de1db51f32b4d9ada8dafdc84e7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: af18de1db51f32b4d9ada8dafdc84e7e, type: 3}
 --- !u!1001 &3551181797074270095
 PrefabInstance:
