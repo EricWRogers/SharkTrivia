@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
 public class TempleMovement : MonoBehaviour
 {
@@ -8,14 +9,18 @@ public class TempleMovement : MonoBehaviour
     public float movementSpeed = 5f;
     public float laneOffset = 5.5f;
 
-    private Vector3 moveDirection = Vector3.forward; // Current running direction
-    private Vector3 sideAxis = Vector3.right; // Axis for lane shifting
-    private Vector3 laneCenter;
+    [Header("Corner Turn")]
+    public bool useSmoothTurn = true;
+    public float turnDuration = 0.5f; // smooth turn time
+   
+    public Transform cameraRig = null;
 
-    void Start()
-    {
-        laneCenter = transform.position; // whereever the player starts is the lane center
-    }
+    Vector3 moveDirection = Vector3.forward;
+    Vector3 sideAxis = Vector3.right;
+    Vector3 laneCenter;
+    bool isTurning = false;
+
+    void Start() => laneCenter = transform.position;
 
     void Update()
     {
@@ -49,7 +54,7 @@ public class TempleMovement : MonoBehaviour
         }
     }
 
-    public void TurnPlayer(int direction) // -1 = left, 1 = right
+    public void TurnPlayer(int direction)
     {
         // Rotate the movement direction vector
         moveDirection = Quaternion.Euler(0, 90 * direction, 0) * moveDirection;
@@ -66,15 +71,60 @@ public class TempleMovement : MonoBehaviour
 
     public void ResetTurn()
     {
-        // Reset your internal direction variable (example)
+        
         moveDirection = Vector3.forward;
         transform.rotation = Quaternion.identity;
+
         
-        // Recalculate side axis so A/D movement works again
         sideAxis = Vector3.right;
 
         // Reset lane center to current spawn point
         laneCenter = transform.position;
+    }
+    
+        public void StartCornerTurn(int direction)  // -1 = left, 1 = right
+    {
+        if (isTurning) return;
+        StartCoroutine(CornerTurnRoutine(direction, turnDuration));
+    }
+
+    IEnumerator CornerTurnRoutine(int direction, float duration)
+    {
+        isTurning = true;
+        float savedRunSpeed = runSpeed;
+        runSpeed = 0f;
+
+        Vector3 startMoveDir = moveDirection;
+        Vector3 targetMoveDir = Quaternion.Euler(0, 90 * direction, 0) * startMoveDir;
+
+        Quaternion startRot = transform.rotation;
+        Quaternion targetRot = Quaternion.LookRotation(targetMoveDir, Vector3.up);
+
+        // rotate player as camera 
+        Quaternion camStart = cameraRig ? cameraRig.rotation : Quaternion.identity;
+        Quaternion camTarget = cameraRig ? Quaternion.LookRotation(targetMoveDir, Vector3.up) : Quaternion.identity;
+
+        float t = 0f;
+        duration = Mathf.Max(0.01f, duration);
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration;
+
+            transform.rotation = Quaternion.Slerp(startRot, targetRot, t);
+            if (cameraRig) cameraRig.rotation = Quaternion.Slerp(camStart, camTarget, t);
+
+            yield return null;
+        }
+
+        transform.rotation = targetRot;
+        if (cameraRig) cameraRig.rotation = camTarget;
+
+        moveDirection = targetMoveDir;
+        sideAxis = Vector3.Cross(Vector3.up, moveDirection).normalized;
+        laneCenter = transform.position;
+
+        runSpeed = savedRunSpeed;
+        isTurning = false;
     }
 
 }
