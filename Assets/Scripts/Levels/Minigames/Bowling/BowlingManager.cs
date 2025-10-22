@@ -10,12 +10,14 @@ public class BowlingManager : MonoBehaviour
 
     public GameObject ball;
     public int score = 0;
+    public int totalScore = 0;
     public int maxRounds = 3;
     public int roundsPlayed = 0;
     private bool pinsUp = true;
     GameObject[] pins;
     public TMP_Text scoreUI;
     public TMP_Text roundsUI;
+    public TMP_Text totalScoreUI;
     public CameraSwitch cameraSwitch;
     public GameOverManager gameOverManager;
     public VideoPlayerScript videoPlayerScript;
@@ -61,19 +63,24 @@ public class BowlingManager : MonoBehaviour
 
     public void CountPinsDown()
     {
+        int pinsDownThisRound = 0;
         // Tracks pins knocked down for scoring
         for (int i = 0; i < pins.Length; i++)
         {
             if (pins[i].transform.eulerAngles.z > 5 && pins[i].transform.eulerAngles.z < 355 && pins[i].activeSelf)
             {
-                score++;
+                pinsDownThisRound++;
                 pins[i].SetActive(false);
             }
             pinsUp = false;
         }
+        score = pinsDownThisRound;
+        totalScore += score;
         videoPlayerScript.SelectVideoClip(score);
         StartCoroutine(videoPlayerScript.PlayVideoAndStop());
         scoreUI.text = score.ToString();
+        if(totalScoreUI != null)
+            totalScoreUI.text = "Total: " + totalScore.ToString();
         score = 0;
     }
 
