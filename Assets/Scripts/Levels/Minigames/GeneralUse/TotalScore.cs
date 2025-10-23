@@ -1,13 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TotalScore : MonoBehaviour
 {
     public static TotalScore instance;
-    private int totalScore = 0;
+    public int totalScore = 0;
+    public float wager = 0.0f;
 
     private void Awake()
     {
-        if(instance==null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -19,9 +21,13 @@ public class TotalScore : MonoBehaviour
 
         }
     }
+    public void PlayerLost()
+    {
+        totalScore -= (int) wager;
+    }
     public void AddPoints(int points)
     {
-        totalScore += points;
+        totalScore += points + (2 * (int) wager);
         SaveScore();
     }
 
