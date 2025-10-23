@@ -198,7 +198,7 @@ MonoBehaviour:
   portrait: {fileID: 1046629060553489229, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
   speakerLine: Sound's like someone's excited, let's start already!
   autoProgress: 1
-  autoDelay: 2
+  autoDelay: 1.5
   nextIfNoChoices: {fileID: 1195773763022010239}
   choices: []
   onEnter:
