@@ -335,7 +335,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.81886786, g: 0.43229356, b: 0.37544313, a: 1}
+      maxColor: {r: 0.9607843, g: 0.6862745, b: 0.68235296, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4965,7 +4965,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 3.7986612, y: 1.5500301, z: 19.999996}
-  m_Center: {x: -0.09120602, y: -1.1730124, z: 9.009292}
+  m_Center: {x: 0, y: 0, z: 9.009292}
 --- !u!114 &4821705903264031574
 MonoBehaviour:
   m_ObjectHideFlags: 0
