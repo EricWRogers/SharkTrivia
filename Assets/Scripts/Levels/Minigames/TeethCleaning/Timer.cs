@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -51,6 +52,10 @@ public class Timer : MonoBehaviour
     private void OnTimerEnds()
     {
         Debug.Log("Timer ended");
+        if(SceneManager.GetActiveScene().name == "MINIGTeethCleaning")
+        {
+            TotalScore.instance.PlayerLost();
+        }
         //whatever loser concequences we want to add later
         LevelManager.LoadBackStage();
     }
