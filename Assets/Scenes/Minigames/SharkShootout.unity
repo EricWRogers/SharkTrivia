@@ -1125,6 +1125,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3573838711101186988, guid: d2a090e4011e2ad4f8f793ecbcff4e60, type: 3}
   firingPoint: {fileID: 1704157309}
   fireRate: 0.1
+  MouthClose: {fileID: -8192867907094323454, guid: 223087c5c769ef14c8b3a8951847469e, type: 3}
+  MouthOpen: {fileID: -612697775432350803, guid: bce205cb9728da741a4b08500ae85647, type: 3}
 --- !u!212 &1690244416
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1169,12 +1171,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.3280082, g: 0.4411673, b: 0.764151, a: 1}
+  m_Sprite: {fileID: -8192867907094323454, guid: 223087c5c769ef14c8b3a8951847469e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 4.65, y: 4.91}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1811,17 +1813,17 @@ MonoBehaviour:
       enemyPrefab: {fileID: 7044823683029345317, guid: d12f41f533cde2d479542f7b9feb15f1, type: 3}
       count: 12
       interval: 1
-      pointValue: 5
+      pointValue: 15
     - name: 
       enemyPrefab: {fileID: 1085524407653634129, guid: c73a529a4680a0144993dedc5389d760, type: 3}
       count: 12
       interval: 2
-      pointValue: 0
+      pointValue: 20
     - name: 
       enemyPrefab: {fileID: 4666793668752257710, guid: 5fbf56e7ffcbdee419225b74f2e41a23, type: 3}
       count: 12
       interval: 1
-      pointValue: 15
+      pointValue: 30
     - name: 
       enemyPrefab: {fileID: 1085524407653634129, guid: c73a529a4680a0144993dedc5389d760, type: 3}
       count: 20
@@ -1998,6 +2000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1326105028}
   highScoreText: {fileID: 0}
+  score: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
