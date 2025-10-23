@@ -20,7 +20,7 @@ public class TranslateGuessLetter : MonoBehaviour
             for (int i = 0; i < gameObject.transform.childCount; i++)
             {
                 currentButton = gameObject.transform.GetChild(i).gameObject;
-                defaultCharacters.Append(currentButton.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text);
+                defaultCharacters.Add(currentButton.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text);
             }        
         } 
 
@@ -30,7 +30,7 @@ public class TranslateGuessLetter : MonoBehaviour
         {
             currentButton = gameObject.transform.GetChild(i).gameObject;
             gButton = currentButton.transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
-            Debug.Log(i);
+            //Debug.Log(i);
             gButton.text = translator.Translate(defaultCharacters[i]);
         }
     }

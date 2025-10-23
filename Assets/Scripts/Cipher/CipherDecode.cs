@@ -30,13 +30,13 @@ public class CipherDecode : MonoBehaviour
     public Dictionary<char, char> confirmedCharAssignments = new Dictionary<char, char>
     {
         //tilde represents an english character which has not been assigned a ciphertext equivalent 
-        {'a', '~'},{'b', '~'},{'c', '~'},{'d', '~'},
-        {'e', '~'},{'f', '~'},{'g', '~'},{'h', '~'},
+        {'a', 'a'},{'b', '~'},{'c', '~'},{'d', '~'},
+        {'e', 'e'},{'f', '~'},{'g', '~'},{'h', 'h'},
         {'i', '~'},{'j', '~'},{'k', '~'},{'l', '~'},
-        {'m', '~'},{'n', '~'},{'o', '~'},{'p', '~'},
-        {'q', '~'},{'r', '~'},{'s', '~'},{'t', '~'},
+        {'m', '~'},{'n', 'n'},{'o', 'o'},{'p', '~'},
+        {'q', '~'},{'r', 'r'},{'s', '~'},{'t', 't'},
         {'u', '~'},{'v', '~'},{'w', '~'},{'x', '~'},
-        {'y', '~'},{'z', '~'}
+        {'y', 'y'},{'z', '~'}
     };
 
     public Dictionary<char, char> secondOrderAssoc = new Dictionary<char, char>
