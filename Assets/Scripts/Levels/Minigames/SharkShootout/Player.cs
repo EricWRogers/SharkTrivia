@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 
 public class Player : MonoBehaviour
 {
@@ -10,15 +11,19 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     
 
-    // Gun Variable
+    
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [Range(0.1f, 1f)]
     [SerializeField] public float fireRate = 0.5f;
 
+    public Sprite MouthClose;
+    public Sprite MouthOpen;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -27,18 +32,29 @@ public class Player : MonoBehaviour
         move = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
 
-        
+
 
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+            
         }
+        
         
          void Shoot()
         {
+
             Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
-            
-         }
+            gameObject.GetComponent<SpriteRenderer>().sprite = MouthOpen;
+          
+        }
+         
+        if (Input.GetMouseButtonUp(0))
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = MouthClose;
+        }
+
+
     }
 }
  
