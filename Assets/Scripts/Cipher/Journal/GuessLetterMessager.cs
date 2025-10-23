@@ -17,7 +17,11 @@ public class GuessLetterMessager : MonoBehaviour
     {
         if (CipherDecode.instance.confirmedCharAssignments.ContainsValue(letter.ToLower()[0]))
         {
-            gameObject.SetActive(false);
+            gameObject.GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            gameObject.GetComponent<Button>().interactable = true;
         }
     } 
 }
