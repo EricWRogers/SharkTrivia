@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0c4b2d27733ff2e41b935d443edc64fe
+guid: 71c600b24ec1e1b4cb8e20930d987d42
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8143184184500006398
-    second: FIN.LineShadow_TempleSharkGame_0
+      213: -5770592416133261771
+    second: Coral2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FIN.LineShadow_TempleSharkGame_0
+      name: Coral2_0
       rect:
         serializedVersion: 2
-        x: 63
-        y: 660
-        width: 1879
-        height: 551
+        x: 3
+        y: 0
+        width: 2157
+        height: 979
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efda3b11fd6620170800000000000000
-      internalID: 8143184184500006398
+      spriteID: 53650dc75ccbaefa0800000000000000
+      internalID: -5770592416133261771
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FIN.LineShadow_TempleSharkGame_0: 8143184184500006398
+      Coral2_0: -5770592416133261771
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

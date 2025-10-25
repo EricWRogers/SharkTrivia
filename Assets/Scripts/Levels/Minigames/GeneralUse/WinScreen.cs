@@ -35,17 +35,26 @@ public class WinScreen : MonoBehaviour
         
         winTime.text = ("Time - " + timer.GetFormattedTime());
         winStat.text = ("Score - " + points);
+        winScreen.SetActive(true);
         ShowWinScreen();    //show the win screen when the minigame is over
+
+        if(SceneManager.GetActiveScene().name == "SharkShootout")
+        {
+            StopGame();
+        }
+
     }
 
-    /////////////// THIS FUNCTION IS ONLY FOR WHEN A TIMER RUNS OUT //////////////
+
     public void DisplayLoseResults(){    //whenever the timer runs out
         int points = totalScore.GetScore();
         winText.text = "you lose!";
         
-        winTime.text = "The timer ran out!";
+        winTime.text = "Out of Time!";
         winStat.text = ("Score - " + points);
+        winScreen.SetActive(true);
         ShowWinScreen();    //show the win screen when the minigame is over
+
     }
 
     public void ReturnButton(){
@@ -59,5 +68,9 @@ public class WinScreen : MonoBehaviour
     }
     void ShowWinScreen(){   //show the win screen
         winScreen.SetActive(true);
+    }
+
+    public void StopGame(){
+        Time.timeScale = 0;
     }
 }
