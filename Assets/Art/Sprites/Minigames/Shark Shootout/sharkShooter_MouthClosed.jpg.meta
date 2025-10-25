@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5f9bb399816e7df48820615927a663c9
+guid: f7ee272dbada8b649996e109a12efe30
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1199191910678637593
-    second: JellyFish_0
+      213: -8497892309231413559
+    second: sharkShooter_MouthClosed_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JellyFish_0
+      name: sharkShooter_MouthClosed_0
       rect:
         serializedVersion: 2
-        x: 136
-        y: 61
-        width: 1652
-        height: 1598
+        x: 0
+        y: 0
+        width: 2160
+        height: 1620
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e35a729f4d9b5fe0800000000000000
-      internalID: -1199191910678637593
+      spriteID: 9c6dcb0f7fb611a80800000000000000
+      internalID: -8497892309231413559
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      JellyFish_0: -1199191910678637593
+      sharkShooter_MouthClosed_0: -8497892309231413559
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

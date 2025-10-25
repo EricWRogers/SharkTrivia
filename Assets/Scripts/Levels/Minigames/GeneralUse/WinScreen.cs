@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+// winScreen.DisplayWinResults();
+
 public class WinScreen : MonoBehaviour
 {
     public Timer timer; 
@@ -42,6 +44,10 @@ public class WinScreen : MonoBehaviour
         {
             StopGame();
         }
+        if(SceneManager.GetActiveScene().name == "Bowling")
+        {
+            StopGame();
+        }
 
     }
 
@@ -55,6 +61,15 @@ public class WinScreen : MonoBehaviour
         winScreen.SetActive(true);
         ShowWinScreen();    //show the win screen when the minigame is over
 
+        if(SceneManager.GetActiveScene().name == "SharkShootout")
+        {
+            StopGame();
+        }
+        if(SceneManager.GetActiveScene().name == "Bowling")
+        {
+            StopGame();
+        }
+
     }
 
     public void ReturnButton(){
@@ -66,7 +81,7 @@ public class WinScreen : MonoBehaviour
     void HideWinScreen(){   //hide the win screen
         winScreen.SetActive(false);
     }
-    void ShowWinScreen(){   //show the win screen
+    public void ShowWinScreen(){   //show the win screen
         winScreen.SetActive(true);
     }
 

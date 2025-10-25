@@ -2166,6 +2166,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 313364172}
     - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
+      propertyPath: totalTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 9033857252222266906}
@@ -2303,6 +2307,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8040045644457489836, guid: cd3a9e6b8bd24be418cb7b4e3520fb30, type: 3}
   m_PrefabInstance: {fileID: 1950393228}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1976869571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1976869573}
+  - component: {fileID: 1976869572}
+  m_Layer: 0
+  m_Name: UNIVERSAL ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1976869572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976869571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a48865da1d57da4eb2bf3594fab0087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 7918315768895528081}
+  highScoreText: {fileID: 1373906028}
+  score: 0
+--- !u!4 &1976869573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976869571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1983218936 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5512682828866956815, guid: ddd99ac4166362d42abe211bee9ac997, type: 3}
@@ -2466,9 +2517,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1161729199}
     - target: {fileID: 887584905543431456, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
+      propertyPath: maxRounds
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 887584905543431456, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
       propertyPath: cameraSwitch
       value: 
       objectReference: {fileID: 1083135080}
+    - target: {fileID: 887584905543431456, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 1976869572}
     - target: {fileID: 887584905543431456, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
       propertyPath: totalScoreUI
       value: 
@@ -3256,6 +3315,17 @@ PrefabInstance:
       addedObject: {fileID: 1373906026}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddd99ac4166362d42abe211bee9ac997, type: 3}
+--- !u!114 &7918315768895528081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9104547605872046699, guid: ddd99ac4166362d42abe211bee9ac997, type: 3}
+  m_PrefabInstance: {fileID: 7918315768895528080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9033857252222266904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3268,9 +3338,33 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1851431029}
+    - target: {fileID: 229451457761822912, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: totalScore
+      value: 
+      objectReference: {fileID: 1976869572}
+    - target: {fileID: 229451457761822912, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: winThreshold
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 324631656674837169, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9033857252222266906}
+    - target: {fileID: 324631656674837169, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 324631656674837169, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WinScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3434199554366433572, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
       propertyPath: m_Name
       value: Win Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434199554366433572, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6835481328159916693, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
       propertyPath: m_Pivot.x
@@ -3390,11 +3484,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 2081044041}
   - {fileID: 614029111}
+  - {fileID: 1083135084}
   - {fileID: 44843687}
   - {fileID: 951719355}
   - {fileID: 926805723}
   - {fileID: 195409621}
-  - {fileID: 1083135084}
   - {fileID: 7918315768895528080}
   - {fileID: 134005147735805288}
   - {fileID: 1598006195}
@@ -3404,3 +3498,4 @@ SceneRoots:
   - {fileID: 1851431028}
   - {fileID: 243994930}
   - {fileID: 1785091607}
+  - {fileID: 1976869573}

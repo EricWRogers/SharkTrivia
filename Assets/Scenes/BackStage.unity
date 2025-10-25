@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.5
+  m_fontSize: 44.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1705,7 +1705,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1993810707}
-  animator: {fileID: 0}
 --- !u!61 &554709517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3580,7 +3579,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.1
+  m_fontSize: 36.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5381,11 +5380,11 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1956842359}
   - {fileID: 1649136643}
   - {fileID: 1222400513}
   - {fileID: 65657586}
   - {fileID: 1739249391}
-  - {fileID: 1956842359}
   - {fileID: 1600692431}
   - {fileID: 805784055}
   - {fileID: 1929080053}

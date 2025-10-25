@@ -2071,6 +2071,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1351132315}
     m_Modifications:
+    - target: {fileID: 229451457761822912, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 1058189571}
+    - target: {fileID: 229451457761822912, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: totalScore
+      value: 
+      objectReference: {fileID: 1351132316}
     - target: {fileID: 324631656674837169, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2171,7 +2179,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 229451457761822912, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

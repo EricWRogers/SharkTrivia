@@ -4,9 +4,10 @@ using TMPro;
 
 public class FinishLine : MonoBehaviour
 {
-    public GameObject WinScreen;
+    //public GameObject WinScreen;
     public Timer timer;
     public Collectibles collectibles;
+    public WinScreen winScreen;
 
     [Header("Text Elements")]
     public TMP_Text winTimerText; // Text element to display the final time
@@ -25,7 +26,11 @@ public class FinishLine : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         Debug.Log("WIN! You made it to the end.");
-        WinScreen.SetActive(true);
+        //WinScreen.SetActive(true);
+
+        winScreen.DisplayWinResults();
+
+
         Time.timeScale = 0f; // Pause the game
 
         // Deactivate specified objects

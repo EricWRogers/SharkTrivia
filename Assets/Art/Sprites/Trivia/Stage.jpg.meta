@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bce205cb9728da741a4b08500ae85647
+guid: 33e08cc60dcbe824c83482fe9bb1e03e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -612697775432350803
-    second: image_png (4)_0
+      213: 8052857364311879337
+    second: Fall2025GameJam_20251024213551_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: image_png (4)_0
+      name: Fall2025GameJam_20251024213551_0
       rect:
         serializedVersion: 2
-        x: 214
+        x: 0
         y: 0
-        width: 540
-        height: 383
+        width: 2000
+        height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da3cea49e924f77f0800000000000000
-      internalID: -612697775432350803
+      spriteID: 9aea2b26b1f71cf60800000000000000
+      internalID: 8052857364311879337
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      image_png (4)_0: -612697775432350803
+      Fall2025GameJam_20251024213551_0: 8052857364311879337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

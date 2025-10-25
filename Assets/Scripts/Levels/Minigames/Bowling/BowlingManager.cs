@@ -8,10 +8,14 @@ public class BowlingManager : MonoBehaviour
     // Manage the score
     // Manage the turns
 
+    //UNIVERSAL SCORE MANAGER
+    public ScoreManager scoreManager;
+
+
     public GameObject ball;
     public int score = 0;
     public int totalScore = 0;
-    public int maxRounds = 3;
+    public int maxRounds = 100;
     public int roundsPlayed = 0;
     private bool pinsUp = true;
     GameObject[] pins;
@@ -75,6 +79,9 @@ public class BowlingManager : MonoBehaviour
             pinsUp = false;
         }
         score = pinsDownThisRound;
+        
+        scoreManager.AddPoints(pinsDownThisRound);  // UNIVERSAL SCORE MANAGER
+
         totalScore += score;
         videoPlayerScript.SelectVideoClip(score);
         StartCoroutine(videoPlayerScript.PlayVideoAndStop());

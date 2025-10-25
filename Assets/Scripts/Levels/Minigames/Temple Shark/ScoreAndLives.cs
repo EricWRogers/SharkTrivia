@@ -4,6 +4,9 @@ using TMPro;
 
 public class ScoreAndLives : MonoBehaviour
 {
+    
+    public ScoreManager scoreManager;   //Universal score manager
+
     public static ScoreAndLives Instance { get; private set; }
     public GameOverManager GOM;
 
@@ -38,6 +41,7 @@ public class ScoreAndLives : MonoBehaviour
 
     public void AddScore(int amount)
     {
+        scoreManager.AddPoints(2);
         Score += amount;
         UpdateScore();
     }
@@ -79,6 +83,7 @@ public class ScoreAndLives : MonoBehaviour
     
         void UpdateScore()
         {
+            //scoreManager.UpdateScoreText();
             if (scoreText) scoreText.text = Score.ToString();
         }
     
