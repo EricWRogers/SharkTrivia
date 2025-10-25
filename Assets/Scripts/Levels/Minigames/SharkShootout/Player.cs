@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [Range(0.1f, 1f)]
-    [SerializeField] public float fireRate = 0.5f;
+    [SerializeField] public float fireRate = 1f;
+    private float nextFire = 0f;
 
     public Sprite MouthClose;
     public Sprite MouthOpen;
@@ -34,9 +35,11 @@ public class Player : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(0))
+        if ((Input.GetMouseButtonDown(0)) && Time.time >= nextFire)
         {
             Shoot();
+
+            nextFire = Time.time + fireRate;
             
         }
         

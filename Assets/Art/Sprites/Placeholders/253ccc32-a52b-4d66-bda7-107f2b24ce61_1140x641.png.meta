@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0c4b2d27733ff2e41b935d443edc64fe
+guid: 8066708707d64f14895d5fda57aac8ce
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8143184184500006398
-    second: FIN.LineShadow_TempleSharkGame_0
+      213: -5057074751652504061
+    second: 253ccc32-a52b-4d66-bda7-107f2b24ce61_1140x641_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1500
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FIN.LineShadow_TempleSharkGame_0
+      name: 253ccc32-a52b-4d66-bda7-107f2b24ce61_1140x641_0
       rect:
         serializedVersion: 2
-        x: 63
-        y: 660
-        width: 1879
-        height: 551
+        x: 0
+        y: 0
+        width: 1140
+        height: 641
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efda3b11fd6620170800000000000000
-      internalID: 8143184184500006398
+      spriteID: 30ed7219e49a1d9b0800000000000000
+      internalID: -5057074751652504061
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FIN.LineShadow_TempleSharkGame_0: 8143184184500006398
+      253ccc32-a52b-4d66-bda7-107f2b24ce61_1140x641_0: -5057074751652504061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

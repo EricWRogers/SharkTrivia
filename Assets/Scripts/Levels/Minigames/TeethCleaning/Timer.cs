@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private float totalTime = 60f;
 
     public GameOverManager gameOverManager;
+    public WinScreen winScreen;
 
     private float timeRemaining;
     private bool timeRunning = true;
@@ -54,9 +55,12 @@ public class Timer : MonoBehaviour
         Debug.Log("Timer ended");
         if(SceneManager.GetActiveScene().name == "MINIGTeethCleaning")
         {
+            winScreen.DisplayLoseResults();
             TotalScore.instance.PlayerLost();
         }
+        else
+            winScreen.DisplayWinResults();
         //whatever loser concequences we want to add later
-        LevelManager.LoadBackStage();
+        //LevelManager.LoadBackStage();
     }
 }
