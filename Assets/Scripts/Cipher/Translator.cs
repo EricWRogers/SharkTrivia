@@ -55,8 +55,8 @@ public class Translator : MonoBehaviour
 
         //usrValues = new List<char>();
 
-        usrValues = CipherDecode.instance.GetUsrValues();
-        valuesAssigned = CipherDecode.instance.GetUsrValuesAssigned();
+        //usrValues = CipherDecode.instance.GetUsrValues();
+        //valuesAssigned = CipherDecode.instance.GetUsrValuesAssigned();
 
         //string str = text.text;
 

@@ -1216,6 +1216,18 @@ PrefabInstance:
       propertyPath: totalScore
       value: 
       objectReference: {fileID: 2038794722}
+    - target: {fileID: 324631656674837169, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1930206913}
+    - target: {fileID: 324631656674837169, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 324631656674837169, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WinScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3434199554366433572, guid: 27c2246d3ec1ef446adf98c2a8731f85, type: 3}
       propertyPath: m_Name
       value: Win Screen
