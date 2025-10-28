@@ -20,6 +20,11 @@ public class WinScreen : MonoBehaviour
     public TMP_Text winTime;
     public TMP_Text winStat;
 
+    void Start(){
+        HideWinScreen();
+
+    }
+
     public void DisplayWinResults(){    //whenever a minigame is over, call function
         int points = totalScore.GetScore();
 
