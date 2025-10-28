@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
+    public WinScreen winScreen;
+
     [Header("Settings")]
     public int maxHits = 3; 
     public string endSceneName = "LoseScene"; 
@@ -28,6 +30,9 @@ public class EndGame : MonoBehaviour
     void Lose()
     {
         Debug.Log("Game Over!");
-        LevelManager.LoadBackStage();
+        winScreen.DisplayWinResults();
+
+        winScreen.StopGame();
+        //LevelManager.LoadBackStage();
     }
 }

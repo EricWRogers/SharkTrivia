@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7c028fa47449fa14f84101ed81c0830d
+guid: d13b7cf83abcaf8408bc8ae6b5b9f299
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3577127785787398535
-    second: ClownFish_0
+      213: 6669533885131038193
+    second: blue-abstract-simple-background-qs-1920x1080_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ClownFish_0
+      name: blue-abstract-simple-background-qs-1920x1080_0
       rect:
         serializedVersion: 2
-        x: 175
-        y: 646
-        width: 1654
-        height: 968
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 789990cc4c284a130800000000000000
-      internalID: 3577127785787398535
+      spriteID: 1fd9aa85bb1fe8c50800000000000000
+      internalID: 6669533885131038193
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ClownFish_0: 3577127785787398535
+      blue-abstract-simple-background-qs-1920x1080_0: 6669533885131038193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

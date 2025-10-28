@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stats - ???
+  m_text: Score - ???
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 6835481328159916693}
   - component: {fileID: 4312522348049366956}
   - component: {fileID: 3106458339691510202}
+  - component: {fileID: 229451457761822912}
   m_Layer: 5
   m_Name: Win Screen
   m_TagString: Untagged
@@ -351,6 +352,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &229451457761822912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434199554366433572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62761679f59f5b841b81e7b2238e0305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  totalScore: {fileID: 0}
+  winThreshold: 5
+  winScreen: {fileID: 3434199554366433572}
+  winText: {fileID: 5927513835968544406}
+  winTime: {fileID: 4683876421585217054}
+  winStat: {fileID: 6543575844664519713}
 --- !u!1 &4582965887047328577
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,9 +492,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NestGoal, Assembly-CSharp
-        m_MethodName: ReturnToMain
+      - m_Target: {fileID: 229451457761822912}
+        m_TargetAssemblyTypeName: WinScreen, Assembly-CSharp
+        m_MethodName: ReturnButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

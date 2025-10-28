@@ -20,7 +20,6 @@ public class GameOverManager : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f; // Resume game time
-        Collectibles.totalScore = 0; // Reset score
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reload current scene
     }
     public void BackStage()
