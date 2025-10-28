@@ -20,13 +20,16 @@ public class WinScreen : MonoBehaviour
     public TMP_Text winTime;
     public TMP_Text winStat;
 
-    public void DisplayWinResults(){    //whenever a minigame is over, call function
-        int points = totalScore.GetScore();
+    public void DisplayWinResults(int score){    //whenever a minigame is over, call function
+        int points = score;
 
-        if(points >= winThreshold)
+
+        if (points >= winThreshold)
             winText.text = "YOU WIN!";
-        if(points < winThreshold)
+            TotalScore.instance.AddPoints(score);
+        if (points < winThreshold)
             winText.text = "you lose!";
+        TotalScore.instance.PlayerLost();
         
         winTime.text = "Time - " + timer.GetFormattedTime();
         winStat.text = "Score - " + points;
@@ -46,11 +49,11 @@ public class WinScreen : MonoBehaviour
 
 
     public void DisplayLoseResults(){    //whenever the timer runs out
-        int points = totalScore.GetScore();
+        TotalScore.instance.PlayerLost();
         winText.text = "you lose!";
         
         winTime.text = "Out of Time!";
-        winStat.text = "Score - " + points;
+        winStat.text = "Score - " + TotalScore.instance.totalScore;
         //winScreen.SetActive(true);
         ShowWinScreen();    //show the win screen when the minigame is over
 

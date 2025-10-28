@@ -30,7 +30,7 @@ public class EndGame : MonoBehaviour
     void Lose()
     {
         Debug.Log("Game Over!");
-        winScreen.DisplayWinResults();
+        //winScreen.DisplayWinResults();
 
         winScreen.StopGame();
         //LevelManager.LoadBackStage();
