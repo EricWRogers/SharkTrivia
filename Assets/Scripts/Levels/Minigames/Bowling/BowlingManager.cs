@@ -23,7 +23,6 @@ public class BowlingManager : MonoBehaviour
     public TMP_Text roundsUI;
     public TMP_Text totalScoreUI;
     public CameraSwitch cameraSwitch;
-    public GameOverManager gameOverManager;
     public VideoPlayerScript videoPlayerScript;
 
     Vector3[] positions;
@@ -139,8 +138,6 @@ public class BowlingManager : MonoBehaviour
         {
             cameraSwitch.camera2.SetActive(false);
             cameraSwitch.camera1.SetActive(true);
-            if (gameOverManager == null) { Debug.Log("NNNNN"); }
-            gameOverManager.GameOverShow();
         }
         roundsUI.text = roundsPlayed.ToString();
     }

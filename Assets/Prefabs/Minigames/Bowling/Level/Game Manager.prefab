@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5157931778429715592}
   - component: {fileID: 887584905543431456}
   - component: {fileID: 4044471872658943733}
-  - component: {fileID: 2758989283787746013}
+  - component: {fileID: -8443058315995975329}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -46,12 +46,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f152b325f39ac74eae4c272b39e1067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
   ball: {fileID: 0}
   score: 0
-  rounds: 0
+  totalScore: 0
+  maxRounds: 100
+  roundsPlayed: 0
   scoreUI: {fileID: 0}
   roundsUI: {fileID: 0}
+  totalScoreUI: {fileID: 0}
   cameraSwitch: {fileID: 0}
+  gameOverManager: {fileID: 0}
+  videoPlayerScript: {fileID: 0}
 --- !u!114 &4044471872658943733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +78,7 @@ MonoBehaviour:
   maxPower: 20
   chargeSpeed: 100
   bowlingBall: {fileID: 0}
---- !u!114 &2758989283787746013
+--- !u!114 &-8443058315995975329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,10 +87,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5500229512548195426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b73771fa76833408cf0e48e05e45ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 62761679f59f5b841b81e7b2238e0305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goUI: {fileID: 0}
-  ball: {fileID: 0}
-  pins: {fileID: 0}
-  lane: {fileID: 0}
+  timer: {fileID: 0}
+  totalScore: {fileID: 0}
+  winThreshold: 100
+  winScreen: {fileID: 0}
+  winText: {fileID: 0}
+  winTime: {fileID: 0}
+  winStat: {fileID: 0}

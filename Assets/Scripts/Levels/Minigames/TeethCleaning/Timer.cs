@@ -53,13 +53,14 @@ public class Timer : MonoBehaviour
     private void OnTimerEnds()
     {
         Debug.Log("Timer ended");
-        if(SceneManager.GetActiveScene().name == "MINIGTeethCleaning")
+        if (SceneManager.GetActiveScene().name == "MINIGTeethCleaning")
         {
             winScreen.DisplayLoseResults();
             TotalScore.instance.PlayerLost();
         }
         else
-            winScreen.DisplayWinResults();
+            return;
+            //winScreen.DisplayWinResults();
         //whatever loser concequences we want to add later
         //LevelManager.LoadBackStage();
     }
