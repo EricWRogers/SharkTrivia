@@ -13,7 +13,7 @@ public class VideoPlayerScript : MonoBehaviour
     public float playDuration = 5f; // Set the desired duration in seconds
     public List<VideoClip> videoClips; // List of Video Clips
     public int currentVideoIndex = 0;
-    public GameObject[] objectsToDisable;
+    public GameObject[] textToDisable;
     private VideoPlayer videoPlayer;
     private bool isPlaying = false;
     
@@ -64,7 +64,7 @@ public class VideoPlayerScript : MonoBehaviour
     }
     public void DisableElements()
     {
-        foreach (var obj in objectsToDisable)
+        foreach (var obj in textToDisable)
         {
             if (obj != null)
                 obj.SetActive(false);
