@@ -8,6 +8,7 @@ public class SegmentGenerator : MonoBehaviour
     public GameObject[] segment;
 
     [SerializeField] int zPos = 50;
+    [SerializeField] float waitTime = 5f;
     [SerializeField] bool segmentCreate = false;
     [SerializeField] int segmentNum; 
 
@@ -25,7 +26,7 @@ public class SegmentGenerator : MonoBehaviour
         segmentNum = Random.Range(0, 3);
         Instantiate(segment[segmentNum], new Vector3(0, 0, zPos), Quaternion.identity);
         zPos += 50;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(waitTime);
         segmentCreate = false;
     }
 }

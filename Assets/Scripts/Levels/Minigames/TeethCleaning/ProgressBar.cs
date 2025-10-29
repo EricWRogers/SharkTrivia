@@ -154,7 +154,7 @@ public class ProgressBar : MonoBehaviour
 
         //display winscreen when minigame is over
         winScreen.ShowWinScreen();
-        winScreen.DisplayWinResults();
+        //winScreen.DisplayWinResults();
     }
 
 }
