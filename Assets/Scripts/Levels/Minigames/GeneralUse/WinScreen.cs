@@ -8,7 +8,6 @@ using TMPro;
 public class WinScreen : MonoBehaviour
 {
     public Timer timer;
-    public ScoreManager totalScore;
     //public LevelManager levelManager;
 
     public int winThreshold = 100; //change this to be whatever the minimum anount of points needed to win
@@ -82,6 +81,7 @@ public class WinScreen : MonoBehaviour
 
     public void ReturnButton()
     {
+        Debug.Log("CLICK");
         LevelManager.LoadBackStage();   //temp for now
 
         //send player back to what ever scene they entered from.

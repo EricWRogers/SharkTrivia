@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     public WinScreen winScreen;
 
     private float timeRemaining;
-    private bool timeRunning = true;
+    public bool timeRunning = true;
 
     private void Start()
     {
@@ -52,15 +52,6 @@ public class Timer : MonoBehaviour
     private void OnTimerEnds()
     {
         Debug.Log("Timer ended");
-        if (SceneManager.GetActiveScene().name == "MINIGTeethCleaning")
-        {
-            winScreen.DisplayLoseResults();
-            TotalScore.instance.PlayerLost();
-        }
-        else
-            return;
-            //winScreen.DisplayWinResults();
-        //whatever loser concequences we want to add later
-        //LevelManager.LoadBackStage();
+
     }
 }

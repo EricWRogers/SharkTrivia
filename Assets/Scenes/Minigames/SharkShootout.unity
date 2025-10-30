@@ -516,7 +516,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.4
+  m_fontSize: 32.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6296,6 +6296,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6485272681576834346, guid: 380de6384f14fa84ba06c7a77be4fbef, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 1628271498}
     - target: {fileID: 6485272681576834346, guid: 380de6384f14fa84ba06c7a77be4fbef, type: 3}
       propertyPath: winScreen
       value: 
