@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 3951433688571588795}
   - component: {fileID: 6613271143521362096}
   - component: {fileID: 305311237848826144}
+  - component: {fileID: 5076080749264803973}
   m_Layer: 5
   m_Name: BowlingScreen
   m_TagString: Untagged
@@ -182,6 +183,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5076080749264803973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9165093063998268452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a48865da1d57da4eb2bf3594fab0087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 9104547605872046699}
+  highScoreText: {fileID: 0}
+  score: 0
 --- !u!1001 &336211162883746107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -724,3 +740,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6559651232597311476, guid: d92aa60b33a0f484c893095ce0a1f1f7, type: 3}
   m_PrefabInstance: {fileID: 9079337212661442715}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9104547605872046699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 25210532127136496, guid: d92aa60b33a0f484c893095ce0a1f1f7, type: 3}
+  m_PrefabInstance: {fileID: 9079337212661442715}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
