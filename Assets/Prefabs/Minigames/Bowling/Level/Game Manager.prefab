@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5157931778429715592}
   - component: {fileID: 887584905543431456}
   - component: {fileID: 4044471872658943733}
-  - component: {fileID: -8443058315995975329}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -47,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 0}
+  winScreen: {fileID: 0}
   ball: {fileID: 0}
   score: 0
   totalScore: 0
@@ -56,7 +56,6 @@ MonoBehaviour:
   roundsUI: {fileID: 0}
   totalScoreUI: {fileID: 0}
   cameraSwitch: {fileID: 0}
-  gameOverManager: {fileID: 0}
   videoPlayerScript: {fileID: 0}
 --- !u!114 &4044471872658943733
 MonoBehaviour:
@@ -78,22 +77,3 @@ MonoBehaviour:
   maxPower: 20
   chargeSpeed: 100
   bowlingBall: {fileID: 0}
---- !u!114 &-8443058315995975329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5500229512548195426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62761679f59f5b841b81e7b2238e0305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 0}
-  totalScore: {fileID: 0}
-  winThreshold: 100
-  winScreen: {fileID: 0}
-  winText: {fileID: 0}
-  winTime: {fileID: 0}
-  winStat: {fileID: 0}
