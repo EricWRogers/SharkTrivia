@@ -21,6 +21,7 @@ public class ProgressBar : MonoBehaviour
     public SpriteRenderer dirtyTeeth;
     public SpriteRenderer cleanTeeth;
     public SpriteRenderer toothBrush;
+    public SpriteRenderer holes;
 
     //connecting to win screen
     public WinScreen winScreen;
@@ -37,6 +38,7 @@ public class ProgressBar : MonoBehaviour
         dirtyTeeth.sortingOrder = 1; 
         cleanTeeth.sortingOrder = 1;
         toothBrush.sortingOrder = 3;
+        holes.sortingOrder = 2;
 
         if (progressBar != null)
         {
