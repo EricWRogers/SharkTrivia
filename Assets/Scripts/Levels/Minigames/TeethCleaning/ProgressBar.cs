@@ -25,6 +25,10 @@ public class ProgressBar : MonoBehaviour
     //connecting to win screen
     public WinScreen winScreen;
 
+    //colliders for teeth
+    public Collider2D topTeeth;
+    public Collider2D bottomTeeth;
+
 
 
     void Start()
@@ -64,10 +68,15 @@ public class ProgressBar : MonoBehaviour
         }
         if (Input.GetMouseButton(0) && isSwiping)
         {
+            if(!IsMouseOver(mouseWorldPos))
+            {
+                isSwiping = false;
+                return;
+            }
             float distance = Vector2.Distance(mousePosition, mouseWorldPos);
             //Debug.Log($"LastPos: {mousePosition} CurrentPos: {mouseWorldPos} Distance: {distance}");
             //Debug.Log("Distance moved " + distance);
-            if(distance > 1f)
+            if(distance > 0.5f)
             {
                 RegisterSwipe();
                 mousePosition = mouseWorldPos;
@@ -102,7 +111,11 @@ public class ProgressBar : MonoBehaviour
     private bool IsMouseOver(Vector2 mouseWorldPos)
     {
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-        return hit.collider != null && hit.collider == GetComponent<Collider2D>();
+        if(hit.collider == null)
+        {
+            return false;
+        }
+        return hit.collider == topTeeth || hit.collider == bottomTeeth;
     }
     private void RegisterSwipe()
     {
