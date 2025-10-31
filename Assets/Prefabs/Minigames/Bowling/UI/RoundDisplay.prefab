@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 7610296058406640686}
   - component: {fileID: 6471519145493489141}
   m_Layer: 5
-  m_Name: RoundsManager
+  m_Name: RoundDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

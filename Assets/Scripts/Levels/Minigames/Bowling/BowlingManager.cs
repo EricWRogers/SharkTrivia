@@ -85,6 +85,7 @@ public class BowlingManager : MonoBehaviour
         // Handle video playback
         videoPlayerScript.SelectVideoClip(score);
         StartCoroutine(videoPlayerScript.PlayVideoAndStop());
+
         // Update UI (using string interpolation)
         scoreUI.text = pinsDownThisRound.ToString();
         if(totalScoreUI != null)
@@ -127,8 +128,7 @@ public class BowlingManager : MonoBehaviour
             powerBar.ResetBar();
         }
     }
-    
-    
+
     public void NewRound() //Updates the round counter
     {
         roundsPlayed++;
