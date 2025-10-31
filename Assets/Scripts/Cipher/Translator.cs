@@ -4,6 +4,10 @@ using System.Text;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.IO.Compression;
+using Unity.Mathematics;
+
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -75,7 +79,9 @@ public class Translator : MonoBehaviour
         StringBuilder message = new StringBuilder(text.ToLower());
 
         //Sets letters equal to their second order associations before translating (turning this off is handled with a public Bool in CipherDecode.cs)
-        for (int i = 0; i < message.Length; i++)
+        
+        
+        for (int i = 0; i < message.Length && CipherDecode.instance.isRandomizing; i++)
         {
             if (char.IsLetter(message[i]))
                 message[i] = CipherDecode.instance.secondOrderAssoc[message[i]];
@@ -143,13 +149,12 @@ public class Translator : MonoBehaviour
             }
 
         }
-        // setting total hits to 0 to avoid other indexes spilling over
-        hit = 0;
         // adding code to the begining so everything is "encrypted"
         message.Insert(0, code);
         //Debug.Log(keys);
 
-        message = TransformStyledColorText(message);
+        if(CipherDecode.instance.isRandomizing)
+            message = TransformStyledColorText(message);
 
         //Debug.Log(message.ToString());
         return message.ToString();
@@ -157,6 +162,7 @@ public class Translator : MonoBehaviour
 
     public StringBuilder TransformStyledColorText(StringBuilder sb)
     {
+        Debug.Log("started regex");
         string input = sb.ToString();
         var output = new StringBuilder();
 
@@ -168,6 +174,7 @@ public class Translator : MonoBehaviour
 
         foreach (Match styleMatch in styleMatches)
         {
+            //Debug.Log("found matches");
             int start = styleMatch.Index;
             int end = styleMatch.Index + styleMatch.Length;
 
@@ -176,31 +183,16 @@ public class Translator : MonoBehaviour
                 output.Append(input.Substring(lastIndex, start - lastIndex));
 
             string styledContent = styleMatch.Groups[1].Value;
+            Debug.Log($"style content = {styledContent}");
 
-            // Match <color=#XXXXXX> followed by non-tag text
-            string colorPattern = $@"<color=({Regex.Escape(confirmedColor)}|{Regex.Escape(usrColor)})>([^<]*)";
-            var transformed = Regex.Replace(styledContent, colorPattern, match =>
-            {
-                string color = match.Groups[1].Value;
-                string text = match.Groups[2].Value;
+            // Match the full color tag (confirmedColor or usrColor) followed by non-tag text
+            // Note: confirmedColor/usrColor already contain the full tag (e.g. "<color=#0000FF>"),
+            // so don't prepend another "<color=" in the regex or it won't match.
+            string colorPattern = $@"({Regex.Escape(confirmedColor)}|{Regex.Escape(usrColor)})([^<]*)";
+            // Use a named MatchEvaluator instead of a lambda for clarity and easier debugging
+            //var transformed = Regex.Replace(styledContent, colorPattern, ReplaceColorMatch(styledContent));
 
-                var map = color.Equals(confirmedColor, StringComparison.OrdinalIgnoreCase)
-                    ? CipherDecode.instance.confirmedCharAssignments
-                    : CipherDecode.instance.charAssignments;
-
-                var transformedText = new StringBuilder();
-                foreach (char c in text)
-                {
-                    if (char.IsLetter(c) && map.ContainsKey(c))
-                    {
-                        transformedText.Append(map[c]);
-                    }
-                    else
-                        transformedText.Append(c);
-                }
-
-                return $"<color={color}>{transformedText}";
-            });
+            var transformed = ReplaceColorMatch(styledContent);
 
             output.Append($"<style=Code>{transformed}</style>");
             lastIndex = end;
@@ -211,6 +203,52 @@ public class Translator : MonoBehaviour
             output.Append(input.Substring(lastIndex));
 
         return output;
+    }
+
+    // Named MatchEvaluator that replaces a matched color + text with the transformed text
+    private string ReplaceColorMatch(string input)
+    {
+
+        //var information = Regex.Match(input, @">[a-z]+<", RegexOptions.Singleline);
+        var formatting = Regex.Match(input, $@"({Regex.Escape(confirmedColor)}|{Regex.Escape(usrColor)})([^<]*)", RegexOptions.Singleline);
+
+        //Debug.Log("defining transformed");
+        string text = formatting.Groups[2].Value;
+        string color = formatting.Groups[1].Value;
+        //Debug.Log(text);
+        //Debug.Log(color);
+
+        Debug.Log("Color = " + color + "test string");
+        Debug.Log("Text = " + text);
+
+        var map = color.Equals(confirmedColor, StringComparison.OrdinalIgnoreCase)
+            ? CipherDecode.instance.confirmedCharAssignments
+            : CipherDecode.instance.charAssignments;
+
+        var transformedText = new StringBuilder();
+        foreach (char c in text)
+        {
+            Debug.Log(c);
+            if (char.IsLetter(c) && CipherDecode.instance.secondOrderAssoc.ContainsValue(c))
+            {
+                for (char i = 'a'; i < 'z'; i++)
+                {
+                    if (CipherDecode.instance.secondOrderAssoc[i] == c && map[i] != '~')
+                    {
+                        Debug.Log(map[i]);
+                        transformedText.Append(map[i]);
+                    }
+                }
+            }
+            else
+            {
+                transformedText.Append(c);
+            }
+        }
+
+        // match.Groups[1] already contains the full <color=...> tag (e.g. "<color=#0000FF>"),
+        // so return it followed by the transformed text (no extra wrapping).
+        return $"{color}{transformedText}";
     }
 
 
