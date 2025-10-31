@@ -12,6 +12,7 @@ public class BowlingBall : MonoBehaviour
     public float curveStrength = 1f; // How much spin curves the ball
     public float randomSpinRange = 50f; // small random spin added each throw
     public float rampUpTime = 2f; // Time before full hook kicks in
+    public float rotationSpeed = 45f;
 
     private float spinDirection = 0f; // -1 left, 0 straight, +1 right
     private float launchTime; // When the ball was launched
@@ -26,6 +27,18 @@ public class BowlingBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Rotate left with the 'A' key
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
+        }
+
+        // Rotate right with the 'D' key
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        }
+    
         if (Input.GetKeyDown(KeyCode.Space) && !hasLaunched)
         {
             LaunchBall();

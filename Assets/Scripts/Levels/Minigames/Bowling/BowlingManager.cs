@@ -8,6 +8,10 @@ public class BowlingManager : MonoBehaviour
     // Manage the score
     // Manage the turns
 
+    //UNIVERSAL SCORE MANAGER
+    public ScoreManager scoreManager;
+    public WinScreen winScreen;
+
     public GameObject ball;
     public int score = 0;
     public int totalScore = 0;
@@ -19,7 +23,6 @@ public class BowlingManager : MonoBehaviour
     public TMP_Text roundsUI;
     public TMP_Text totalScoreUI;
     public CameraSwitch cameraSwitch;
-    public GameOverManager gameOverManager;
     public VideoPlayerScript videoPlayerScript;
 
     Vector3[] positions;
@@ -64,6 +67,7 @@ public class BowlingManager : MonoBehaviour
     public void CountPinsDown()
     {
         int pinsDownThisRound = 0;
+
         // Tracks pins knocked down for scoring
         for (int i = 0; i < pins.Length; i++)
         {
@@ -74,14 +78,17 @@ public class BowlingManager : MonoBehaviour
             }
             pinsUp = false;
         }
-        score = pinsDownThisRound;
-        totalScore += score;
+        // Update total score and score managers
+        scoreManager.AddPoints(pinsDownThisRound);  // UNIVERSAL SCORE MANAGER
+        totalScore += pinsDownThisRound;
+
+        // Handle video playback
         videoPlayerScript.SelectVideoClip(score);
         StartCoroutine(videoPlayerScript.PlayVideoAndStop());
-        scoreUI.text = score.ToString();
+        // Update UI (using string interpolation)
+        scoreUI.text = pinsDownThisRound.ToString();
         if(totalScoreUI != null)
-            totalScoreUI.text = "Total: " + totalScore.ToString();
-        score = 0;
+            totalScoreUI.text = $"Total: {totalScore}";
     }
 
     public void ResetPins()
@@ -124,17 +131,14 @@ public class BowlingManager : MonoBehaviour
     
     public void NewRound() //Updates the round counter
     {
-        if (pinsUp == false)
-        {
-            roundsPlayed++;
-        }
-        if (roundsPlayed == maxRounds)
+        roundsPlayed++;
+        roundsUI.text = roundsPlayed.ToString();
+
+        if (roundsPlayed >= maxRounds)
         {
             cameraSwitch.camera2.SetActive(false);
             cameraSwitch.camera1.SetActive(true);
-            if (gameOverManager == null) { Debug.Log("NNNNN"); }
-            gameOverManager.GameOverShow();
+            winScreen.ShowWinScreen();
         }
-        roundsUI.text = roundsPlayed.ToString();
     }
 }

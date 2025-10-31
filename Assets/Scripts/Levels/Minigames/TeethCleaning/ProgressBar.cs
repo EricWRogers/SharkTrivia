@@ -21,9 +21,14 @@ public class ProgressBar : MonoBehaviour
     public SpriteRenderer dirtyTeeth;
     public SpriteRenderer cleanTeeth;
     public SpriteRenderer toothBrush;
+    public SpriteRenderer holes;
 
     //connecting to win screen
     public WinScreen winScreen;
+
+    //colliders for teeth
+    public Collider2D topTeeth;
+    public Collider2D bottomTeeth;
 
 
 
@@ -33,6 +38,7 @@ public class ProgressBar : MonoBehaviour
         dirtyTeeth.sortingOrder = 1; 
         cleanTeeth.sortingOrder = 1;
         toothBrush.sortingOrder = 3;
+        holes.sortingOrder = 2;
 
         if (progressBar != null)
         {
@@ -64,10 +70,15 @@ public class ProgressBar : MonoBehaviour
         }
         if (Input.GetMouseButton(0) && isSwiping)
         {
+            if(!IsMouseOver(mouseWorldPos))
+            {
+                isSwiping = false;
+                return;
+            }
             float distance = Vector2.Distance(mousePosition, mouseWorldPos);
             //Debug.Log($"LastPos: {mousePosition} CurrentPos: {mouseWorldPos} Distance: {distance}");
             //Debug.Log("Distance moved " + distance);
-            if(distance > 1f)
+            if(distance > 0.5f)
             {
                 RegisterSwipe();
                 mousePosition = mouseWorldPos;
@@ -102,7 +113,11 @@ public class ProgressBar : MonoBehaviour
     private bool IsMouseOver(Vector2 mouseWorldPos)
     {
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-        return hit.collider != null && hit.collider == GetComponent<Collider2D>();
+        if(hit.collider == null)
+        {
+            return false;
+        }
+        return hit.collider == topTeeth || hit.collider == bottomTeeth;
     }
     private void RegisterSwipe()
     {
@@ -153,7 +168,8 @@ public class ProgressBar : MonoBehaviour
         }
 
         //display winscreen when minigame is over
-        winScreen.DisplayWinResults();
+        winScreen.ShowWinScreen();
+        //winScreen.DisplayWinResults();
     }
 
 }

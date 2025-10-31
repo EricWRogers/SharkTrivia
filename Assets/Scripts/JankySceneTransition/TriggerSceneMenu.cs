@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class TriggerSceneMenu : MonoBehaviour
 {
     public GameObject menu;
-    public Animator animator;
+    //public Animator animator;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,6 +14,9 @@ public class TriggerSceneMenu : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         menu.SetActive(false);
+        if (menu == null){
+            Debug.Log("KYS");
+        }
     }
 
     public void TeethCleaningScene()
