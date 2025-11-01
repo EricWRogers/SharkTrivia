@@ -19,8 +19,6 @@ public class TranslatorEditor : Editor
 
         if (GUILayout.Button("Translate"))
         {
-            tr.usrValues = CipherDecode.instance.GetUsrValues();
-            tr.valuesAssigned = CipherDecode.instance.GetUsrValuesAssigned();
             tr.DEBUG_TEXT.text = tr.Translate("the quick brown fox jumps over the lazy dog");
         }
     }
