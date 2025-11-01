@@ -27,11 +27,6 @@ public class CanvasPathFollwer : MonoBehaviour
         {
             MoveAlongPath();
         }
-        // Reset path if video is not playing and at endpoint
-        if (videoPlayerScript.isPlaying == false && currentWaypointIndex == waypoints.Length - 1)
-        {
-            ResetPath();
-        }
     }
     private void MoveAlongPath()
     {
@@ -50,7 +45,7 @@ public class CanvasPathFollwer : MonoBehaviour
             }
         }
     }
-    private void ResetPath()
+    public void ResetPath()
     {
         // Reset to the starting waypoint
         currentWaypointIndex = 0;
@@ -58,4 +53,3 @@ public class CanvasPathFollwer : MonoBehaviour
         movingForward = false;
     }
 }
-

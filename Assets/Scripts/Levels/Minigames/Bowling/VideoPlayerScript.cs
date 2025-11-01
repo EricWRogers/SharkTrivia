@@ -64,6 +64,7 @@ public class VideoPlayerScript : MonoBehaviour
             GL.Clear(true, true, Color.black);
             RenderTexture.active = null;
             Debug.Log("RenderTexture cleared.");
+            
         }
     }
 }
