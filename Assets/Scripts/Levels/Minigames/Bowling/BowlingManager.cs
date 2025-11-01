@@ -17,6 +17,7 @@ public class BowlingManager : MonoBehaviour
     public int totalScore = 0;
     public int maxRounds = 3;
     public int roundsPlayed = 0;
+    private int bonus = 10;
     private bool pinsUp = true;
     GameObject[] pins;
     public TMP_Text scoreUI;
@@ -24,6 +25,7 @@ public class BowlingManager : MonoBehaviour
     public TMP_Text totalScoreUI;
     public CameraSwitch cameraSwitch;
     public VideoPlayerScript videoPlayerScript;
+    public CanvasPathFollwer canvasPathFollwer; 
 
     Vector3[] positions;
 
@@ -83,8 +85,12 @@ public class BowlingManager : MonoBehaviour
         totalScore += pinsDownThisRound;
 
         // Handle video playback
-        videoPlayerScript.SelectVideoClip(score);
-        StartCoroutine(videoPlayerScript.PlayVideoAndStop());
+        if (canvasPathFollwer.currentWaypointIndex == canvasPathFollwer.waypoints.Length - 1)
+        {
+            videoPlayerScript.SelectVideoClip(score);
+            StartCoroutine(videoPlayerScript.PlayVideoAndStop());
+        }
+
         // Update UI (using string interpolation)
         scoreUI.text = pinsDownThisRound.ToString();
         if(totalScoreUI != null)
@@ -127,8 +133,7 @@ public class BowlingManager : MonoBehaviour
             powerBar.ResetBar();
         }
     }
-    
-    
+
     public void NewRound() //Updates the round counter
     {
         roundsPlayed++;
