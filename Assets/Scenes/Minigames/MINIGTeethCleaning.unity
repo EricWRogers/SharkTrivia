@@ -1448,7 +1448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1057637195
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2293,7 +2293,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1058189571}
-  totalScore: {fileID: 1351132316}
   winThreshold: 100
   winScreen: {fileID: 964783729}
   winText: {fileID: 717322390}

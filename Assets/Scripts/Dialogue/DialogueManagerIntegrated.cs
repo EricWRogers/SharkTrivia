@@ -16,6 +16,10 @@ public class DialogueManagerIntegrated : MonoBehaviour
     [SerializeField] private KeyCode altAdvanceKey = KeyCode.Return;
     [SerializeField] private bool clickAdvances = true;
 
+    // --- Journal pause state ---
+    private bool _pausedByJournal = false;
+    private readonly List<UnityEngine.UI.Button> _choiceButtons = new();
+
     private bool isTyping;
     private Coroutine typingRoutine;
     private Coroutine autoNextRoutine;
@@ -42,6 +46,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
     void Update()
     {
+        if (_pausedByJournal) return; 
         if (active == null) return;
 
         bool advancePressed =
@@ -111,7 +116,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
         // Encode speaker name & line
         string nameOut = encode ? translator.Translate(node.speakerName) : node.speakerName;
-        string lineOut = encode ? translator.Translate(node.speakerLine)  : node.speakerLine;
+        string lineOut = encode ? translator.Translate(node.speakerLine) : node.speakerLine;
 
         // Push name + portrait
         ui.SetCharInfo(nameOut, node.portrait);
@@ -119,6 +124,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
         // Clear prior buttons, reset cache
         ui.ClearChoices();
         _choiceLabels.Clear();
+        _choiceButtons.Clear();
 
         // Prepare and start typewriter for the body text
         var body = ui.dialogueText; // ensure DialogueController exposes this TMP_Text
@@ -133,6 +139,44 @@ public class DialogueManagerIntegrated : MonoBehaviour
         if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
 
         typingRoutine = StartCoroutine(TypeLine(body, lineOut, node));
+    }
+
+    // Call when opening the Journal 
+    public void PauseForJournal(bool hideChoices = false, bool finishLine = true)
+    {
+        if (_pausedByJournal) return;
+        _pausedByJournal = true;
+
+
+        if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
+        if (finishLine) FinishTypingNow();
+
+        // disable choice buttons so nothing can be clicked behind the journal
+        foreach (var b in _choiceButtons) if (b) b.interactable = false;
+    }
+    
+    
+    public void PauseForJournal()
+    {
+        PauseForJournal(true, true);   // hideChoices = true, finishLine = true
+    }
+
+
+    public void PauseForJournalFinish(bool finishLine)
+    {
+        PauseForJournal(true, finishLine);
+    }
+
+    // Call when closing the Journal
+    public void ResumeFromJournal()
+    {
+        if (!_pausedByJournal) return;
+        _pausedByJournal = false;
+
+        // re-enable buttons
+        foreach (var b in _choiceButtons) if (b) b.interactable = true;
+
+        RefreshAllTexts();
     }
 
     private IEnumerator TypeLine(TMP_Text label, string fullText, DNode node)
@@ -209,6 +253,8 @@ public class DialogueManagerIntegrated : MonoBehaviour
             {
                 var label = choiceButtonGO.GetComponentInChildren<TMP_Text>(true);
                 if (label != null) _choiceLabels.Add(label);
+                var btn = choiceButtonGO.GetComponent<UnityEngine.UI.Button>();
+                if (btn) _choiceButtons.Add(btn);
             }
         }
     }
