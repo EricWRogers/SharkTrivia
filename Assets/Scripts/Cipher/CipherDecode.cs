@@ -74,7 +74,7 @@ public class CipherDecode : MonoBehaviour
             else
                 UnRandomizeLetters();
 
-
+            Debug.Log("Singleton init");
             instance = this;
             DontDestroyOnLoad(gameObject);
 
