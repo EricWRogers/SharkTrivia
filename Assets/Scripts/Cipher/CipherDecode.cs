@@ -17,7 +17,7 @@ public class CipherDecode : MonoBehaviour
 
     //test build switches and trackers
     public bool isCountingGuesses = false;
-    public int maxGuesses = 4;    
+    public int maxGuesses = 6;    
     public int numGuesses = 0;
 
 
