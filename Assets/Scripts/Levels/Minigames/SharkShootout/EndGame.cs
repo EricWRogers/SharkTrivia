@@ -11,14 +11,6 @@ public class EndGame : MonoBehaviour
     public string endSceneName = "LoseScene";
 
     private int hitCount = 0;
-    public void Update()
-    {
-        if (!timer.timeRunning)
-        {
-            winScreen.DisplayWinResults(ScoreManager.instance.score);
-        }
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Fish"))
@@ -28,19 +20,11 @@ public class EndGame : MonoBehaviour
             Debug.Log("Hit #" + hitCount);
             if (hitCount >= maxHits)
             {
-                Lose();
+                winScreen.DisplayLoseResults();
             }
             
         }
 
     }
 
-    void Lose()
-    {
-        Debug.Log("Game Over!");
-        //winScreen.DisplayWinResults();
-
-        winScreen.StopGame();
-        //LevelManager.LoadBackStage();
-    }
 }

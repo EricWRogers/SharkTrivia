@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Timer : MonoBehaviour
 
     private float timeRemaining;
     public bool timeRunning = true;
+    public UnityEvent timeOut;
 
     private void Awake()
     {
@@ -55,7 +57,7 @@ public class Timer : MonoBehaviour
     }
     private void OnTimerEnds()
     {
-        Debug.Log("Timer ended");
+        timeOut.Invoke();
 
     }
 }
