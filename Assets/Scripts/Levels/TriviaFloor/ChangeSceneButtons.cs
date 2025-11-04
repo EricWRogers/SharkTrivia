@@ -1,57 +1,86 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class ChangeSceneButtons : MonoBehaviour
 {
-    public GameObject goBackstage;  //load the backstage scene
-    public GameObject playMiniGame; //load a random minigame
-    public GameObject continueQuiz; //continue the trivia
+    public static ChangeSceneButtons Instance { get; private set; }
 
-//adjust for number of working minigames
-    public int minigame = 2;    //minigame total
+    [Header("Buttons")]
+    [SerializeField] private GameObject goBackstage;   // load the backstage scene
+    [SerializeField] private GameObject playMiniGame;  // load a random minigame
+    [SerializeField] private GameObject continueQuiz;  // continue the trivia
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Minigame Count (1..N)")]
+    [Min(1)] public int minigame = 2; // number of working minigames
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
+        HideButtons();
+    }
+
+    public void HideButtons()
+    {
+        SetActiveSafe(goBackstage, false);
+        SetActiveSafe(playMiniGame, false);
+        SetActiveSafe(continueQuiz, false);
+    }
+
+    public void ShowButtons()
+    {
+        SetActiveSafe(goBackstage, true);
+        SetActiveSafe(playMiniGame, true);
+        SetActiveSafe(continueQuiz, true);
+    }
+
+    // Optional helper if you want to show only the minigame button
+    public void ShowOnlyMiniGame()
+    {
+        SetActiveSafe(goBackstage, false);
+        SetActiveSafe(playMiniGame, true);
+        SetActiveSafe(continueQuiz, false);
+    }
+
+    private void SetActiveSafe(GameObject go, bool on)
+    {
+        if (go) go.SetActive(on);
+        else Debug.LogWarning($"ChangeSceneButtons: a button reference is missing.");
+    }
+
+
+    public void LoadBackStage()
+    {
+        SceneManager.LoadScene("BackStage");
+    }
+
+    public void KeepGoing()
+    {
+       
         HideButtons();
         
     }
 
-    public void HideButtons(){  //call as a singleton to hide all the buttons
-        goBackstage.SetActive(false);
-        playMiniGame.SetActive(false);
-        continueQuiz.SetActive(false);
-    }
+    public void LoadMiniGames()
+    {
+        //pick 1 minigame
+        int game = Random.Range(1, minigame + 1);
 
-    public void ShowButtons(){  //call as a singleton to show all the buttons
-        goBackstage.SetActive(true);
-        playMiniGame.SetActive(true);
-        continueQuiz.SetActive(true);
-    }
+        switch (game)
+        {
+            case 1:
+                SceneManager.LoadScene("Bowling");
+                break;
+            case 2:
+                SceneManager.LoadScene("MINIGTeethCleaning");
+                break;
 
-    public void LoadBackStage(){
-        SceneManager.LoadScene("BackStage");
-    }
-
-    public void KeepGoing(){
-        //return to the trivia
-    }
-
-    public void LoadMiniGames(){
-        int game = Random.Range(minigame,0);
-        //Debug.Log(game);
-
-        if (game == 1){
-            SceneManager.LoadScene("Bowling");   //load the bowling minigame
-        } 
-        if (game == 2){
-            SceneManager.LoadScene("MINIGTeethCleaning");   //load the Teethcleaning game
+            default:
+                Debug.LogWarning($"No scene mapped for game index {game}.");
+                break;
         }
-        else{
-            Debug.Log("Something has gone wrong");  //just incase it chooses an unuseable number
-        }
-
     }
-    
 }
