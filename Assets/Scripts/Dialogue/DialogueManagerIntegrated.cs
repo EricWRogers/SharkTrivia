@@ -259,6 +259,45 @@ public class DialogueManagerIntegrated : MonoBehaviour
         }
     }
 
+
+
+
+    // Jump into any node (line)
+    public void JumpToNode(DNode node)
+    {
+        if (!node) return;
+        isFinished = false;
+
+        if (typingRoutine != null) { StopCoroutine(typingRoutine); typingRoutine = null; }
+        if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
+
+        ShowNode(node);
+    }
+
+    //delayed version
+    public void JumpToNodeDelayed(DNode node, float delay)
+    {
+        if (!node) return;
+        StartCoroutine(_JumpDelayed(node, delay));
+    }
+    private IEnumerator _JumpDelayed(DNode node, float delay)
+    {
+        yield return new WaitForSeconds(Mathf.Max(0f, delay));
+        JumpToNode(node);
+    }
+
+    public void StartConversationAt(Conversation convo, DNode startNode)
+    {
+        if (!convo) return;
+        isFinished = false;
+        active = convo;
+
+        if (typingRoutine != null) { StopCoroutine(typingRoutine); typingRoutine = null; }
+        if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
+
+        ShowNode(startNode ? startNode : convo.entry);
+    }
+
     private void FinishTypingNow()
     {
         isTyping = false;

@@ -12,10 +12,17 @@ public class UnassignOrGuess : MonoBehaviour
     {
         englishAlphabet.SetActive(false);
 
-/*        if ()
+        if (cipherDecode.charAssignments[englishKey] != '~')
         {
-            
-        } */
+            unassignLetter.SetActive(true);
+        }
+
+        else
+        {
+            guessLetter.SetActive(true);
+        }
+
+
     }
     
 }
