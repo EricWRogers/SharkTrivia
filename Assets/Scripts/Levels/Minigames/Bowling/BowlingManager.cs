@@ -15,10 +15,10 @@ public class BowlingManager : MonoBehaviour
     public GameObject ball;
     public int score = 0;
     public int totalScore = 0;
-    public int maxRounds = 3;
+    public int maxRounds = 6;
     public int roundsPlayed = 0;
     private int bonus = 10;
-    private bool pinsUp = true;
+    private bool pinsUp = false;
     GameObject[] pins;
     public TMP_Text scoreUI;
     public TMP_Text roundsUI;
@@ -48,11 +48,15 @@ public class BowlingManager : MonoBehaviour
 
         // Launch the ball
         Rigidbody rb = ball.GetComponent<Rigidbody>();
-
+        if (roundsPlayed % 2 == 0 && !pinsUp)
+        {
+            ResetPins();
+            pinsUp = true;
+        }
         if (ball.GetComponent<BowlingBall>().hasLaunched && (ball.transform.position.y < -20 || rb.IsSleeping()))
         {
             CountPinsDown();
-            ResetPins();
+            ResetBall();
             NewRound();
         }
     }
@@ -69,7 +73,7 @@ public class BowlingManager : MonoBehaviour
     public void CountPinsDown()
     {
         int pinsDownThisRound = 0;
-
+        
         // Tracks pins knocked down for scoring
         for (int i = 0; i < pins.Length; i++)
         {
@@ -87,7 +91,7 @@ public class BowlingManager : MonoBehaviour
         // Handle video playback
         if (canvasPathFollwer.currentWaypointIndex == canvasPathFollwer.waypoints.Length - 1)
         {
-            videoPlayerScript.SelectVideoClip(score);
+            videoPlayerScript.SelectVideoClip(pinsDownThisRound);
             StartCoroutine(videoPlayerScript.PlayVideoAndStop());
         }
 
@@ -108,23 +112,8 @@ public class BowlingManager : MonoBehaviour
             pins[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             pins[i].transform.rotation = Quaternion.identity;
         }
-        // Resets ball into original position + resets motion
-        ball.transform.position = new Vector3(0, 0.108f, -4f);
-        ball.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-        ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        ball.transform.rotation = Quaternion.identity;
-
-        BowlingBall bowlingBall = ball.GetComponent<BowlingBall>();
-        if (bowlingBall != null)
-        {
-            bowlingBall.ResetBall();
-        }
-
-        // Swaps cameras on and off after reset
-        cameraSwitch.camera1.SetActive(true);
-        cameraSwitch.camera2.SetActive(false);
-
-        cameraSwitch.gameObject.SetActive(true);
+        
+        //OLD POWER BAR IMPLEMENTATION
         /*
         // Resets Power bar for next throw
         PowerBar powerBar = FindAnyObjectByType<PowerBar>();
@@ -133,6 +122,24 @@ public class BowlingManager : MonoBehaviour
             powerBar.ResetBar();
         }
         */
+    }
+
+    public void ResetBall()
+    {
+        BowlingBall bowlingBall = ball.GetComponent<BowlingBall>();
+        // Resets ball into original position + resets motion
+        ball.transform.position = new Vector3(0, 0.108f, -4f);
+        ball.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+        ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        ball.transform.rotation = Quaternion.identity;
+        bowlingBall.hasLaunched = false; // allows launch again
+        bowlingBall.spinDirection = 0f;
+
+        // Swaps cameras on and off after reset
+        cameraSwitch.camera1.SetActive(true);
+        cameraSwitch.camera2.SetActive(false);
+
+        cameraSwitch.gameObject.SetActive(true);
     }
 
     public void NewRound() //Updates the round counter
