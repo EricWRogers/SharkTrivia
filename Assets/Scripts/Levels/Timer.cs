@@ -12,9 +12,13 @@ public class Timer : MonoBehaviour
     private float timeRemaining;
     public bool timeRunning = true;
 
-    private void Start()
+    private void Awake()
     {
         timeRemaining = totalTime;
+    }
+
+    private void Start()
+    {
         UpdateTimerDisplay();
     }
     private void Update()
