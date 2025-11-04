@@ -24,6 +24,8 @@ public class CipherDecode : MonoBehaviour
     public bool isLimitingCorrectness = false;
     public int maxCorrectGuesses = 4;
     public int numCorrectGuesses = 0;
+
+    public bool clearingUserLetters = true;
     
     //
 
@@ -81,6 +83,16 @@ public class CipherDecode : MonoBehaviour
         {
             Destroy(this);
             return;
+        }
+
+        if (clearingUserLetters)
+        {
+            for (char i = 'a'; i < 'z'; i++)
+            {
+                charAssignments[i] = '~';
+            }
+
+            updateDisplays();
         }
 
     }
