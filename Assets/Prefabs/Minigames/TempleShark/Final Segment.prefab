@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 51296041010451160}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -66.76, y: 2.3, z: 29.94}
+  m_LocalPosition: {x: -66.76, y: 1.16, z: 29.94}
   m_LocalScale: {x: 8.668134, y: 3.5596566, z: 2.8030994}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63651093d1fc6c54d920c487b3713b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amp: 1
+  amp: 0.5
   freq: 1
 --- !u!1 &77950349217372029
 GameObject:
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 550162073613603200}
   - component: {fileID: 246035461467795266}
   m_Layer: 0
-  m_Name: Mines 2
+  m_Name: Mines 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1587,7 +1587,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5000001
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0.000011444092}
 --- !u!1 &1091109454012718577
 GameObject:
@@ -2261,7 +2261,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5000001
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0.000011444092}
 --- !u!1 &1989661991699082961
 GameObject:
@@ -2425,7 +2425,7 @@ GameObject:
   - component: {fileID: 1148720298075759982}
   - component: {fileID: 4017714467638064389}
   m_Layer: 0
-  m_Name: 'Mines '
+  m_Name: Mines 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2589,7 +2589,7 @@ Transform:
   m_GameObject: {fileID: 2580945684907906558}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -18.74, y: -3.4499345, z: 1.03}
+  m_LocalPosition: {x: -18.74, y: -4.32, z: 1.03}
   m_LocalScale: {x: 1.238913, y: 1.2351102, z: 1.4242997}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3273,7 +3273,7 @@ Transform:
   m_GameObject: {fileID: 3653939670054132967}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -26.07, y: -3.4499345, z: -5.939995}
+  m_LocalPosition: {x: -26.07, y: -4.59, z: -5.939995}
   m_LocalScale: {x: 1.238913, y: 1.2351102, z: 1.4242997}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3509,7 +3509,7 @@ Transform:
   m_GameObject: {fileID: 4099130445276785465}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -23.83, y: -3.4499345, z: 4.159996}
+  m_LocalPosition: {x: -23.83, y: -4.9, z: 4.159996}
   m_LocalScale: {x: 1.238913, y: 1.2351102, z: 1.4242997}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14958,7 +14958,7 @@ GameObject:
   - component: {fileID: 5320338972612886832}
   - component: {fileID: 2325085755576427416}
   m_Layer: 0
-  m_Name: Mines 2
+  m_Name: Mines 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
