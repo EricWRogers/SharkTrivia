@@ -3550,6 +3550,10 @@ PrefabInstance:
       propertyPath: percentageText
       value: 
       objectReference: {fileID: 1282188473}
+    - target: {fileID: 4044471872658943733, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
+      propertyPath: scrollSensitivity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5157931778429715592, guid: 756e519f502eabd429dcfde494c34b38, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.4288218

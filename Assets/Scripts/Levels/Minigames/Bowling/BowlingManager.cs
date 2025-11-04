@@ -125,13 +125,14 @@ public class BowlingManager : MonoBehaviour
         cameraSwitch.camera2.SetActive(false);
 
         cameraSwitch.gameObject.SetActive(true);
-
+        /*
         // Resets Power bar for next throw
         PowerBar powerBar = FindAnyObjectByType<PowerBar>();
         if (powerBar != null)
         {
             powerBar.ResetBar();
         }
+        */
     }
 
     public void NewRound() //Updates the round counter
