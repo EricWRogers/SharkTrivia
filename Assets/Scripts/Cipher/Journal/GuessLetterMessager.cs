@@ -6,6 +6,9 @@ public class GuessLetterMessager : MonoBehaviour
     public ButtonRename buttonRename;
     public Translator translator;
     public string letter;
+    public GameObject englishAlphabet;
+    public GameObject guessLetter;
+    public GameObject unassignLetter;
 
     public void Open()
     {
@@ -30,10 +33,28 @@ public class GuessLetterMessager : MonoBehaviour
         {
             gameObject.GetComponent<Button>().interactable = true;
         }
-        
+
         //THIS LINE BELOW IS ALSO EXTREMELY SCUFFED ; ALSO MAKE BETTER LATER - Scott
-        if(transform.parent.parent.parent.GetChild(transform.parent.parent.parent.childCount - 1).name == "Debug_1" && !maxGuessesIncurred)
+        if (transform.parent.parent.parent.GetChild(transform.parent.parent.parent.childCount - 1).name == "Debug_1" && !maxGuessesIncurred)
             transform.parent.parent.parent.GetChild(transform.parent.parent.parent.childCount - 1).gameObject.SetActive(false);
 
     } 
+    public void MiniMenuManager()
+    {
+        englishAlphabet.SetActive(false);
+
+        //Take letter as enlgih key from GLM
+
+        if (CipherDecode.instance.charAssignments[letter.ToLower().ToCharArray()[0]] != '~')
+        {
+            unassignLetter.SetActive(true);
+        }
+
+        else
+        {
+            guessLetter.SetActive(true);
+        }
+
+
+    }
 }

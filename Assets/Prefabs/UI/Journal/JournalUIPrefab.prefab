@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4226917896721775817}
   - component: {fileID: 2644937982484230700}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: GuessJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,10 +35,10 @@ RectTransform:
   - {fileID: 4325710702369783560}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 826, y: -178}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &450914067458336778
 CanvasRenderer:
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 4319661247151754624}
   - component: {fileID: 8172914061044097037}
   m_Layer: 5
-  m_Name: Button (20)
+  m_Name: GuessV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,10 +480,10 @@ RectTransform:
   - {fileID: 7640627937433216932}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 826, y: -394}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2583700431945645302
 CanvasRenderer:
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 4498383386354091696}
   - component: {fileID: 1548133612162352976}
   m_Layer: 5
-  m_Name: Button
+  m_Name: GuessA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,10 +653,10 @@ RectTransform:
   - {fileID: 4810862558915554317}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 130, y: -70}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7036197860465407371
 CanvasRenderer:
@@ -1213,7 +1213,7 @@ GameObject:
   - component: {fileID: 2029191874070095626}
   - component: {fileID: 1558814040212659603}
   m_Layer: 5
-  m_Name: Button (19)
+  m_Name: GuessU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1234,10 +1234,10 @@ RectTransform:
   - {fileID: 6290951513746838701}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 594, y: -394}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1854455331928022978
 CanvasRenderer:
@@ -1604,7 +1604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f227472f9dd3421ba60d775fc8b7b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cipherDecode: {fileID: 0}
   buttonText: 0
   keyToUpdate: 97
   newKeyValue: 98
@@ -1786,7 +1785,7 @@ GameObject:
   - component: {fileID: 8672588173009610640}
   - component: {fileID: 8856808207606191097}
   m_Layer: 5
-  m_Name: Button (14)
+  m_Name: GuessP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1807,10 +1806,10 @@ RectTransform:
   - {fileID: 4375810984422077149}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -286}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 826, y: -286}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4000806365250787740
 CanvasRenderer:
@@ -2037,7 +2036,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.45
+  m_fontSize: 18
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2095,7 +2094,7 @@ GameObject:
   - component: {fileID: 3289300310428269376}
   - component: {fileID: 2216786508380752090}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: GuessG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2116,10 +2115,10 @@ RectTransform:
   - {fileID: 2422730816802580262}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 130, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 130, y: -178}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5160435004890478045
 CanvasRenderer:
@@ -2573,7 +2572,7 @@ GameObject:
   - component: {fileID: 6843957038513018775}
   - component: {fileID: 3809861955945715008}
   m_Layer: 5
-  m_Name: Button (9)
+  m_Name: GuessK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2594,10 +2593,10 @@ RectTransform:
   - {fileID: 1417248088445130176}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1058, y: -178}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2549256604455745140
 CanvasRenderer:
@@ -2824,7 +2823,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 35.8
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2882,7 +2881,7 @@ GameObject:
   - component: {fileID: 8808391545794705715}
   - component: {fileID: 5556787907816337532}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: GuessC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2903,10 +2902,10 @@ RectTransform:
   - {fileID: 759248328726065832}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 594, y: -70}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1550075625617331289
 CanvasRenderer:
@@ -3055,7 +3054,7 @@ GameObject:
   - component: {fileID: 1790153985913903205}
   - component: {fileID: 6054344477170468943}
   m_Layer: 5
-  m_Name: Button (22)
+  m_Name: GuessX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3076,10 +3075,10 @@ RectTransform:
   - {fileID: 3850957031987934613}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1290, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1290, y: -394}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4275427876148507118
 CanvasRenderer:
@@ -3228,7 +3227,7 @@ GameObject:
   - component: {fileID: 7252552281452713819}
   - component: {fileID: 652614148095164964}
   m_Layer: 5
-  m_Name: Button (16)
+  m_Name: GuessR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3249,10 +3248,10 @@ RectTransform:
   - {fileID: 5946245244621008029}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1290, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1290, y: -286}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6377338396457723462
 CanvasRenderer:
@@ -3537,7 +3536,7 @@ GameObject:
   - component: {fileID: 960520878303116545}
   - component: {fileID: 2468257150364105776}
   m_Layer: 5
-  m_Name: Button (21)
+  m_Name: GuessW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3558,10 +3557,10 @@ RectTransform:
   - {fileID: 328942026086689561}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -394}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1058, y: -394}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6198493259103014144
 CanvasRenderer:
@@ -3982,7 +3981,7 @@ GameObject:
   - component: {fileID: 2274046632655520298}
   - component: {fileID: 8798997116248256432}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: GuessD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4003,10 +4002,10 @@ RectTransform:
   - {fileID: 2051767990159405133}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 826, y: -70}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5176418908706239787
 CanvasRenderer:
@@ -4563,7 +4562,7 @@ GameObject:
   - component: {fileID: 5168919391607568973}
   - component: {fileID: 6333564955833011933}
   m_Layer: 5
-  m_Name: Button (24)
+  m_Name: GuessZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4584,10 +4583,10 @@ RectTransform:
   - {fileID: 8151708980969108543}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 362, y: -502}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &279774701469604492
 CanvasRenderer:
@@ -5305,7 +5304,7 @@ GameObject:
   - component: {fileID: 4033953689476033624}
   - component: {fileID: 5673477840486408087}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: GuessH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5326,10 +5325,10 @@ RectTransform:
   - {fileID: 2761317148645874347}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -178}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 362, y: -178}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4596951759471597582
 CanvasRenderer:
@@ -5516,7 +5515,7 @@ GameObject:
   - component: {fileID: 7060885909562387437}
   - component: {fileID: 3664209309886738360}
   m_Layer: 5
-  m_Name: Button (10)
+  m_Name: GuessL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5537,10 +5536,10 @@ RectTransform:
   - {fileID: 5527156601149642276}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1290, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1290, y: -178}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1095327125275941941
 CanvasRenderer:
@@ -5689,7 +5688,7 @@ GameObject:
   - component: {fileID: 2239135284635394454}
   - component: {fileID: 8868286680520282323}
   m_Layer: 5
-  m_Name: Button (12)
+  m_Name: GuessN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5710,10 +5709,10 @@ RectTransform:
   - {fileID: 7988288705169454208}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 362, y: -286}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5631189157977292566
 CanvasRenderer:
@@ -5862,7 +5861,7 @@ GameObject:
   - component: {fileID: 9096012579465738790}
   - component: {fileID: 6528170507070510484}
   m_Layer: 5
-  m_Name: Button (11)
+  m_Name: GuessM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5883,10 +5882,10 @@ RectTransform:
   - {fileID: 7529922260563534536}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 130, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 130, y: -286}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &553007664587706924
 CanvasRenderer:
@@ -6035,7 +6034,7 @@ GameObject:
   - component: {fileID: 1582370891105401066}
   - component: {fileID: 8465219594631617637}
   m_Layer: 5
-  m_Name: Button (23)
+  m_Name: GuessY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6056,10 +6055,10 @@ RectTransform:
   - {fileID: 7067346422825859251}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 130, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 130, y: -502}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7016567317989211608
 CanvasRenderer:
@@ -6501,7 +6500,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 95
+  m_fontSize: 18
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6781,7 +6780,7 @@ GameObject:
   - component: {fileID: 8118656197682160681}
   - component: {fileID: 2120208302246954312}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: GuessB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6802,10 +6801,10 @@ RectTransform:
   - {fileID: 731581537046471745}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 362, y: -70}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7650738446571649345
 CanvasRenderer:
@@ -6954,7 +6953,7 @@ GameObject:
   - component: {fileID: 1208469849818706375}
   - component: {fileID: 6166658599316334176}
   m_Layer: 5
-  m_Name: Button (17)
+  m_Name: GuessS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6975,10 +6974,10 @@ RectTransform:
   - {fileID: 6849726759917968149}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 130, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 130, y: -394}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8433535952200001731
 CanvasRenderer:
@@ -7127,7 +7126,7 @@ GameObject:
   - component: {fileID: 8181969592419523191}
   - component: {fileID: 612262746861480707}
   m_Layer: 5
-  m_Name: Button (15)
+  m_Name: GuessQ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7148,10 +7147,10 @@ RectTransform:
   - {fileID: 3867518605640376363}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1058, y: -286}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5785018926400944585
 CanvasRenderer:
@@ -7708,7 +7707,7 @@ GameObject:
   - component: {fileID: 2819072946660745013}
   - component: {fileID: 6944367560741247698}
   m_Layer: 5
-  m_Name: Button (18)
+  m_Name: GuessT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7729,10 +7728,10 @@ RectTransform:
   - {fileID: 98565939922963200}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 362, y: -394}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6038452543348780491
 CanvasRenderer:
@@ -8017,7 +8016,7 @@ GameObject:
   - component: {fileID: 8724773243288738994}
   - component: {fileID: 8939126778196430070}
   m_Layer: 5
-  m_Name: Button (13)
+  m_Name: GuessO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8038,10 +8037,10 @@ RectTransform:
   - {fileID: 2774467895813417155}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -286}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 594, y: -286}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8481041924661557214
 CanvasRenderer:
@@ -8598,7 +8597,7 @@ GameObject:
   - component: {fileID: 2471692295224813583}
   - component: {fileID: 3038287976868937515}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: GuessF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8619,10 +8618,10 @@ RectTransform:
   - {fileID: 9194586173267867159}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1290, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1290, y: -70}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6263415365441957645
 CanvasRenderer:
@@ -8771,7 +8770,7 @@ GameObject:
   - component: {fileID: 7183848047850985582}
   - component: {fileID: 8926501312158084062}
   m_Layer: 5
-  m_Name: Button (25)
+  m_Name: Guessi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8792,10 +8791,10 @@ RectTransform:
   - {fileID: 2721483832302537501}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 594, y: -178}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7930763893370936376
 CanvasRenderer:
@@ -8944,7 +8943,7 @@ GameObject:
   - component: {fileID: 8400761270854234256}
   - component: {fileID: 7281988137693926962}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: GuessE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8965,10 +8964,10 @@ RectTransform:
   - {fileID: 16745233453367488}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1058, y: -70}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 120, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5435639524097034287
 CanvasRenderer:

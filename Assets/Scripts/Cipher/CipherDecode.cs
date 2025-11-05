@@ -17,13 +17,15 @@ public class CipherDecode : MonoBehaviour
 
     //test build switches and trackers
     public bool isCountingGuesses = false;
-    public int maxGuesses = 4;    
+    public int maxGuesses = 6;    
     public int numGuesses = 0;
 
 
     public bool isLimitingCorrectness = false;
     public int maxCorrectGuesses = 4;
     public int numCorrectGuesses = 0;
+
+    public bool clearingUserLetters = true;
     
     //
 
@@ -72,7 +74,7 @@ public class CipherDecode : MonoBehaviour
             else
                 UnRandomizeLetters();
 
-
+            Debug.Log("Singleton init");
             instance = this;
             DontDestroyOnLoad(gameObject);
 
@@ -81,6 +83,16 @@ public class CipherDecode : MonoBehaviour
         {
             Destroy(this);
             return;
+        }
+
+        if (clearingUserLetters)
+        {
+            for (char i = 'a'; i < 'z'; i++)
+            {
+                charAssignments[i] = '~';
+            }
+
+            updateDisplays();
         }
 
     }

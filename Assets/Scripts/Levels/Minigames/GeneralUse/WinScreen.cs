@@ -25,20 +25,17 @@ public class WinScreen : MonoBehaviour
     public TMP_Text winTime;
     public TMP_Text winStat;
 
-    void Start(){
-        HideWinScreen();
-
-    }
-
-    public void DisplayWinResults(int score)
-    {    //whenever a minigame is over, call function
-        int points = score;
+    public void DisplayWinResults()
+    {
+        //whenever a minigame is over, call function
+        StopGame();
+        int points = ScoreManager.instance.score;
 
 
         if (points >= winThreshold)
         {
             winText.text = "YOU WIN!";
-            //TotalScore.instance.AddPoints(score);
+            TotalScore.instance.AddPoints(points);
         }
         if (points < winThreshold)
         {
@@ -51,15 +48,6 @@ public class WinScreen : MonoBehaviour
         winScreen.SetActive(true);
         
         ShowWinScreen();    //show the win screen when the minigame is over
-
-        if (SceneManager.GetActiveScene().name == "SharkShootout")
-        {
-            StopGame();
-        }
-        if (SceneManager.GetActiveScene().name == "Bowling")
-        {
-            StopGame();
-        }
 
     }
 
@@ -74,20 +62,11 @@ public class WinScreen : MonoBehaviour
         //winScreen.SetActive(true);
         ShowWinScreen();    //show the win screen when the minigame is over
 
-        if (SceneManager.GetActiveScene().name == "SharkShootout")
-        {
-            StopGame();
-        }
-        if (SceneManager.GetActiveScene().name == "Bowling")
-        {
-            StopGame();
-        }
-
     }
 
     public void ReturnButton()
     {
-        Debug.Log("CLICK");
+        LevelManager.StaticResume();
         LevelManager.LoadBackStage();   //temp for now
 
         //send player back to what ever scene they entered from.
@@ -104,6 +83,7 @@ public class WinScreen : MonoBehaviour
 
     private void StopGame()
     {
+        //Debug.Log(SceneManager.GetActiveScene().name);
         Time.timeScale = 0;
     }
 }

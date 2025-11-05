@@ -16,6 +16,10 @@ public class DialogueManagerIntegrated : MonoBehaviour
     [SerializeField] private KeyCode altAdvanceKey = KeyCode.Return;
     [SerializeField] private bool clickAdvances = true;
 
+    // --- Journal pause state ---
+    private bool _pausedByJournal = false;
+    private readonly List<UnityEngine.UI.Button> _choiceButtons = new();
+
     private bool isTyping;
     private Coroutine typingRoutine;
     private Coroutine autoNextRoutine;
@@ -42,6 +46,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
     void Update()
     {
+        if (_pausedByJournal) return; 
         if (active == null) return;
 
         bool advancePressed =
@@ -111,7 +116,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
         // Encode speaker name & line
         string nameOut = encode ? translator.Translate(node.speakerName) : node.speakerName;
-        string lineOut = encode ? translator.Translate(node.speakerLine)  : node.speakerLine;
+        string lineOut = encode ? translator.Translate(node.speakerLine) : node.speakerLine;
 
         // Push name + portrait
         ui.SetCharInfo(nameOut, node.portrait);
@@ -119,6 +124,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
         // Clear prior buttons, reset cache
         ui.ClearChoices();
         _choiceLabels.Clear();
+        _choiceButtons.Clear();
 
         // Prepare and start typewriter for the body text
         var body = ui.dialogueText; // ensure DialogueController exposes this TMP_Text
@@ -133,21 +139,103 @@ public class DialogueManagerIntegrated : MonoBehaviour
         if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
 
         typingRoutine = StartCoroutine(TypeLine(body, lineOut, node));
+
     }
+
+    // Call when opening the Journal 
+    public void PauseForJournal(bool hideChoices = false, bool finishLine = true)
+    {
+        if (_pausedByJournal) return;
+        _pausedByJournal = true;
+
+
+        if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
+        if (finishLine) FinishTypingNow();
+
+        // disable choice buttons so nothing can be clicked behind the journal
+        foreach (var b in _choiceButtons) if (b) b.interactable = false;
+    }
+    
+    
+    public void PauseForJournal()
+    {
+        PauseForJournal(true, true);   // hideChoices = true, finishLine = true
+    }
+
+
+    public void PauseForJournalFinish(bool finishLine)
+    {
+        PauseForJournal(true, finishLine);
+    }
+
+    // Call when closing the Journal
+    public void ResumeFromJournal()
+    {
+        if (!_pausedByJournal) return;
+        _pausedByJournal = false;
+
+        // re-enable buttons
+        foreach (var b in _choiceButtons) if (b) b.interactable = true;
+
+        RefreshAllTexts();
+    }
+
+        private void AfterTypeDone(DNode node)
+        {
+            // build choices if present
+            if (node.choices != null && node.choices.Length > 0)
+            {
+                BuildChoices(node);
+                return;
+            }
+
+            // or auto-advance
+            if (node.autoProgress && node.nextIfNoChoices != null)
+            {
+                autoNextRoutine = StartCoroutine(AutoNext(node.nextIfNoChoices, node.autoDelay));
+                return;
+            }
+
+            // or show a Continue button
+            var go = DialogueController.Instance.CreateChoiceButton("Continue", () =>
+            {
+                if (node.nextIfNoChoices != null) ShowNode(node.nextIfNoChoices);
+                else EndConversation();
+            });
+            if (go != null)
+            {
+                var lbl = go.GetComponentInChildren<TMP_Text>(true);
+                if (lbl != null) _choiceLabels.Add(lbl);
+                var btn = go.GetComponent<UnityEngine.UI.Button>();
+                if (btn) _choiceButtons.Add(btn);
+            }
+        }
 
     private IEnumerator TypeLine(TMP_Text label, string fullText, DNode node)
     {
         isTyping = true;
 
+        // set text and measure visible characters
         label.text = fullText;
         label.ForceMeshUpdate();
         int total = Mathf.Max(0, label.textInfo.characterCount);
+
+        // If nothing to type 
+        if (total == 0)
+        {
+            label.maxVisibleCharacters = 999999;
+            isTyping = false;
+            typingRoutine = null;
+            AfterTypeDone(node);
+            yield break; 
+        }
 
         // Hide all characters, reveal over time
         label.maxVisibleCharacters = 0;
 
         if (charsPerSecond <= 0f)
         {
+            // Instant reveal if speed is zero/negative
             label.maxVisibleCharacters = 999999;
         }
         else
@@ -155,6 +243,13 @@ public class DialogueManagerIntegrated : MonoBehaviour
             float t = 0f;
             while (label.maxVisibleCharacters < total)
             {
+                // If journal pauses, just wait
+                if (_pausedByJournal)
+                {
+                    yield return null;
+                    continue;
+                }
+
                 t += Time.unscaledDeltaTime * charsPerSecond;
                 int visible = Mathf.Clamp(Mathf.FloorToInt(t), 0, total);
                 label.maxVisibleCharacters = visible;
@@ -166,29 +261,36 @@ public class DialogueManagerIntegrated : MonoBehaviour
         isTyping = false;
         typingRoutine = null;
 
-        // After typing finishes:
-        if (node.choices != null && node.choices.Length > 0)
+        
+        AfterTypeDone(node);
+        yield break;  
+    }
+
+    private void FinishTypingNow()
+    {
+        
+        if (isTyping)
         {
-            BuildChoices(node);
-        }
-        else if (node.autoProgress && node.nextIfNoChoices != null)
-        {
-            // Start auto-next (click/space will cancel and advance immediately)
-            autoNextRoutine = StartCoroutine(AutoNext(node.nextIfNoChoices, node.autoDelay));
+            isTyping = false;
+
+            
+            if (typingRoutine != null)
+            {
+                StopCoroutine(typingRoutine);
+                typingRoutine = null;
+            }
+
+            var body = DialogueController.Instance?.dialogueText;
+            if (body != null) body.maxVisibleCharacters = 999999;
+
+            
+            if (current != null) AfterTypeDone(current);
         }
         else
         {
-            // Also provide a Continue button just in case
-            var go = DialogueController.Instance.CreateChoiceButton("Continue", () =>
-            {
-                if (node.nextIfNoChoices != null) ShowNode(node.nextIfNoChoices);
-                else EndConversation();
-            });
-            if (go != null)
-            {
-                var lbl = go.GetComponentInChildren<TMP_Text>(true);
-                if (lbl != null) _choiceLabels.Add(lbl);
-            }
+            
+            var body = DialogueController.Instance?.dialogueText;
+            if (body != null) body.maxVisibleCharacters = 999999;
         }
     }
 
@@ -209,22 +311,51 @@ public class DialogueManagerIntegrated : MonoBehaviour
             {
                 var label = choiceButtonGO.GetComponentInChildren<TMP_Text>(true);
                 if (label != null) _choiceLabels.Add(label);
+                var btn = choiceButtonGO.GetComponent<UnityEngine.UI.Button>();
+                if (btn) _choiceButtons.Add(btn);
             }
         }
     }
 
-    private void FinishTypingNow()
-    {
-        isTyping = false;
-        if (typingRoutine != null)
-        {
-            StopCoroutine(typingRoutine);
-            typingRoutine = null;
-        }
 
-        var body = DialogueController.Instance?.dialogueText;
-        if (body != null) body.maxVisibleCharacters = 999999;
+
+
+    // Jump into any node (line)
+    public void JumpToNode(DNode node)
+    {
+        if (!node) return;
+        isFinished = false;
+
+        if (typingRoutine != null) { StopCoroutine(typingRoutine); typingRoutine = null; }
+        if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
+
+        ShowNode(node);
     }
+
+    //delayed version
+    public void JumpToNodeDelayed(DNode node, float delay)
+    {
+        if (!node) return;
+        StartCoroutine(_JumpDelayed(node, delay));
+    }
+    private IEnumerator _JumpDelayed(DNode node, float delay)
+    {
+        yield return new WaitForSeconds(Mathf.Max(0f, delay));
+        JumpToNode(node);
+    }
+
+    public void StartConversationAt(Conversation convo, DNode startNode)
+    {
+        if (!convo) return;
+        isFinished = false;
+        active = convo;
+
+        if (typingRoutine != null) { StopCoroutine(typingRoutine); typingRoutine = null; }
+        if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
+
+        ShowNode(startNode ? startNode : convo.entry);
+    }
+
 
     private void OnChoiceSelected(Choice c)
     {
