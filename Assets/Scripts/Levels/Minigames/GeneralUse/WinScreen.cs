@@ -5,6 +5,12 @@ using TMPro;
 
 // winScreen.DisplayWinResults();
 
+///////////// TO USE THE WIN SCREEN (it also works as a lose screen) /////////////
+// winScreen.DisplayWinResults(ScoreManager.instance.score);
+
+
+
+
 public class WinScreen : MonoBehaviour
 {
     public Timer timer;
@@ -32,16 +38,16 @@ public class WinScreen : MonoBehaviour
         if (points >= winThreshold)
         {
             winText.text = "YOU WIN!";
-            TotalScore.instance.AddPoints(score);
+            //TotalScore.instance.AddPoints(score);
         }
         if (points < winThreshold)
         {
             winText.text = "you lose!";
-            TotalScore.instance.PlayerLost();
+            //TotalScore.instance.PlayerLost();
         }
 
         winTime.text = "Time - " + timer.GetFormattedTime();
-        winStat.text = "Score - " + points;
+        winStat.text = "Score - ";
         winScreen.SetActive(true);
         
         ShowWinScreen();    //show the win screen when the minigame is over
@@ -96,7 +102,7 @@ public class WinScreen : MonoBehaviour
         winScreen.SetActive(true);
     }
 
-    public void StopGame()
+    private void StopGame()
     {
         Time.timeScale = 0;
     }

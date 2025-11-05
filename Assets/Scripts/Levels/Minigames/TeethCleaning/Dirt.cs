@@ -3,25 +3,31 @@ using UnityEngine;
 public class Dirt : MonoBehaviour
 {
 
-    public SpriteRenderer dirt;
+    //public SpriteRenderer dirt;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Toothbrush"))
+        if (other.CompareTag("Toothbrush"))      //when can change the tag to whateven tool we need... possably a "pick"
         {
-            ScoreManager.instance.AddPoint();
-            FadeOut();
-            Destroy(gameObject);
+            Debug.Log("touching");
+            if(Input.GetMouseButtonDown(0)){
+                Debug.Log("clicked");
+                ScoreManager.instance.AddPoint();
+
+                RemoveTween();
+                
+            }
+            // Destroy(gameObject);
 
         }
     }
 
-    public void FadeOut(){
-        Color c = dirt.color;
-        c.a = 1f;
-        while(c.a > 0f){
-            c.a -= 0.2f;
-            dirt.color = c;
-        }
+    void RemoveTween(){
+        // while(Vector3.position.y > -10){
+        //     transfrom.Translate(0,-2,0);
+        //     transfrom.Rotate(0,0,0.1);
+        // }
+
+        Destroy(gameObject);
     }
 }

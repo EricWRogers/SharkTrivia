@@ -7,8 +7,6 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float totalTime = 60f;
 
-    public WinScreen winScreen;
-
     private float timeRemaining;
     public bool timeRunning = true;
 
