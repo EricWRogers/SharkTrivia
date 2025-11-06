@@ -67,6 +67,13 @@ public class CipherDecode : MonoBehaviour
 
     void Awake()
     {
+
+        /// <summary>
+        /// prevents cipher from being deleted when a new level loads.
+        /// temporaily commented out as we are temporarily using 3 unique ciphers 
+        /// </summary>
+
+        
         if (instance == null)
         {
             if (isRandomizing)
@@ -81,25 +88,15 @@ public class CipherDecode : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
             return;
-        }
-
-        /*
-        if (clearingUserLetters)
-        {
-            for (char i = 'a'; i < 'z'; i++)
-            {
-                charAssignments[i] = '~';
-            }
-
-            updateDisplays();
-        } */
-
+        } 
     }
 
     public void clearUserLetters()
     {
+        Debug.Log("Reseting cipher...");
+
         for (char i = 'a'; i < 'z'; i++)
         {
             charAssignments[i] = '~';

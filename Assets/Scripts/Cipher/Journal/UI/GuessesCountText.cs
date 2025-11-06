@@ -10,7 +10,14 @@ public class GuessesCountText : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        userDecode = GameObject.Find("usrDecode");
+
         _cipherDecode = userDecode.GetComponent<CipherDecode>();
+
+        if ( _cipherDecode == null)
+        {
+            Debug.LogWarning("Error: cipher decode script not found!");
+        }
     }
 
     // Update is called once per frame
