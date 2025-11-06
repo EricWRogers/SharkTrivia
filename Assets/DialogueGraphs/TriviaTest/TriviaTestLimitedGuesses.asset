@@ -17,7 +17,7 @@ MonoBehaviour:
   speakerLine: That's right! And your's is particularly bright!
   autoProgress: 0
   autoDelay: 0.75
-  nextIfNoChoices: {fileID: 0}
+  nextIfNoChoices: {fileID: -4579287456020053817}
   choices: []
   onEnter:
     m_PersistentCalls:
@@ -139,7 +139,7 @@ MonoBehaviour:
     and many different species do live in the artic.
   autoProgress: 0
   autoDelay: 0.75
-  nextIfNoChoices: {fileID: 0}
+  nextIfNoChoices: {fileID: -3459772486641571436}
   choices: []
   onEnter:
     m_PersistentCalls:
@@ -161,7 +161,7 @@ MonoBehaviour:
   speakerLine: That's correct! Great job!
   autoProgress: 0
   autoDelay: 0.75
-  nextIfNoChoices: {fileID: 0}
+  nextIfNoChoices: {fileID: -3459772486641571436}
   choices: []
   onEnter:
     m_PersistentCalls:
@@ -183,7 +183,7 @@ MonoBehaviour:
   speakerLine: 'Well, maybe you don''t, but other sharks typically do. '
   autoProgress: 0
   autoDelay: 0.75
-  nextIfNoChoices: {fileID: 0}
+  nextIfNoChoices: {fileID: -4579287456020053817}
   choices: []
   onEnter:
     m_PersistentCalls:
@@ -396,7 +396,7 @@ MonoBehaviour:
   speakerLine: Wonderful! Let's begin!
   autoProgress: 1
   autoDelay: 1
-  nextIfNoChoices: {fileID: 0}
+  nextIfNoChoices: {fileID: 1886794867248464250}
   choices: []
   onEnter:
     m_PersistentCalls:
