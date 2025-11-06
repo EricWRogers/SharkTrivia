@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
+//using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 //Originally Programmed by Samuel (Scott)
 
@@ -73,7 +74,7 @@ public class CipherDecode : MonoBehaviour
         /// temporaily commented out as we are temporarily using 3 unique ciphers 
         /// </summary>
 
-        
+
         if (instance == null)
         {
             if (isRandomizing)
@@ -82,6 +83,8 @@ public class CipherDecode : MonoBehaviour
                 UnRandomizeLetters();
 
             Debug.Log("Singleton init");
+            SceneManager.activeSceneChanged += sceneChanged;
+
             instance = this;
             DontDestroyOnLoad(gameObject);
 
@@ -90,7 +93,7 @@ public class CipherDecode : MonoBehaviour
         {
             Destroy(this.gameObject);
             return;
-        } 
+        }
     }
 
     public void clearUserLetters()
@@ -310,6 +313,30 @@ public class CipherDecode : MonoBehaviour
         updateDisplays();
         return 1;
 
+    }
+
+    void sceneChanged(Scene current, Scene next)
+    {
+        if (next.buildIndex == 10)
+        {
+            isLimitingCorrectness = true;
+            isCountingGuesses = false;
+        }
+        else if (next.buildIndex == 11)
+        {
+            isLimitingCorrectness = false;
+            isCountingGuesses = true;
+        }
+        else
+        {
+            isLimitingCorrectness = false;
+            isCountingGuesses = false;
+        }
+
+        numCorrectGuesses = 0;
+        numGuesses = 0;
+
+        clearUserLetters();
     }
     
 }
