@@ -8,9 +8,6 @@ using TMPro;
 ///////////// TO USE THE WIN SCREEN (it also works as a lose screen) /////////////
 // winScreen.DisplayWinResults(ScoreManager.instance.score);
 
-
-
-
 public class WinScreen : MonoBehaviour
 {
     public Timer timer;
@@ -24,6 +21,12 @@ public class WinScreen : MonoBehaviour
     public TMP_Text winText;
     public TMP_Text winTime;
     public TMP_Text winStat;
+
+    void Start(){
+        //HideWinScreen();
+        //just turn off the object in the scene (the prefab should automatically be off)
+        // idk why but this stops the screen from turning on AT ALL
+    }
 
     public void DisplayWinResults()
     {
@@ -44,10 +47,10 @@ public class WinScreen : MonoBehaviour
         }
 
         winTime.text = "Time - " + timer.GetFormattedTime();
-        winStat.text = "Score - ";
+        winStat.text = "Score - " + points.ToString();
         winScreen.SetActive(true);
         
-        ShowWinScreen();    //show the win screen when the minigame is over
+        //ShowWinScreen();    //show the win screen when the minigame is over
 
     }
 

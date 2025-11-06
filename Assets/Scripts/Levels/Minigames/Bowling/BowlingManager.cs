@@ -59,6 +59,10 @@ public class BowlingManager : MonoBehaviour
             ResetBall();
             NewRound();
         }
+        if (ball.GetComponent<BowlingBall>().hasLaunched && (ball.tag == "Stuck"))
+        {
+            ResetBall();
+        }
     }
 
     void MoveBall()
@@ -112,16 +116,14 @@ public class BowlingManager : MonoBehaviour
             pins[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             pins[i].transform.rotation = Quaternion.identity;
         }
-        
-        //OLD POWER BAR IMPLEMENTATION
-        /*
+ 
         // Resets Power bar for next throw
         PowerBar powerBar = FindAnyObjectByType<PowerBar>();
         if (powerBar != null)
         {
             powerBar.ResetBar();
         }
-        */
+        
     }
 
     public void ResetBall()

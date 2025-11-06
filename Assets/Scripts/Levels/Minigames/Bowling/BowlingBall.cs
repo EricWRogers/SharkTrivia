@@ -6,7 +6,7 @@ public class BowlingBall : MonoBehaviour
     [SerializeField]
     float maxPower = 800f; // max force
     public bool hasLaunched = false;
-    private PowerBar powerBar;
+    private SliderScroller sliderScroller;
 
     public float spinForce = 200f; // Torque amount (positive = right) (negative = left)
     public float curveStrength = 1f; // How much spin curves the ball
@@ -21,7 +21,7 @@ public class BowlingBall : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        powerBar = FindAnyObjectByType<PowerBar>();
+        sliderScroller = FindAnyObjectByType<SliderScroller>();
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class BowlingBall : MonoBehaviour
     {
         {
             // Get the power % from the power bar
-            float percent = (powerBar != null) ? powerBar.GetPowerPercent() : 1f;
+            float percent = (sliderScroller != null) ? sliderScroller.GetPowerPercent() : 1f;
 
             // Calculate final force
             float launchPower = maxPower * percent;
@@ -72,10 +72,6 @@ public class BowlingBall : MonoBehaviour
             // Mark launch
             hasLaunched = true;
             launchTime = Time.time;
-
-            // Lock/hide power bar
-            if (powerBar != null)
-                powerBar.LockPower();
         }
     }
 
