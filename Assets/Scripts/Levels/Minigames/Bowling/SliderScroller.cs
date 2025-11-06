@@ -1,24 +1,50 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI; // Required for UI elements like Slider
+using UnityEngine.UI;
 
 public class SliderScroller : MonoBehaviour
 {
-    public Slider superSlider; // Assign your UI Slider here in the Inspector
-    public float scrollSensitivity = 1f; // Adjust this value to control scroll speed
+    public float scrollSensitivity = 1f;
+    [Header("UI Elements")]
+    public GameObject UISlider; // parent GameObject containing slider & text
+    public Slider superSlider;
+    public Image fillImage;
+    public TMP_Text percentageText;
+
+    [Header("Power Settings")]
+    public float minPower = 1f;
+    public float maxPower = 20f;
+
+    [Header("Ball Reference")]
+    public Rigidbody bowlingBall;
 
     void Update()
     {
-        // Get the mouse scroll wheel input
+        
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
 
-        // If there's scroll input, update the slider value
-        if (scrollInput != 0)
+        if (scrollInput != 0 && percentageText != null)
         {
-            // Adjust the slider's value based on scroll input and sensitivity
             superSlider.value += scrollInput * scrollSensitivity;
-
-            // Optional: Clamp the slider value within its min/max range if needed
             superSlider.value = Mathf.Clamp(superSlider.value, superSlider.minValue, superSlider.maxValue);
+            percentageText.text = Mathf.RoundToInt(superSlider.value * 20f) + "%";
         }
+        UpdateColor();
+    }
+
+    void UpdateColor()
+    {
+        if (fillImage == null) return;
+
+        if (superSlider.value < 0.33f)
+            fillImage.color = Color.green;
+        else if (superSlider.value < 0.66f)
+            fillImage.color = Color.yellow;
+        else
+            fillImage.color = Color.red;
+    }
+    public float GetPowerPercent()
+    {
+        return superSlider.value;
     }
 }
