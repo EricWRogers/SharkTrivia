@@ -8,9 +8,6 @@ using TMPro;
 ///////////// TO USE THE WIN SCREEN (it also works as a lose screen) /////////////
 // winScreen.DisplayWinResults(ScoreManager.instance.score);
 
-
-
-
 public class WinScreen : MonoBehaviour
 {
     public Timer timer;
@@ -24,6 +21,10 @@ public class WinScreen : MonoBehaviour
     public TMP_Text winText;
     public TMP_Text winTime;
     public TMP_Text winStat;
+
+    void Start(){
+        HideWinScreen();
+    }
 
     public void DisplayWinResults()
     {
