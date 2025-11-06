@@ -8,7 +8,7 @@ public class ScoreAndLives : MonoBehaviour
     public ScoreManager scoreManager;   //Universal score manager
 
     public static ScoreAndLives Instance { get; private set; }
-    public GameOverManager GOM;
+    public WinScreen winScreen;  //reference to win screen script to call game over
 
     [Header("Gameplay")]
     public int startingLives = 3;
@@ -54,7 +54,7 @@ public class ScoreAndLives : MonoBehaviour
         if (Lives <= 0)
         {
             //call gameover later
-            GOM.GameOverShow();
+            winScreen.DisplayWinResults();
             return;
         }
         // respawn pop
