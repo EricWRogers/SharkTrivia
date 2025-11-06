@@ -2004,7 +2004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2eedf15120558a44943675108f90178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: c6e9aca257d2bc640afa5dca966e59ec, type: 2}
+  conversation: {fileID: 11400000, guid: e08770a954c3c644e955c2ebc8cb8156, type: 2}
   cipherEnabled: 1
 --- !u!1 &321082179
 GameObject:

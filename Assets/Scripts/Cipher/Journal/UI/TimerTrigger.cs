@@ -27,7 +27,7 @@ public class TimerTrigger : MonoBehaviour
 
         if (!isTimeUp)
         {
-            Debug.Log("Time has begun");
+            //Debug.Log("Time has begun");
 
             if (!timer.timeRunning)
             {
@@ -52,6 +52,12 @@ public class TimerTrigger : MonoBehaviour
         Debug.Log("Hello! I have been spawned!");
 
         timer.timeRunning = true;  
+    }
+
+    public void StopTimer()
+    {
+        Debug.Log("Goodbye! I have been stopped!");
+        timer.timeRunning = false;
     }
 
     public void TimeUp()

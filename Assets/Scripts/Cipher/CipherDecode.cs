@@ -85,6 +85,7 @@ public class CipherDecode : MonoBehaviour
             return;
         }
 
+        /*
         if (clearingUserLetters)
         {
             for (char i = 'a'; i < 'z'; i++)
@@ -93,8 +94,18 @@ public class CipherDecode : MonoBehaviour
             }
 
             updateDisplays();
+        } */
+
+    }
+
+    public void clearUserLetters()
+    {
+        for (char i = 'a'; i < 'z'; i++)
+        {
+            charAssignments[i] = '~';
         }
 
+        updateDisplays();
     }
 
     void updateDisplays()
