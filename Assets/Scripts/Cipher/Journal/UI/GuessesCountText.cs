@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 public class GuessesCountText : MonoBehaviour
 {
-    public TextMeshProUGUI guessesLeft;
+    public TMP_Text guessesLeft;
 
     public GameObject userDecode;
     CipherDecode _cipherDecode;
