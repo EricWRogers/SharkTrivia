@@ -362,7 +362,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
         var ui = DialogueController.Instance;
         if (ui == null) { EndConversation(); return; }
 
-        // Cancel pending auto-next
+      
         if (autoNextRoutine != null)
         {
             StopCoroutine(autoNextRoutine);
@@ -371,6 +371,22 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
         if (c == null) { EndConversation(); return; }
 
+        
+        try
+        {
+            if (c.onSelected != null)
+            {
+                
+                Debug.Log($"[Dialogue] Invoking onSelected for choice: \"{c.choiceText}\"");
+                c.onSelected.Invoke();
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"[Dialogue] onSelected threw an exception on choice \"{c.choiceText}\": {ex}");
+        }
+
+        
         if (c.isTriviaQuestion)
         {
             if (c.isCorrect)
@@ -392,12 +408,8 @@ public class DialogueManagerIntegrated : MonoBehaviour
                 ui.SetDialogueText("Incorrect.");
             }
         }
-        else
-        {
-            // run unity event
-            c.onSelected.Invoke();
-        }
 
+        // Continue conversation
         if (c.next != null) ShowNode(c.next);
         else EndConversation();
     }
