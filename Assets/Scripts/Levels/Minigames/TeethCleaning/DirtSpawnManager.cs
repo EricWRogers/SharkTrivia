@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DirtSpawnManager : MonoBehaviour
 {
-    public GameObject spawnPlace;
+    //public GameObject spawnPlace;
 
     public GameObject dirtPrefab;
     public int spawnCount = 10;

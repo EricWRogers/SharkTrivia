@@ -7,6 +7,7 @@ public class SegmentGenerator : MonoBehaviour
     [Header("Generator")]
     public GameObject[] segments; // Array of segment prefabs
     public int maxSegments = 10; // Total segments before placing the final one
+    private int index = 4; // Index of the final segment
 
     [SerializeField] int zPos = 50;
     [SerializeField] float waitTime = 5f;
@@ -28,13 +29,13 @@ public class SegmentGenerator : MonoBehaviour
         // If we haven't reached max segments
         if (generatedCount < maxSegments)
         {
-            int segmentNum = Random.Range(0, segments.Length - 1); // Excludes last segment (index 3)
+            int segmentNum = Random.Range(0, segments.Length - 1); // Excludes last segment
             Instantiate(segments[segmentNum], new Vector3(0, 0, zPos), Quaternion.identity);
         }
         else
         {
-            // Spawn the final (4th, index 3) segment
-            Instantiate(segments[3], new Vector3(0, 0, zPos), Quaternion.identity);
+            // Spawn the final segment
+            Instantiate(segments[index], new Vector3(0, 0, zPos), Quaternion.identity);
         }
         generatedCount++;
         zPos += 50;

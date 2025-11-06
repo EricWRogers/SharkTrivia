@@ -13,8 +13,8 @@ public class BowlingBall : MonoBehaviour
     public float randomSpinRange = 50f; // small random spin added each throw
     public float rampUpTime = 2f; // Time before full hook kicks in
     public float rotationSpeed = 45f;
-
-    private float spinDirection = 0f; // -1 left, 0 straight, +1 right
+    public float spinDirection = 0f; // -1 left, 0 straight, +1 right
+    
     private float launchTime; // When the ball was launched
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -93,11 +93,5 @@ public class BowlingBall : MonoBehaviour
             Vector3 sideForce = Vector3.right * spinAmount * curveStrength * curveFactor;
             rb.AddForce(sideForce);
         }
-    }
-
-    public void ResetBall()
-    {
-        hasLaunched = false; // allows launch again
-        spinDirection = 0f;
     }
 }

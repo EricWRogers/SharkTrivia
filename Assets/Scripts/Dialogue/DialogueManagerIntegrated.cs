@@ -139,6 +139,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
         if (autoNextRoutine != null) { StopCoroutine(autoNextRoutine); autoNextRoutine = null; }
 
         typingRoutine = StartCoroutine(TypeLine(body, lineOut, node));
+
     }
 
     // Call when opening the Journal 
@@ -179,19 +180,62 @@ public class DialogueManagerIntegrated : MonoBehaviour
         RefreshAllTexts();
     }
 
+        private void AfterTypeDone(DNode node)
+        {
+            // build choices if present
+            if (node.choices != null && node.choices.Length > 0)
+            {
+                BuildChoices(node);
+                return;
+            }
+
+            // or auto-advance
+            if (node.autoProgress && node.nextIfNoChoices != null)
+            {
+                autoNextRoutine = StartCoroutine(AutoNext(node.nextIfNoChoices, node.autoDelay));
+                return;
+            }
+
+            // or show a Continue button
+            var go = DialogueController.Instance.CreateChoiceButton("Continue", () =>
+            {
+                if (node.nextIfNoChoices != null) ShowNode(node.nextIfNoChoices);
+                else EndConversation();
+            });
+            if (go != null)
+            {
+                var lbl = go.GetComponentInChildren<TMP_Text>(true);
+                if (lbl != null) _choiceLabels.Add(lbl);
+                var btn = go.GetComponent<UnityEngine.UI.Button>();
+                if (btn) _choiceButtons.Add(btn);
+            }
+        }
+
     private IEnumerator TypeLine(TMP_Text label, string fullText, DNode node)
     {
         isTyping = true;
 
+        // set text and measure visible characters
         label.text = fullText;
         label.ForceMeshUpdate();
         int total = Mathf.Max(0, label.textInfo.characterCount);
+
+        // If nothing to type 
+        if (total == 0)
+        {
+            label.maxVisibleCharacters = 999999;
+            isTyping = false;
+            typingRoutine = null;
+            AfterTypeDone(node);
+            yield break; 
+        }
 
         // Hide all characters, reveal over time
         label.maxVisibleCharacters = 0;
 
         if (charsPerSecond <= 0f)
         {
+            // Instant reveal if speed is zero/negative
             label.maxVisibleCharacters = 999999;
         }
         else
@@ -199,6 +243,13 @@ public class DialogueManagerIntegrated : MonoBehaviour
             float t = 0f;
             while (label.maxVisibleCharacters < total)
             {
+                // If journal pauses, just wait
+                if (_pausedByJournal)
+                {
+                    yield return null;
+                    continue;
+                }
+
                 t += Time.unscaledDeltaTime * charsPerSecond;
                 int visible = Mathf.Clamp(Mathf.FloorToInt(t), 0, total);
                 label.maxVisibleCharacters = visible;
@@ -210,29 +261,36 @@ public class DialogueManagerIntegrated : MonoBehaviour
         isTyping = false;
         typingRoutine = null;
 
-        // After typing finishes:
-        if (node.choices != null && node.choices.Length > 0)
+        
+        AfterTypeDone(node);
+        yield break;  
+    }
+
+    private void FinishTypingNow()
+    {
+        
+        if (isTyping)
         {
-            BuildChoices(node);
-        }
-        else if (node.autoProgress && node.nextIfNoChoices != null)
-        {
-            // Start auto-next (click/space will cancel and advance immediately)
-            autoNextRoutine = StartCoroutine(AutoNext(node.nextIfNoChoices, node.autoDelay));
+            isTyping = false;
+
+            
+            if (typingRoutine != null)
+            {
+                StopCoroutine(typingRoutine);
+                typingRoutine = null;
+            }
+
+            var body = DialogueController.Instance?.dialogueText;
+            if (body != null) body.maxVisibleCharacters = 999999;
+
+            
+            if (current != null) AfterTypeDone(current);
         }
         else
         {
-            // Also provide a Continue button just in case
-            var go = DialogueController.Instance.CreateChoiceButton("Continue", () =>
-            {
-                if (node.nextIfNoChoices != null) ShowNode(node.nextIfNoChoices);
-                else EndConversation();
-            });
-            if (go != null)
-            {
-                var lbl = go.GetComponentInChildren<TMP_Text>(true);
-                if (lbl != null) _choiceLabels.Add(lbl);
-            }
+            
+            var body = DialogueController.Instance?.dialogueText;
+            if (body != null) body.maxVisibleCharacters = 999999;
         }
     }
 
@@ -298,18 +356,6 @@ public class DialogueManagerIntegrated : MonoBehaviour
         ShowNode(startNode ? startNode : convo.entry);
     }
 
-    private void FinishTypingNow()
-    {
-        isTyping = false;
-        if (typingRoutine != null)
-        {
-            StopCoroutine(typingRoutine);
-            typingRoutine = null;
-        }
-
-        var body = DialogueController.Instance?.dialogueText;
-        if (body != null) body.maxVisibleCharacters = 999999;
-    }
 
     private void OnChoiceSelected(Choice c)
     {
