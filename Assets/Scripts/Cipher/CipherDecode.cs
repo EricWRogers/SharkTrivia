@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
 //Originally Programmed by Samuel (Scott)
@@ -24,10 +23,7 @@ public class CipherDecode : MonoBehaviour
 
     public bool isLimitingCorrectness = false;
     public int maxCorrectGuesses = 4;
-    public int numCorrectGuesses = 0;
-
-    public bool clearingUserLetters = true;
-    
+    public int numCorrectGuesses = 0;    
     //
 
     public Dictionary<char, char> charAssignments = new Dictionary<char, char>
@@ -70,8 +66,7 @@ public class CipherDecode : MonoBehaviour
     {
 
         /// <summary>
-        /// prevents cipher from being deleted when a new level loads.
-        /// temporaily commented out as we are temporarily using 3 unique ciphers 
+        /// prevents cipher from being deleted when a new level loads and other setup stuff.
         /// </summary>
 
 
@@ -91,7 +86,7 @@ public class CipherDecode : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
     }
