@@ -335,6 +335,8 @@ public class CipherDecode : MonoBehaviour
 
         numCorrectGuesses = 0;
         numGuesses = 0;
+
+        clearUserLetters();
     }
     
 }
