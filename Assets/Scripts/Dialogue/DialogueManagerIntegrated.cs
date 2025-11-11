@@ -114,8 +114,10 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
         bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
 
-        // Encode speaker name & line
-        string nameOut = encode ? translator.Translate(node.speakerName) : node.speakerName;
+        // DO NOT encode the speaker name
+        string nameOut = node.speakerName;
+
+        // Still encode the body line
         string lineOut = encode ? translator.Translate(node.speakerLine) : node.speakerLine;
 
         // Push name + portrait
@@ -534,34 +536,6 @@ public class DialogueManagerIntegrated : MonoBehaviour
 
         ui.SetDialogueText(final);
         FinishTypingNow();
-    }
-
-   
-    public void SetSpeakerName(string newName, bool encode = true, bool mutateNode = true)
-    {
-        var ui = DialogueController.Instance;
-        if (ui == null) return;
-
-        if (mutateNode && current != null)
-            current.speakerName = newName;
-
-        bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
-        string final = doEncode ? translator.Translate(newName) : newName;
-
-        ui.SetCharInfo(final, current != null ? current.portrait : null);
-    }
-
-    
-    public void RefreshSpeakerName()
-    {
-        var ui = DialogueController.Instance;
-        if (ui == null || current == null) return;
-
-        string raw = current.speakerName ?? "";
-        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
-        string final = encode ? translator.Translate(raw) : raw;
-
-        ui.SetCharInfo(final, current.portrait);
     }
 
     //refresh all

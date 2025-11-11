@@ -65,8 +65,8 @@ public class FinishLine : MonoBehaviour
         }
         if(TotalScore.instance != null)
         {
-            int finalePoints = ScoreManager.instance != null ? ScoreManager.instance.GetScore() : 0;
-            TotalScore.instance.AddPoints(finalePoints);
+            int finalPoints = ScoreManager.instance != null ? ScoreManager.instance.GetScore() : 0;
+            TotalScore.instance.AddPoints(finalPoints);
         }
     }
 }
