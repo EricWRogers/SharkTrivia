@@ -99,7 +99,7 @@ public class BowlingManager : MonoBehaviour
             StartCoroutine(videoPlayerScript.PlayVideoAndStop());
         }
 
-        // Update UI (using string interpolation)
+        // Update UI
         scoreUI.text = pinsDownThisRound.ToString();
         if(totalScoreUI != null)
             totalScoreUI.text = $"Total: {totalScore}";
@@ -116,14 +116,6 @@ public class BowlingManager : MonoBehaviour
             pins[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             pins[i].transform.rotation = Quaternion.identity;
         }
- 
-        // Resets Power bar for next throw
-        PowerBar powerBar = FindAnyObjectByType<PowerBar>();
-        if (powerBar != null)
-        {
-            powerBar.ResetBar();
-        }
-        
     }
 
     public void ResetBall()

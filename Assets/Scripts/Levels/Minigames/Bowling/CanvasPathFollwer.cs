@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class CanvasPathFollwer : MonoBehaviour
@@ -34,7 +33,7 @@ public class CanvasPathFollwer : MonoBehaviour
         // Move towards the next waypoint
         if (movingForward && currentWaypointIndex < waypoints.Length - 1)
         {
-            // Just a safety check to prevent index out of range
+            // Safety check to prevent index out of range
             Transform targetWaypoint = waypoints[currentWaypointIndex + 1];
             // Move towards the target waypoint at the specified speed
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, moveSpeed * Time.deltaTime);
