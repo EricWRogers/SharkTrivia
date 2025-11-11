@@ -53,6 +53,12 @@ public class ScoreAndLives : MonoBehaviour
         UpdateHearts();
         if (Lives <= 0)
         {
+            //total score
+            if(TotalScore.instance != null)
+            {
+                int finalPoints = ScoreManager.instance != null ? ScoreManager.instance.GetScore() : 0;
+                TotalScore.instance.AddPoints(finalPoints);
+            }
             //call gameover later
             winScreen.DisplayWinResults();
             return;

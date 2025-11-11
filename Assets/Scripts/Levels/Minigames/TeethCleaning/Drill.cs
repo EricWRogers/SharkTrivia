@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class Drill : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private Vector2 mousePos;
+    public float moveSpeed = 0.2f; 
 
-    // Update is called once per frame
     void Update()
     {
-        
+        mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        transform.position = Vector2.Lerp(transform.position, mousePos, moveSpeed);
     }
 }

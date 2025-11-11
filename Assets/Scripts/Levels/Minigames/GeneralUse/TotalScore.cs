@@ -13,7 +13,7 @@ public class TotalScore : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            //LoadScore();
+            LoadScore();
         }
         else
         {
@@ -28,7 +28,7 @@ public class TotalScore : MonoBehaviour
     public void AddPoints(int points)
     {
         totalScore += points + (2 * (int) wager);
-        //SaveScore();
+        SaveScore();
     }
 
     public int GetScore()
