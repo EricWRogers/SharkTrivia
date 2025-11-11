@@ -19,6 +19,9 @@ MonoBehaviour:
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-5970508715077456686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,6 +41,9 @@ MonoBehaviour:
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-5060542200875771641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,8 +65,23 @@ MonoBehaviour:
   choices:
   - choiceText: It's going pretty well!
     next: {fileID: -443422892680886709}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
   - choiceText: It's going bad, and sharks aren't smooth.
     next: {fileID: -5970508715077456686}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-3460297969042749541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +101,9 @@ MonoBehaviour:
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-3330984343224446606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +123,9 @@ MonoBehaviour:
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-443422892680886709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +145,9 @@ MonoBehaviour:
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +180,6 @@ MonoBehaviour:
   autoDelay: 0.75
   nextIfNoChoices: {fileID: -5060542200875771641}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []

@@ -10,6 +10,8 @@ TagManager:
   - Toothbrush
   - Sprite
   - Fish
+  - EndPoint
+  - Drill
   layers:
   - Default
   - TransparentFX

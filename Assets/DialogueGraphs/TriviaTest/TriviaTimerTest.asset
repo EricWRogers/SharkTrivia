@@ -1,0 +1,356 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3827928155175703925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn5
+  m_EditorClassIdentifier: 
+  speakerName: ???
+  portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
+  speakerLine: Are you ready to start?
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: 0}
+  choices:
+  - choiceText: Let's do it
+    next: {fileID: 8337026696270167202}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  - choiceText: Please sir I just want to eat fish!
+    next: {fileID: 8337026696270167202}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6174fe4a7d4998478b926a21e26dff7, type: 3}
+  m_Name: TriviaTimerTest
+  m_EditorClassIdentifier: 
+  entry: {fileID: 7687397218872731293}
+--- !u!114 &862515239476715877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn7
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
+  speakerLine: What do shark's use to "breathe" underwater?
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: 0}
+  choices:
+  - choiceText: Lungs
+    next: {fileID: 4902226093730003972}
+    isCorrect: 0
+    isTriviaQuestion: 1
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  - choiceText: Gills
+    next: {fileID: 2633674132263349907}
+    isCorrect: 1
+    isTriviaQuestion: 1
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  - choiceText: Snorkles
+    next: {fileID: 4902226093730003972}
+    isCorrect: 0
+    isTriviaQuestion: 1
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  - choiceText: they just hold their breath!
+    next: {fileID: 4902226093730003972}
+    isCorrect: 0
+    isTriviaQuestion: 1
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: SpawnTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &1486097637322995840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn2
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
+  speakerLine: For this next trivia round, we'll be trying something new
+  autoProgress: 1
+  autoDelay: 2
+  nextIfNoChoices: {fileID: 3218230725146158438}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1940082232400289180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn11
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
+  speakerLine: Well that's all from us today folks, I hope you had fun! Buh-bye now!
+  autoProgress: 1
+  autoDelay: 2
+  nextIfNoChoices: {fileID: 0}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2633674132263349907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn8
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 9121839293005398823, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
+  speakerLine: That is correct! Congratulations
+  autoProgress: 1
+  autoDelay: 2
+  nextIfNoChoices: {fileID: 1940082232400289180}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: StopTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3218230725146158438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn3
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
+  speakerLine: This time, you'll have precious time, because you're up against the
+    clock!
+  autoProgress: 1
+  autoDelay: 3
+  nextIfNoChoices: {fileID: 4968081623068926364}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4902226093730003972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn9
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
+  speakerLine: I'm sorry, but that's not right! It seems our guest doesn't know himself
+    that well! Did the timer make you choke?
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: 1940082232400289180}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: StopTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4968081623068926364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn4
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 9121839293005398823, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
+  speakerLine: That's right, this time you'll have to answer the question before
+    the timer up above runs out!
+  autoProgress: 1
+  autoDelay: 3
+  nextIfNoChoices: {fileID: -3827928155175703925}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6131191287683981865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn10
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
+  speakerLine: Aw, I'm sorry, but we're out of time! You have to answer faster.
+  autoProgress: 1
+  autoDelay: 3
+  nextIfNoChoices: {fileID: 1940082232400289180}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7687397218872731293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn1
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
+  speakerLine: Welcome back, Mr. Shark!
+  autoProgress: 1
+  autoDelay: 1
+  nextIfNoChoices: {fileID: 1486097637322995840}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1641477418594199489, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+        m_TargetAssemblyTypeName: CipherDecode, Assembly-CSharp
+        m_MethodName: clearUserLetters
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &8337026696270167202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn6
+  m_EditorClassIdentifier: 
+  speakerName: ???
+  portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
+  speakerLine: Great, let's do it!
+  autoProgress: 1
+  autoDelay: 1
+  nextIfNoChoices: {fileID: 862515239476715877}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []

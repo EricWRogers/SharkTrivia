@@ -8,7 +8,7 @@ public class ScoreAndLives : MonoBehaviour
     public ScoreManager scoreManager;   //Universal score manager
 
     public static ScoreAndLives Instance { get; private set; }
-    public GameOverManager GOM;
+    public WinScreen winScreen;  //reference to win screen script to call game over
 
     [Header("Gameplay")]
     public int startingLives = 3;
@@ -53,8 +53,14 @@ public class ScoreAndLives : MonoBehaviour
         UpdateHearts();
         if (Lives <= 0)
         {
+            //total score
+            if(TotalScore.instance != null)
+            {
+                int finalPoints = ScoreManager.instance != null ? ScoreManager.instance.GetScore() : 0;
+                TotalScore.instance.AddPoints(finalPoints);
+            }
             //call gameover later
-            GOM.GameOverShow();
+            winScreen.DisplayWinResults();
             return;
         }
         // respawn pop

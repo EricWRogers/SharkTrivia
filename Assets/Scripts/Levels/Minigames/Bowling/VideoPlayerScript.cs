@@ -10,12 +10,13 @@ public class VideoPlayerScript : MonoBehaviour
     public VideoClip videoToPlay; 
     public RawImage rawImageDisplay; //Call in the raw image set in the unity editor from the bowling screen 
     public BowlingManager bowlingManager; // Call in bowling manager
+    public CanvasPathFollwer canvasPathFollwer;
     public float playDuration = 5f; // Set the desired duration in seconds
     public List<VideoClip> videoClips; // List of Video Clips
     public int currentVideoIndex = 0;
-    public GameObject[] textToDisable;
+    public bool isPlaying = false;
     private VideoPlayer videoPlayer;
-    private bool isPlaying = false;
+    
     
     void Start()
     {
@@ -43,14 +44,17 @@ public class VideoPlayerScript : MonoBehaviour
             Debug.LogWarning("Invalid video clip index.");
         }
     }
-    // Play the video for a set duration then reset to clear texture
+    // Play the video and stop after a set duration if at the endpoint
     public IEnumerator PlayVideoAndStop()
     {
+        // Activate the RawImage to display the video
         rawImageDisplay.gameObject.SetActive(true);
         isPlaying = true;
+        // Play the video for 5 seconds/Whatever the duration wanted is then stop.
         videoPlayer.Play();
         yield return new WaitForSeconds(playDuration);
         videoPlayer.Stop();
+        // Log when the video stops
         Debug.Log("Video Stopped");
         isPlaying = false;
         // Clear the RenderTexture when the object is disabled
@@ -60,14 +64,8 @@ public class VideoPlayerScript : MonoBehaviour
             GL.Clear(true, true, Color.black);
             RenderTexture.active = null;
             Debug.Log("RenderTexture cleared.");
-        }
-    }
-    public void DisableElements()
-    {
-        foreach (var obj in textToDisable)
-        {
-            if (obj != null)
-                obj.SetActive(false);
+            
         }
     }
 }
+

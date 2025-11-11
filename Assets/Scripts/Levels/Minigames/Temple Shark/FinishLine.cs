@@ -63,5 +63,10 @@ public class FinishLine : MonoBehaviour
             var collectCount = ScoreManager.instance.GetScore();
             winScoreText.text = $"Coins - {collectCount}";
         }
+        if(TotalScore.instance != null)
+        {
+            int finalePoints = ScoreManager.instance != null ? ScoreManager.instance.GetScore() : 0;
+            TotalScore.instance.AddPoints(finalePoints);
+        }
     }
 }

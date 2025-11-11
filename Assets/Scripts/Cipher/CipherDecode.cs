@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
+using UnityEngine.SceneManagement;
 
 //Originally Programmed by Samuel (Scott)
 
@@ -14,6 +14,17 @@ public class CipherDecode : MonoBehaviour
     public List<CipherNode> confirmedAssignmentDisplay;
     public bool encoding = true;
     public bool isRandomizing = false;
+
+    //test build switches and trackers
+    public bool isCountingGuesses = false;
+    public int maxGuesses = 6;    
+    public int numGuesses = 0;
+
+
+    public bool isLimitingCorrectness = false;
+    public int maxCorrectGuesses = 4;
+    public int numCorrectGuesses = 0;    
+    //
 
     public Dictionary<char, char> charAssignments = new Dictionary<char, char>
     {
@@ -53,6 +64,12 @@ public class CipherDecode : MonoBehaviour
 
     void Awake()
     {
+
+        /// <summary>
+        /// prevents cipher from being deleted when a new level loads and other setup stuff.
+        /// </summary>
+
+
         if (instance == null)
         {
             if (isRandomizing)
@@ -60,6 +77,8 @@ public class CipherDecode : MonoBehaviour
             else
                 UnRandomizeLetters();
 
+            Debug.Log("Singleton init");
+            SceneManager.activeSceneChanged += sceneChanged;
 
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -67,10 +86,21 @@ public class CipherDecode : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
+    }
 
+    public void clearUserLetters()
+    {
+        Debug.Log("Reseting cipher...");
+
+        for (char i = 'a'; i < 'z'; i++)
+        {
+            charAssignments[i] = '~';
+        }
+
+        updateDisplays();
     }
 
     void updateDisplays()
@@ -192,6 +222,17 @@ public class CipherDecode : MonoBehaviour
             if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value))
             {
                 charAssignments[key] = value;
+
+                if (isCountingGuesses)
+                {
+                    numGuesses++;
+                }
+                if(isLimitingCorrectness && i == value)
+                {
+                    numCorrectGuesses++;
+                }
+
+
                 break;
             }
 
@@ -204,6 +245,16 @@ public class CipherDecode : MonoBehaviour
 
                 //OR
 
+                if (isCountingGuesses)
+                {
+                    numGuesses++;
+                }
+                if(isLimitingCorrectness && i == value)
+                {
+                    numCorrectGuesses++;
+                }
+
+                Debug.Log("CipherDecode: Overwrote previous char assignment");
                 charAssignments[key] = value;
                 break;
             }
@@ -216,12 +267,14 @@ public class CipherDecode : MonoBehaviour
                 //Case where the value that goes to the key in question is blank
                 if (charAssignments[(char)i] == '~')
                 {
+                    Debug.Log("CipherDecode: return warning code -2");
                     returnCode = -2;
                 }
 
                 //Case where the value that goes to the key in question is not blank
                 if (charAssignments[(char)i] != '~')
                 {
+                    Debug.Log("CipherDecode: return warning code -3");
                     returnCode = -3;
                 }
 
@@ -236,6 +289,7 @@ public class CipherDecode : MonoBehaviour
             //This handles the case where the player hits a letter they already did for this cipher character, so it'll just dissasociate it and go back to being blank
             else if (charAssignments[(char)i] != '~' && (char)i == key && !charAssignments.ContainsValue(value) && charAssignments[key] == value)
             {
+                Debug.Log("CipherDecode: erasing previous assignment");
                 charAssignments[key] = '~';
                 break;
             }
@@ -254,6 +308,30 @@ public class CipherDecode : MonoBehaviour
         updateDisplays();
         return 1;
 
+    }
+
+    void sceneChanged(Scene current, Scene next)
+    {
+        if (next.buildIndex == 10)
+        {
+            isLimitingCorrectness = true;
+            isCountingGuesses = false;
+        }
+        else if (next.buildIndex == 11)
+        {
+            isLimitingCorrectness = false;
+            isCountingGuesses = true;
+        }
+        else
+        {
+            isLimitingCorrectness = false;
+            isCountingGuesses = false;
+        }
+
+        numCorrectGuesses = 0;
+        numGuesses = 0;
+
+        clearUserLetters();
     }
     
 }

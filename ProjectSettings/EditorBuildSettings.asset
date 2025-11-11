@@ -35,6 +35,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/SharkShootout.unity
     guid: 28db2b91ab50f5f499dc5e35e7b6d5ae
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/TestTrivia/TestTriviaLimitedCorrect.unity
+    guid: 5d9faa87fe3391841846520ef3a5b209
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/TestTrivia/TestTriviaLimitedGuesses.unity
+    guid: c6db7e2f28d41554e8c3fba5daae178d
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/TestTrivia/TestTriviaTimer.unity
+    guid: b9a20e1fa70d8284588b0fa876ed924d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

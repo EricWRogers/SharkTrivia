@@ -27,6 +27,32 @@ public class TempleMovement : MonoBehaviour
         // Always move forward in current direction
         transform.Translate(moveDirection * runSpeed * Time.deltaTime, Space.World);
 
+        // Handle up/down movement
+        Vector3 vertical = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.UpArrow))
+        {
+            vertical = Vector3.up;
+        }
+        else if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.DownArrow))
+        {
+            vertical = Vector3.down;
+        }
+
+        if (vertical != Vector3.zero)
+        {
+            // Calculate new position
+            Vector3 newPos = transform.position + vertical * movementSpeed * Time.deltaTime;
+
+            // Measure distance from the lane center
+            float distanceFromCenter = Vector3.Dot(newPos - laneCenter, Vector3.up);
+
+            if (Mathf.Abs(distanceFromCenter) <= laneOffset)
+            {
+                transform.position = newPos;
+            }
+        }
+
         // Handle side movement
         Vector3 side = Vector3.zero;
 

@@ -7,8 +7,10 @@ public class EndGame : MonoBehaviour
 {
     private TakingDamage takingdamage;
     public WinScreen winScreen;
+    public Timer timer;
+
     [Header("Settings")]
-    public int maxHits = 3;
+    public int maxHits = 3; 
     public string endSceneName = "LoseScene";
 
     private int hitCount = 0;
@@ -32,7 +34,7 @@ public class EndGame : MonoBehaviour
             Debug.Log("Hit #" + hitCount);
             if (hitCount >= maxHits)
             {
-                Lose();
+                winScreen.DisplayLoseResults();
             }
 
         }
