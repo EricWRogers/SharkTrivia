@@ -45,7 +45,7 @@ public class EndGame : MonoBehaviour
     {
         Debug.Log("Game Over!");
         LevelManager.LoadBackStage();
-        winScreen.StopGame();
+        //winScreen.StopGame();
     }
     /*void Win()
       {
