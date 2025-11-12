@@ -37,9 +37,9 @@ public class TimerTrigger : MonoBehaviour
         }
     }
 
-    public void SpawnTimer()
+    public void SpawnTimer(bool foo = true)
     {
-        if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard)
+        if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard || foo)
         {
             Instantiate(this.gameObject);
 
@@ -57,9 +57,9 @@ public class TimerTrigger : MonoBehaviour
         timer.timeRunning = true;  
     }
 
-    public void StopTimer()
+    public void StopTimer(bool foo = true)
     {
-        if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard)
+        if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard || foo)
         {
             Debug.Log("Goodbye! I have been stopped!");
             timer.timeRunning = false;
