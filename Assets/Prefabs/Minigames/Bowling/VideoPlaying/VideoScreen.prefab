@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2334888458297624727}
   - component: {fileID: 1676704296629863257}
   - component: {fileID: 1462938620423151}
-  - component: {fileID: -1037113976568915313}
   m_Layer: 5
   m_Name: VideoScreen
   m_TagString: Untagged
@@ -104,20 +103,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &-1037113976568915313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5106769160516605033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff84f767f598034bbbe95ed0f79bb72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints: []
-  moveSpeed: 2
 --- !u!1001 &3494639285260577690
 PrefabInstance:
   m_ObjectHideFlags: 0

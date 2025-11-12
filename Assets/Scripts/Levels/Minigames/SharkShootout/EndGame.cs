@@ -44,12 +44,12 @@ public class EndGame : MonoBehaviour
     void Lose()
     {
         Debug.Log("Game Over!");
-        //LevelManager.LoadBackStage();
-        winScreen.DisplayLoseResults(); //win screen will automatically stoptime and provide a button to go back to back stage
+        LevelManager.LoadBackStage();
+        //winScreen.StopGame();
     }
-    /*void Win()
-      {
-
-     }
-     */
+    public void Win()
+    {
+        winScreen.DisplayLoseResults(); 
+    }
+     
 }
