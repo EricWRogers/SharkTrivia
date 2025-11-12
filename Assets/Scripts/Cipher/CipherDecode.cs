@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
 //Originally Programmed by Samuel (Scott)
 
@@ -14,6 +13,9 @@ public class CipherDecode : MonoBehaviour
     public List<CipherNode> confirmedAssignmentDisplay;
     public bool encoding = true;
     public bool isRandomizing = false;
+    public enum GameMode { Easy, Medium, Hard }
+
+    public GameMode difficulty = GameMode.Easy;
 
     //test build switches and trackers
     public bool isCountingGuesses = false;
@@ -78,7 +80,6 @@ public class CipherDecode : MonoBehaviour
                 UnRandomizeLetters();
 
             Debug.Log("Singleton init");
-            SceneManager.activeSceneChanged += sceneChanged;
 
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -310,22 +311,69 @@ public class CipherDecode : MonoBehaviour
 
     }
 
-    void sceneChanged(Scene current, Scene next)
+    /// <summary>
+    /// Handles enabling and disabling parts of the scene in accordance with the diffuclty setting. Should always be called on first dialogue node.
+    /// </summary>
+    public void UpdateGameMode()
     {
-        if (next.buildIndex == 10)
+        GameObject[] timerStuffs = GameObject.FindGameObjectsWithTag("Timer");
+
+        switch (difficulty)
         {
-            isLimitingCorrectness = true;
-            isCountingGuesses = false;
+
+            case GameMode.Hard:
+                foreach (GameObject obj in timerStuffs)
+                {
+                    obj.SetActive(true);
+                }
+
+                break;
+
+            default:
+                foreach (GameObject obj in timerStuffs)
+                {
+                    obj.SetActive(false);
+                }
+
+                break;
+
         }
-        else if (next.buildIndex == 11)
+    }
+    
+    //for weird scriptable object reasons, I believe this should be called by dialogue nodes instead of UpdateGameMode() itself
+    public void UpdateGameModeHelper()
+    {
+        instance.UpdateGameMode();
+    }
+
+    /// <summary>
+    /// Changes the trivia game mode. 0 is easy, 1 is medium, and 2 is hard. Should not be called mid-trivia game.
+    /// </summary>
+    /// <param name="mode">The mode to change to (0-2).</param>
+    public void ChangeGameMode(int mode)
+    {
+        difficulty = (GameMode)mode;
+
+        switch (difficulty)
         {
-            isLimitingCorrectness = false;
-            isCountingGuesses = true;
-        }
-        else
-        {
-            isLimitingCorrectness = false;
-            isCountingGuesses = false;
+            case GameMode.Easy:
+
+                isLimitingCorrectness = true;
+                isCountingGuesses = false;
+                break;
+
+            case GameMode.Medium:
+
+                isLimitingCorrectness = false;
+                isCountingGuesses = true;
+                break;
+
+            case GameMode.Hard:
+
+                isLimitingCorrectness = false;
+                isCountingGuesses = true;
+                break;
+
         }
 
         numCorrectGuesses = 0;

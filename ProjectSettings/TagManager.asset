@@ -12,6 +12,7 @@ TagManager:
   - Fish
   - EndPoint
   - Drill
+  - Timer
   layers:
   - Default
   - TransparentFX
