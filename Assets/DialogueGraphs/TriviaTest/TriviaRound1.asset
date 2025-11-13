@@ -162,7 +162,7 @@ MonoBehaviour:
       - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
         m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
         m_MethodName: StopTimer
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -196,7 +196,7 @@ MonoBehaviour:
       - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
         m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
         m_MethodName: StopTimer
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -297,7 +297,7 @@ MonoBehaviour:
       - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
         m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
         m_MethodName: SpawnTimer
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
