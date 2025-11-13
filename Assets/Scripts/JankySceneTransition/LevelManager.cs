@@ -92,9 +92,12 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
     }
     public static void StaticResume()
     {
-        pauseMenuUI.SetActive(false);
-        GameIsPaused = false;
-        Time.timeScale = 1.0f;
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(false);
+            GameIsPaused = false;
+            Time.timeScale = 1.0f;
+        }
     }
     public void Resume()
     {
