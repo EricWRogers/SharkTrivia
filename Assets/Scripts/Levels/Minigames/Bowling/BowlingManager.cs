@@ -89,7 +89,8 @@ public class BowlingManager : MonoBehaviour
             pinsUp = false;
         }
         // Update total score and score managers
-        scoreManager.AddPoints(pinsDownThisRound);  // UNIVERSAL SCORE MANAGER
+        //CW now adds 10* the score. It just evens out the amount of points in minigames
+        scoreManager.AddPoints(pinsDownThisRound * 10);  // UNIVERSAL SCORE MANAGER
         totalScore += pinsDownThisRound;
 
         // Handle video playback
@@ -145,7 +146,9 @@ public class BowlingManager : MonoBehaviour
         {
             cameraSwitch.camera2.SetActive(false);
             cameraSwitch.camera1.SetActive(true);
-            winScreen.ShowWinScreen();
+            winScreen.DisplayWinResults();
+            //CW changed to DisplayWinResults() from ShowWinScreen()
+            //I know its confusing but this is the one that shows the updated score
         }
     }
 }

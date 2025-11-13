@@ -162,7 +162,9 @@ public class ProgressBar : MonoBehaviour
         
         if(TotalScore.instance != null){
             int finalPoints = ScoreManager.instance.GetScore();
-            TotalScore.instance.AddPoints(finalPoints);
+            //TotalScore.instance.AddPoints(finalPoints);
+            //This gets called when the bar reaches 100% and it detects a swipe
+            //TotalScore also gets called in WinScreen.DisplayWinResults so it was doubling the score
         }
         if(Holes.holesRemaining<=0)
         {
@@ -170,8 +172,9 @@ public class ProgressBar : MonoBehaviour
                 timer.StopTimer();
 
             //display winscreen when minigame is over
-            winScreen.ShowWinScreen();
-            //winScreen.DisplayWinResults();
+            //winScreen.ShowWinScreen(); this just turns the WinScreen on
+            //WinScreen.DisplayWinResults displays the updated scoreboard
+            winScreen.DisplayWinResults();
         }
     }
 

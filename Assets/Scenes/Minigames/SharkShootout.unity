@@ -1180,7 +1180,6 @@ GameObject:
   - component: {fileID: 1793793988}
   - component: {fileID: 1793793987}
   - component: {fileID: 1793793986}
-  - component: {fileID: 1793793990}
   m_Layer: 5
   m_Name: Win Screen
   m_TagString: Untagged
