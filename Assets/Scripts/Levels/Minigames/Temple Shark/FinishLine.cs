@@ -4,9 +4,10 @@ using TMPro;
 
 public class FinishLine : MonoBehaviour
 {
-    public GameObject WinScreen;
+    //public GameObject WinScreen;
     public Timer timer;
-    public Collectibles collectibles;
+    public ScoreManager scoreManager;
+    public WinScreen winScreen;
 
     [Header("Text Elements")]
     public TMP_Text winTimerText; // Text element to display the final time
@@ -25,8 +26,13 @@ public class FinishLine : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         Debug.Log("WIN! You made it to the end.");
-        WinScreen.SetActive(true);
+        //WinScreen.SetActive(true);
+
+        // Disable Escape pause
+        LevelManager.allowPause = false;
+
         Time.timeScale = 0f; // Pause the game
+        winScreen.ShowWinScreen();
 
         // Deactivate specified objects
         if (objectsToDeactivate != null)
@@ -54,8 +60,13 @@ public class FinishLine : MonoBehaviour
         // Update stats text
         if (winScoreText != null)
         {
-            var collectCount = Collectibles.totalScore;
-            winScoreText.text = $"Coins Collected: {collectCount}";
+            var collectCount = ScoreManager.instance.GetScore();
+            winScoreText.text = $"Coins - {collectCount}";
+        }
+        if(TotalScore.instance != null)
+        {
+            int finalPoints = ScoreManager.instance != null ? ScoreManager.instance.GetScore() : 0;
+            TotalScore.instance.AddPoints(finalPoints);
         }
     }
 }

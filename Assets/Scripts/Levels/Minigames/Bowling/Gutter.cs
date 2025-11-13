@@ -24,6 +24,7 @@ public class Gutter : MonoBehaviour
             // Call manager to handle round + reset
             if (manager != null)
             {
+                manager.ResetBall();
                 manager.CountPinsDown();
                 manager.NewRound();
                 manager.ResetPins();

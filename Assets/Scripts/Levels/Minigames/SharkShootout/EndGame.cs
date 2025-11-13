@@ -1,15 +1,27 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
+
 
 public class EndGame : MonoBehaviour
 {
+    private TakingDamage takingdamage;
     public WinScreen winScreen;
+    public Timer timer;
 
     [Header("Settings")]
     public int maxHits = 3; 
-    public string endSceneName = "LoseScene"; 
+    public string endSceneName = "LoseScene";
 
     private int hitCount = 0;
+
+    void Start()
+    {
+        
+            takingdamage = GameObject.FindGameObjectWithTag("Player").GetComponent<TakingDamage>();
+            takingdamage.endgame = this;
+    }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,12 +29,14 @@ public class EndGame : MonoBehaviour
         {
             hitCount++;
 
+            takingdamage.TakeDamage(hitCount);
+
             Debug.Log("Hit #" + hitCount);
             if (hitCount >= maxHits)
             {
-                Lose();
+                winScreen.DisplayLoseResults();
             }
-            
+
         }
 
     }
@@ -30,9 +44,12 @@ public class EndGame : MonoBehaviour
     void Lose()
     {
         Debug.Log("Game Over!");
-        winScreen.DisplayWinResults();
-
-        winScreen.StopGame();
-        //LevelManager.LoadBackStage();
+        LevelManager.LoadBackStage();
+        //winScreen.StopGame();
     }
+    public void Win()
+    {
+        winScreen.DisplayLoseResults(); 
+    }
+     
 }

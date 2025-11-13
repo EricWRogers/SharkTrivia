@@ -6,26 +6,39 @@ public class BowlingBall : MonoBehaviour
     [SerializeField]
     float maxPower = 800f; // max force
     public bool hasLaunched = false;
-    private PowerBar powerBar;
+    private SliderScroller sliderScroller;
 
     public float spinForce = 200f; // Torque amount (positive = right) (negative = left)
     public float curveStrength = 1f; // How much spin curves the ball
     public float randomSpinRange = 50f; // small random spin added each throw
     public float rampUpTime = 2f; // Time before full hook kicks in
-
-    private float spinDirection = 0f; // -1 left, 0 straight, +1 right
+    public float rotationSpeed = 45f;
+    public float spinDirection = 0f; // -1 left, 0 straight, +1 right
+    
     private float launchTime; // When the ball was launched
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        powerBar = FindAnyObjectByType<PowerBar>();
+        sliderScroller = FindAnyObjectByType<SliderScroller>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Rotate left with the 'A' key
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
+        }
+
+        // Rotate right with the 'D' key
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        }
+    
         if (Input.GetKeyDown(KeyCode.Space) && !hasLaunched)
         {
             LaunchBall();
@@ -36,7 +49,7 @@ public class BowlingBall : MonoBehaviour
     {
         {
             // Get the power % from the power bar
-            float percent = (powerBar != null) ? powerBar.GetPowerPercent() : 1f;
+            float percent = (sliderScroller != null) ? sliderScroller.GetPowerPercent() : 1f;
 
             // Calculate final force
             float launchPower = maxPower * percent;
@@ -59,10 +72,6 @@ public class BowlingBall : MonoBehaviour
             // Mark launch
             hasLaunched = true;
             launchTime = Time.time;
-
-            // Lock/hide power bar
-            if (powerBar != null)
-                powerBar.LockPower();
         }
     }
 
@@ -80,11 +89,5 @@ public class BowlingBall : MonoBehaviour
             Vector3 sideForce = Vector3.right * spinAmount * curveStrength * curveFactor;
             rb.AddForce(sideForce);
         }
-    }
-
-    public void ResetBall()
-    {
-        hasLaunched = false; // allows launch again
-        spinDirection = 0f;
     }
 }

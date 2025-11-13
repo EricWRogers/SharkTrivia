@@ -8,6 +8,7 @@ public class TempleMovement : MonoBehaviour
     public float runSpeed = 2f;
     public float movementSpeed = 5f;
     public float laneOffset = 5.5f;
+    public float groundOffset = 1f;
 
     [Header("Corner Turn")]
     public bool useSmoothTurn = true;
@@ -17,15 +18,49 @@ public class TempleMovement : MonoBehaviour
 
     Vector3 moveDirection = Vector3.forward;
     Vector3 sideAxis = Vector3.right;
+    Vector3 vertical = Vector3.zero;
     Vector3 laneCenter;
     bool isTurning = false;
 
-    void Start() => laneCenter = transform.position;
+    // store original ground height so it doesn't shift over time
+    float baseGroundHeight;
+
+    void Start()
+    {
+        laneCenter = transform.position;
+        baseGroundHeight = laneCenter.y;
+    }
 
     void Update()
     {
         // Always move forward in current direction
         transform.Translate(moveDirection * runSpeed * Time.deltaTime, Space.World);
+
+        // Handle up/down movement
+        vertical = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.UpArrow))
+        {
+            vertical = Vector3.up;
+        }
+        else if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.DownArrow))
+        {
+            vertical = -Vector3.up;
+        }
+
+        if (vertical != Vector3.zero)
+        {
+            // Calculate new position
+            Vector3 newPos = transform.position + vertical * movementSpeed * Time.deltaTime;
+
+            // Measure distance from the lane center
+            float distanceFromCenter = Vector3.Dot(newPos - laneCenter, Vector3.up);
+
+            if (Mathf.Abs(distanceFromCenter) <= groundOffset)
+            {
+                transform.position = newPos;
+            }
+        }
 
         // Handle side movement
         Vector3 side = Vector3.zero;
@@ -65,8 +100,11 @@ public class TempleMovement : MonoBehaviour
         // Update the side axis (always perpendicular to moveDirection)
         sideAxis = Vector3.Cross(Vector3.up, moveDirection).normalized;
 
-        // Reset lane center after turning
-        laneCenter = transform.position;
+        // Keep vertical movement functional after turning
+        vertical = Vector3.zero;
+
+        // Keep same ground height reference to prevent drift
+        laneCenter = new Vector3(transform.position.x, baseGroundHeight, transform.position.z);
     }
 
     public void ResetTurn()
@@ -75,11 +113,12 @@ public class TempleMovement : MonoBehaviour
         moveDirection = Vector3.forward;
         transform.rotation = Quaternion.identity;
 
-        
+
         sideAxis = Vector3.right;
+        vertical = Vector3.zero;
 
         // Reset lane center to current spawn point
-        laneCenter = transform.position;
+        laneCenter = new Vector3(transform.position.x, baseGroundHeight, transform.position.z);
     }
     
         public void StartCornerTurn(int direction)  // -1 = left, 1 = right
@@ -121,7 +160,10 @@ public class TempleMovement : MonoBehaviour
 
         moveDirection = targetMoveDir;
         sideAxis = Vector3.Cross(Vector3.up, moveDirection).normalized;
-        laneCenter = transform.position;
+        vertical = Vector3.zero;
+        
+        // keep Y fixed to base ground height
+        laneCenter = new Vector3(transform.position.x, baseGroundHeight, transform.position.z);
 
         runSpeed = savedRunSpeed;
         isTurning = false;

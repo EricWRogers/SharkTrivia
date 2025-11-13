@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 
 //Originally Programmed by Samuel (Scott)
 
@@ -14,6 +13,20 @@ public class CipherDecode : MonoBehaviour
     public List<CipherNode> confirmedAssignmentDisplay;
     public bool encoding = true;
     public bool isRandomizing = false;
+    public enum GameMode { Easy, Medium, Hard }
+
+    public GameMode difficulty = GameMode.Easy;
+
+    //test build switches and trackers
+    public bool isCountingGuesses = false;
+    public int maxGuesses = 6;    
+    public int numGuesses = 0;
+
+
+    public bool isLimitingCorrectness = false;
+    public int maxCorrectGuesses = 4;
+    public int numCorrectGuesses = 0;    
+    //
 
     public Dictionary<char, char> charAssignments = new Dictionary<char, char>
     {
@@ -53,6 +66,12 @@ public class CipherDecode : MonoBehaviour
 
     void Awake()
     {
+
+        /// <summary>
+        /// prevents cipher from being deleted when a new level loads and other setup stuff.
+        /// </summary>
+
+
         if (instance == null)
         {
             if (isRandomizing)
@@ -60,6 +79,7 @@ public class CipherDecode : MonoBehaviour
             else
                 UnRandomizeLetters();
 
+            Debug.Log("Singleton init");
 
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -67,10 +87,21 @@ public class CipherDecode : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
+    }
 
+    public void clearUserLetters()
+    {
+        Debug.Log("Reseting cipher...");
+
+        for (char i = 'a'; i < 'z'; i++)
+        {
+            charAssignments[i] = '~';
+        }
+
+        updateDisplays();
     }
 
     void updateDisplays()
@@ -192,6 +223,17 @@ public class CipherDecode : MonoBehaviour
             if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value))
             {
                 charAssignments[key] = value;
+
+                if (isCountingGuesses)
+                {
+                    numGuesses++;
+                }
+                if(isLimitingCorrectness && i == value)
+                {
+                    numCorrectGuesses++;
+                }
+
+
                 break;
             }
 
@@ -204,6 +246,16 @@ public class CipherDecode : MonoBehaviour
 
                 //OR
 
+                if (isCountingGuesses)
+                {
+                    numGuesses++;
+                }
+                if(isLimitingCorrectness && i == value)
+                {
+                    numCorrectGuesses++;
+                }
+
+                Debug.Log("CipherDecode: Overwrote previous char assignment");
                 charAssignments[key] = value;
                 break;
             }
@@ -216,12 +268,14 @@ public class CipherDecode : MonoBehaviour
                 //Case where the value that goes to the key in question is blank
                 if (charAssignments[(char)i] == '~')
                 {
+                    Debug.Log("CipherDecode: return warning code -2");
                     returnCode = -2;
                 }
 
                 //Case where the value that goes to the key in question is not blank
                 if (charAssignments[(char)i] != '~')
                 {
+                    Debug.Log("CipherDecode: return warning code -3");
                     returnCode = -3;
                 }
 
@@ -236,6 +290,7 @@ public class CipherDecode : MonoBehaviour
             //This handles the case where the player hits a letter they already did for this cipher character, so it'll just dissasociate it and go back to being blank
             else if (charAssignments[(char)i] != '~' && (char)i == key && !charAssignments.ContainsValue(value) && charAssignments[key] == value)
             {
+                Debug.Log("CipherDecode: erasing previous assignment");
                 charAssignments[key] = '~';
                 break;
             }
@@ -254,6 +309,77 @@ public class CipherDecode : MonoBehaviour
         updateDisplays();
         return 1;
 
+    }
+
+    /// <summary>
+    /// Handles enabling and disabling parts of the scene in accordance with the diffuclty setting. Should always be called on first dialogue node.
+    /// </summary>
+    public void UpdateGameMode()
+    {
+        GameObject[] timerStuffs = GameObject.FindGameObjectsWithTag("Timer");
+
+        switch (difficulty)
+        {
+
+            case GameMode.Hard:
+                foreach (GameObject obj in timerStuffs)
+                {
+                    obj.SetActive(true);
+                }
+
+                break;
+
+            default:
+                foreach (GameObject obj in timerStuffs)
+                {
+                    obj.SetActive(false);
+                }
+
+                break;
+
+        }
+    }
+    
+    //for weird scriptable object reasons, I believe this should be called by dialogue nodes instead of UpdateGameMode() itself
+    public void UpdateGameModeHelper()
+    {
+        instance.UpdateGameMode();
+    }
+
+    /// <summary>
+    /// Changes the trivia game mode. 0 is easy, 1 is medium, and 2 is hard. Should not be called mid-trivia game.
+    /// </summary>
+    /// <param name="mode">The mode to change to (0-2).</param>
+    public void ChangeGameMode(int mode)
+    {
+        difficulty = (GameMode)mode;
+
+        switch (difficulty)
+        {
+            case GameMode.Easy:
+
+                isLimitingCorrectness = true;
+                isCountingGuesses = false;
+                break;
+
+            case GameMode.Medium:
+
+                isLimitingCorrectness = false;
+                isCountingGuesses = true;
+                break;
+
+            case GameMode.Hard:
+
+                isLimitingCorrectness = false;
+                isCountingGuesses = true;
+                break;
+
+        }
+
+        numCorrectGuesses = 0;
+        numGuesses = 0;
+
+        clearUserLetters();
     }
     
 }

@@ -14,16 +14,22 @@ public class ProgressBar : MonoBehaviour
     
     private Vector2 mousePosition;
 
-    [SerializeField] private Timer timer;
+    [SerializeField] public Timer timer;
 
     private Camera mainCamera;
 
     public SpriteRenderer dirtyTeeth;
     public SpriteRenderer cleanTeeth;
     public SpriteRenderer toothBrush;
+    
+    public SpriteRenderer drill;
 
     //connecting to win screen
     public WinScreen winScreen;
+
+    //colliders for teeth
+    public Collider2D topTeeth;
+    public Collider2D bottomTeeth;
 
 
 
@@ -33,6 +39,8 @@ public class ProgressBar : MonoBehaviour
         dirtyTeeth.sortingOrder = 1; 
         cleanTeeth.sortingOrder = 1;
         toothBrush.sortingOrder = 3;
+        drill.sortingOrder = 3;
+
 
         if (progressBar != null)
         {
@@ -64,10 +72,15 @@ public class ProgressBar : MonoBehaviour
         }
         if (Input.GetMouseButton(0) && isSwiping)
         {
+            if(!IsMouseOver(mouseWorldPos))
+            {
+                isSwiping = false;
+                return;
+            }
             float distance = Vector2.Distance(mousePosition, mouseWorldPos);
             //Debug.Log($"LastPos: {mousePosition} CurrentPos: {mouseWorldPos} Distance: {distance}");
             //Debug.Log("Distance moved " + distance);
-            if(distance > 1f)
+            if(distance > 0.4f)
             {
                 RegisterSwipe();
                 mousePosition = mouseWorldPos;
@@ -101,8 +114,12 @@ public class ProgressBar : MonoBehaviour
     }
     private bool IsMouseOver(Vector2 mouseWorldPos)
     {
-        RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-        return hit.collider != null && hit.collider == GetComponent<Collider2D>();
+        Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
+        if (hit == null)
+        {
+            return false;
+        }
+        return hit == topTeeth || hit == bottomTeeth;
     }
     private void RegisterSwipe()
     {
@@ -135,10 +152,6 @@ public class ProgressBar : MonoBehaviour
     private void OnSwipeGoalReached()
     {
         //Debug.Log("Swipe goal reached!");
-        if (timer != null)
-        {
-            timer.StopTimer();
-        }
         
         //bonus points for 100% clean
         if(lastPercentage == 100)
@@ -151,9 +164,15 @@ public class ProgressBar : MonoBehaviour
             int finalPoints = ScoreManager.instance.GetScore();
             TotalScore.instance.AddPoints(finalPoints);
         }
+        if(Holes.holesRemaining<=0)
+        {
+            if (timer != null)
+                timer.StopTimer();
 
-        //display winscreen when minigame is over
-        winScreen.DisplayWinResults();
+            //display winscreen when minigame is over
+            winScreen.ShowWinScreen();
+            //winScreen.DisplayWinResults();
+        }
     }
 
 }

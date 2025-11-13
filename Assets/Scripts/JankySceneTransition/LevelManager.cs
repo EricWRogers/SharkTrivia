@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     private static LevelManager Instance;
     public static bool GameIsPaused = false;
+    public static bool allowPause = true;
     [SerializeField] public static string[] miniGameLevels = { "Bowling", "Temple Shark", "MINIGTeethCleaning", "SharkShootout" };
     public static GameObject pauseMenuUI;
     public Animator animator;
@@ -75,6 +76,8 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
 
     void Update()
     {
+        if (!allowPause) return; // Skip pausing if disabled
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
@@ -89,9 +92,12 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
     }
     public static void StaticResume()
     {
-        pauseMenuUI.SetActive(false);
-        GameIsPaused = false;
-        Time.timeScale = 1.0f;
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(false);
+            GameIsPaused = false;
+            Time.timeScale = 1.0f;
+        }
     }
     public void Resume()
     {

@@ -9,21 +9,22 @@ public class Player : MonoBehaviour
     public float speed;
     private float move;
     private Rigidbody2D rb;
-    
 
     
+
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [Range(0.1f, 1f)]
     [SerializeField] public float fireRate = 1f;
     private float nextFire = 0f;
-
+    
     public Sprite MouthClose;
     public Sprite MouthOpen;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
 
     }
 
@@ -40,24 +41,27 @@ public class Player : MonoBehaviour
             Shoot();
 
             nextFire = Time.time + fireRate;
-            
+
         }
-        
-        
-         void Shoot()
+
+
+        void Shoot()
         {
 
             Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
             gameObject.GetComponent<SpriteRenderer>().sprite = MouthOpen;
-          
+
         }
-         
+
         if (Input.GetMouseButtonUp(0))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = MouthClose;
         }
-
-
     }
+
+    
+
 }
+        
+
  

@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance == null || instance != this)
             instance = this;
         else
             Destroy(gameObject);
@@ -35,8 +35,6 @@ public class ScoreManager : MonoBehaviour
         score += amount;
         UpdateScoreText();
         CheckHighScore();
-
-
     }
     void CheckHighScore()
     {
@@ -54,7 +52,8 @@ public class ScoreManager : MonoBehaviour
     {
         highScoreText.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
     }
-    public int GetScore(){
+    public int GetScore()
+    {
         return score;
     }
 }
