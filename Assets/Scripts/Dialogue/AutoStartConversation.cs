@@ -8,6 +8,7 @@ public class AutoStartConversation : MonoBehaviour
     void Start()
     {
         TempCipherEncoder.Enabled = cipherEnabled; // toggle cipher for this scene
+        Debug.Log("starting conversation: " + conversation);
         DialogueManagerIntegrated.Instance.StartConversation(conversation);
     }
 }
