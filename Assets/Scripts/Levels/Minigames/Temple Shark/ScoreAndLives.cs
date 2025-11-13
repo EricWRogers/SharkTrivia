@@ -56,7 +56,7 @@ public class ScoreAndLives : MonoBehaviour
             //total score
             if(TotalScore.instance != null)
             {
-                int finalPoints = ScoreManager.instance != null ? ScoreManager.instance.GetScore() : 0;
+                int finalPoints = ScoreManager.instance != null ? ScoreManager.instance.score : 0;
                 TotalScore.instance.AddPoints(finalPoints);
             }
             //call gameover later

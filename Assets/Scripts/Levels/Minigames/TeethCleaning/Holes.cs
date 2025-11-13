@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Holes : MonoBehaviour
 {
-    public static int holesRemaining = 0; 
+    public static int holesRemaining = 0;
     public float fadeSpeed = 1.5f;
     private SpriteRenderer sr;
     public SpriteRenderer holes;
@@ -18,7 +18,7 @@ public class Holes : MonoBehaviour
         else
             col.isTrigger = true;
 
-        holesRemaining++; 
+        holesRemaining++;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -30,8 +30,8 @@ public class Holes : MonoBehaviour
             sr.color = c;
 
             if (c.a <= 0)
-            {   
-                holesRemaining--; 
+            {
+                holesRemaining--;
                 Destroy(gameObject);
                 ScoreManager.instance.AddPoints(5);
 
@@ -42,9 +42,11 @@ public class Holes : MonoBehaviour
                     if (pb != null && pb.progressBar.value >= pb.progressBar.maxValue)
                     {
                         if (pb.timer != null)
-                        pb.timer.StopTimer();
+                            pb.timer.StopTimer();
 
-                        pb.winScreen.ShowWinScreen();
+                        //winScreen.ShowWinScreen(); this just turns the WinScreen on
+                        //WinScreen.DisplayWinResults displays the updated scoreboard
+                        pb.winScreen.DisplayWinResults();
                     }
                 }
             }
