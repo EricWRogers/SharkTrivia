@@ -223,13 +223,17 @@ public class CipherDecode : MonoBehaviour
             //This if handles the case where the value that goes to the key in question is blank ('~') and the new value is not already found elsehwere
             if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value))
             {
-                charAssignments[key] = value;
+                
 
                 if (isCountingGuesses && !(difficulty == GameMode.Medium && i == value))
                     numGuesses++;
                 if(isLimitingCorrectness && i == value)
                     numCorrectGuesses++;
 
+                if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
+                    confirmedCharAssignments[key] = value;
+                else
+                    charAssignments[key] = value;
 
                 break;
             }
@@ -245,11 +249,19 @@ public class CipherDecode : MonoBehaviour
 
                 if (isCountingGuesses && !(difficulty == GameMode.Medium && i == value))
                     numGuesses++;
+                
+
                 if(isLimitingCorrectness && i == value)
                     numCorrectGuesses++;
 
                 Debug.Log("CipherDecode: Overwrote previous char assignment");
-                charAssignments[key] = value;
+
+                if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
+                    confirmedCharAssignments[key] = value;
+
+                else
+                    charAssignments[key] = value;
+
                 break;
             }
 
