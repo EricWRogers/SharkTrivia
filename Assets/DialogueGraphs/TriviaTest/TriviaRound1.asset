@@ -81,19 +81,7 @@ MonoBehaviour:
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1641477418594199489, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
-        m_TargetAssemblyTypeName: CipherDecode, Assembly-CSharp
-        m_MethodName: UpdateGameModeHelper
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &-7278055386564224267
 MonoBehaviour:
   m_ObjectHideFlags: 0

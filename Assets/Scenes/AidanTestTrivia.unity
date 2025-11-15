@@ -3049,7 +3049,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation: {fileID: 11400000, guid: c6e9aca257d2bc640afa5dca966e59ec, type: 2}
-  cipherEnabled: 1
 --- !u!1 &321082179
 GameObject:
   m_ObjectHideFlags: 0
@@ -3124,8 +3123,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
