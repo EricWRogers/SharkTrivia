@@ -15,6 +15,19 @@ public class SegmentGenerator : MonoBehaviour
     private bool segmentCreate = false;
     public int generatedCount = 0; // Tracks how many segments have been spawned
 
+    private List<int> availableSegments; // List of indices to pick from without repeats
+    
+    void Start()
+    {
+        // Initialize the list of available segments (excluding the final segment)
+        availableSegments = new List<int>();
+        for (int i = 0; i < segments.Length; i++)
+        {
+            if (i != index) // exclude final segment
+                availableSegments.Add(i);
+        }
+    }
+
     void Update()
     {
         if (!segmentCreate && generatedCount < maxSegments + 1)
@@ -29,14 +42,32 @@ public class SegmentGenerator : MonoBehaviour
         // If we haven't reached max segments
         if (generatedCount < maxSegments)
         {
-            int segmentNum = Random.Range(0, segments.Length - 1); // Excludes last segment
-            Instantiate(segments[segmentNum], new Vector3(0, 0, zPos), Quaternion.identity);
+            // Shuffle available segments if empty
+            if (availableSegments.Count == 0)
+            {
+                for (int i = 0; i < segments.Length; i++)
+                {
+                    if (i != index) // exclude final segment
+                        availableSegments.Add(i);
+                }
+            }
+
+            // Pick a random segment index from available segments
+            int randListIndex = Random.Range(0, availableSegments.Count);
+            int segmentIndex = availableSegments[randListIndex];
+
+            // Remove the chosen index to avoid immediate repeats
+            availableSegments.RemoveAt(randListIndex);
+
+            Instantiate(segments[segmentIndex], new Vector3(0, 0, zPos), Quaternion.identity);
         }
+        
         else
         {
             // Spawn the final segment
             Instantiate(segments[index], new Vector3(0, 0, zPos), Quaternion.identity);
         }
+        
         generatedCount++;
         zPos += 50;
 
