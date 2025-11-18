@@ -1640,8 +1640,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3946766409669321691, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
+      propertyPath: m_Resource
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5259959568999270460, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1684,20 +1684,188 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
-      propertyPath: musicSource
+      propertyPath: musicClips.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: sfxClips.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: sfxClips.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[0].clip
       value: 
-      objectReference: {fileID: 1813705510}
-    - target: {fileID: 6684950144522493853, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
-      propertyPath: m_IsActive
+      objectReference: {fileID: 8300000, guid: 66ae13924c0beea48bb5100e43894b2c, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 15c6fba3fc862854f81bcd7e802e81ce, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[1].name
+      value: CutsceneTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 78c61fb51a988354b95e48bda563f09b, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[2].name
+      value: TestTriviaTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 78c61fb51a988354b95e48bda563f09b, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[3].name
+      value: TriviaLimitedCorrectTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 78c61fb51a988354b95e48bda563f09b, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[4].name
+      value: TriviaLimitedGuessesTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 78c61fb51a988354b95e48bda563f09b, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[5].name
+      value: TriviaTimerTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 15c6fba3fc862854f81bcd7e802e81ce, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[6].name
+      value: BackStageTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0823a37038e58964c9110632aa63c2f1, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[7].name
+      value: BowlingTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a399a259f104d2408aea4f62c25809e, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[8].name
+      value: TeethCleaningTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 78dab42034594af42b6fe232c36b076b, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[9].name
+      value: SharkShootoutTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a8ae6c2b223f4e047977c458794606d5, type: 3}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[10].name
+      value: TempleSharkTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[4].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[5].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[6].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[7].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[8].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[9].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[10].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[4].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[5].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[6].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[7].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[8].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[9].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+      propertyPath: musicClips.Array.data[10].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6765442086062213357, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6765442086062213357, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
+      propertyPath: m_Resource
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

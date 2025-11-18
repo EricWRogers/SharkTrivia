@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
@@ -51,9 +51,27 @@ public class AudioManager : MonoBehaviour
             case "MainMenu":
                 PlayMusic("MenuTheme");
                 break;
-            case "Level1":
-                PlayMusic("Level1Theme");
+                
+            case "IntroCutscene":
+                PlayMusic("CutsceneTheme");
                 break;
+
+            case "TriviaR1":
+                PlayMusic("TestTriviaTheme");
+                break;
+
+            case "TestTriviaLimitedCorrect":
+                PlayMusic("TriviaLimitedCorrectTheme");
+                break;
+
+            case "TestTriviaLimitedGuesses":
+                PlayMusic("TriviaLimitedGuessesTheme");
+                break;
+
+            case "TestTriviaTimer":
+                PlayMusic("TriviaTimerTheme");
+                break;
+
             case "BackStage":
                 PlayMusic("BackStageTheme");
                 break;
@@ -64,6 +82,14 @@ public class AudioManager : MonoBehaviour
 
             case "MINIGTeethCleaning":
                 PlayMusic("TeethCleaningTheme");
+                break;
+
+            case "SharkShootout":
+                PlayMusic("SharkShootoutTheme");
+                break;
+
+            case "Temple Shark":
+                PlayMusic("TempleSharkTheme");
                 break;
 
             default:
