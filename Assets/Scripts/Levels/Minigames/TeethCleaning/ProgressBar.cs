@@ -174,7 +174,7 @@ public class ProgressBar : MonoBehaviour
             //display winscreen when minigame is over
             //winScreen.ShowWinScreen(); this just turns the WinScreen on
             //WinScreen.DisplayWinResults displays the updated scoreboard
-            winScreen.DisplayWinResults();
+            winScreen.DisplayWinResults(ScoreManager.instance.score);
         }
     }
 

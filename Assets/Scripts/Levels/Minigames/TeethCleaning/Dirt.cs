@@ -9,9 +9,9 @@ public class Dirt : MonoBehaviour
     {
         if (other.CompareTag("Toothbrush"))      //when can change the tag to whateven tool we need... possably a "pick"
         {
-            Debug.Log("touching");
+            //Debug.Log("touching");
             if(Input.GetMouseButtonDown(0)){
-                Debug.Log("clicked");
+                //Debug.Log("clicked");
                 ScoreManager.instance.AddPoint();
 
                 RemoveTween();

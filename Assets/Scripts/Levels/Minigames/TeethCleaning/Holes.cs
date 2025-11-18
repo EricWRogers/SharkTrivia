@@ -46,7 +46,7 @@ public class Holes : MonoBehaviour
 
                         //winScreen.ShowWinScreen(); this just turns the WinScreen on
                         //WinScreen.DisplayWinResults displays the updated scoreboard
-                        pb.winScreen.DisplayWinResults();
+                        //pb.winScreen.DisplayWinResults();
                     }
                 }
             }

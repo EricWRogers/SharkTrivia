@@ -49,7 +49,8 @@ public class EndGame : MonoBehaviour
     }
     public void Win()
     {
-        winScreen.DisplayWinResults(); 
+        //winScreen.DisplayWinResults(); 
+        winScreen.DisplayWinResults(ScoreManager.instance.score);
     }
      
 }
