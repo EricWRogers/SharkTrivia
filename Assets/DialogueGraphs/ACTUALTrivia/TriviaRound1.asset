@@ -148,6 +148,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 5654390532154605717, guid: 67f4569896dd57944bc6e743ce5afd10, type: 3}
+        m_TargetAssemblyTypeName: TotalScore, Assembly-CSharp
+        m_MethodName: TakePoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1946937906327751057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +194,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 5654390532154605717, guid: 67f4569896dd57944bc6e743ce5afd10, type: 3}
+        m_TargetAssemblyTypeName: TotalScore, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +320,7 @@ MonoBehaviour:
   m_Name: Rn12
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
   speakerLine: Now that we know our contestant's wit, let's test their skill! With
     a minigame!
   autoProgress: 0
@@ -370,7 +394,19 @@ MonoBehaviour:
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5654390532154605717, guid: 67f4569896dd57944bc6e743ce5afd10, type: 3}
+        m_TargetAssemblyTypeName: TotalScore, Assembly-CSharp
+        m_MethodName: TakePoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8543082807017806957
 MonoBehaviour:
   m_ObjectHideFlags: 0
