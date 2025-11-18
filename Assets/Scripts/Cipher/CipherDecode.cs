@@ -256,6 +256,8 @@ public class CipherDecode : MonoBehaviour
 
                 Debug.Log("CipherDecode: Overwrote previous char assignment");
 
+                charAssignments[key] = '~';
+
                 if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
                     confirmedCharAssignments[key] = value;
 
