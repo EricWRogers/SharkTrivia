@@ -54,8 +54,8 @@ MonoBehaviour:
   portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
   speakerLine: Well this will certainly be an interesting game, won't it folks?
   autoProgress: 1
-  autoDelay: 3
-  nextIfNoChoices: {fileID: -7278055386564224267}
+  autoDelay: 5
+  nextIfNoChoices: {fileID: 2702153461593583789}
   choices: []
   onEnter:
     m_PersistentCalls:
@@ -76,24 +76,12 @@ MonoBehaviour:
   portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
   speakerLine: 'Ahoy There, Hello! '
   autoProgress: 1
-  autoDelay: 2
+  autoDelay: 5
   nextIfNoChoices: {fileID: 4574236666349939304}
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1641477418594199489, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
-        m_TargetAssemblyTypeName: CipherDecode, Assembly-CSharp
-        m_MethodName: UpdateGameModeHelper
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &-7278055386564224267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,11 +96,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Host
   portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
-  speakerLine: Now that we know our contestant's wit, let's test their skill! With
-    a minigame!
-  autoProgress: 0
-  autoDelay: 3
-  nextIfNoChoices: {fileID: 0}
+  speakerLine: What a great start, let's give our our contestant here a round of
+    applause!
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: 2702153461593583789}
   choices:
   - choiceText: Continue...
     next: {fileID: 0}
@@ -121,19 +109,7 @@ MonoBehaviour:
     loadSceneOnSelect: 
     onSelected:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 9125416981288732490, guid: 778a63add9d9de44bb114fd3ca769590, type: 3}
-          m_TargetAssemblyTypeName: RandomMinigameCall, Assembly-CSharp
-          m_MethodName: CallRandomLevel
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
+        m_Calls: []
   onEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -151,9 +127,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Host
   portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
-  speakerLine: Aww, I'm sorry, but that is incorrect!
+  speakerLine: Aww, I'm sorry, but that is incorrect! Don't worry though, we're just
+    getting started!
   autoProgress: 1
-  autoDelay: 2
+  autoDelay: 5
   nextIfNoChoices: {fileID: -8182024956505882972}
   choices: []
   onEnter:
@@ -187,8 +164,8 @@ MonoBehaviour:
   portrait: {fileID: 1046629060553489229, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
   speakerLine: That is correct! Congratulations!
   autoProgress: 1
-  autoDelay: 2
-  nextIfNoChoices: {fileID: -8182024956505882972}
+  autoDelay: 5
+  nextIfNoChoices: {fileID: -7278055386564224267}
   choices: []
   onEnter:
     m_PersistentCalls:
@@ -234,7 +211,7 @@ MonoBehaviour:
   portrait: {fileID: 1046629060553489229, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
   speakerLine: Sound's like someone's excited, let's start already!
   autoProgress: 1
-  autoDelay: 1.5
+  autoDelay: 3
   nextIfNoChoices: {fileID: 1195773763022010239}
   choices: []
   onEnter:
@@ -254,12 +231,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Host
   portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
-  speakerLine: What's the fastest species of shark?
+  speakerLine: 'We''re starting with a softball today: How do sharks breathe?'
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices:
-  - choiceText: Great White Shark
+  - choiceText: With lungs
     next: {fileID: -5239269961706621938}
     isCorrect: 0
     isTriviaQuestion: 1
@@ -267,15 +244,7 @@ MonoBehaviour:
     onSelected:
       m_PersistentCalls:
         m_Calls: []
-  - choiceText: Greenland Shark
-    next: {fileID: -5239269961706621938}
-    isCorrect: 0
-    isTriviaQuestion: 1
-    loadSceneOnSelect: 
-    onSelected:
-      m_PersistentCalls:
-        m_Calls: []
-  - choiceText: Shortfin Mako Shark
+  - choiceText: With gills
     next: {fileID: -1946937906327751057}
     isCorrect: 1
     isTriviaQuestion: 1
@@ -283,8 +252,16 @@ MonoBehaviour:
     onSelected:
       m_PersistentCalls:
         m_Calls: []
-  - choiceText: Loan Shark
+  - choiceText: with snorkles
     next: {fileID: 6685537915821145208}
+    isCorrect: 0
+    isTriviaQuestion: 1
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  - choiceText: We simply don't!
+    next: {fileID: -5239269961706621938}
     isCorrect: 0
     isTriviaQuestion: 1
     loadSceneOnSelect: 
@@ -306,6 +283,49 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+--- !u!114 &2702153461593583789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn12
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: Now that we know our contestant's wit, let's test their skill! With
+    a minigame!
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: 0}
+  choices:
+  - choiceText: Continue...
+    next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9125416981288732490, guid: 778a63add9d9de44bb114fd3ca769590, type: 3}
+          m_TargetAssemblyTypeName: RandomMinigameCall, Assembly-CSharp
+          m_MethodName: CallRandomLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4574236666349939304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +343,7 @@ MonoBehaviour:
   speakerLine: "Welcome Gills and Lampreys to the premiere episode of our exciting
     new game show\u2026"
   autoProgress: 1
-  autoDelay: 4
+  autoDelay: 5
   nextIfNoChoices: {fileID: 8543082807017806957}
   choices: []
   onEnter:
@@ -345,7 +365,7 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: Haha, what? That isn't even close!
   autoProgress: 1
-  autoDelay: 2
+  autoDelay: 5
   nextIfNoChoices: {fileID: -8182024956505882972}
   choices: []
   onEnter:
@@ -367,7 +387,7 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: Shark Trivia!
   autoProgress: 1
-  autoDelay: 3
+  autoDelay: 5
   nextIfNoChoices: {fileID: -8540530116224922796}
   choices: []
   onEnter:
