@@ -693,7 +693,7 @@ Transform:
   m_GameObject: {fileID: 505031075}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: -15}
+  m_LocalPosition: {x: 0, y: 1.98, z: -13.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -725,7 +725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7bb6f6da19de07b449bf41ac8f1dde58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.99
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7bb6f6da19de07b449bf41ac8f1dde58, type: 3}
       propertyPath: m_LocalPosition.z
@@ -774,6 +774,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7bb6f6da19de07b449bf41ac8f1dde58, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1785804495}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7bb6f6da19de07b449bf41ac8f1dde58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1785804497}
   m_SourcePrefab: {fileID: 100100000, guid: 7bb6f6da19de07b449bf41ac8f1dde58, type: 3}
 --- !u!1 &614029107
 GameObject:
@@ -948,7 +951,7 @@ Transform:
   m_GameObject: {fileID: 694492872}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.55, z: -17.54}
+  m_LocalPosition: {x: 0, y: -1.65, z: -15.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1410,7 +1413,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892878680}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: -11.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2004,7 +2007,7 @@ Transform:
   m_GameObject: {fileID: 1266287933}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.75, z: -15}
+  m_LocalPosition: {x: 0, y: 2.52, z: -12.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2084,6 +2087,10 @@ PrefabInstance:
     - target: {fileID: 1902925572445493710, guid: ddd99ac4166362d42abe211bee9ac997, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230957735541069688, guid: ddd99ac4166362d42abe211bee9ac997, type: 3}
+      propertyPath: m_text
+      value: 'Total:'
       objectReference: {fileID: 0}
     - target: {fileID: 2230957735541069688, guid: ddd99ac4166362d42abe211bee9ac997, type: 3}
       propertyPath: m_fontSize
@@ -2452,7 +2459,7 @@ Transform:
   m_GameObject: {fileID: 1549691393}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.75, z: -15}
+  m_LocalPosition: {x: 0, y: 1.31, z: -13.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2577,7 +2584,7 @@ Transform:
   m_GameObject: {fileID: 1594107653}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.38, y: 0.5, z: -15}
+  m_LocalPosition: {x: 0, y: 0.5, z: -14.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3182,13 +3189,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff84f767f598034bbbe95ed0f79bb72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
-  moveSpeed: 0.5
+  waypoints:
+  - {fileID: 892878681}
+  - {fileID: 1266287934}
+  - {fileID: 505031076}
+  - {fileID: 1549691394}
+  - {fileID: 1594107654}
+  - {fileID: 694492873}
+  moveSpeed: 4
   movingForward: 0
   currentWaypointIndex: 0
   bowlingManager: {fileID: 134005147735805291}
   bowlingBall: {fileID: 286272557}
   videoPlayerScript: {fileID: 761192495}
+--- !u!114 &1785804497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785804493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4266404eb5538a6488f8fde40fef7f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoToPlay: {fileID: 0}
+  rawImageDisplay: {fileID: 0}
+  bowlingManager: {fileID: 134005147735805291}
+  canvasPathFollwer: {fileID: 1785804495}
+  playDuration: 5
+  videoClips:
+  - {fileID: 32900000, guid: 2106205ff3ceb09469c66cd6f0d3e670, type: 3}
+  - {fileID: 32900000, guid: 0423fd0d57a0ebf4091610468938b502, type: 3}
+  - {fileID: 32900000, guid: 6c44445dc7ec8904eb0453f8ecac2b6b, type: 3}
+  - {fileID: 32900000, guid: 13103675db2adcb4d9aab503c976b991, type: 3}
+  - {fileID: 32900000, guid: c9f8442e12a04d34a9a8ab4a5a4ab43d, type: 3}
+  - {fileID: 32900000, guid: 8f95bc24acffab140a5602db6e6984e8, type: 3}
+  - {fileID: 32900000, guid: cbc884216c56bc644ad14c38944e5309, type: 3}
+  - {fileID: 32900000, guid: 6226aa7317b45b14bae5919bad0fee19, type: 3}
+  - {fileID: 32900000, guid: 821d8ca52b96c5840b1fbeb5b6a16736, type: 3}
+  - {fileID: 32900000, guid: bedb2438b42e0fe4b95430bb4eb5583e, type: 3}
+  - {fileID: 32900000, guid: 01aa2c640abe0c842bdbf39a4e7cc597, type: 3}
+  currentVideoIndex: 0
+  isPlaying: 0
 --- !u!1001 &1851431028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4244,7 +4288,7 @@ PrefabInstance:
     - target: {fileID: 2096837162749168752, guid: 2dd1add5855c16f4b9aa6f4d96eef1c4, type: 3}
       propertyPath: canvasPathFollwer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1785804495}
     - target: {fileID: 2334888458297624727, guid: 2dd1add5855c16f4b9aa6f4d96eef1c4, type: 3}
       propertyPath: m_RenderMode
       value: 2
