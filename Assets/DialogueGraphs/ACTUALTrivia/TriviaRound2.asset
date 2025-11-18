@@ -1,0 +1,371 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8311972476953595097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn1_Child1
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: Let's hope that our contestant here is warmed up and ready to go,
+    because we're raising the stakes and making this one worth even more points!
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: 3197141116899137783}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-4929323995905578850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn11
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: Let's move on to our next minigame!
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: 0}
+  choices:
+  - choiceText: Continue...
+    next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9125416981288732490, guid: 778a63add9d9de44bb114fd3ca769590, type: 3}
+          m_TargetAssemblyTypeName: RandomMinigameCall, Assembly-CSharp
+          m_MethodName: CallRandomLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-3035556012208523319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn4
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: Well! Let's Begin!
+  autoProgress: 1
+  autoDelay: 3
+  nextIfNoChoices: {fileID: 8938270116623604821}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-2912360186939904165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn9
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: Well that was fun, wasn't it folks!
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: -4929323995905578850}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-1933077885700075555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn7
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: That is correct! You would know, wouldn't you Mr. Mako?
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: 1732500077030790063}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6174fe4a7d4998478b926a21e26dff7, type: 3}
+  m_Name: TriviaRound2
+  m_EditorClassIdentifier: 
+  entry: {fileID: 8661170993701715181}
+--- !u!114 &308367774174494347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn8
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: Haha, good one! Unfortunately however, it is wrong.
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: -2912360186939904165}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1628653037141088385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn6
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: I'm afraid that your is incorrect! Better luck next time!
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: -2912360186939904165}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1732500077030790063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn10
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: Let's give our contestant a round of applause folks!
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: -4929323995905578850}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3197141116899137783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn2
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: Do you have anything you'd like to tell the audience before we begin?
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: 0}
+  choices:
+  - choiceText: It's an honor to be here today!
+    next: {fileID: 7545979845865342671}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  - choiceText: Please let me go, I just want to eat fish!
+    next: {fileID: 6598025147336120514}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6598025147336120514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn3
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: Woah, haha! Well there it is folks, the honest truth! Haha, we have
+    fun here....
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: -3035556012208523319}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7545979845865342671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn2_Child1
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: Aw, shucks. I'm blushing!
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: -3035556012208523319}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8661170993701715181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn1
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
+  speakerLine: ...Aaand we're back folks! I hope you're ready for round two!
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: -8311972476953595097}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8938270116623604821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn5
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 0}
+  speakerLine: What's the fastest species of shark?
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: 0}
+  choices:
+  - choiceText: Greenland Shark
+    next: {fileID: 1628653037141088385}
+    isCorrect: 0
+    isTriviaQuestion: 1
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  - choiceText: Great White Shark
+    next: {fileID: 1628653037141088385}
+    isCorrect: 0
+    isTriviaQuestion: 1
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  - choiceText: Shortfin Mako Shark
+    next: {fileID: -1933077885700075555}
+    isCorrect: 1
+    isTriviaQuestion: 1
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  - choiceText: Loan Shark
+    next: {fileID: 308367774174494347}
+    isCorrect: 0
+    isTriviaQuestion: 1
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []

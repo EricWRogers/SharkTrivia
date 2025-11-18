@@ -1,6 +1,6 @@
 using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 //Originally Programmed by Samuel (Scott)
 
@@ -14,6 +14,9 @@ public class CipherDecode : MonoBehaviour
     public List<CipherNode> confirmedAssignmentDisplay;
     public bool encoding = true;
     public bool isRandomizing = false;
+    public enum GameMode { Easy, Medium, Hard }
+
+    public GameMode difficulty = GameMode.Easy;
 
     //test build switches and trackers
     public bool isCountingGuesses = false;
@@ -77,9 +80,8 @@ public class CipherDecode : MonoBehaviour
             else
                 UnRandomizeLetters();
 
+            SceneManager.activeSceneChanged += OnActiveSceneChanged;
             Debug.Log("Singleton init");
-            SceneManager.activeSceneChanged += sceneChanged;
-
             instance = this;
             DontDestroyOnLoad(gameObject);
 
@@ -221,17 +223,17 @@ public class CipherDecode : MonoBehaviour
             //This if handles the case where the value that goes to the key in question is blank ('~') and the new value is not already found elsehwere
             if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value))
             {
-                charAssignments[key] = value;
+                
 
-                if (isCountingGuesses)
-                {
+                if (isCountingGuesses && !(difficulty == GameMode.Medium && i == value))
                     numGuesses++;
-                }
                 if(isLimitingCorrectness && i == value)
-                {
                     numCorrectGuesses++;
-                }
 
+                if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
+                    confirmedCharAssignments[key] = value;
+                else
+                    charAssignments[key] = value;
 
                 break;
             }
@@ -245,24 +247,30 @@ public class CipherDecode : MonoBehaviour
 
                 //OR
 
-                if (isCountingGuesses)
-                {
+                if (isCountingGuesses && !(difficulty == GameMode.Medium && i == value))
                     numGuesses++;
-                }
+                
+
                 if(isLimitingCorrectness && i == value)
-                {
                     numCorrectGuesses++;
-                }
 
                 Debug.Log("CipherDecode: Overwrote previous char assignment");
-                charAssignments[key] = value;
+
+                charAssignments[key] = '~';
+
+                if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
+                    confirmedCharAssignments[key] = value;
+
+                else
+                    charAssignments[key] = value;
+
                 break;
             }
 
             //This if handles the case where the new value is already used somehwere else in the journal with some subcases
             else if ((char)i == key && charAssignments.ContainsValue(value))
             {
-                //Return an error code (some other negative number) if you want this operation to be illegal, elsewise erase where the new value already was and put it here
+                //Return a warning code (some other negative number) if you want this operation to be illegal, elsewise erase where the new value already was and put it here
 
                 //Case where the value that goes to the key in question is blank
                 if (charAssignments[(char)i] == '~')
@@ -310,28 +318,94 @@ public class CipherDecode : MonoBehaviour
 
     }
 
-    void sceneChanged(Scene current, Scene next)
+    /// <summary>
+    /// Handles enabling and disabling parts of the scene in accordance with the diffuclty setting. Should not be called directly, use UpdateGameModeHelper() instead.
+    /// </summary>
+    public void UpdateGameMode()
     {
-        if (next.buildIndex == 10)
+        GameObject[] timerStuffs = GameObject.FindGameObjectsWithTag("Timer");
+
+        switch (difficulty)
         {
-            isLimitingCorrectness = true;
-            isCountingGuesses = false;
+
+            case GameMode.Hard:
+                foreach (GameObject obj in timerStuffs)
+                {
+                    obj.SetActive(true);
+                }
+
+                break;
+
+            default:
+                foreach (GameObject obj in timerStuffs)
+                {
+                    obj.SetActive(false);
+                }
+
+                break;
+
         }
-        else if (next.buildIndex == 11)
+    }
+    
+    //for weird scriptable object reasons, I believe this should be called by dialogue nodes instead of UpdateGameMode() itself
+    public void UpdateGameModeHelper()
+    {
+        instance.UpdateGameMode();
+    }
+
+    /// <summary>
+    /// Changes the trivia game mode. 0 is easy, 1 is medium, and 2 is hard. Should not be called mid-trivia game.
+    /// </summary>
+    /// <param name="mode">The mode to change to (0-2).</param>
+    public void ChangeGameMode(int mode)
+    {
+        difficulty = (GameMode)mode;
+
+        switch (difficulty)
         {
-            isLimitingCorrectness = false;
-            isCountingGuesses = true;
-        }
-        else
-        {
-            isLimitingCorrectness = false;
-            isCountingGuesses = false;
+            case GameMode.Easy:
+
+                isLimitingCorrectness = true;
+                isCountingGuesses = false;
+                break;
+
+            case GameMode.Medium:
+
+                isLimitingCorrectness = false;
+                isCountingGuesses = true;
+                break;
+
+            case GameMode.Hard:
+
+                isLimitingCorrectness = false;
+                isCountingGuesses = true;
+                break;
+
         }
 
         numCorrectGuesses = 0;
         numGuesses = 0;
 
         clearUserLetters();
+    }
+
+
+    /// <summary>
+    /// Changes the number of guesses at letters the player is allowed to make.
+    /// </summary>
+    /// <param name="change">The number to modify the guesses by (negative subtracts guesses, positive adds them).</param>
+    public void changeGuessNum(int change)
+    {
+        if(isCountingGuesses)
+            maxGuesses += change;
+        else if(isLimitingCorrectness)
+            maxCorrectGuesses += change;
+    }
+
+    private void OnActiveSceneChanged(Scene current, Scene next)
+    {
+        if(next.name.ToLower().Contains("trivia"))
+            UpdateGameMode();
     }
     
 }

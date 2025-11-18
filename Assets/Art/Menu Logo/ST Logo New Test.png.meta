@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: f80bb87e285f5ee4598890350758aed4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8354792215256638087
+    second: ST Logo New Test_0
+  - first:
+      213: -8843364371690842509
+    second: ST Logo New Test_1
+  - first:
+      213: -4405113363045224710
+    second: ST Logo New Test_2
+  - first:
+      213: -5858080895887900366
+    second: ST Logo New Test_3
+  - first:
+      213: 1139225753504312554
+    second: ST Logo New Test_4
+  - first:
+      213: 550238380079506568
+    second: ST Logo New Test_5
+  - first:
+      213: -6141669095770873964
+    second: ST Logo New Test_6
+  - first:
+      213: -4858978686680766169
+    second: ST Logo New Test_7
+  - first:
+      213: 8777221588333480730
+    second: ST Logo New Test_8
+  - first:
+      213: -5353523397714143597
+    second: ST Logo New Test_9
+  - first:
+      213: -3882943820700675091
+    second: ST Logo New Test_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ST Logo New Test_0
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 370
+        width: 233
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7822292114f22f370800000000000000
+      internalID: 8354792215256638087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST Logo New Test_1
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 374
+        width: 262
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 376950645fe064580800000000000000
+      internalID: -8843364371690842509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST Logo New Test_2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 374
+        width: 252
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afeec505cb4edd2c0800000000000000
+      internalID: -4405113363045224710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST Logo New Test_3
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 374
+        width: 229
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231891f667ae3bea0800000000000000
+      internalID: -5858080895887900366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST Logo New Test_4
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 374
+        width: 265
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aece99479c75fcf00800000000000000
+      internalID: 1139225753504312554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST Logo New Test_5
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 83
+        width: 192
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 884ec6234e6d2a700800000000000000
+      internalID: 550238380079506568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST Logo New Test_6
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 83
+        width: 229
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f15925f7864caa0800000000000000
+      internalID: -6141669095770873964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST Logo New Test_7
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 83
+        width: 157
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 729e231e0a0719cb0800000000000000
+      internalID: -4858978686680766169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST Logo New Test_8
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 83
+        width: 207
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1bc187e784fec970800000000000000
+      internalID: 8777221588333480730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST Logo New Test_9
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 83
+        width: 157
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396918e75d674b5b0800000000000000
+      internalID: -5353523397714143597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST Logo New Test_10
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 83
+        width: 252
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de39654fa230d1ac0800000000000000
+      internalID: -3882943820700675091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ST Logo New Test_0: 8354792215256638087
+      ST Logo New Test_1: -8843364371690842509
+      ST Logo New Test_10: -3882943820700675091
+      ST Logo New Test_2: -4405113363045224710
+      ST Logo New Test_3: -5858080895887900366
+      ST Logo New Test_4: 1139225753504312554
+      ST Logo New Test_5: 550238380079506568
+      ST Logo New Test_6: -6141669095770873964
+      ST Logo New Test_7: -4858978686680766169
+      ST Logo New Test_8: 8777221588333480730
+      ST Logo New Test_9: -5353523397714143597
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -37,14 +37,17 @@ public class TimerTrigger : MonoBehaviour
         }
     }
 
-    public void SpawnTimer()
+    public void SpawnTimer(bool foo = true)
     {
-        Instantiate(this.gameObject);
+        if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard || foo)
+        {
+            Instantiate(this.gameObject);
 
-        timerM = GameObject.Find("TimeManager");
-        timer = timerM.GetComponent<Timer>();
+            timerM = GameObject.Find("TimeManager");
+            timer = timerM.GetComponent<Timer>();
 
-        StartTimer();
+            StartTimer();
+        }
     }
 
     public void StartTimer()
@@ -54,10 +57,13 @@ public class TimerTrigger : MonoBehaviour
         timer.timeRunning = true;  
     }
 
-    public void StopTimer()
+    public void StopTimer(bool foo = true)
     {
-        Debug.Log("Goodbye! I have been stopped!");
-        timer.timeRunning = false;
+        if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard || foo)
+        {
+            Debug.Log("Goodbye! I have been stopped!");
+            timer.timeRunning = false;
+        }
     }
 
     public void TimeUp()
