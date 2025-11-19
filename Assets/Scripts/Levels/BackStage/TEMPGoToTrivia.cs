@@ -20,19 +20,19 @@ public class TEMPGoToTrivia : MonoBehaviour
         }
     }
 
-    public void TimedTrivia()
+    public void TriviaR1()
     {
-        LevelManager.LoadSpecificScene("TestTriviaTimer");
+        LevelManager.LoadSpecificScene("TriviaR1");
     }
 
-    public void LimitedGuessesTrivia()
+    public void TriviaR2()
     {
-        LevelManager.LoadSpecificScene("TestTriviaLimitedGuesses");
+        LevelManager.LoadSpecificScene("TriviaR2");
     }
 
-    public void LimitedCorrect()
+    public void TriviaR3()
     {
-        LevelManager.LoadSpecificScene("TestTriviaLimitedCorrect");
+        LevelManager.LoadSpecificScene("TriviaR3");
     }
 
     /// code from when this would only load one scene
