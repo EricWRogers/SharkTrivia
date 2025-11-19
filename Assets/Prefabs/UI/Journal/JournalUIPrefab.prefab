@@ -35,10 +35,10 @@ RectTransform:
   - {fileID: 4325710702369783560}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 826, y: -178}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &450914067458336778
 CanvasRenderer:
@@ -122,22 +122,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2644937982484230700}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -148,7 +136,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2644937982484230700}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -173,6 +161,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: J
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &297897122701936291
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,10 +473,10 @@ RectTransform:
   - {fileID: 7640627937433216932}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 826, y: -394}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2583700431945645302
 CanvasRenderer:
@@ -567,22 +560,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8172914061044097037}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -593,7 +574,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 8172914061044097037}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -618,6 +599,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: V
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &890827527253831803
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,10 +639,10 @@ RectTransform:
   - {fileID: 4810862558915554317}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130, y: -70}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7036197860465407371
 CanvasRenderer:
@@ -740,22 +726,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1548133612162352976}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -766,7 +740,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1548133612162352976}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -791,6 +765,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: A
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &1191707224986422340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,10 +1213,10 @@ RectTransform:
   - {fileID: 6290951513746838701}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 594, y: -394}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1854455331928022978
 CanvasRenderer:
@@ -1321,22 +1300,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1558814040212659603}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1347,7 +1314,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1558814040212659603}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1372,6 +1339,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: U
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &1422141751177454765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,6 +1536,7 @@ GameObject:
   - component: {fileID: 6474377530173715153}
   - component: {fileID: 3242688487487988331}
   - component: {fileID: 1130513919271449605}
+  - component: {fileID: 3594992542845183687}
   m_Layer: 5
   m_Name: GuessLetter
   m_TagString: Untagged
@@ -1585,6 +1558,7 @@ RectTransform:
   m_Children:
   - {fileID: 2827141657510659053}
   - {fileID: 3539056008925448521}
+  - {fileID: 6370581835680328880}
   m_Father: {fileID: 5597141893382749117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -1635,6 +1609,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &3594992542845183687
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496398561085448436}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1497349443215850497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,10 +1792,10 @@ RectTransform:
   - {fileID: 4375810984422077149}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 826, y: -286}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4000806365250787740
 CanvasRenderer:
@@ -1893,22 +1879,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8856808207606191097}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1919,7 +1893,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 8856808207606191097}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1944,6 +1918,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: P
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &1760986893108492875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,7 +2015,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 40.35
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2115,10 +2094,10 @@ RectTransform:
   - {fileID: 2422730816802580262}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130, y: -178}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5160435004890478045
 CanvasRenderer:
@@ -2202,22 +2181,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2216786508380752090}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2228,7 +2195,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2216786508380752090}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2253,6 +2220,168 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: G
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
+--- !u!1 &1834578099792459490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4531467954982642504}
+  - component: {fileID: 1393610638185483731}
+  - component: {fileID: 4761818290699214760}
+  - component: {fileID: 4441359462521506900}
+  m_Layer: 0
+  m_Name: Unassign
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4531467954982642504
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834578099792459490}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5.33877}
+  m_LocalScale: {x: 1.3865625, y: 1.65, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2472260464206977914}
+  m_Father: {fileID: 6370581835680328880}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1393610638185483731
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834578099792459490}
+  m_CullTransparentMesh: 1
+--- !u!114 &4761818290699214760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834578099792459490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4441359462521506900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834578099792459490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 4761818290699214760}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1496398561085448436}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9212149384611430348}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3242688487487988331}
+        m_TargetAssemblyTypeName: ButtonRename, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ~
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1915544596321064481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,10 +2722,10 @@ RectTransform:
   - {fileID: 1417248088445130176}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1058, y: -178}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2549256604455745140
 CanvasRenderer:
@@ -2680,22 +2809,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 3809861955945715008}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2706,7 +2823,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 3809861955945715008}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2731,6 +2848,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: K
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &2107794837865298148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,10 +3024,10 @@ RectTransform:
   - {fileID: 759248328726065832}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 594, y: -70}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1550075625617331289
 CanvasRenderer:
@@ -2989,22 +3111,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5556787907816337532}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3015,7 +3125,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5556787907816337532}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3040,6 +3150,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: C
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &2234835988227412413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,10 +3190,10 @@ RectTransform:
   - {fileID: 3850957031987934613}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1290, y: -394}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4275427876148507118
 CanvasRenderer:
@@ -3162,22 +3277,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 6054344477170468943}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3188,7 +3291,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 6054344477170468943}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3213,6 +3316,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: X
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &2270708965230918068
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,10 +3356,10 @@ RectTransform:
   - {fileID: 5946245244621008029}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1290, y: -286}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6377338396457723462
 CanvasRenderer:
@@ -3335,22 +3443,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 652614148095164964}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3361,7 +3457,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 652614148095164964}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3386,6 +3482,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: R
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &2365701792461494030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,10 +3519,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6474377530173715153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -125.60002}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 567.5, y: 0}
+  m_SizeDelta: {x: 564.89, y: 102.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6068905851748744281
 CanvasRenderer:
@@ -3557,10 +3658,10 @@ RectTransform:
   - {fileID: 328942026086689561}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1058, y: -394}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6198493259103014144
 CanvasRenderer:
@@ -3644,22 +3745,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2468257150364105776}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3670,7 +3759,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2468257150364105776}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3695,6 +3784,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: W
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &2473764871571445460
 GameObject:
   m_ObjectHideFlags: 0
@@ -3831,6 +3925,151 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &2551682649259235612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1920425510027289655}
+  - component: {fileID: 9108983911410630003}
+  - component: {fileID: 1130326043160056722}
+  - component: {fileID: 1752567728398316044}
+  m_Layer: 0
+  m_Name: Return
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1920425510027289655
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551682649259235612}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5.33877}
+  m_LocalScale: {x: 1.3865625, y: 1.65, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 105834860951420111}
+  m_Father: {fileID: 6370581835680328880}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &9108983911410630003
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551682649259235612}
+  m_CullTransparentMesh: 1
+--- !u!114 &1130326043160056722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551682649259235612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1752567728398316044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551682649259235612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1130326043160056722}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1496398561085448436}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9212149384611430348}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &2676748115662347104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3967,6 +4206,68 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &2681558063699407188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6370581835680328880}
+  - component: {fileID: 7252441755659760591}
+  m_Layer: 0
+  m_Name: UnassAndReturn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6370581835680328880
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681558063699407188}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5.33877}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4531467954982642504}
+  - {fileID: 1920425510027289655}
+  m_Father: {fileID: 6474377530173715153}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7252441755659760591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681558063699407188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 8
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 100, y: 100}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &2719200941832299296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,10 +4303,10 @@ RectTransform:
   - {fileID: 2051767990159405133}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 826, y: -70}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5176418908706239787
 CanvasRenderer:
@@ -4089,22 +4390,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8798997116248256432}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4115,7 +4404,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 8798997116248256432}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4140,6 +4429,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: D
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &3008098575318756780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,10 +4877,10 @@ RectTransform:
   - {fileID: 8151708980969108543}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 362, y: -502}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &279774701469604492
 CanvasRenderer:
@@ -4670,22 +4964,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 6333564955833011933}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4696,7 +4978,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 6333564955833011933}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4721,6 +5003,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: Z
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &3637600010834797944
 GameObject:
   m_ObjectHideFlags: 0
@@ -4796,6 +5083,142 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3644114482600370165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2472260464206977914}
+  - component: {fileID: 578998964196232574}
+  - component: {fileID: 6482561753437464734}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2472260464206977914
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644114482600370165}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4531467954982642504}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &578998964196232574
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644114482600370165}
+  m_CullTransparentMesh: 1
+--- !u!114 &6482561753437464734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644114482600370165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: UNASSIGN
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 746e520fbb1a23643aa8bb6af27d5375, type: 2}
+  m_sharedMaterial: {fileID: -6946219281666307428, guid: 746e520fbb1a23643aa8bb6af27d5375, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3650058468550243456
 GameObject:
   m_ObjectHideFlags: 0
@@ -5214,6 +5637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3539056008925448521}
   - component: {fileID: 8676896825387569190}
+  - component: {fileID: 5195498286457280449}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -5261,10 +5685,10 @@ RectTransform:
   - {fileID: 8187521336627275934}
   m_Father: {fileID: 6474377530173715153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -681.995}
-  m_SizeDelta: {x: 930, y: 405}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 567.5, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &8676896825387569190
 MonoBehaviour:
@@ -5290,6 +5714,18 @@ MonoBehaviour:
   m_Spacing: {x: 15, y: 15}
   m_Constraint: 2
   m_ConstraintCount: 4
+--- !u!225 &5195498286457280449
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4063668483765901461}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4106323790306430407
 GameObject:
   m_ObjectHideFlags: 0
@@ -5325,10 +5761,10 @@ RectTransform:
   - {fileID: 2761317148645874347}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 362, y: -178}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4596951759471597582
 CanvasRenderer:
@@ -5412,22 +5848,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5673477840486408087}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5438,7 +5862,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5673477840486408087}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5463,6 +5887,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: H
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &4169299506749208971
 GameObject:
   m_ObjectHideFlags: 0
@@ -5536,10 +5965,10 @@ RectTransform:
   - {fileID: 5527156601149642276}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1290, y: -178}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1095327125275941941
 CanvasRenderer:
@@ -5623,22 +6052,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 3664209309886738360}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5649,7 +6066,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 3664209309886738360}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5674,6 +6091,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: L
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &5031687901378255516
 GameObject:
   m_ObjectHideFlags: 0
@@ -5709,10 +6131,10 @@ RectTransform:
   - {fileID: 7988288705169454208}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 362, y: -286}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5631189157977292566
 CanvasRenderer:
@@ -5796,22 +6218,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8868286680520282323}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5822,7 +6232,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 8868286680520282323}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5847,6 +6257,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: N
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &5454112686453579883
 GameObject:
   m_ObjectHideFlags: 0
@@ -5882,10 +6297,10 @@ RectTransform:
   - {fileID: 7529922260563534536}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130, y: -286}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &553007664587706924
 CanvasRenderer:
@@ -5969,22 +6384,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 6528170507070510484}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5995,7 +6398,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 6528170507070510484}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6020,6 +6423,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: M
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &5564031292835054293
 GameObject:
   m_ObjectHideFlags: 0
@@ -6055,10 +6463,10 @@ RectTransform:
   - {fileID: 7067346422825859251}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130, y: -502}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7016567317989211608
 CanvasRenderer:
@@ -6142,22 +6550,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8465219594631617637}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6168,7 +6564,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 8465219594631617637}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6193,6 +6589,147 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: Y
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
+--- !u!1 &5579695671312147610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 105834860951420111}
+  - component: {fileID: 9114027998680403916}
+  - component: {fileID: 8644589991527391294}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &105834860951420111
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579695671312147610}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1920425510027289655}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &9114027998680403916
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579695671312147610}
+  m_CullTransparentMesh: 1
+--- !u!114 &8644589991527391294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579695671312147610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: RETURN
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 746e520fbb1a23643aa8bb6af27d5375, type: 2}
+  m_sharedMaterial: {fileID: -6946219281666307428, guid: 746e520fbb1a23643aa8bb6af27d5375, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5795546167681385754
 GameObject:
   m_ObjectHideFlags: 0
@@ -6801,10 +7338,10 @@ RectTransform:
   - {fileID: 731581537046471745}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 362, y: -70}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7650738446571649345
 CanvasRenderer:
@@ -6888,22 +7425,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2120208302246954312}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6914,7 +7439,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2120208302246954312}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6939,6 +7464,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: B
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &7104252362644422678
 GameObject:
   m_ObjectHideFlags: 0
@@ -6974,10 +7504,10 @@ RectTransform:
   - {fileID: 6849726759917968149}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130, y: -394}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8433535952200001731
 CanvasRenderer:
@@ -7061,22 +7591,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 6166658599316334176}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7087,7 +7605,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 6166658599316334176}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7112,6 +7630,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: S
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &7112704367579322970
 GameObject:
   m_ObjectHideFlags: 0
@@ -7147,10 +7670,10 @@ RectTransform:
   - {fileID: 3867518605640376363}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1058, y: -286}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5785018926400944585
 CanvasRenderer:
@@ -7234,22 +7757,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 612262746861480707}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7260,7 +7771,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 612262746861480707}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7285,6 +7796,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: Q
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &7260050413904809084
 GameObject:
   m_ObjectHideFlags: 0
@@ -7728,10 +8244,10 @@ RectTransform:
   - {fileID: 98565939922963200}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 362, y: -394}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6038452543348780491
 CanvasRenderer:
@@ -7815,22 +8331,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 6944367560741247698}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7841,7 +8345,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 6944367560741247698}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7866,6 +8370,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: T
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &7612273868727338675
 GameObject:
   m_ObjectHideFlags: 0
@@ -8037,10 +8546,10 @@ RectTransform:
   - {fileID: 2774467895813417155}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 594, y: -286}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8481041924661557214
 CanvasRenderer:
@@ -8124,22 +8633,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8939126778196430070}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8150,7 +8647,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 8939126778196430070}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8175,6 +8672,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: O
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &8217883743704555392
 GameObject:
   m_ObjectHideFlags: 0
@@ -8618,10 +9120,10 @@ RectTransform:
   - {fileID: 9194586173267867159}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1290, y: -70}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6263415365441957645
 CanvasRenderer:
@@ -8705,22 +9207,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 3038287976868937515}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8731,7 +9221,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 3038287976868937515}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8756,6 +9246,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: F
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &8813401315063202020
 GameObject:
   m_ObjectHideFlags: 0
@@ -8791,10 +9286,10 @@ RectTransform:
   - {fileID: 2721483832302537501}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 594, y: -178}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7930763893370936376
 CanvasRenderer:
@@ -8878,22 +9373,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8926501312158084062}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8904,7 +9387,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 8926501312158084062}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8929,6 +9412,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: I
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &8840219410335553691
 GameObject:
   m_ObjectHideFlags: 0
@@ -8964,10 +9452,10 @@ RectTransform:
   - {fileID: 16745233453367488}
   m_Father: {fileID: 8667797792223484586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1058, y: -70}
-  m_SizeDelta: {x: 120, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5435639524097034287
 CanvasRenderer:
@@ -9051,22 +9539,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496398561085448436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9212149384611430348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 7281988137693926962}
+        m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9077,7 +9553,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7281988137693926962}
         m_TargetAssemblyTypeName: GuessLetterMessager, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: MiniMenuManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9102,6 +9578,11 @@ MonoBehaviour:
   buttonRename: {fileID: 3242688487487988331}
   translator: {fileID: 0}
   letter: E
+  englishAlphabet: {fileID: 9212149384611430348}
+  guessLetter: {fileID: 1496398561085448436}
+  gLButtons: {fileID: 5195498286457280449}
+  unassButton: {fileID: 4441359462521506900}
+  unassCipherLetter: 126
 --- !u!1 &9009110402161594393
 GameObject:
   m_ObjectHideFlags: 0
@@ -9470,7 +9951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -9478,15 +9959,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -9522,11 +10003,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 870
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9672,7 +10153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -9680,15 +10161,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -9724,11 +10205,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 735
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9874,7 +10355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -9882,15 +10363,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -9926,11 +10407,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 465
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -360
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10076,7 +10557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -10084,15 +10565,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -10128,11 +10609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 600
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -360
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10278,7 +10759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -10286,15 +10767,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -10330,11 +10811,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 600
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10480,7 +10961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -10488,15 +10969,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -10532,11 +11013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 465
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10682,7 +11163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -10690,15 +11171,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -10734,11 +11215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 735
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10876,7 +11357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -10884,15 +11365,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -10928,11 +11409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -360
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11078,7 +11559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -11086,15 +11567,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -11130,11 +11611,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 195
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11312,7 +11793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -11320,15 +11801,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -11364,11 +11845,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11514,7 +11995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -11522,15 +12003,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -11566,11 +12047,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 330
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11720,7 +12201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -11728,15 +12209,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -11772,11 +12253,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 465
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11922,7 +12403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -11930,15 +12411,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -11974,11 +12455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12112,7 +12593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -12120,15 +12601,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -12164,11 +12645,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 330
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -360
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12302,7 +12783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -12310,15 +12791,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -12354,11 +12835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 870
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12504,7 +12985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -12512,15 +12993,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -12556,11 +13037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 195
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -360
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12706,7 +13187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -12714,15 +13195,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -12758,11 +13239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 600
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12908,7 +13389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -12916,15 +13397,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -12960,11 +13441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 735
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13110,7 +13591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -13118,15 +13599,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -13162,11 +13643,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 600
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13304,7 +13785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -13312,15 +13793,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -13356,11 +13837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 330
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13506,7 +13987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -13514,15 +13995,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -13558,11 +14039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 195
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13714,7 +14195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -13722,15 +14203,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -13766,11 +14247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13940,7 +14421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -13948,15 +14429,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -13992,11 +14473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 330
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14130,7 +14611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -14138,15 +14619,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -14182,11 +14663,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 195
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14332,7 +14813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -14340,15 +14821,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -14384,11 +14865,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 870
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14538,7 +15019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.x
@@ -14546,15 +15027,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalScale.x
@@ -14590,11 +15071,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 465
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300140816854420419, guid: 36edb156fb60a4f598cb3b66ad52d182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

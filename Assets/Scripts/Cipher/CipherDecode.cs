@@ -273,24 +273,25 @@ public class CipherDecode : MonoBehaviour
                 //Return a warning code (some other negative number) if you want this operation to be illegal, elsewise erase where the new value already was and put it here
 
                 //Case where the value that goes to the key in question is blank
-                if (charAssignments[(char)i] == '~')
-                {
-                    Debug.Log("CipherDecode: return warning code -2");
-                    returnCode = -2;
-                }
+                // if (charAssignments[(char)i] == '~')
+                // {
+                //     Debug.Log("CipherDecode: return warning code -2");
+                //     returnCode = -2;
+                // }
 
                 //Case where the value that goes to the key in question is not blank
-                if (charAssignments[(char)i] != '~')
-                {
-                    Debug.Log("CipherDecode: return warning code -3");
-                    returnCode = -3;
-                }
+                // if (charAssignments[(char)i] != '~')
+                // {
+                //     Debug.Log("CipherDecode: return warning code -3");
+                //     returnCode = -3;
+                // }
 
                 //OR
 
-                // var firstKey = charAssignments.FirstOrDefault(kvp => kvp.Value == value).Key;
-                // charAssignments[firstKey] = '~';
-                // charAssignments[key] = value;
+                //var firstKey = charAssignments.FirstOrDefault(kvp => kvp.Value == value).Key;
+
+                charAssignments[(char)i] = '~';
+                charAssignments[key] = value;
 
                 break;
             }
