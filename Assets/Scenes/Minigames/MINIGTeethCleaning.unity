@@ -3935,9 +3935,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1067931597}
     - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
+      propertyPath: totalTime
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 1618356809}
+    - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
+      propertyPath: timeOut.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
+      propertyPath: timeOut.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
+      propertyPath: timeOut.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618356809}
+    - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
+      propertyPath: timeOut.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
+      propertyPath: timeOut.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisplayLoseResults
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
+      propertyPath: timeOut.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WinScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
+      propertyPath: timeOut.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8804640018492181840, guid: 118936e9574aea245a9d93138930e126, type: 3}
       propertyPath: m_LocalPosition.x
       value: 437.6057
