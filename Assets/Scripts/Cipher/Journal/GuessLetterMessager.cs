@@ -8,7 +8,10 @@ public class GuessLetterMessager : MonoBehaviour
     public string letter;
     public GameObject englishAlphabet;
     public GameObject guessLetter;
-    public GameObject unassignLetter;
+   // public GameObject unassignLetter;
+    public CanvasGroup gLButtons;
+    public Button unassButton;
+    public char unassCipherLetter;
 
     public void Open()
     {
@@ -42,17 +45,32 @@ public class GuessLetterMessager : MonoBehaviour
     public void MiniMenuManager()
     {
         englishAlphabet.SetActive(false);
-
+        guessLetter.SetActive(true);
         //Take letter as enlgih key from GLM
+
+        Debug.Log(CipherDecode.instance.charAssignments[letter.ToLower().ToCharArray()[0]]);
+        Debug.Log(letter.ToLower().ToCharArray()[0]);
 
         if (CipherDecode.instance.charAssignments[letter.ToLower().ToCharArray()[0]] != '~')
         {
-            unassignLetter.SetActive(true);
+
+            if (gLButtons != null)
+            {
+                gLButtons.interactable = false;
+            }
+            GameObject.Find("Unassign").GetComponent<Button>().interactable = true;
+            Debug.Log("on?");
+
+            //unassCipherLetter = '~';
+
+
         }
 
         else
         {
-            guessLetter.SetActive(true);
+            GameObject.Find("Unassign").GetComponent<Button>().interactable = false;
+            //Debug.Log(unassButton.gameObject.name);
+            gLButtons.interactable = true;
         }
 
 
