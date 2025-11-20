@@ -144,7 +144,7 @@ public class BowlingManager : MonoBehaviour
         {
             cameraSwitch.camera2.SetActive(false);
             cameraSwitch.camera1.SetActive(true);
-            winScreen.DisplayWinResults(ScoreManager.instance.score);
+            winScreen.DisplayWinResults();
             //CW changed to DisplayWinResults() from ShowWinScreen()
             //I know its confusing but this is the one that shows the updated score
             //added "ScoreManager.instance.score"

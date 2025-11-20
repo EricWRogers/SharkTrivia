@@ -1,7 +1,5 @@
 using UnityEngine;
 using TMPro;
-using System.Collections.Generic;
-using UnityEngine.UI;
 
 public class ButtonRename : MonoBehaviour
 {
@@ -32,7 +30,7 @@ public class ButtonRename : MonoBehaviour
             Debug.Log("Cipher is null");
 
         
-        CipherDecode.instance.CharAssignment(newKeyValue, _c[0]);
+        CipherDecode.instance.CharAssignment(_c[0], newKeyValue);
 
 
         //THIS IS INCREDIBLY SCUFFED ALSO, YOU KNOW THE DRILL
