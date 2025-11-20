@@ -23,24 +23,24 @@ public class WinScreen : MonoBehaviour
     public TMP_Text winStat;
 
     void Start(){
-        HideWinScreen();
+        //HideWinScreen();
         //just turn off the object in the scene (the prefab should automatically be off)
         //idk why but this stops the screen from turning on AT ALL
     }
 
-    public void DisplayWinResults(int points)
+    public void DisplayWinResults()
     {
-        //int points = ScoreManager.instance.score;
+        int points = ScoreManager.instance.score;
 
         if (points >= winThreshold)
         {
             winText.text = "YOU WIN!";
-            //TotalScore.instance.AddPoints(points);
+            TotalScore.instance.AddPoints(points);
         }
         if (points < winThreshold)
         {
             winText.text = "you lose!";
-            //TotalScore.instance.PlayerLost();
+            TotalScore.instance.PlayerLost();
         }
 
         winTime.text = "Time - " + timer.GetFormattedTime();
