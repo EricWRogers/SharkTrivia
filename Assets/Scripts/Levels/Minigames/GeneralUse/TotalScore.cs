@@ -25,6 +25,7 @@ public class TotalScore : MonoBehaviour
     {
         totalScore -= (int) wager;
     }
+
     public void AddPoints(int points)
     {
         totalScore += points + (2 * (int) wager);
@@ -36,7 +37,7 @@ public class TotalScore : MonoBehaviour
         return totalScore;
     }
 
-    private void SaveScore(){
+    public void SaveScore(){
         PlayerPrefs.SetInt("TotalScore",totalScore);
         PlayerPrefs.Save();
     }

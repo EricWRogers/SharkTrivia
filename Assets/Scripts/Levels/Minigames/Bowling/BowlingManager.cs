@@ -18,6 +18,7 @@ public class BowlingManager : MonoBehaviour
     public int maxRounds = 6;
     public int roundsPlayed = 0;
     private int bonus = 10;
+    int pinsDownThisRound = 0;
     private bool pinsUp = false;
     GameObject[] pins;
     public TMP_Text scoreUI;
@@ -76,8 +77,6 @@ public class BowlingManager : MonoBehaviour
 
     public void CountPinsDown()
     {
-        int pinsDownThisRound = 0;
-        
         // Tracks pins knocked down for scoring
         for (int i = 0; i < pins.Length; i++)
         {
@@ -89,20 +88,14 @@ public class BowlingManager : MonoBehaviour
             pinsUp = false;
         }
         // Update total score and score managers
-        scoreManager.AddPoints(pinsDownThisRound);  // UNIVERSAL SCORE MANAGER
+        //CW now adds 10* the score. It just evens out the amount of points in minigames
+        scoreManager.AddPoints(pinsDownThisRound * 10);  // UNIVERSAL SCORE MANAGER
         totalScore += pinsDownThisRound;
-
-        // Handle video playback
-        if (canvasPathFollwer.currentWaypointIndex == canvasPathFollwer.waypoints.Length - 1)
-        {
-            videoPlayerScript.SelectVideoClip(pinsDownThisRound);
-            StartCoroutine(videoPlayerScript.PlayVideoAndStop());
-        }
 
         // Update UI
         scoreUI.text = pinsDownThisRound.ToString();
         if(totalScoreUI != null)
-            totalScoreUI.text = $"Total: {totalScore}";
+            totalScoreUI.text = $"{totalScore}";
     }
 
     public void ResetPins()
@@ -134,6 +127,12 @@ public class BowlingManager : MonoBehaviour
         cameraSwitch.camera2.SetActive(false);
 
         cameraSwitch.gameObject.SetActive(true);
+        // Handle video playback
+        if (canvasPathFollwer.currentWaypointIndex == canvasPathFollwer.waypoints.Length - 1)
+        {
+            videoPlayerScript.SelectVideoClip(pinsDownThisRound);
+            StartCoroutine(videoPlayerScript.PlayVideoAndStop());
+        }
     }
 
     public void NewRound() //Updates the round counter
@@ -145,7 +144,10 @@ public class BowlingManager : MonoBehaviour
         {
             cameraSwitch.camera2.SetActive(false);
             cameraSwitch.camera1.SetActive(true);
-            winScreen.ShowWinScreen();
+            winScreen.DisplayWinResults(ScoreManager.instance.score);
+            //CW changed to DisplayWinResults() from ShowWinScreen()
+            //I know its confusing but this is the one that shows the updated score
+            //added "ScoreManager.instance.score"
         }
     }
 }

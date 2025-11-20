@@ -25,7 +25,7 @@ TagManager:
   - Suimono_Water
   - Suimono_Depth
   - Suimono_Screen
-  - 
+  - Obstacle
   - 
   - 
   - 
@@ -64,6 +64,12 @@ TagManager:
     locked: 0
   - name: ToothBrush
     uniqueID: 824807525
+    locked: 0
+  - name: Obstacle
+    uniqueID: 1903357275
+    locked: 0
+  - name: Player
+    uniqueID: 3089005751
     locked: 0
   m_RenderingLayers:
   - Default

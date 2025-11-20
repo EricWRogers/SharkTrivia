@@ -1,0 +1,806 @@
+fileFormatVersion: 2
+guid: c88e533739ccd5e419f7346ecd681ed2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7700004200229993528
+    second: HardDifficulty_0
+  - first:
+      213: -2971391247572010376
+    second: HardDifficulty_1
+  - first:
+      213: 4222920429341524228
+    second: HardDifficulty_2
+  - first:
+      213: 8461161274359052727
+    second: HardDifficulty_3
+  - first:
+      213: 8121202551161835893
+    second: HardDifficulty_4
+  - first:
+      213: -7468105308525961247
+    second: HardDifficulty_5
+  - first:
+      213: 9148996024246772576
+    second: HardDifficulty_6
+  - first:
+      213: -3097956149615306847
+    second: HardDifficulty_7
+  - first:
+      213: 3865052438316826919
+    second: HardDifficulty_8
+  - first:
+      213: 8149357390711906924
+    second: HardDifficulty_9
+  - first:
+      213: 6887069832965248883
+    second: HardDifficulty_10
+  - first:
+      213: 7133062965839412896
+    second: HardDifficulty_11
+  - first:
+      213: 2285457555503720235
+    second: HardDifficulty_12
+  - first:
+      213: 8716047403342299375
+    second: HardDifficulty_13
+  - first:
+      213: 6460983425752464122
+    second: HardDifficulty_14
+  - first:
+      213: 4731862191855360309
+    second: HardDifficulty_15
+  - first:
+      213: -8593085299532642206
+    second: HardDifficulty_16
+  - first:
+      213: 301001064515428807
+    second: HardDifficulty_17
+  - first:
+      213: 1020474471404645557
+    second: HardDifficulty_18
+  - first:
+      213: -8623040654613027929
+    second: HardDifficulty_19
+  - first:
+      213: 5767563452038345452
+    second: HardDifficulty_20
+  - first:
+      213: -7038510260312903266
+    second: HardDifficulty_21
+  - first:
+      213: -8611323339571888251
+    second: HardDifficulty_22
+  - first:
+      213: 5960948613433055476
+    second: HardDifficulty_23
+  - first:
+      213: 6011209576962985183
+    second: HardDifficulty_24
+  - first:
+      213: 8990355129609778873
+    second: HardDifficulty_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HardDifficulty_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 677
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c3864ce9f6142590800000000000000
+      internalID: -7700004200229993528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_1
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 441
+        width: 11
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87af3c7476f73c6d0800000000000000
+      internalID: -2971391247572010376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_2
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 461
+        width: 11
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40144a9a1c3da9a30800000000000000
+      internalID: 4222920429341524228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_3
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 468
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b9767199551c6570800000000000000
+      internalID: 8461161274359052727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_4
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 400
+        width: 11
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5715ffa31be44b070800000000000000
+      internalID: 8121202551161835893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_5
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 403
+        width: 11
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1efd9142ac5fb5890800000000000000
+      internalID: -7468105308525961247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_6
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 405
+        width: 11
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 063a0bc1963c7fe70800000000000000
+      internalID: 9148996024246772576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_7
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 423
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7517cab49d105d0800000000000000
+      internalID: -3097956149615306847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_8
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 401
+        width: 10
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 721c128f6bc63a530800000000000000
+      internalID: 3865052438316826919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_9
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 394
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c626615ae55581170800000000000000
+      internalID: 8149357390711906924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_10
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 396
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 377d3391689c39f50800000000000000
+      internalID: 6887069832965248883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_11
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 398
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ae3a5f89fabdf260800000000000000
+      internalID: 7133062965839412896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_12
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 281
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b272801b98397bf10800000000000000
+      internalID: 2285457555503720235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_13
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 141
+        width: 11
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe00fa90fee95f870800000000000000
+      internalID: 8716047403342299375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_14
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 141
+        width: 11
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa79a7a1360aa950800000000000000
+      internalID: 6460983425752464122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_15
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 138
+        width: 11
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539d3afc793faa140800000000000000
+      internalID: 4731862191855360309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_16
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 217
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 268c9bcb27a3fb880800000000000000
+      internalID: -8593085299532642206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_17
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 120
+        width: 25
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c1e4779fde5d2400800000000000000
+      internalID: 301001064515428807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_18
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 137
+        width: 11
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bcad620024792e00800000000000000
+      internalID: 1020474471404645557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_19
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 197
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a3e902263ec45880800000000000000
+      internalID: -8623040654613027929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 143
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2754ad6608a0050800000000000000
+      internalID: 5767563452038345452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_21
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 131
+        width: 11
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e917b1ab530325e90800000000000000
+      internalID: -7038510260312903266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 123
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58f79c22c0f6e7880800000000000000
+      internalID: -8611323339571888251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_23
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 103
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8d8047e2b89b250800000000000000
+      internalID: 5960948613433055476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_24
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 118
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdc0e41f24b1c6350800000000000000
+      internalID: 6011209576962985183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardDifficulty_25
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 122
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b670018b5824cc70800000000000000
+      internalID: 8990355129609778873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      HardDifficulty_0: -7700004200229993528
+      HardDifficulty_1: -2971391247572010376
+      HardDifficulty_10: 6887069832965248883
+      HardDifficulty_11: 7133062965839412896
+      HardDifficulty_12: 2285457555503720235
+      HardDifficulty_13: 8716047403342299375
+      HardDifficulty_14: 6460983425752464122
+      HardDifficulty_15: 4731862191855360309
+      HardDifficulty_16: -8593085299532642206
+      HardDifficulty_17: 301001064515428807
+      HardDifficulty_18: 1020474471404645557
+      HardDifficulty_19: -8623040654613027929
+      HardDifficulty_2: 4222920429341524228
+      HardDifficulty_20: 5767563452038345452
+      HardDifficulty_21: -7038510260312903266
+      HardDifficulty_22: -8611323339571888251
+      HardDifficulty_23: 5960948613433055476
+      HardDifficulty_24: 6011209576962985183
+      HardDifficulty_25: 8990355129609778873
+      HardDifficulty_3: 8461161274359052727
+      HardDifficulty_4: 8121202551161835893
+      HardDifficulty_5: -7468105308525961247
+      HardDifficulty_6: 9148996024246772576
+      HardDifficulty_7: -3097956149615306847
+      HardDifficulty_8: 3865052438316826919
+      HardDifficulty_9: 8149357390711906924
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

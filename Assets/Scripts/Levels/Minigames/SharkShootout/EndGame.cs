@@ -44,12 +44,13 @@ public class EndGame : MonoBehaviour
     void Lose()
     {
         Debug.Log("Game Over!");
-        LevelManager.LoadBackStage();
+        winScreen.DisplayLoseResults();
         //winScreen.StopGame();
     }
     public void Win()
     {
-        winScreen.DisplayLoseResults(); 
+        //winScreen.DisplayWinResults(); 
+        winScreen.DisplayWinResults(ScoreManager.instance.score);
     }
      
 }

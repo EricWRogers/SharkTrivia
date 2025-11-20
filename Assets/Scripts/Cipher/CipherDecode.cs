@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 //Originally Programmed by Samuel (Scott)
@@ -16,8 +17,8 @@ public class CipherDecode : MonoBehaviour
     public enum GameMode { Easy, Medium, Hard }
 
     public GameMode difficulty = GameMode.Easy;
+    public bool difficultyDebugMode = false;
 
-    //test build switches and trackers
     public bool isCountingGuesses = false;
     public int maxGuesses = 6;    
     public int numGuesses = 0;
@@ -25,8 +26,9 @@ public class CipherDecode : MonoBehaviour
 
     public bool isLimitingCorrectness = false;
     public int maxCorrectGuesses = 4;
-    public int numCorrectGuesses = 0;    
-    //
+    public int numCorrectGuesses = 0;
+
+    
 
     public Dictionary<char, char> charAssignments = new Dictionary<char, char>
     {
@@ -43,13 +45,13 @@ public class CipherDecode : MonoBehaviour
     public Dictionary<char, char> confirmedCharAssignments = new Dictionary<char, char>
     {
         //tilde represents an english character which has not been assigned a ciphertext equivalent 
-        {'a', 'a'},{'b', '~'},{'c', '~'},{'d', '~'},
-        {'e', 'e'},{'f', '~'},{'g', '~'},{'h', 'h'},
+        {'a', '~'},{'b', '~'},{'c', '~'},{'d', '~'},
+        {'e', '~'},{'f', '~'},{'g', '~'},{'h', '~'},
         {'i', '~'},{'j', '~'},{'k', '~'},{'l', '~'},
-        {'m', '~'},{'n', 'n'},{'o', 'o'},{'p', '~'},
-        {'q', '~'},{'r', 'r'},{'s', '~'},{'t', 't'},
+        {'m', '~'},{'n', '~'},{'o', '~'},{'p', '~'},
+        {'q', '~'},{'r', '~'},{'s', '~'},{'t', '~'},
         {'u', '~'},{'v', '~'},{'w', '~'},{'x', '~'},
-        {'y', 'y'},{'z', '~'}
+        {'y', '~'},{'z', '~'}
     };
 
     public Dictionary<char, char> secondOrderAssoc = new Dictionary<char, char>
@@ -79,8 +81,14 @@ public class CipherDecode : MonoBehaviour
             else
                 UnRandomizeLetters();
 
-            Debug.Log("Singleton init");
+            SceneManager.activeSceneChanged += OnActiveSceneChanged;
 
+            if(difficultyDebugMode)
+            {
+                UpdateGameMode();
+                ChangeGameMode((int)difficulty);
+            }
+            Debug.Log("Singleton init");
             instance = this;
             DontDestroyOnLoad(gameObject);
 
@@ -222,17 +230,17 @@ public class CipherDecode : MonoBehaviour
             //This if handles the case where the value that goes to the key in question is blank ('~') and the new value is not already found elsehwere
             if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value))
             {
-                charAssignments[key] = value;
+                
 
-                if (isCountingGuesses)
-                {
+                if (isCountingGuesses && !(difficulty == GameMode.Medium && i == value))
                     numGuesses++;
-                }
                 if(isLimitingCorrectness && i == value)
-                {
                     numCorrectGuesses++;
-                }
 
+                if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
+                    confirmedCharAssignments[key] = value;
+                else
+                    charAssignments[key] = value;
 
                 break;
             }
@@ -246,44 +254,51 @@ public class CipherDecode : MonoBehaviour
 
                 //OR
 
-                if (isCountingGuesses)
-                {
+                if (isCountingGuesses && !(difficulty == GameMode.Medium && i == value))
                     numGuesses++;
-                }
+                
+
                 if(isLimitingCorrectness && i == value)
-                {
                     numCorrectGuesses++;
-                }
 
                 Debug.Log("CipherDecode: Overwrote previous char assignment");
-                charAssignments[key] = value;
+
+                charAssignments[key] = '~';
+
+                if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
+                    confirmedCharAssignments[key] = value;
+
+                else
+                    charAssignments[key] = value;
+
                 break;
             }
 
             //This if handles the case where the new value is already used somehwere else in the journal with some subcases
             else if ((char)i == key && charAssignments.ContainsValue(value))
             {
-                //Return an error code (some other negative number) if you want this operation to be illegal, elsewise erase where the new value already was and put it here
+                //Return a warning code (some other negative number) if you want this operation to be illegal, elsewise erase where the new value already was and put it here
 
                 //Case where the value that goes to the key in question is blank
-                if (charAssignments[(char)i] == '~')
-                {
-                    Debug.Log("CipherDecode: return warning code -2");
-                    returnCode = -2;
-                }
+                // if (charAssignments[(char)i] == '~')
+                // {
+                //     Debug.Log("CipherDecode: return warning code -2");
+                //     returnCode = -2;
+                // }
 
                 //Case where the value that goes to the key in question is not blank
-                if (charAssignments[(char)i] != '~')
-                {
-                    Debug.Log("CipherDecode: return warning code -3");
-                    returnCode = -3;
-                }
+                // if (charAssignments[(char)i] != '~')
+                // {
+                //     Debug.Log("CipherDecode: return warning code -3");
+                //     returnCode = -3;
+                // }
 
                 //OR
 
-                // var firstKey = charAssignments.FirstOrDefault(kvp => kvp.Value == value).Key;
-                // charAssignments[firstKey] = '~';
-                // charAssignments[key] = value;
+                //var firstKey = charAssignments.FirstOrDefault(kvp => kvp.Value == value).Key;
+
+                charAssignments[(char)i] = '~';
+                charAssignments[key] = value;
 
                 break;
             }
@@ -312,7 +327,7 @@ public class CipherDecode : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles enabling and disabling parts of the scene in accordance with the diffuclty setting. Should always be called on first dialogue node.
+    /// Handles enabling and disabling parts of the scene in accordance with the diffuclty setting. Should not be called directly, use UpdateGameModeHelper() instead.
     /// </summary>
     public void UpdateGameMode()
     {
@@ -354,22 +369,46 @@ public class CipherDecode : MonoBehaviour
     {
         difficulty = (GameMode)mode;
 
+        // clearing the default letters
+        for(char i = 'a'; i < 'z'; i++)
+            confirmedCharAssignments[i] = '~';
+
         switch (difficulty)
         {
             case GameMode.Easy:
 
                 isLimitingCorrectness = true;
                 isCountingGuesses = false;
+
+                // who ate ryan
+                confirmedCharAssignments['w'] = 'w';
+                confirmedCharAssignments['h'] = 'h';
+                confirmedCharAssignments['o'] = 'o';
+                confirmedCharAssignments['a'] = 'a';
+                confirmedCharAssignments['t'] = 't';
+                confirmedCharAssignments['e'] = 'e';
+                confirmedCharAssignments['r'] = 'r';
+                confirmedCharAssignments['y'] = 'y';
+                confirmedCharAssignments['n'] = 'n';
+
                 break;
 
             case GameMode.Medium:
 
+                // vowels
+                confirmedCharAssignments['a'] = 'a';
+                confirmedCharAssignments['e'] = 'e';
+                confirmedCharAssignments['i'] = 'i';
+                confirmedCharAssignments['o'] = 'o';
+                confirmedCharAssignments['u'] = 'u';
+                
                 isLimitingCorrectness = false;
                 isCountingGuesses = true;
                 break;
 
             case GameMode.Hard:
 
+                // no default letters
                 isLimitingCorrectness = false;
                 isCountingGuesses = true;
                 break;
@@ -379,7 +418,27 @@ public class CipherDecode : MonoBehaviour
         numCorrectGuesses = 0;
         numGuesses = 0;
 
+        updateDisplays();
         clearUserLetters();
+    }
+
+
+    /// <summary>
+    /// Changes the number of guesses at letters the player is allowed to make.
+    /// </summary>
+    /// <param name="change">The number to modify the guesses by (negative subtracts guesses, positive adds them).</param>
+    public void changeGuessNum(int change)
+    {
+        if(isCountingGuesses)
+            maxGuesses += change;
+        else if(isLimitingCorrectness)
+            maxCorrectGuesses += change;
+    }
+
+    private void OnActiveSceneChanged(Scene current, Scene next)
+    {
+        if(next.name.ToLower().Contains("trivia"))
+            UpdateGameMode();
     }
     
 }
