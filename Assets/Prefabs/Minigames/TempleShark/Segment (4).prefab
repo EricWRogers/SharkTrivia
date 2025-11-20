@@ -116,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 52646486005733072}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 23.399323, y: 60.95861, z: -229.44746}
+  m_LocalPosition: {x: 23.399323, y: 61.45, z: -220.45747}
   m_LocalScale: {x: 0.6716799, y: 4.00626, z: 0.81514007}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -788,12 +788,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2882356585171668347}
   - {fileID: 3523682089232213589}
   - {fileID: 968913211990356947}
+  - {fileID: 1414741123455188001}
   - {fileID: 8263193998939590587}
   - {fileID: 5356932678141647381}
-  - {fileID: 2882356585171668347}
-  - {fileID: 1414741123455188001}
   - {fileID: 3573390014016630397}
   - {fileID: 3949561146032255483}
   - {fileID: 6023172484659402402}
@@ -914,7 +914,7 @@ Transform:
   m_GameObject: {fileID: 1681187621816602610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.83, y: 1, z: 8.89}
+  m_LocalPosition: {x: -2.83, y: 1, z: 17.88001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7688,7 +7688,7 @@ Transform:
   m_GameObject: {fileID: 3681523601567910910}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 7.11, y: 0, z: 11.209996}
+  m_LocalPosition: {x: 7.11, y: 0, z: 20.199986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7944,7 +7944,7 @@ GameObject:
   - component: {fileID: 5473115258001412974}
   - component: {fileID: 4357566714200736603}
   m_Layer: 0
-  m_Name: Rock 4
+  m_Name: Rock 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7959,7 +7959,7 @@ Transform:
   m_GameObject: {fileID: 4145931005532779513}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 0.7461, z: 18.2}
+  m_LocalPosition: {x: 4.5, y: 0.7461, z: 25.31001}
   m_LocalScale: {x: 2.6351652, y: 2.1354718, z: 1.6412061}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8032,7 +8032,7 @@ GameObject:
   - component: {fileID: 5291126087054548381}
   - component: {fileID: 3418174081438299491}
   m_Layer: 0
-  m_Name: Rock 6
+  m_Name: Rock 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8047,7 +8047,7 @@ Transform:
   m_GameObject: {fileID: 4198100639728246929}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.2, y: 0.7461, z: 24.960028}
+  m_LocalPosition: {x: -4.9, y: 0.7461, z: 24.650011}
   m_LocalScale: {x: 2.6351652, y: 2.1354718, z: 1.6412061}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13266,7 +13266,7 @@ GameObject:
   - component: {fileID: 7352218174789390754}
   - component: {fileID: 6978671851326150766}
   m_Layer: 0
-  m_Name: Collectible 2
+  m_Name: Collectible 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13281,7 +13281,7 @@ Transform:
   m_GameObject: {fileID: 4545250809874756969}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.9699993, y: 1.56, z: 2.6399994}
+  m_LocalPosition: {x: -2.57, y: 0.69, z: 20.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13737,7 +13737,7 @@ Transform:
   m_GameObject: {fileID: 4628314791133114925}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 27.899323, y: 60.95861, z: -229.44746}
+  m_LocalPosition: {x: 27.899323, y: 61.45, z: -220.45747}
   m_LocalScale: {x: 0.6716799, y: 4.00626, z: 0.81514007}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14728,7 +14728,7 @@ GameObject:
   - component: {fileID: 257858885378335392}
   - component: {fileID: 8592258118929036350}
   m_Layer: 0
-  m_Name: Collectible 3
+  m_Name: Collectible 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14743,7 +14743,7 @@ Transform:
   m_GameObject: {fileID: 6514192180436793001}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 1.16, z: 16.199997}
+  m_LocalPosition: {x: 2, y: 0.68, z: 20.39001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14794,7 +14794,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.06757277, g: 0.05098039, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.05098039, b: 0.96814793, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14817,7 +14817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 3
-  value: 3
+  value: 2
   collectSound: {fileID: 8300000, guid: e7381b49933882b418dc5b14a262538e, type: 3}
 --- !u!82 &257858885378335392
 AudioSource:
@@ -15070,7 +15070,7 @@ Transform:
   m_GameObject: {fileID: 6599533876429720355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5.11, y: 0, z: 11.21}
+  m_LocalPosition: {x: -5.11, y: 0, z: 20.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20412,7 +20412,7 @@ GameObject:
   - component: {fileID: 488143597736185132}
   - component: {fileID: 2034939836491863619}
   m_Layer: 0
-  m_Name: Collectible 4
+  m_Name: Collectible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20427,7 +20427,7 @@ Transform:
   m_GameObject: {fileID: 7405654580308895616}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6399994, y: 1.57, z: 29.12999}
+  m_LocalPosition: {x: -2.94, y: 1.01, z: 6.6000047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20760,7 +20760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3573390014016630397
 Transform:
   m_ObjectHideFlags: 0
@@ -20774,10 +20774,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 397395493770333010}
   - {fileID: 7334445836220519533}
   - {fileID: 514640424273622386}
   - {fileID: 7545576817195397171}
-  - {fileID: 397395493770333010}
   m_Father: {fileID: 7262005975543976863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7696431781435703032
@@ -20878,7 +20878,7 @@ GameObject:
   - component: {fileID: 5624203046493755881}
   - component: {fileID: 620470020606260297}
   m_Layer: 0
-  m_Name: Rock 5
+  m_Name: Rock 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20893,7 +20893,7 @@ Transform:
   m_GameObject: {fileID: 7703153101648419860}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.2200003, y: 0.7461, z: 24.960007}
+  m_LocalPosition: {x: -0.52, y: 0.7461, z: 8.8}
   m_LocalScale: {x: 2.6351652, y: 2.1354718, z: 1.6412061}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20969,7 +20969,7 @@ GameObject:
   - component: {fileID: 3914016215780721278}
   - component: {fileID: 6786662100031230378}
   m_Layer: 0
-  m_Name: Collectible
+  m_Name: Collectible 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20984,7 +20984,7 @@ Transform:
   m_GameObject: {fileID: 7739243217606613975}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4899998, y: 1.09, z: -1.2299957}
+  m_LocalPosition: {x: 2.2, y: 1.09, z: 6.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21058,7 +21058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 3
-  value: 5
+  value: 3
   collectSound: {fileID: 8300000, guid: e7381b49933882b418dc5b14a262538e, type: 3}
 --- !u!82 &3914016215780721278
 AudioSource:
@@ -21327,13 +21327,13 @@ Transform:
   m_GameObject: {fileID: 7805496028381745492}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.08, z: 0}
+  m_LocalPosition: {x: 0, y: -0.08, z: 3.0099792}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5473115258001412974}
   - {fileID: 5624203046493755881}
   - {fileID: 5291126087054548381}
+  - {fileID: 5473115258001412974}
   m_Father: {fileID: 7262005975543976863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7824138834963367001

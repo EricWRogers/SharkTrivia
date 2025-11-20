@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class ButtonRename : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ButtonRename : MonoBehaviour
     public char newKeyValue;
     public TMP_Text returnText;
     public TMP_Text titleText;
+
 
     public void NewText()
     {
@@ -28,6 +30,8 @@ public class ButtonRename : MonoBehaviour
 
         if (CipherDecode.instance == null)
             Debug.Log("Cipher is null");
+
+        
         CipherDecode.instance.CharAssignment(newKeyValue, _c[0]);
 
 
