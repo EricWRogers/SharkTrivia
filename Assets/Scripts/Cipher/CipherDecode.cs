@@ -17,8 +17,8 @@ public class CipherDecode : MonoBehaviour
     public enum GameMode { Easy, Medium, Hard }
 
     public GameMode difficulty = GameMode.Easy;
+    public bool difficultyDebugMode = false;
 
-    //test build switches and trackers
     public bool isCountingGuesses = false;
     public int maxGuesses = 6;    
     public int numGuesses = 0;
@@ -26,8 +26,9 @@ public class CipherDecode : MonoBehaviour
 
     public bool isLimitingCorrectness = false;
     public int maxCorrectGuesses = 4;
-    public int numCorrectGuesses = 0;    
-    //
+    public int numCorrectGuesses = 0;
+
+    
 
     public Dictionary<char, char> charAssignments = new Dictionary<char, char>
     {
@@ -81,6 +82,12 @@ public class CipherDecode : MonoBehaviour
                 UnRandomizeLetters();
 
             SceneManager.activeSceneChanged += OnActiveSceneChanged;
+
+            if(difficultyDebugMode)
+            {
+                UpdateGameMode();
+                ChangeGameMode((int)difficulty);
+            }
             Debug.Log("Singleton init");
             instance = this;
             DontDestroyOnLoad(gameObject);
