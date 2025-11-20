@@ -3121,37 +3121,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121609861}
   m_CullTransparentMesh: 1
---- !u!1 &126622196
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 126622197}
-  m_Layer: 0
-  m_Name: DialoguePointsChange
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &126622197
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126622196}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8861521, y: 0.59165275, z: 28.776915}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5088,8 +5057,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1641477418594199489, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
-      propertyPath: difficulty
+      propertyPath: debugMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641477418594199489, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
+      propertyPath: difficulty
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4054880452131744966, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
       propertyPath: m_Name
@@ -5696,13 +5669,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5654390532154605717, guid: 67f4569896dd57944bc6e743ce5afd10, type: 3}
-      propertyPath: totalScore
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9195026100379462554, guid: 67f4569896dd57944bc6e743ce5afd10, type: 3}
       propertyPath: m_Name
-      value: ScoreManager
+      value: TotalScore
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7485,4 +7454,3 @@ SceneRoots:
   - {fileID: 641725266}
   - {fileID: 1772292319}
   - {fileID: 855461192}
-  - {fileID: 126622197}

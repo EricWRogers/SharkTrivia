@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 05b57966595206942a0b01d22f001dff
+guid: e86ad4c375c68e7419ff256f93783d55
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4517553597814813242
-    second: full_heart_0
+      213: -4638808310049905187
+    second: glowbug2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: full_heart_0
+      name: glowbug2_0
       rect:
         serializedVersion: 2
-        x: 464
-        y: 315
-        width: 826
-        height: 697
+        x: 70
+        y: 70
+        width: 401
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a323a8bef0391be30800000000000000
-      internalID: 4517553597814813242
+      spriteID: dd568526b64af9fb0800000000000000
+      internalID: -4638808310049905187
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      full_heart_0: 4517553597814813242
+      glowbug2_0: -4638808310049905187
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

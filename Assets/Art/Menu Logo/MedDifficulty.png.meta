@@ -1,40 +1,28 @@
 fileFormatVersion: 2
-guid: f80bb87e285f5ee4598890350758aed4
+guid: d90450245cf44b6468cecd6d2ad4ffbb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8354792215256638087
-    second: ST Logo New Test_0
+      213: 4598946084598122655
+    second: MedDifficulty_0
   - first:
-      213: -8843364371690842509
-    second: ST Logo New Test_1
+      213: 5831207407608928718
+    second: MedDifficulty_1
   - first:
-      213: -4405113363045224710
-    second: ST Logo New Test_2
+      213: -73760457877293594
+    second: MedDifficulty_2
   - first:
-      213: -5858080895887900366
-    second: ST Logo New Test_3
+      213: -4415983848155991195
+    second: MedDifficulty_3
   - first:
-      213: 1139225753504312554
-    second: ST Logo New Test_4
+      213: 4470644296116316473
+    second: MedDifficulty_4
   - first:
-      213: 550238380079506568
-    second: ST Logo New Test_5
+      213: 4045100137758389151
+    second: MedDifficulty_5
   - first:
-      213: -6141669095770873964
-    second: ST Logo New Test_6
-  - first:
-      213: -4858978686680766169
-    second: ST Logo New Test_7
-  - first:
-      213: 8777221588333480730
-    second: ST Logo New Test_8
-  - first:
-      213: -5353523397714143597
-    second: ST Logo New Test_9
-  - first:
-      213: -3882943820700675091
-    second: ST Logo New Test_10
+      213: 3479458115577930059
+    second: MedDifficulty_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -143,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ST Logo New Test_0
+      name: MedDifficulty_0
       rect:
         serializedVersion: 2
-        x: 219
-        y: 370
-        width: 233
-        height: 246
+        x: 35
+        y: 605
+        width: 12
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7822292114f22f370800000000000000
-      internalID: 8354792215256638087
+      spriteID: f9805a1091db2df30800000000000000
+      internalID: 4598946084598122655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_1
+      name: MedDifficulty_1
       rect:
         serializedVersion: 2
-        x: 407
-        y: 374
-        width: 262
-        height: 238
+        x: 49
+        y: 436
+        width: 13
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 376950645fe064580800000000000000
-      internalID: -8843364371690842509
+      spriteID: ec9182efd3c9ce050800000000000000
+      internalID: 5831207407608928718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_2
+      name: MedDifficulty_2
       rect:
         serializedVersion: 2
-        x: 598
-        y: 374
-        width: 252
-        height: 238
+        x: 55
+        y: 59
+        width: 760
+        height: 777
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afeec505cb4edd2c0800000000000000
-      internalID: -4405113363045224710
+      spriteID: 6e5f0cd1143f9fef0800000000000000
+      internalID: -73760457877293594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_3
+      name: MedDifficulty_3
       rect:
         serializedVersion: 2
-        x: 844
-        y: 374
-        width: 229
-        height: 238
+        x: 35
+        y: 505
+        width: 13
+        height: 97
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +212,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 231891f667ae3bea0800000000000000
-      internalID: -5858080895887900366
+      spriteID: 563bcc4461647b2c0800000000000000
+      internalID: -4415983848155991195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_4
+      name: MedDifficulty_4
       rect:
         serializedVersion: 2
-        x: 1034
-        y: 374
-        width: 265
-        height: 238
+        x: 35
+        y: 474
+        width: 12
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aece99479c75fcf00800000000000000
-      internalID: 1139225753504312554
+      spriteID: 939a3230d4bea0e30800000000000000
+      internalID: 4470644296116316473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_5
+      name: MedDifficulty_5
       rect:
         serializedVersion: 2
-        x: 760
-        y: 83
-        width: 192
-        height: 238
+        x: 35
+        y: 462
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +256,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 884ec6234e6d2a700800000000000000
-      internalID: 550238380079506568
+      spriteID: f93f8f7b425132830800000000000000
+      internalID: 4045100137758389151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_6
+      name: MedDifficulty_6
       rect:
         serializedVersion: 2
-        x: 885
-        y: 83
-        width: 229
-        height: 238
+        x: 49
+        y: 407
+        width: 13
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,96 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49f15925f7864caa0800000000000000
-      internalID: -6141669095770873964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ST Logo New Test_7
-      rect:
-        serializedVersion: 2
-        x: 1075
-        y: 83
-        width: 157
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 729e231e0a0719cb0800000000000000
-      internalID: -4858978686680766169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ST Logo New Test_8
-      rect:
-        serializedVersion: 2
-        x: 1218
-        y: 83
-        width: 207
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1bc187e784fec970800000000000000
-      internalID: 8777221588333480730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ST Logo New Test_9
-      rect:
-        serializedVersion: 2
-        x: 1356
-        y: 83
-        width: 157
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 396918e75d674b5b0800000000000000
-      internalID: -5353523397714143597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ST Logo New Test_10
-      rect:
-        serializedVersion: 2
-        x: 1442
-        y: 83
-        width: 252
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: de39654fa230d1ac0800000000000000
-      internalID: -3882943820700675091
+      spriteID: b416fdd98b4894030800000000000000
+      internalID: 3479458115577930059
       vertices: []
       indices: 
       edges: []
@@ -398,17 +298,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ST Logo New Test_0: 8354792215256638087
-      ST Logo New Test_1: -8843364371690842509
-      ST Logo New Test_10: -3882943820700675091
-      ST Logo New Test_2: -4405113363045224710
-      ST Logo New Test_3: -5858080895887900366
-      ST Logo New Test_4: 1139225753504312554
-      ST Logo New Test_5: 550238380079506568
-      ST Logo New Test_6: -6141669095770873964
-      ST Logo New Test_7: -4858978686680766169
-      ST Logo New Test_8: 8777221588333480730
-      ST Logo New Test_9: -5353523397714143597
+      MedDifficulty_0: 4598946084598122655
+      MedDifficulty_1: 5831207407608928718
+      MedDifficulty_2: -73760457877293594
+      MedDifficulty_3: -4415983848155991195
+      MedDifficulty_4: 4470644296116316473
+      MedDifficulty_5: 4045100137758389151
+      MedDifficulty_6: 3479458115577930059
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

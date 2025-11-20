@@ -1,40 +1,46 @@
 fileFormatVersion: 2
-guid: f80bb87e285f5ee4598890350758aed4
+guid: 2d9cc445ddae1b644a7ca21dfd8b374e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8354792215256638087
-    second: ST Logo New Test_0
+      213: -4065704506971175879
+    second: DirtydanPinhead3_0
   - first:
-      213: -8843364371690842509
-    second: ST Logo New Test_1
+      213: -2572750780664380100
+    second: DirtydanPinhead3_1
   - first:
-      213: -4405113363045224710
-    second: ST Logo New Test_2
+      213: -2448065219195594203
+    second: DirtydanPinhead3_2
   - first:
-      213: -5858080895887900366
-    second: ST Logo New Test_3
+      213: -3431398409536510176
+    second: DirtydanPinhead3_3
   - first:
-      213: 1139225753504312554
-    second: ST Logo New Test_4
+      213: 9061472843425656640
+    second: DirtydanPinhead3_4
   - first:
-      213: 550238380079506568
-    second: ST Logo New Test_5
+      213: -277224695597689968
+    second: DirtydanPinhead3_5
   - first:
-      213: -6141669095770873964
-    second: ST Logo New Test_6
+      213: 4467139336787934109
+    second: DirtydanPinhead3_6
   - first:
-      213: -4858978686680766169
-    second: ST Logo New Test_7
+      213: -8872571028034941504
+    second: DirtydanPinhead3_7
   - first:
-      213: 8777221588333480730
-    second: ST Logo New Test_8
+      213: 6869983999197671056
+    second: DirtydanPinhead3_8
   - first:
-      213: -5353523397714143597
-    second: ST Logo New Test_9
+      213: -8391136113596197642
+    second: DirtydanPinhead3_9
   - first:
-      213: -3882943820700675091
-    second: ST Logo New Test_10
+      213: 455682504666095300
+    second: DirtydanPinhead3_10
+  - first:
+      213: -806994700611445904
+    second: DirtydanPinhead3_11
+  - first:
+      213: 508384187742632041
+    second: DirtydanPinhead3_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -76,7 +82,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,30 +132,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ST Logo New Test_0
+      name: DirtydanPinhead3_0
       rect:
         serializedVersion: 2
-        x: 219
-        y: 370
-        width: 233
-        height: 246
+        x: 171
+        y: 243
+        width: 45
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7822292114f22f370800000000000000
-      internalID: 8354792215256638087
+      spriteID: 934474cba47b397c0800000000000000
+      internalID: -4065704506971175879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_1
+      name: DirtydanPinhead3_1
       rect:
         serializedVersion: 2
-        x: 407
-        y: 374
-        width: 262
-        height: 238
+        x: 210
+        y: 253
+        width: 26
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 376950645fe064580800000000000000
-      internalID: -8843364371690842509
+      spriteID: c3504e6cbc0cb4cd0800000000000000
+      internalID: -2572750780664380100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_2
+      name: DirtydanPinhead3_2
       rect:
         serializedVersion: 2
-        x: 598
-        y: 374
-        width: 252
-        height: 238
+        x: 222
+        y: 245
+        width: 16
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afeec505cb4edd2c0800000000000000
-      internalID: -4405113363045224710
+      spriteID: 52a9bde47a9b60ed0800000000000000
+      internalID: -2448065219195594203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_3
+      name: DirtydanPinhead3_3
       rect:
         serializedVersion: 2
-        x: 844
-        y: 374
-        width: 229
-        height: 238
+        x: 239
+        y: 252
+        width: 14
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 231891f667ae3bea0800000000000000
-      internalID: -5858080895887900366
+      spriteID: 0276cbca3593160d0800000000000000
+      internalID: -3431398409536510176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_4
+      name: DirtydanPinhead3_4
       rect:
         serializedVersion: 2
-        x: 1034
-        y: 374
-        width: 265
-        height: 238
+        x: 244
+        y: 223
+        width: 40
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aece99479c75fcf00800000000000000
-      internalID: 1139225753504312554
+      spriteID: 04f2c369a81d0cd70800000000000000
+      internalID: 9061472843425656640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_5
+      name: DirtydanPinhead3_5
       rect:
         serializedVersion: 2
-        x: 760
-        y: 83
-        width: 192
-        height: 238
+        x: 34
+        y: 24
+        width: 332
+        height: 221
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 884ec6234e6d2a700800000000000000
-      internalID: 550238380079506568
+      spriteID: 0931fefab99172cf0800000000000000
+      internalID: -277224695597689968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_6
+      name: DirtydanPinhead3_6
       rect:
         serializedVersion: 2
-        x: 885
-        y: 83
-        width: 229
-        height: 238
+        x: 336
+        y: 125
+        width: 31
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +283,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49f15925f7864caa0800000000000000
-      internalID: -6141669095770873964
+      spriteID: d9b3b631f877efd30800000000000000
+      internalID: 4467139336787934109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_7
+      name: DirtydanPinhead3_7
       rect:
         serializedVersion: 2
-        x: 1075
-        y: 83
-        width: 157
-        height: 238
+        x: 354
+        y: 43
+        width: 159
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 729e231e0a0719cb0800000000000000
-      internalID: -4858978686680766169
+      spriteID: 0cd0e8da8ab4ed480800000000000000
+      internalID: -8872571028034941504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_8
+      name: DirtydanPinhead3_8
       rect:
         serializedVersion: 2
-        x: 1218
-        y: 83
-        width: 207
-        height: 238
+        x: 451
+        y: 131
+        width: 9
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1bc187e784fec970800000000000000
-      internalID: 8777221588333480730
+      spriteID: 09e6bcc6c06175f50800000000000000
+      internalID: 6869983999197671056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_9
+      name: DirtydanPinhead3_9
       rect:
         serializedVersion: 2
-        x: 1356
-        y: 83
-        width: 157
-        height: 238
+        x: 489
+        y: 60
+        width: 25
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,20 +349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 396918e75d674b5b0800000000000000
-      internalID: -5353523397714143597
+      spriteID: 6f4952fa922bc8b80800000000000000
+      internalID: -8391136113596197642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST Logo New Test_10
+      name: DirtydanPinhead3_10
       rect:
         serializedVersion: 2
-        x: 1442
-        y: 83
-        width: 252
-        height: 238
+        x: 456
+        y: 41
+        width: 12
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,8 +371,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de39654fa230d1ac0800000000000000
-      internalID: -3882943820700675091
+      spriteID: 4ce9bfcd2d8e25600800000000000000
+      internalID: 455682504666095300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DirtydanPinhead3_11
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 5
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b9e6e689afcc4f0800000000000000
+      internalID: -806994700611445904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DirtydanPinhead3_12
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 21
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96833d7a9b42e0700800000000000000
+      internalID: 508384187742632041
       vertices: []
       indices: 
       edges: []
@@ -388,7 +425,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -398,17 +435,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ST Logo New Test_0: 8354792215256638087
-      ST Logo New Test_1: -8843364371690842509
-      ST Logo New Test_10: -3882943820700675091
-      ST Logo New Test_2: -4405113363045224710
-      ST Logo New Test_3: -5858080895887900366
-      ST Logo New Test_4: 1139225753504312554
-      ST Logo New Test_5: 550238380079506568
-      ST Logo New Test_6: -6141669095770873964
-      ST Logo New Test_7: -4858978686680766169
-      ST Logo New Test_8: 8777221588333480730
-      ST Logo New Test_9: -5353523397714143597
+      DirtydanPinhead3_0: -4065704506971175879
+      DirtydanPinhead3_1: -2572750780664380100
+      DirtydanPinhead3_10: 455682504666095300
+      DirtydanPinhead3_11: -806994700611445904
+      DirtydanPinhead3_12: 508384187742632041
+      DirtydanPinhead3_2: -2448065219195594203
+      DirtydanPinhead3_3: -3431398409536510176
+      DirtydanPinhead3_4: 9061472843425656640
+      DirtydanPinhead3_5: -277224695597689968
+      DirtydanPinhead3_6: 4467139336787934109
+      DirtydanPinhead3_7: -8872571028034941504
+      DirtydanPinhead3_8: 6869983999197671056
+      DirtydanPinhead3_9: -8391136113596197642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
