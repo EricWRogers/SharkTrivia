@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Runtime.CompilerServices;
 
 
 public class EndGame : MonoBehaviour
 {
     private TakingDamage takingdamage;
+    private LosingHearts losinghearts; 
     public WinScreen winScreen;
     public Timer timer;
 
@@ -19,7 +21,9 @@ public class EndGame : MonoBehaviour
     {
         
             takingdamage = GameObject.FindGameObjectWithTag("Player").GetComponent<TakingDamage>();
+            losinghearts = FindFirstObjectByType<LosingHearts>();// FindGameObjectWithTag("Hearts").GetComponent<LosingHearts>();
             takingdamage.endgame = this;
+            losinghearts.endgame = this;
     }
 
 
@@ -30,6 +34,7 @@ public class EndGame : MonoBehaviour
             hitCount++;
 
             takingdamage.TakeDamage(hitCount);
+            losinghearts.Hearts(hitCount);
 
             Debug.Log("Hit #" + hitCount);
             if (hitCount >= maxHits)
@@ -50,7 +55,7 @@ public class EndGame : MonoBehaviour
     public void Win()
     {
         //winScreen.DisplayWinResults(); 
-        winScreen.DisplayWinResults(ScoreManager.instance.score);
+        winScreen.DisplayWinResults();
     }
      
 }
