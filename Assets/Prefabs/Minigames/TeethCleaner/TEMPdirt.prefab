@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6784445052061296723}
   - component: {fileID: 4073246493383720262}
   - component: {fileID: 3998024483395565337}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TEMPdirt
   m_TagString: Dirt
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1785891265800893632, guid: 9c44492b880d3494d94e984f070b8a43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
