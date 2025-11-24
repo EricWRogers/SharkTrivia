@@ -130,7 +130,19 @@ MonoBehaviour:
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +177,19 @@ MonoBehaviour:
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: TakePoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1628653037141088385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +211,19 @@ MonoBehaviour:
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: TakePoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1732500077030790063
 MonoBehaviour:
   m_ObjectHideFlags: 0
