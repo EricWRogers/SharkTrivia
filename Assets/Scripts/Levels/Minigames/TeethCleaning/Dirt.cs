@@ -7,19 +7,29 @@ public class Dirt : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Toothbrush"))      //when can change the tag to whateven tool we need... possably a "pick"
+        
+        //if (other.CompareTag("Toothbrush"))      //when can change the tag to whateven tool we need... possably a "pick"
         {
             //Debug.Log("touching");
-            if(Input.GetMouseButtonDown(0)){
+            //if(Input.GetMouseButtonDown(0)){
                 //Debug.Log("clicked");
-                ScoreManager.instance.AddPoint();
+                //ScoreManager.instance.AddPoint();
 
-                RemoveTween();
+                //RemoveTween();
                 
-            }
+           // }
             // Destroy(gameObject);
 
         }
+    }
+    void OnMouseDown()
+    {
+        
+        if (ToolManager.ActiveToolName == "Pick")
+        {
+            Destroy(gameObject);
+        }
+    
     }
 
     void RemoveTween(){

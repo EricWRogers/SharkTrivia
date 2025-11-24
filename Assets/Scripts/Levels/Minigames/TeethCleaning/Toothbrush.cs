@@ -2,21 +2,14 @@ using UnityEngine;
 
 public class Toothbrush : MonoBehaviour
 {
+    public bool isActive = false; 
     private Vector2 mousePos;
-    public float moveSpeed = 1f;    // useing one as a defalt, actuall speed set to 0.5
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public float moveSpeed = 1f;
 
-    // Update is called once per frame
     void Update()
     {
-                //****** movement ******
         mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);    //very important
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
         transform.position = Vector2.Lerp(transform.position, mousePos, moveSpeed);
     }
-
 }

@@ -15,22 +15,15 @@ public class TakingDamage : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer == null)
         {
-            //EndGame endgame = GetComponent<EndGame>();
             Debug.LogError("SpriteRenderer component not found!");
         }
-        /*endgame = GetComponent<EndGame>();
-        if (endgame == null)
-        {
-            Debug.LogError("EndGame component not found!");
-        }*/
+        
     }
 
-   
-   
     
     public void TakeDamage(int hitCount)
      {
-        //if (endgame != null && hitCount >= endgame.maxHits)
+        
          {
              StartCoroutine(DamageFlashRoutine());
          }
