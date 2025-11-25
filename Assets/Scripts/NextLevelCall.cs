@@ -7,11 +7,15 @@ public class NextLevelCall : MonoBehaviour
 
     public void NextLevel(string sceneName)
     {
-        Debug.Log("Calling new level: " + sceneName);
-
         sceneName = nextLevel;
 
+        Debug.Log("Calling new level: " + sceneName);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void CallTriviaR1()
+    {
+        SceneManager.LoadScene("TriviaR1");
     }
 
     public void CallBackstage()

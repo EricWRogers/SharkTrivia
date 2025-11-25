@@ -60,7 +60,7 @@ public class ScoreAndLives : MonoBehaviour
                 TotalScore.instance.AddPoints(finalPoints);
             }
             //call gameover later
-            winScreen.DisplayWinResults(ScoreManager.instance.score);
+            winScreen.DisplayWinResults();
             return;
         }
         // respawn pop
