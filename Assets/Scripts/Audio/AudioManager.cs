@@ -35,17 +35,16 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            return;
         }
 
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded -= OnSceneLoaded; // prevents double registration
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -63,6 +62,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case "TriviaR1":
                 PlayMusic("TestTriviaTheme");
+                break;
+            case "TriviaR2":
+                PlayMusic("TestTriviaTheeme");
                 break;
             case "TestTriviaLimitedCorrect":
                 PlayMusic("TriviaLimitedCorrectTheme");
