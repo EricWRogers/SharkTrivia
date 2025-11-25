@@ -32,19 +32,19 @@ public class WinScreen : MonoBehaviour
     public TMP_Text winStat;
 
 
-    public void DisplayWinResults(int points)
+    public void DisplayWinResults()
     {
-        //int points = ScoreManager.instance.score;
+        int points = ScoreManager.instance.score;
 
         if (points >= winThreshold)
         {
             winText.text = "YOU WIN!";
-            //TotalScore.instance.AddPoints(points);
+            TotalScore.instance.AddPoints(points);
         }
         if (points < winThreshold)
         {
             winText.text = "you lose!";
-            //TotalScore.instance.PlayerLost();
+            TotalScore.instance.PlayerLost();
         }
 
         winTime.text = "Time - " + timer.GetFormattedTime();

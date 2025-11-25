@@ -4,33 +4,43 @@ public class ToolManager : MonoBehaviour
 {
     public GameObject toothbrush;
     public GameObject drill;
+    public GameObject pick;
 
-    private GameObject currentTool;
+    public static string ActiveToolName = "Toothbrush"; 
+    [HideInInspector] public GameObject currentTool;
 
     void Start()
     {
-        
-        SelectTool(toothbrush);
+        SelectTool(toothbrush, "Toothbrush");
     }
 
     void Update()
     {
-        // switch tools using 1 or 2
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            SelectTool(toothbrush);
+            SelectTool(toothbrush, "Toothbrush");
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SelectTool(drill);
+            SelectTool(drill, "Drill");
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            SelectTool(pick, "Pick");
     }
 
-    void SelectTool(GameObject tool)
+    void SelectTool(GameObject tool, string toolName)
     {
         
         toothbrush.SetActive(false);
         drill.SetActive(false);
+        pick.SetActive(false);
 
         
         tool.SetActive(true);
         currentTool = tool;
+        ActiveToolName = toolName;
+
+        
+        Toothbrush tb = toothbrush.GetComponent<Toothbrush>();
+        if (tb != null)
+            tb.isActive = (tool == toothbrush);
     }
 }

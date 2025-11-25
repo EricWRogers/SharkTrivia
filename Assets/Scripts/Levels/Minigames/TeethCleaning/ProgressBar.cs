@@ -23,6 +23,7 @@ public class ProgressBar : MonoBehaviour
     public SpriteRenderer toothBrush;
     public SpriteRenderer background;
     public SpriteRenderer drill;
+    
 
     //connecting to win screen
     public WinScreen winScreen;
@@ -64,7 +65,7 @@ public class ProgressBar : MonoBehaviour
         //Debug.Log("Mouse world position " + mouseWorldPos);
         if (Input.GetMouseButtonDown(0))
         {
-            if (IsMouseOver(mouseWorldPos))
+            if (IsMouseOver(mouseWorldPos)&& IsToothbrushActive())
             {
                 isSwiping = true;
                 mousePosition = mouseWorldPos;
@@ -175,8 +176,14 @@ public class ProgressBar : MonoBehaviour
             //display winscreen when minigame is over
             //winScreen.ShowWinScreen(); this just turns the WinScreen on
             //WinScreen.DisplayWinResults displays the updated scoreboard
-            winScreen.DisplayWinResults(ScoreManager.instance.score);
+            winScreen.DisplayWinResults();
         }
     }
+   private bool IsToothbrushActive()
+    {
+        return ToolManager.ActiveToolName == "Toothbrush";
+    }
+
+
 
 }
