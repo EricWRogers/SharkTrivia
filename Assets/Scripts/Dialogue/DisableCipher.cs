@@ -8,6 +8,7 @@ public class DisableCipher : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Debug.Log("Deprecated guy got called");
         cipher = GameObject.Find("usrDecode");
         cipherDecode = cipher.GetComponent<CipherDecode>();
 

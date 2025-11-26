@@ -3,17 +3,10 @@ using TMPro;
 
 public class ButtonRename : MonoBehaviour
 {
-    public char buttonText;
     public char keyToUpdate;
     public char newKeyValue;
     public TMP_Text returnText;
     public TMP_Text titleText;
-
-
-    public void NewText()
-    {
-        newKeyValue = buttonText;
-    }
 
     public void Open(GameObject _text, string _c)
     {
@@ -27,14 +20,15 @@ public class ButtonRename : MonoBehaviour
 
         if(_c[0] != '~'){
 
-            if(CipherDecode.instance.charAssignments[_c[0]] == '~' && CipherDecode.instance.confirmedCharAssignments[_c[0]] == '~')
-                returnText.text = _c;
+            // if(CipherDecode.instance.charAssignments[_c[0]] == '~' && CipherDecode.instance.confirmedCharAssignments[_c[0]] == '~')
+            //     returnText.text = _c;
 
             if (CipherDecode.instance == null)
                 Debug.Log("Cipher is null");
 
             
-            CipherDecode.instance.CharAssignment(_c[0], newKeyValue);
+            if(CipherDecode.instance.CharAssignment(_c[0], newKeyValue) <= 0) // ugly jank
+                returnText.text = _c;
 
 
             //THIS IS INCREDIBLY SCUFFED ALSO, YOU KNOW THE DRILL
@@ -44,7 +38,7 @@ public class ButtonRename : MonoBehaviour
 
                 for(int i = 0; i < buttonScripts.Length; i++)
                 {
-                    buttonScripts[i].OnEnable();
+                    buttonScripts[i].OnJournalEnter();
                 }
             }
         }
@@ -56,7 +50,10 @@ public class ButtonRename : MonoBehaviour
     {
         returnText.text = _u;
 
-        CipherDecode.instance.CharAssignment(_u[0], newKeyValue);
+        Debug.Log($"Clear letter called, key is {GuessLetterMessager.mostRecentChar}");
+
+        CipherDecode.instance.CharAssignment(GuessLetterMessager.mostRecentChar, '~');//charAssignments[_u[0]] = newKeyValue;
+        CipherDecode.instance.unassButtonsToEnable[char.ToLower(newKeyValue) - 'a'] = false;
 
 
         //THIS IS INCREDIBLY SCUFFED ALSO, YOU KNOW THE DRILL
@@ -66,7 +63,7 @@ public class ButtonRename : MonoBehaviour
 
             for(int i = 0; i < buttonScripts.Length; i++)
             {
-                buttonScripts[i].OnEnable();
+                buttonScripts[i].OnJournalEnter();
             }
         }
     }
