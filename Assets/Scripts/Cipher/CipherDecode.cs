@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Linq;
 
 //Originally Programmed by Samuel (Scott)
 
@@ -28,6 +29,7 @@ public class CipherDecode : MonoBehaviour
     public int maxCorrectGuesses = 4;
     public int numCorrectGuesses = 0;
 
+    public int numOfRandLetters = 5;
     
 
     public Dictionary<char, char> charAssignments = new Dictionary<char, char>
@@ -408,9 +410,23 @@ public class CipherDecode : MonoBehaviour
 
             case GameMode.Hard:
 
-                // no default letters
+                // random selection of letters
                 isLimitingCorrectness = false;
                 isCountingGuesses = true;
+
+                List<char> listOfChars = new List<char> {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+                                             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+                int randNum;
+
+                for(int i = 0; i < numOfRandLetters; i++)
+                {
+                    randNum = Random.Range(0, listOfChars.Count);
+
+                    confirmedCharAssignments[listOfChars[randNum]] = listOfChars[randNum];
+
+                    listOfChars.RemoveAt(randNum);
+                }
+
                 break;
 
         }
