@@ -5,7 +5,6 @@ public class TimerTrigger : MonoBehaviour
     public GameObject timerM;
     Timer timer;
 
-    bool timeHasStarted;
     bool isTimeUp;
 
     public DNode nodeOnTimeout;
@@ -28,9 +27,10 @@ public class TimerTrigger : MonoBehaviour
         if (!isTimeUp)
         {
             //Debug.Log("Time has begun");
+            //Debug.Log("time reamaining:" + timer.timeRemaining);
 
-            if (!timer.timeRunning)
-            {
+            if (timer.timeRemaining <= 0)
+            { 
                 TimeUp();
                 isTimeUp = true;
             }
@@ -41,7 +41,9 @@ public class TimerTrigger : MonoBehaviour
     {
         if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard || foo)
         {
+            gameObject.SetActive(true);
             Instantiate(this.gameObject);
+            
 
             timerM = GameObject.Find("TimeManager");
             timer = timerM.GetComponent<Timer>();
@@ -52,7 +54,7 @@ public class TimerTrigger : MonoBehaviour
 
     public void StartTimer()
     {
-        Debug.Log("Hello! I have been spawned!");
+        Debug.Log("Hello! I have been begun!");
 
         timer.timeRunning = true;  
     }
@@ -61,7 +63,8 @@ public class TimerTrigger : MonoBehaviour
     {
         if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard || foo)
         {
-            Debug.Log("Goodbye! I have been stopped!");
+            Debug.Log("Goodbye! I have been stopped!");;
+
             timer.timeRunning = false;
         }
     }
