@@ -101,15 +101,7 @@ MonoBehaviour:
   autoProgress: 1
   autoDelay: 5
   nextIfNoChoices: {fileID: 2702153461593583789}
-  choices:
-  - choiceText: Continue...
-    next: {fileID: 0}
-    isCorrect: 0
-    isTriviaQuestion: 0
-    loadSceneOnSelect: 
-    onSelected:
-      m_PersistentCalls:
-        m_Calls: []
+  choices: []
   onEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -136,6 +128,18 @@ MonoBehaviour:
   onEnter:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: TakePoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
         m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
         m_MethodName: StopTimer
@@ -148,18 +152,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
-        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
-        m_MethodName: TakePoints
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 60
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &-1946937906327751057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +174,18 @@ MonoBehaviour:
   onEnter:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
         m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
         m_MethodName: StopTimer
@@ -194,18 +198,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
-        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
-        m_MethodName: AddPoints
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 800
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +277,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - choiceText: We simply don't!
-    next: {fileID: -5239269961706621938}
+    next: {fileID: 6685537915821145208}
     isCorrect: 0
     isTriviaQuestion: 1
     loadSceneOnSelect: 
@@ -402,7 +394,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: StopTimer
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

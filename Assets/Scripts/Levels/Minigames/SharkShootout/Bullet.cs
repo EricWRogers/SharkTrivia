@@ -6,7 +6,10 @@ public class Bullet : MonoBehaviour
     
     public float Speed = 5f;
     public float life = 1f;
-    
+
+    // SFX for bullet
+    private string popSFXName = "Pop";
+
     void Start()
     {
         Destroy(gameObject, life);
@@ -22,9 +25,11 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fish"))
         {
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
-        
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+
+            // SFX
+            AudioManager.instance.PlaySFX(popSFXName);
         } 
     }
 }

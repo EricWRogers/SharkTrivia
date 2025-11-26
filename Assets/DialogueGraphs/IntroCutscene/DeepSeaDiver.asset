@@ -201,14 +201,14 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 7901379826495602195, guid: 104dc1ef508ea8641a9f96d88a7fafa9, type: 3}
           m_TargetAssemblyTypeName: NextLevelCall, Assembly-CSharp
-          m_MethodName: NextLevel
-          m_Mode: 5
+          m_MethodName: CallTriviaR1
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: AidenTestTrivia
+            m_StringArgument: TriviaR1
             m_BoolArgument: 0
           m_CallState: 2
   onEnter:
