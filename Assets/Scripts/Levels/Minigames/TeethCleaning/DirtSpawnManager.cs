@@ -6,10 +6,11 @@ public class DirtSpawnManager : MonoBehaviour
 
     public GameObject dirtPrefab;
     public int spawnCount = 10;
-    public float spawnRange = 3;
+    public float spawnRange = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Dirt.dirtRemaining = 0;
         SpawnDirt(spawnCount);
         
     }

@@ -34,21 +34,9 @@ public class Holes : MonoBehaviour
                 holesRemaining--;
                 Destroy(gameObject);
                 ScoreManager.instance.AddPoints(5);
-
-                if (holesRemaining <= 0)
-                {
-                    Debug.Log("All holes cleared!");
-                    ProgressBar pb = FindFirstObjectByType<ProgressBar>();
-                    if (pb != null && pb.progressBar.value >= pb.progressBar.maxValue)
-                    {
-                        if (pb.timer != null)
-                            pb.timer.StopTimer();
-
-                        //winScreen.ShowWinScreen(); this just turns the WinScreen on
-                        //WinScreen.DisplayWinResults displays the updated scoreboard
-                        pb.winScreen.DisplayWinResults();
-                    }
-                }
+                ProgressBar pb = FindFirstObjectByType<ProgressBar>();
+                    if (pb != null)
+                        pb.Win();
             }
         }
     }

@@ -17,7 +17,11 @@ public class BowlingManager : MonoBehaviour
     public int totalScore = 0;
     public int maxRounds = 6;
     public int roundsPlayed = 0;
+    public int strikeCount = 0;
+    public int spareCount = 0;
     private int bonus = 10;
+    public bool strike = false;
+    public bool spare = false;
     int pinsDownThisRound = 0;
     private bool pinsUp = false;
     GameObject[] pins;
@@ -46,20 +50,16 @@ public class BowlingManager : MonoBehaviour
     {
         if (!ball.GetComponent<BowlingBall>().hasLaunched) // Only move before launch
             MoveBall();
-
         // Launch the ball
         Rigidbody rb = ball.GetComponent<Rigidbody>();
-        if (roundsPlayed % 2 == 0 && !pinsUp)
-        {
-            ResetPins();
-            pinsUp = true;
-        }
+
         if (ball.GetComponent<BowlingBall>().hasLaunched && (ball.transform.position.y < -20 || rb.IsSleeping()))
         {
             CountPinsDown();
             ResetBall();
             NewRound();
         }
+    
         if (ball.GetComponent<BowlingBall>().hasLaunched && (ball.tag == "Stuck"))
         {
             ResetBall();
@@ -87,11 +87,44 @@ public class BowlingManager : MonoBehaviour
             }
             pinsUp = false;
         }
+
+        // If you have played 1 round and if the pins knocked down is equal to 10 pins
+        // Strike is true
+        if (roundsPlayed % 2 == 1 && pinsDownThisRound == 10)
+        {
+            strike = true;
+            Debug.Log("STRIKE X");
+            ResetPins();
+        }
+
+        // If you have played 2 rounds and if pins knocked down is equal to 10 pins
+        // Spare is true
+        else if (roundsPlayed % 2 == 0 && pinsDownThisRound == 10)
+        {
+            spare = true;
+            Debug.Log("SPARE /");
+        }
+
+        int scoreForCurrentRound = pinsDownThisRound;
+
+        if (strike)
+        {
+            scoreForCurrentRound += bonus;
+            strike = false; //Turn off after use.
+            strikeCount += 1; //Increment the strikeCount to track the number of total strikes
+        }
+        
+        else if (spare)
+        {
+            scoreForCurrentRound += bonus;
+            spare = false; //Turn off after use.
+            spareCount += 1; //Increment the spareCount to track the number of total spares
+        }
+
         // Update total score and score managers
         //CW now adds 10* the score. It just evens out the amount of points in minigames
         scoreManager.AddPoints(pinsDownThisRound * 10);  // UNIVERSAL SCORE MANAGER
         totalScore += pinsDownThisRound;
-
         // Update UI
         scoreUI.text = pinsDownThisRound.ToString();
         if(totalScoreUI != null)
@@ -139,6 +172,11 @@ public class BowlingManager : MonoBehaviour
     {
         roundsPlayed++;
         roundsUI.text = roundsPlayed.ToString();
+
+        if (roundsPlayed > 0 && roundsPlayed % 2 == 0)
+        {
+            ResetPins();
+        }
 
         if (roundsPlayed >= maxRounds)
         {
