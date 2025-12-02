@@ -25,6 +25,7 @@ public class BowlingManager : MonoBehaviour
     int pinsDownThisRound = 0;
     private bool pinsUp = false;
     GameObject[] pins;
+    GameObject[] downedPins;
     public TMP_Text scoreUI;
     public TMP_Text roundsUI;
     public TMP_Text totalScoreUI;
@@ -80,7 +81,7 @@ public class BowlingManager : MonoBehaviour
         // Tracks pins knocked down for scoring
         for (int i = 0; i < pins.Length; i++)
         {
-            if (pins[i].transform.eulerAngles.z > 5 && pins[i].transform.eulerAngles.z < 355 && pins[i].activeSelf)
+            if (pins[i].transform.eulerAngles.z > 50 && pins[i].transform.eulerAngles.z < 500 && pins[i].activeSelf)
             {
                 pinsDownThisRound++;
                 pins[i].SetActive(false);
@@ -111,14 +112,14 @@ public class BowlingManager : MonoBehaviour
         {
             scoreForCurrentRound += bonus;
             strike = false; //Turn off after use.
-            strikeCount += 1; //Increment the strikeCount to track the number of total strikes
+            strikeCount ++; //Increment the strikeCount to track the number of total strikes
         }
         
         else if (spare)
         {
             scoreForCurrentRound += bonus;
             spare = false; //Turn off after use.
-            spareCount += 1; //Increment the spareCount to track the number of total spares
+            spareCount ++; //Increment the spareCount to track the number of total spares
         }
 
         // Update total score and score managers
