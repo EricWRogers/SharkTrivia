@@ -26,10 +26,6 @@ public class DialogueController : MonoBehaviour
     public GameObject choiceButtonPrefab;
 
 
-    //SCOTT CHANGES START
-    private Translator translator;
-    //SCOTT CHANGES END
-
     void Awake()
     {
         //make sure there is only one dialogue controller
@@ -37,10 +33,6 @@ public class DialogueController : MonoBehaviour
         {
             Instance = this;
 
-            //SCOTT CHANGES START
-            gameObject.AddComponent<Translator>();
-            translator = gameObject.GetComponent<Translator>();
-            //SCOTT CHANGES END
         }
         else Destroy(gameObject);
 

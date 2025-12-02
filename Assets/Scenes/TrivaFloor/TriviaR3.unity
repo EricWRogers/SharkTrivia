@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2eedf15120558a44943675108f90178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: 38a654468a24f1f419ee18df628a853f, type: 2}
+  conversation: {fileID: 11400000, guid: e08770a954c3c644e955c2ebc8cb8156, type: 2}
 --- !u!1 &321082179
 GameObject:
   m_ObjectHideFlags: 0
@@ -8979,7 +8979,7 @@ PrefabInstance:
       objectReference: {fileID: 1278043293}
     - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
       propertyPath: totalTime
-      value: 60
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
       propertyPath: timeRunning

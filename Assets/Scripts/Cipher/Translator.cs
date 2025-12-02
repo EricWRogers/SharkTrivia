@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 
 
+
 #if UNITY_EDITOR
 using UnityEditor;
 
@@ -99,7 +100,7 @@ public class Translator : MonoBehaviour
 
             }
 
-            else if (keys.Contains(characters[i]) && !charIndexes.Contains(i))
+            else if ((keys.Contains(characters[i]) && !charIndexes.Contains(i)) || !char.IsLetter(characters[i]))
             {
                 message.Insert(i + (hit * (exitBlackCode.Length + colorCode.Length)), exitBlackCode);
                 adjust += exitBlackCode.Length;

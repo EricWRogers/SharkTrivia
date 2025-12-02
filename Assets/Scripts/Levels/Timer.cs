@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float totalTime = 60f;
 
-    private float timeRemaining;
+    public float timeRemaining {get; private set;}
     public bool timeRunning = true;
     public UnityEvent timeOut;
 

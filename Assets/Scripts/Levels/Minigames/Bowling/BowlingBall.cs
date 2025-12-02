@@ -14,8 +14,12 @@ public class BowlingBall : MonoBehaviour
     public float rampUpTime = 2f; // Time before full hook kicks in
     public float rotationSpeed = 45f;
     public float spinDirection = 0f; // -1 left, 0 straight, +1 right
-    
+
     private float launchTime; // When the ball was launched
+
+    // SFX for ball
+    private string rollSFXName = "Roll";
+    private string pinHitSFXName = "PinHit";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,10 +42,11 @@ public class BowlingBall : MonoBehaviour
         {
             transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         }
-    
+
         if (Input.GetKeyDown(KeyCode.Space) && !hasLaunched)
         {
             LaunchBall();
+            AudioManager.instance.PlaySFX(rollSFXName); // Plays Roll SFX
         }
     }
 
@@ -88,6 +93,14 @@ public class BowlingBall : MonoBehaviour
             float spinAmount = rb.angularVelocity.y;
             Vector3 sideForce = Vector3.right * spinAmount * curveStrength * curveFactor;
             rb.AddForce(sideForce);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Pin"))
+        {
+            AudioManager.instance.PlaySFX(pinHitSFXName);
         }
     }
 }

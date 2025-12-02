@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class TranslateGuessLetter : MonoBehaviour
 {
-    public Translator translator;
     public GameObject currentButton;
     public TMP_Text gButton;
     private List<string> defaultCharacters;
@@ -29,7 +28,7 @@ public class TranslateGuessLetter : MonoBehaviour
             currentButton = gameObject.transform.GetChild(i).gameObject;
             gButton = currentButton.transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
             //Debug.Log(i);
-            gButton.text = translator.Translate(defaultCharacters[i]);
+            gButton.text = FindFirstObjectByType<Translator>().Translate(defaultCharacters[i]);
         }
     }
 }
