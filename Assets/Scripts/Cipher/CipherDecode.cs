@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.UI;
 
 //Originally Programmed by Samuel (Scott)
 
@@ -28,6 +30,8 @@ public class CipherDecode : MonoBehaviour
     public int maxCorrectGuesses = 4;
     public int numCorrectGuesses = 0;
 
+    public int numOfRandLetters = 5;
+    public List<bool> unassButtonsToEnable;
     
 
     public Dictionary<char, char> charAssignments = new Dictionary<char, char>
@@ -81,6 +85,9 @@ public class CipherDecode : MonoBehaviour
             else
                 UnRandomizeLetters();
 
+            unassButtonsToEnable = new List<bool>{false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,
+                                                  false,false,false,false,false,false,false,false};
+
             SceneManager.activeSceneChanged += OnActiveSceneChanged;
 
             if(difficultyDebugMode)
@@ -88,9 +95,21 @@ public class CipherDecode : MonoBehaviour
                 UpdateGameMode();
                 ChangeGameMode((int)difficulty);
             }
+
+
+
             Debug.Log("Singleton init");
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            // handling journal U.I. stuff
+
+            GuessLetterMessager[] cipherButtons = FindObjectsByType<GuessLetterMessager>(FindObjectsSortMode.None);
+
+            foreach (GuessLetterMessager butt in cipherButtons)
+            {
+                butt.OnJournalEnter();
+            }
 
         }
         else
@@ -221,97 +240,155 @@ public class CipherDecode : MonoBehaviour
     {
         key = key.ToString().ToLower()[0];
         value = value.ToString().ToLower()[0];
-        int returnCode = 0;
+        int returnCode = 1;
+        
 
-        for (int i = 'a'; i <= 'z'; i++)
+        Debug.Log($"Just got passed Key: {key} to Value: {value}");
+
+        if(value == '~')
         {
-            //Debug.Log("Checking character: " + (char)i);
+            int charIndex = key - 'a';
 
-            //This if handles the case where the value that goes to the key in question is blank ('~') and the new value is not already found elsehwere
-            if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value))
+            //instance.charAssignments[key] = value;
+
+            char prevVal = '?'; // should never end as '?'
+
+            // which dictionary key was assigned to the name of the key parameter?
+            for(char i = 'a'; i < 'z'; i++)
             {
-                
-
-                if (isCountingGuesses && !(difficulty == GameMode.Medium && i == value))
-                    numGuesses++;
-                if(isLimitingCorrectness && i == value)
-                    numCorrectGuesses++;
-
-                if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
-                    confirmedCharAssignments[key] = value;
-                else
-                    charAssignments[key] = value;
-
-                break;
+                if(charAssignments[i] == key)
+                {
+                    prevVal = i;
+                }
             }
 
-            //This if handles the case where the value that goes to the key in question is not blank but the new value also isn't found anywhere else in the journal
-            else if (charAssignments[(char)i] != '~' && (char)i == key && !charAssignments.ContainsValue(value))
-            {
-                //Return an error code (some negative number) if you want this operation to be illegal, elsewise just overwrite the value if you're ok with it
 
-                //returnCode = -1;
 
-                //OR
+            instance.charAssignments[prevVal] = value;
 
-                if (isCountingGuesses && !(difficulty == GameMode.Medium && i == value))
-                    numGuesses++;
-                
+            unassButtonsToEnable[charIndex] = false;
 
-                if(isLimitingCorrectness && i == value)
-                    numCorrectGuesses++;
+            Debug.Log($"Just erased Key: {prevVal} to Value: {value}");
 
-                Debug.Log("CipherDecode: Overwrote previous char assignment");
+            returnCode = -1;
+        }
+        else if(!charAssignments.ContainsValue(value))
+        {
+            int charIndex = value - 'a';
 
-                charAssignments[key] = '~';
+            if(isCountingGuesses && !(difficulty == GameMode.Medium && key == value))
+                numGuesses++;
+            if(isLimitingCorrectness && key == value)
+                numCorrectGuesses++;
 
-                if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
-                    confirmedCharAssignments[key] = value;
+            unassButtonsToEnable[charIndex] = true;
 
-                else
-                    charAssignments[key] = value;
-
-                break;
-            }
-
-            //This if handles the case where the new value is already used somehwere else in the journal with some subcases
-            else if ((char)i == key && charAssignments.ContainsValue(value))
-            {
-                //Return a warning code (some other negative number) if you want this operation to be illegal, elsewise erase where the new value already was and put it here
-
-                //Case where the value that goes to the key in question is blank
-                // if (charAssignments[(char)i] == '~')
-                // {
-                //     Debug.Log("CipherDecode: return warning code -2");
-                //     returnCode = -2;
-                // }
-
-                //Case where the value that goes to the key in question is not blank
-                // if (charAssignments[(char)i] != '~')
-                // {
-                //     Debug.Log("CipherDecode: return warning code -3");
-                //     returnCode = -3;
-                // }
-
-                //OR
-
-                //var firstKey = charAssignments.FirstOrDefault(kvp => kvp.Value == value).Key;
-
-                charAssignments[(char)i] = '~';
-                charAssignments[key] = value;
-
-                break;
-            }
-            //This handles the case where the player hits a letter they already did for this cipher character, so it'll just dissasociate it and go back to being blank
-            else if (charAssignments[(char)i] != '~' && (char)i == key && !charAssignments.ContainsValue(value) && charAssignments[key] == value)
-            {
-                Debug.Log("CipherDecode: erasing previous assignment");
-                charAssignments[key] = '~';
-                break;
-            }
-
+            Debug.Log($"Just assigned Key: {key} to Value: {value}");
+            instance.charAssignments[key] = value;
+            returnCode = 0;
         }
 
+        // for (int i = 'a'; i <= 'z'; i++)
+        // {
+        //     //Debug.Log("Checking character: " + (char)i);
+
+        //     // this handles erasure
+        //     if((char)i == key && value == '~')
+        //     {
+        //         charAssignments[(char)i] = '~';
+        //         charAssignments[key] = value;
+
+        //         returnCode = -1;
+
+        //         break;
+        //     }
+
+        //     //This if handles the case where the value that goes to the key in question is blank ('~') and the new value is not already found elsehwere
+        //     else if (charAssignments[(char)i] == '~' && (char)i == key && !charAssignments.ContainsValue(value))
+        //     {
+                
+
+        //         if (isCountingGuesses && !(difficulty == GameMode.Medium && i == value))
+        //             numGuesses++;
+        //         if(isLimitingCorrectness && i == value)
+        //             numCorrectGuesses++;
+
+        //         if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
+        //             confirmedCharAssignments[key] = value;
+        //         else
+        //             charAssignments[key] = value;
+
+        //         break;
+        //     }
+
+        //     //This if handles the case where the value that goes to the key in question is not blank but the new value also isn't found anywhere else in the journal
+        //     else if (charAssignments[(char)i] != '~' && (char)i == key && !charAssignments.ContainsValue(value))
+        //     {
+        //         //Return an error code (some negative number) if you want this operation to be illegal, elsewise just overwrite the value if you're ok with it
+
+        //         //returnCode = -1;
+
+        //         //OR
+
+        //         if (isCountingGuesses && !(difficulty == GameMode.Medium && i == value))
+        //             numGuesses++;
+                
+
+        //         if(isLimitingCorrectness && i == value)
+        //             numCorrectGuesses++;
+
+        //         Debug.Log("CipherDecode: Overwrote previous char assignment");
+
+        //         charAssignments[key] = '~';
+
+        //         if(isCountingGuesses && difficulty == GameMode.Medium && i == value)
+        //             confirmedCharAssignments[key] = value;
+
+        //         else
+        //             charAssignments[key] = value;
+
+        //         break;
+        //     }
+
+        //     // //This if handles the case where the new value is already used somehwere else in the journal with some subcases
+        //     // else if ((char)i == key && charAssignments.ContainsValue(value))
+        //     // {
+        //     //     //Return a warning code (some other negative number) if you want this operation to be illegal, elsewise erase where the new value already was and put it here
+
+        //     //     //Case where the value that goes to the key in question is blank
+        //     //     // if (charAssignments[(char)i] == '~')
+        //     //     // {
+        //     //     //     Debug.Log("CipherDecode: return warning code -2");
+        //     //     //     returnCode = -2;
+        //     //     // }
+
+        //     //     //Case where the value that goes to the key in question is not blank
+        //     //     // if (charAssignments[(char)i] != '~')
+        //     //     // {
+        //     //     //     Debug.Log("CipherDecode: return warning code -3");
+        //     //     //     returnCode = -3;
+        //     //     // }
+
+        //     //     //OR
+
+        //     //     //var firstKey = charAssignments.FirstOrDefault(kvp => kvp.Value == value).Key;
+
+        //     //     charAssignments[(char)i] = '~';
+        //     //     charAssignments[key] = value;
+
+        //     //     break;
+        //     // }
+        //     // //This handles the case where the player hits a letter they already did for this cipher character, so it'll just dissasociate it and go back to being blank
+        //     // else if (charAssignments[(char)i] != '~' && (char)i == key && !charAssignments.ContainsValue(value) && charAssignments[key] == value)
+        //     // {
+        //     //     Debug.Log("CipherDecode: erasing previous assignment");
+        //     //     charAssignments[key] = '~';
+        //     //     break;
+        //     // }
+
+        // }
+
+        
 
         updateDisplays();
 
@@ -408,18 +485,32 @@ public class CipherDecode : MonoBehaviour
 
             case GameMode.Hard:
 
-                // no default letters
+                // random selection of letters
                 isLimitingCorrectness = false;
                 isCountingGuesses = true;
+
+                List<char> listOfChars = new List<char> {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+                                             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+                int randNum;
+
+                for(int i = 0; i < numOfRandLetters; i++)
+                {
+                    randNum = Random.Range(0, listOfChars.Count);
+
+                    confirmedCharAssignments[listOfChars[randNum]] = listOfChars[randNum];
+
+                    listOfChars.RemoveAt(randNum);
+                }
+
                 break;
 
         }
 
         numCorrectGuesses = 0;
         numGuesses = 0;
-
-        updateDisplays();
+        
         clearUserLetters();
+        updateDisplays();
     }
 
 
