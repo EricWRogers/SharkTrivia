@@ -377,7 +377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4517553597814813242, guid: 05b57966595206942a0b01d22f001dff, type: 3}
+  m_Sprite: {fileID: 4517553597814813242, guid: 7b66d5b12d025b44d9da2fced27d165f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -873,7 +873,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4517553597814813242, guid: 05b57966595206942a0b01d22f001dff, type: 3}
+  m_Sprite: {fileID: 4517553597814813242, guid: 7b66d5b12d025b44d9da2fced27d165f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4517553597814813242, guid: 05b57966595206942a0b01d22f001dff, type: 3}
+  m_Sprite: {fileID: 4517553597814813242, guid: 7b66d5b12d025b44d9da2fced27d165f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2152,7 +2152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6275223650564170930, guid: 2ddbcda27f828684885d44c85298614b, type: 3}
       propertyPath: fireRate
-      value: 0.201
+      value: 0.334
       objectReference: {fileID: 0}
     - target: {fileID: 7619279110012217063, guid: 2ddbcda27f828684885d44c85298614b, type: 3}
       propertyPath: m_LocalScale.x
