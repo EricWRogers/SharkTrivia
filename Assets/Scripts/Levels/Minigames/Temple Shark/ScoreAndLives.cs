@@ -7,7 +7,7 @@ public class ScoreAndLives : MonoBehaviour
     
     public ScoreManager scoreManager;   //Universal score manager
 
-    public static ScoreAndLives Instance { get; private set; }
+    public static ScoreAndLives Instance; //{ get; private set; }
     public WinScreen winScreen;  //reference to win screen script to call game over
 
     [Header("Gameplay")]
@@ -25,10 +25,16 @@ public class ScoreAndLives : MonoBehaviour
     bool invincible;
     Vector3 respawnPoint;
 
-    void Awake()
+    private void Awake()
     {
-        if (Instance && Instance != this) { Destroy(gameObject); return; }
-        Instance = this;
+        if (Instance == null || Instance != this)
+        {
+            Instance = this;
+        }
+        else
+            Destroy(gameObject);
+        
+
         Lives = startingLives;
         UpdateHearts();
         UpdateScore();

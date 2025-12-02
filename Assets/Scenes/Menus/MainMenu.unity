@@ -1868,7 +1868,7 @@ PrefabInstance:
     - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
       propertyPath: sfxClips.Array.data[3].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 1722c2201fd920749bda9b1f2e67abc7, type: 3}
+      objectReference: {fileID: 8300000, guid: 40204add512306f43af73b8dc1fcd6cf, type: 3}
     - target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
       propertyPath: sfxClips.Array.data[3].name
       value: ButtonClick
