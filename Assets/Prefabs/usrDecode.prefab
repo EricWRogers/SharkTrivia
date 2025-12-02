@@ -49,9 +49,14 @@ MonoBehaviour:
   confirmedAssignmentDisplay: []
   encoding: 1
   isRandomizing: 0
+  difficulty: 0
+  difficultyDebugMode: 0
   isCountingGuesses: 0
   maxGuesses: 6
   numGuesses: 0
   isLimitingCorrectness: 0
   maxCorrectGuesses: 4
   numCorrectGuesses: 0
+  additionalGuesses: 1
+  numOfRandLetters: 5
+  unassButtonsToEnable: 

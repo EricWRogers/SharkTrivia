@@ -159,13 +159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: J
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &297897122701936291
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,13 +593,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: V
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &890827527253831803
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,13 +755,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: A
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &1191707224986422340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,13 +1325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: U
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &1422141751177454765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,7 +1562,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f227472f9dd3421ba60d775fc8b7b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: 0
   keyToUpdate: 97
   newKeyValue: 98
   returnText: {fileID: 0}
@@ -1916,13 +1899,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: P
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &1760986893108492875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,13 +2197,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: G
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &1834578099792459490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,13 +2821,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: K
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &2107794837865298148
 GameObject:
   m_ObjectHideFlags: 0
@@ -3148,13 +3119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: C
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &2234835988227412413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3314,13 +3281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: X
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &2270708965230918068
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,13 +3443,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: R
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &2365701792461494030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,13 +3741,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: W
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &2473764871571445460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4264,7 +4219,7 @@ MonoBehaviour:
   m_ChildAlignment: 8
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
+  m_CellSize: {x: 163.9, y: 100}
   m_Spacing: {x: 100, y: 100}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -4427,13 +4382,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: D
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &3008098575318756780
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,13 +4952,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: Z
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &3637600010834797944
 GameObject:
   m_ObjectHideFlags: 0
@@ -5175,7 +5122,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 28.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -5885,13 +5832,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: H
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &4169299506749208971
 GameObject:
   m_ObjectHideFlags: 0
@@ -6089,13 +6032,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: L
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &5031687901378255516
 GameObject:
   m_ObjectHideFlags: 0
@@ -6255,13 +6194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: N
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &5454112686453579883
 GameObject:
   m_ObjectHideFlags: 0
@@ -6421,13 +6356,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: M
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &5564031292835054293
 GameObject:
   m_ObjectHideFlags: 0
@@ -6587,13 +6518,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: Y
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &5579695671312147610
 GameObject:
   m_ObjectHideFlags: 0
@@ -6686,7 +6613,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 32.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -6977,7 +6904,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 40}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4387542956198055489
@@ -7140,7 +7067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 39.99998}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2482655847199297396
@@ -7462,13 +7389,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: B
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &7104252362644422678
 GameObject:
   m_ObjectHideFlags: 0
@@ -7628,13 +7551,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: S
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &7112704367579322970
 GameObject:
   m_ObjectHideFlags: 0
@@ -7794,13 +7713,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: Q
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &7260050413904809084
 GameObject:
   m_ObjectHideFlags: 0
@@ -8368,13 +8283,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: T
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &7612273868727338675
 GameObject:
   m_ObjectHideFlags: 0
@@ -8670,13 +8581,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: O
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &8217883743704555392
 GameObject:
   m_ObjectHideFlags: 0
@@ -9244,13 +9151,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: F
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &8813401315063202020
 GameObject:
   m_ObjectHideFlags: 0
@@ -9410,13 +9313,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: I
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &8840219410335553691
 GameObject:
   m_ObjectHideFlags: 0
@@ -9576,13 +9475,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRename: {fileID: 3242688487487988331}
-  translator: {fileID: 0}
   letter: E
   englishAlphabet: {fileID: 9212149384611430348}
   guessLetter: {fileID: 1496398561085448436}
-  gLButtons: {fileID: 5195498286457280449}
-  unassButton: {fileID: 4441359462521506900}
-  unassCipherLetter: 126
 --- !u!1 &9009110402161594393
 GameObject:
   m_ObjectHideFlags: 0
