@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Bullet : MonoBehaviour
 {
@@ -25,11 +27,24 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fish"))
         {
+
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+        
+            Pop(); 
 
             // SFX
-            AudioManager.instance.PlaySFX(popSFXName);
+                AudioManager.instance.PlaySFX(popSFXName);   
+
+            Destroy(gameObject);
         } 
+
+    
+    }
+
+    void Pop()
+    {
+        //Instantiate(PopEffect, transform.position, transform.rotation);
     }
 }
+
+
