@@ -6,8 +6,10 @@ public class TimerTrigger : MonoBehaviour
     Timer timer;
 
     bool isTimeUp;
+    bool isFinalRound;
 
     public DNode nodeOnTimeout;
+    public DNode nodeOnFinalTimeout;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -37,7 +39,7 @@ public class TimerTrigger : MonoBehaviour
         }
     }
 
-    public void SpawnTimer(bool foo = true)
+    public void SpawnTimer(bool _isFinalRound, bool foo = true)
     {
         if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard || foo)
         {
@@ -47,6 +49,8 @@ public class TimerTrigger : MonoBehaviour
 
             timerM = GameObject.Find("TimeManager");
             timer = timerM.GetComponent<Timer>();
+
+            if (_isFinalRound) isFinalRound = true;
 
             StartTimer();
         }
@@ -77,6 +81,14 @@ public class TimerTrigger : MonoBehaviour
 
         var dm = DialogueManagerIntegrated.Instance;
         if (!dm || !nodeOnTimeout) return;
-        dm.JumpToNode(nodeOnTimeout);
+
+        if (isFinalRound)
+        {
+            dm.JumpToNode(nodeOnFinalTimeout);
+        }
+        else
+        {
+            dm.JumpToNode(nodeOnTimeout);
+        }
     }
 }

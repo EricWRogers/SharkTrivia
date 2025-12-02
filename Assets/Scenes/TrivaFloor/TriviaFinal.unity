@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2eedf15120558a44943675108f90178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: e08770a954c3c644e955c2ebc8cb8156, type: 2}
+  conversation: {fileID: 11400000, guid: 9d8b93d6a17fd7745a15b81b6b971e2a, type: 2}
 --- !u!1 &321082179
 GameObject:
   m_ObjectHideFlags: 0
@@ -6937,11 +6937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641477418594199489, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
       propertyPath: difficulty
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1641477418594199489, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
       propertyPath: difficultyDebugMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4054880452131744966, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
       propertyPath: m_Name
@@ -8979,7 +8979,7 @@ PrefabInstance:
       objectReference: {fileID: 1278043293}
     - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
       propertyPath: totalTime
-      value: 90
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
       propertyPath: timeRunning
