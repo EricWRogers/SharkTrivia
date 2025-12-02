@@ -456,6 +456,8 @@ public class CipherDecode : MonoBehaviour
         {
             UpdateGameMode();
             changeGuessNum(additionalGuesses);
+            numGuesses = 0;
+            numCorrectGuesses = 0;
         }
     }
     
