@@ -1,12 +1,10 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class LevelManager : MonoBehaviour
 {
-    private static LevelManager Instance;
+    public static LevelManager Instance;
     public static bool GameIsPaused = false;
     public static bool allowPause = true;
     [SerializeField] public static string[] miniGameLevels = { "Bowling", "Temple Shark", "MINIGTeethCleaning", "SharkShootout" };
@@ -14,12 +12,19 @@ public class LevelManager : MonoBehaviour
     public Animator animator;
     static int oldMinigameNum = 0;
     static string oldSceneName;
+    int incrementSceneNum = 1;
+    public bool inMainLoop = true;
 
 /*if youre here because its not loading the right scene copy paste whichever you need
 to load the back stage do -- LevelManager.LoadBackStage();
 to load the main menu do -- LevelManager.LoadMainMenu();
 to load a Random MiniGame do -- LevelManager.LoadRandMiniGame();
 to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("SceneName");*/
+/// <summary>
+/// To set the MainLoop do 
+/// LevelManager.Instance.InMainLoop = true 
+/// before you call the return button
+/// </summary>
     void Awake()
     {
         if (Instance == null)
@@ -71,6 +76,30 @@ to load a specific scene not mentioned do -- LevelManager.LoadSpecificScene("Sce
     {
         StaticResume();
         Instance.StartCoroutine(Instance.LoadLevel(oldSceneName));
+    }
+    public void MainLoop()
+    {
+
+        if (incrementSceneNum == 1)
+        {
+            Debug.Log("Loading R2");
+            incrementSceneNum ++;
+            LoadSpecificScene("TriviaR2");
+        }
+        else if(incrementSceneNum == 2)
+        {
+            Debug.Log("Loading R3");
+            incrementSceneNum++;
+            LoadSpecificScene("TriviaR3");
+        }
+        else
+        {
+            Debug.Log("Loading BackStage");
+            incrementSceneNum = 0;
+            inMainLoop = false;
+            LoadBackStage();
+        }
+
     }
 
 

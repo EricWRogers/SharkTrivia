@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 202707441925526184}
+  inMainLoop: 1
 --- !u!95 &202707441925526184
 Animator:
   serializedVersion: 7
