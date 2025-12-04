@@ -81,7 +81,8 @@ public class BowlingManager : MonoBehaviour
         // Tracks pins knocked down for scoring
         for (int i = 0; i < pins.Length; i++)
         {
-            if (pins[i].transform.eulerAngles.z > 50 && pins[i].transform.eulerAngles.z < 500 && pins[i].activeSelf)
+            if (pins[i].transform.eulerAngles.z > 50 && pins[i].transform.eulerAngles.z < 500 && 
+                pins[i].transform.eulerAngles.x > 50 && pins[i].transform.eulerAngles.x < 500 && pins[i].activeSelf)
             {
                 pinsDownThisRound++;
                 pins[i].SetActive(false);

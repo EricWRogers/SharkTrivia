@@ -12,8 +12,8 @@ public class SliderScroller : MonoBehaviour
     public TMP_Text percentageText;
 
     [Header("Power Settings")]
-    public float minPower = 1f;
-    public float maxPower = 20f;
+    public float minPower = 0f;
+    public float maxPower = 10f;
 
     [Header("Ball Reference")]
     public Rigidbody bowlingBall;
@@ -27,7 +27,7 @@ public class SliderScroller : MonoBehaviour
         {
             superSlider.value += scrollInput * scrollSensitivity;
             superSlider.value = Mathf.Clamp(superSlider.value, superSlider.minValue, superSlider.maxValue);
-            percentageText.text = Mathf.RoundToInt(superSlider.value * 20f) + "%";
+            percentageText.text = Mathf.RoundToInt(superSlider.value * 100f) + "%";
         }
         UpdateColor();
     }
