@@ -947,7 +947,7 @@ MonoBehaviour:
   heart1: {fileID: 347040796}
   heart2: {fileID: 1702288994}
   heart3: {fileID: 838308401}
-  endgame: {fileID: 2823741684094042248}
+  endgame: {fileID: 1698415211}
 --- !u!1 &1326105026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,6 +1182,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 947336342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1698415211 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6485272681576834346, guid: 380de6384f14fa84ba06c7a77be4fbef, type: 3}
+  m_PrefabInstance: {fileID: 2823741684094042247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87b1964982ed4144b1159cac99e7dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1702288994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,7 +1991,7 @@ PrefabInstance:
     - target: {fileID: 6485272681576834346, guid: 380de6384f14fa84ba06c7a77be4fbef, type: 3}
       propertyPath: winScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1845458255}
     - target: {fileID: 6485272681576834346, guid: 380de6384f14fa84ba06c7a77be4fbef, type: 3}
       propertyPath: takingdamage
       value: 
