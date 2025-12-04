@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     
     public float Speed = 5f;
     public float life = 1f;
+    public GameObject particles;
 
     // SFX for bullet
     private string popSFXName = "Pop";
@@ -33,7 +34,7 @@ public class Bullet : MonoBehaviour
             Pop(); 
 
             // SFX
-                AudioManager.instance.PlaySFX(popSFXName);   
+               GameObject particle = Instantiate(particles);   
 
             Destroy(gameObject);
         } 

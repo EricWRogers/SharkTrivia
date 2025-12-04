@@ -39,6 +39,11 @@ public class TimerTrigger : MonoBehaviour
         }
     }
 
+    public void SpawnTimerEvent(bool _isFinalRound)
+    {
+        SpawnTimer(_isFinalRound);
+    }
+
     public void SpawnTimer(bool _isFinalRound, bool foo = true)
     {
         if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard || foo)
