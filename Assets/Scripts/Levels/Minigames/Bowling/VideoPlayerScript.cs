@@ -8,10 +8,11 @@ using System.Collections.Generic;
 public class VideoPlayerScript : MonoBehaviour
 {
     public VideoClip videoToPlay; 
-    public RawImage rawImageDisplay; //Call in the raw image set in the unity editor from the bowling screen 
-    public BowlingManager bowlingManager; // Call in bowling manager
+    public RawImage rawImageDisplay;
+    public BowlingManager bowlingManager;
     public CanvasPathFollwer canvasPathFollwer;
-    public float playDuration = 5f; // Set the desired duration in seconds
+    public RenderTexture renderTexture;
+    public float playDuration = 5f; // Desired duration in seconds for the video
     public List<VideoClip> videoClips; // List of Video Clips
     public int currentVideoIndex = 0;
     public bool isPlaying = false;
@@ -60,12 +61,17 @@ public class VideoPlayerScript : MonoBehaviour
         // Clear the RenderTexture when the object is disabled
         if (isPlaying == false)
         {
-            rawImageDisplay.gameObject.SetActive(false);
-            GL.Clear(true, true, Color.black);
-            RenderTexture.active = null;
+            ClearOutRenderTexture(renderTexture);
             Debug.Log("RenderTexture cleared.");
             canvasPathFollwer.ResetPath();
         }
+    }
+    public void ClearOutRenderTexture(RenderTexture renderTexture)
+    {
+        RenderTexture rt = RenderTexture.active;
+        RenderTexture.active = renderTexture;
+        GL.Clear(true, true, Color.clear);
+        RenderTexture.active = rt;
     }
 }
 
