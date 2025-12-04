@@ -5,10 +5,11 @@ public class TimerTrigger : MonoBehaviour
     public GameObject timerM;
     Timer timer;
 
-    bool timeHasStarted;
     bool isTimeUp;
+    bool isFinalRound;
 
     public DNode nodeOnTimeout;
+    public DNode nodeOnFinalTimeout;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -28,23 +29,28 @@ public class TimerTrigger : MonoBehaviour
         if (!isTimeUp)
         {
             //Debug.Log("Time has begun");
+            //Debug.Log("time reamaining:" + timer.timeRemaining);
 
-            if (!timer.timeRunning)
-            {
+            if (timer.timeRemaining <= 0)
+            { 
                 TimeUp();
                 isTimeUp = true;
             }
         }
     }
 
-    public void SpawnTimer(bool foo = true)
+    public void SpawnTimer(bool _isFinalRound, bool foo = true)
     {
         if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard || foo)
         {
+            gameObject.SetActive(true);
             Instantiate(this.gameObject);
+            
 
             timerM = GameObject.Find("TimeManager");
             timer = timerM.GetComponent<Timer>();
+
+            if (_isFinalRound) isFinalRound = true;
 
             StartTimer();
         }
@@ -52,7 +58,7 @@ public class TimerTrigger : MonoBehaviour
 
     public void StartTimer()
     {
-        Debug.Log("Hello! I have been spawned!");
+        Debug.Log("Hello! I have been begun!");
 
         timer.timeRunning = true;  
     }
@@ -61,7 +67,8 @@ public class TimerTrigger : MonoBehaviour
     {
         if (CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard || foo)
         {
-            Debug.Log("Goodbye! I have been stopped!");
+            Debug.Log("Goodbye! I have been stopped!");;
+
             timer.timeRunning = false;
         }
     }
@@ -74,6 +81,14 @@ public class TimerTrigger : MonoBehaviour
 
         var dm = DialogueManagerIntegrated.Instance;
         if (!dm || !nodeOnTimeout) return;
-        dm.JumpToNode(nodeOnTimeout);
+
+        if (isFinalRound)
+        {
+            dm.JumpToNode(nodeOnFinalTimeout);
+        }
+        else
+        {
+            dm.JumpToNode(nodeOnTimeout);
+        }
     }
 }

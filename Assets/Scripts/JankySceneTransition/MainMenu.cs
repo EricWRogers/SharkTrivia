@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void TheMagicButton()
     {
-        LevelManager.LoadSpecificScene("TriviaR1"); //IntroCutscene
+        LevelManager.LoadSpecificScene("IntroCutscene"); //IntroCutscene
     }
 
     public void TheLoserButton()

@@ -4,22 +4,28 @@ using UnityEngine.UI;
 public class GuessLetterMessager : MonoBehaviour
 {
     public ButtonRename buttonRename;
-    public Translator translator;
     public string letter;
     public GameObject englishAlphabet;
     public GameObject guessLetter;
-   // public GameObject unassignLetter;
-    public CanvasGroup gLButtons;
-    public Button unassButton;
-    public char unassCipherLetter;
+
+    public static char mostRecentChar;
+
+
+    // void Awake()
+    // {
+    //     OnEnter(); // this is very jank, ugly hack - Scott
+    // }
 
     public void Open()
     {
+        mostRecentChar = letter.ToLower().ToCharArray()[0];
         buttonRename.Open(gameObject.transform.GetChild(0).gameObject, letter);
     }
 
-    public void OnEnable()
+    public void OnJournalEnter()
     {
+        
+        
         bool maxGuessesIncurred = CipherDecode.instance.numGuesses == CipherDecode.instance.maxGuesses || CipherDecode.instance.numCorrectGuesses == CipherDecode.instance.maxCorrectGuesses;
 
         if (CipherDecode.instance.confirmedCharAssignments.ContainsValue(letter.ToLower()[0]) || maxGuessesIncurred)
@@ -48,16 +54,19 @@ public class GuessLetterMessager : MonoBehaviour
         guessLetter.SetActive(true);
         //Take letter as enlgih key from GLM
 
-        Debug.Log(CipherDecode.instance.charAssignments[letter.ToLower().ToCharArray()[0]]);
-        Debug.Log(letter.ToLower().ToCharArray()[0]);
+        // Debug.Log(CipherDecode.instance.charAssignments[letter.ToLower().ToCharArray()[0]]);
+        // Debug.Log(letter.ToLower().ToCharArray()[0]);
 
-        if (CipherDecode.instance.charAssignments[letter.ToLower().ToCharArray()[0]] != '~')
+        int letterIndex = letter.ToLower().ToCharArray()[0] - 'a';
+
+        if (CipherDecode.instance.unassButtonsToEnable[letterIndex])
+        //CipherDecode.instance.charAssignments.ContainsKey(CipherDecode.instance.charAssignments[CipherDecode.instance.charAssignments[letter.ToLower().ToCharArray()[0]]]) != '~'
         {
 
-            if (gLButtons != null)
-            {
-                gLButtons.interactable = false;
-            }
+            // if (gLButtons != null)
+            // {
+            //     gLButtons.interactable = false;
+            // }
             GameObject.Find("Unassign").GetComponent<Button>().interactable = true;
             Debug.Log("on?");
 
@@ -70,7 +79,7 @@ public class GuessLetterMessager : MonoBehaviour
         {
             GameObject.Find("Unassign").GetComponent<Button>().interactable = false;
             //Debug.Log(unassButton.gameObject.name);
-            gLButtons.interactable = true;
+            //gLButtons.interactable = true;
         }
 
 

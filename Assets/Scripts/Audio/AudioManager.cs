@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class Sound
@@ -12,7 +14,6 @@ public class Sound
     [Range(0f, 3f)]
     public float pitch = 1f;
 }
-
 
 public class AudioManager : MonoBehaviour
 {
@@ -26,19 +27,24 @@ public class AudioManager : MonoBehaviour
     public AudioSource sfxSource;
     public Sound[] sfxClips;
 
+    [Header("UI Buttons")]
+    [SerializeField] private string buttonClickSFX = "ButtonClick";
+
+    // Track buttons that already have listeners
+    private readonly List<Button> registeredButtons = new List<Button>();
+
     private void Awake()
     {
-        // Singleton
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            return;
         }
 
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded -= OnSceneLoaded; // prevents double registration
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -51,50 +57,77 @@ public class AudioManager : MonoBehaviour
             case "MainMenu":
                 PlayMusic("MenuTheme");
                 break;
-            case "Level1":
-                PlayMusic("Level1Theme");
+            case "IntroCutscene":
+                PlayMusic("CutsceneTheme");
+                break;
+            case "TriviaR1":
+                PlayMusic("TestTriviaTheme");
+                break;
+            case "TriviaR2":
+                PlayMusic("TestTriviaTheeme");
+                break;
+            case "TestTriviaLimitedCorrect":
+                PlayMusic("TriviaLimitedCorrectTheme");
+                break;
+            case "TestTriviaLimitedGuesses":
+                PlayMusic("TriviaLimitedGuessesTheme");
+                break;
+            case "TestTriviaTimer":
+                PlayMusic("TriviaTimerTheme");
                 break;
             case "BackStage":
                 PlayMusic("BackStageTheme");
                 break;
-
             case "Bowling":
                 PlayMusic("BowlingTheme");
                 break;
-
             case "MINIGTeethCleaning":
                 PlayMusic("TeethCleaningTheme");
                 break;
-
+            case "SharkShootout":
+                PlayMusic("SharkShootoutTheme");
+                break;
+            case "Temple Shark":
+                PlayMusic("TempleSharkTheme");
+                break;
             default:
                 StopMusic();
                 break;
+        }
+
+        // Register all buttons that exist at scene load
+        RegisterAllButtons();
+    }
+
+    private void Update()
+    {
+        // Dynamically register new buttons that appear during gameplay
+        Button[] buttons = FindObjectsOfType<Button>();
+        foreach (Button btn in buttons)
+        {
+            if (registeredButtons.Contains(btn))
+                continue;
+
+            // Exclude prefabs named "EnterJournal" or "Exit"
+            if (btn.gameObject.name == "EnterJournal" || btn.gameObject.name == "Exit")
+                continue;
+
+            btn.onClick.AddListener(() => PlaySFX(buttonClickSFX));
+            registeredButtons.Add(btn);
         }
     }
 
     public void PlayMusic(string name)
     {
-        Debug.Log("Play that funky music! We're playing: " + name);
-
-
         Sound sound = System.Array.Find(musicClips, s => s.name == name);
         if (sound != null)
         {
-            // Always switch music when a scene loads
             musicSource.Stop();
             musicSource.clip = sound.clip;
             musicSource.volume = sound.volume;
             musicSource.pitch = sound.pitch;
             musicSource.loop = true;
             musicSource.Play();
-            if (musicSource.loop == true)
-            {
-                Debug.LogWarning("Looping");
-            }
-            else
-            { 
-                Debug.LogWarning("Not Looping"); 
-            }
         }
         else
         {
@@ -102,7 +135,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // ⬅ ADDED: new method to stop music
     public void StopMusic()
     {
         if (musicSource.isPlaying)
@@ -129,6 +161,23 @@ public class AudioManager : MonoBehaviour
         if (sfxSource.isPlaying)
         {
             sfxSource.Stop();
+        }
+    }
+
+    // Register all buttons present at scene load, excluding certain prefabs
+    private void RegisterAllButtons()
+    {
+        Button[] buttons = FindObjectsOfType<Button>();
+        foreach (Button btn in buttons)
+        {
+            if (registeredButtons.Contains(btn))
+                continue;
+
+            if (btn.gameObject.name == "EnterJournal" || btn.gameObject.name == "Exit")
+                continue;
+
+            btn.onClick.AddListener(() => PlaySFX(buttonClickSFX));
+            registeredButtons.Add(btn);
         }
     }
 }

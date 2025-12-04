@@ -1,36 +1,93 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ToolManager : MonoBehaviour
 {
-    public GameObject toothbrush;
-    public GameObject drill;
+    
+    [Header("Tool GameObjects")]
+    
+    public GameObject toothbrushToolObject;
+    public GameObject pickToolObject;
+    public GameObject drillToolObject;
 
-    private GameObject currentTool;
+    
+    public static string ActiveToolName { get; private set; } 
+    private const string ToothbrushName = "Toothbrush";
+    private const string PickName = "Pick";
+    private const string DrillName = "Drill";
 
-    void Start()
+     
+    private Dictionary<string, GameObject> toolObjects;
+
+
+    void Awake()
     {
+   
+        toolObjects = new Dictionary<string, GameObject>
+        {
+            { ToothbrushName, toothbrushToolObject },
+            { PickName, pickToolObject },
+            { DrillName, drillToolObject }
+        };
+
         
-        SelectTool(toothbrush);
+        ActiveToolName = ToothbrushName;
+    
+        SetActiveTool(ActiveToolName); 
     }
 
+  
+    public static void SetActiveTool(string toolName)
+    {
+    
+        ToolManager instance = FindObjectOfType<ToolManager>();
+        if (instance == null) return; 
+
+        if (ActiveToolName != toolName)
+        {
+            
+            if (instance.toolObjects.ContainsKey(ActiveToolName))
+            {
+                instance.toolObjects[ActiveToolName].SetActive(false);
+            }
+
+            
+            ActiveToolName = toolName;
+
+            
+            if (instance.toolObjects.ContainsKey(ActiveToolName))
+            {
+                instance.toolObjects[ActiveToolName].SetActive(true);
+            }
+            
+            Debug.Log("Tool switched to: " + ActiveToolName);
+        } 
+        else if (!instance.toolObjects[toolName].activeInHierarchy)
+        {
+            
+             instance.toolObjects[toolName].SetActive(true);
+        }
+    }
+
+    
     void Update()
     {
-        // switch tools using 1 or 2
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            SelectTool(toothbrush);
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            SelectTool(drill);
-    }
-
-    void SelectTool(GameObject tool)
-    {
         
-        toothbrush.SetActive(false);
-        drill.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        {
+            SetActiveTool(ToothbrushName); 
+        }
+
+         
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) 
+        {
+            SetActiveTool(PickName); 
+        }
 
         
-        tool.SetActive(true);
-        currentTool = tool;
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) 
+        {
+            SetActiveTool(DrillName); 
+        }
     }
 }

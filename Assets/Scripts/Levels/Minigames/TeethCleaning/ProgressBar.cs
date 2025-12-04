@@ -23,6 +23,7 @@ public class ProgressBar : MonoBehaviour
     public SpriteRenderer toothBrush;
     public SpriteRenderer background;
     public SpriteRenderer drill;
+    
 
     //connecting to win screen
     public WinScreen winScreen;
@@ -64,7 +65,7 @@ public class ProgressBar : MonoBehaviour
         //Debug.Log("Mouse world position " + mouseWorldPos);
         if (Input.GetMouseButtonDown(0))
         {
-            if (IsMouseOver(mouseWorldPos))
+            if (IsMouseOver(mouseWorldPos)&& IsToothbrushActive())
             {
                 isSwiping = true;
                 mousePosition = mouseWorldPos;
@@ -81,7 +82,7 @@ public class ProgressBar : MonoBehaviour
             float distance = Vector2.Distance(mousePosition, mouseWorldPos);
             //Debug.Log($"LastPos: {mousePosition} CurrentPos: {mouseWorldPos} Distance: {distance}");
             //Debug.Log("Distance moved " + distance);
-            if(distance > 0.4f)
+            if(distance > 0.2f)
             {
                 RegisterSwipe();
                 mousePosition = mouseWorldPos;
@@ -167,16 +168,26 @@ public class ProgressBar : MonoBehaviour
             //This gets called when the bar reaches 100% and it detects a swipe
             //TotalScore also gets called in WinScreen.DisplayWinResults so it was doubling the score
         }
-        if(Holes.holesRemaining<=0)
-        {
-            if (timer != null)
-                timer.StopTimer();
-
-            //display winscreen when minigame is over
-            //winScreen.ShowWinScreen(); this just turns the WinScreen on
-            //WinScreen.DisplayWinResults displays the updated scoreboard
-            winScreen.DisplayWinResults(ScoreManager.instance.score);
-        }
+        Win();
     }
+   private bool IsToothbrushActive()
+    {
+        return ToolManager.ActiveToolName == "Toothbrush";
+    }
+
+    public void Win()
+{
+    bool cleaned = swipeCount >= swipesAmount;
+    bool noHoles = Holes.holesRemaining <= 0;
+    bool noDirt = Dirt.dirtRemaining <= 0;
+
+    if (cleaned && noHoles && noDirt)
+    {
+        timer?.StopTimer();
+        winScreen.DisplayWinResults();
+    }
+}
+
+
 
 }

@@ -2,24 +2,48 @@ using UnityEngine;
 
 public class Dirt : MonoBehaviour
 {
+    public static int dirtRemaining = 0;
 
     //public SpriteRenderer dirt;
+    void Start(){
+        dirtRemaining++;
+        var col = GetComponent<Collider2D>();
+        if (col is PolygonCollider2D poly)
+            poly.SetPath(0, poly.GetPath(0)); 
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Toothbrush"))      //when can change the tag to whateven tool we need... possably a "pick"
+        
+        //if (other.CompareTag("Toothbrush"))      //when can change the tag to whateven tool we need... possably a "pick"
         {
             //Debug.Log("touching");
-            if(Input.GetMouseButtonDown(0)){
+            //if(Input.GetMouseButtonDown(0)){
                 //Debug.Log("clicked");
-                ScoreManager.instance.AddPoint();
+                //ScoreManager.instance.AddPoint();
 
-                RemoveTween();
+                //RemoveTween();
                 
-            }
+           // }
             // Destroy(gameObject);
 
         }
+    }
+    void OnDestroy(){
+        dirtRemaining--;
+        ProgressBar pb = FindFirstObjectByType<ProgressBar>();
+        if (pb != null)
+            pb.Win();
+
+    }
+    void OnMouseDown()
+    {
+        
+        if (ToolManager.ActiveToolName == "Pick")
+        {
+            Destroy(gameObject);
+        }
+    
     }
 
     void RemoveTween(){

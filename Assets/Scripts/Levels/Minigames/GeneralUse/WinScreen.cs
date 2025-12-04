@@ -4,9 +4,18 @@ using UnityEngine.SceneManagement;
 using TMPro;
 
 // winScreen.DisplayWinResults();
+//just turn off the object in the scene (the prefab should automatically be off)
 
 ///////////// TO USE THE WIN SCREEN (it also works as a lose screen) /////////////
-// winScreen.DisplayWinResults(ScoreManager.instance.score);
+// winScreen.DisplayWinResults();
+//just turn off the object in the scene (the prefab should automatically be off)
+
+//////////// Win screen (lose screen) with the timer ////////////
+// go to the "time manager" game object in the editor
+// find Time out() 
+// click add (+)
+// drag the win screen into the space under the "Runtime Only" drop down
+// select "WinScreen.DisplayLoseResults" in the second dropdown menu
 
 public class WinScreen : MonoBehaviour
 {
@@ -22,15 +31,10 @@ public class WinScreen : MonoBehaviour
     public TMP_Text winTime;
     public TMP_Text winStat;
 
-    void Start(){
-        HideWinScreen();
-        //just turn off the object in the scene (the prefab should automatically be off)
-        //idk why but this stops the screen from turning on AT ALL
-    }
 
-    public void DisplayWinResults(int points)
+    public void DisplayWinResults()
     {
-        //int points = ScoreManager.instance.score;
+        int points = ScoreManager.instance.score;
 
         if (points >= winThreshold)
         {
@@ -40,7 +44,7 @@ public class WinScreen : MonoBehaviour
         if (points < winThreshold)
         {
             winText.text = "you lose!";
-            //TotalScore.instance.PlayerLost();
+            TotalScore.instance.PlayerLost();
         }
 
         winTime.text = "Time - " + timer.GetFormattedTime();
@@ -56,12 +60,12 @@ public class WinScreen : MonoBehaviour
 
 
     public void DisplayLoseResults()
-    {    //whenever the timer runs out
-        TotalScore.instance.PlayerLost();
+    {   //whenever the timer runs out
+        //TotalScore.instance.PlayerLost();
         winText.text = "you lose!";
 
         winTime.text = "Out of Time!";
-        winStat.text = "Score - " + TotalScore.instance.totalScore;
+        winStat.text = "";
         //winScreen.SetActive(true);
         ShowWinScreen();    //show the win screen when the minigame is over
 
@@ -69,15 +73,20 @@ public class WinScreen : MonoBehaviour
 
     public void ReturnButton()
     {
-        LevelManager.StaticResume();
-        LevelManager.LoadBackStage();   //temp for now
-
+        if (LevelManager.Instance.inMainLoop)
+        {
+            LevelManager.Instance.MainLoop();
+        }
+        else
+        {
+            LevelManager.LoadBackStage();
+        }
         //send player back to what ever scene they entered from.
     }
 
     public void HideWinScreen()
     {   //hide the win screen
-        winScreen.SetActive(false);
+        //winScreen.SetActive(false);
     }
     public void ShowWinScreen()
     {   //show the win screen

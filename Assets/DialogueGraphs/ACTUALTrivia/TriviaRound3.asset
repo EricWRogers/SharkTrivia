@@ -14,14 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Host
   portrait: {fileID: 9121839293005398823, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
-  speakerLine: That's right! And your's is particularly bright!
-  autoProgress: 0
-  autoDelay: 0.75
+  speakerLine: That's right! And your's is particularly large! Next question!
+  autoProgress: 1
+  autoDelay: 3
   nextIfNoChoices: {fileID: -4579287456020053817}
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-4579287456020053817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,10 +126,30 @@ MonoBehaviour:
   speakerName: Host
   portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
   speakerLine: That concludes our lightning round. Thank you for playing!
-  autoProgress: 0
-  autoDelay: 3
+  autoProgress: 1
+  autoDelay: 5
   nextIfNoChoices: {fileID: 0}
-  choices: []
+  choices:
+  - choiceText: Continue...
+    next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9125416981288732490, guid: 778a63add9d9de44bb114fd3ca769590, type: 3}
+          m_TargetAssemblyTypeName: RandomMinigameCall, Assembly-CSharp
+          m_MethodName: CallRandomLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   onEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -136,14 +168,26 @@ MonoBehaviour:
   speakerName: Host
   portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: I'm sorry, but that's incorrect. Not all sharks are cold blooded,
-    and many different species do live in the artic.
-  autoProgress: 0
-  autoDelay: 0.75
+    and many different species do live in the artic. Better luck next time!
+  autoProgress: 1
+  autoDelay: 5
   nextIfNoChoices: {fileID: -3459772486641571436}
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: TakePoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1547385135107533431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,13 +203,37 @@ MonoBehaviour:
   speakerName: Host
   portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: That's correct! Great job!
-  autoProgress: 0
-  autoDelay: 0.75
+  autoProgress: 1
+  autoDelay: 3
   nextIfNoChoices: {fileID: -3459772486641571436}
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: StopTimer
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1477008953252460416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,14 +248,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Host
   portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
-  speakerLine: 'Well, maybe you don''t, but other sharks typically do. '
-  autoProgress: 0
-  autoDelay: 0.75
+  speakerLine: Well, maybe you don't, but other sharks typically do. Next question!
+  autoProgress: 1
+  autoDelay: 3
   nextIfNoChoices: {fileID: -4579287456020053817}
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: TakePoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1408924202358289169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +322,7 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
   speakerLine: Welcome back folks, I hope we've been having fun!
   autoProgress: 1
-  autoDelay: 1
+  autoDelay: 5
   nextIfNoChoices: {fileID: 6353975212905002086}
   choices: []
   onEnter:
@@ -270,7 +350,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6174fe4a7d4998478b926a21e26dff7, type: 3}
-  m_Name: TriviaTestLimitedGuesses
+  m_Name: TriviaRound3
   m_EditorClassIdentifier: 
   entry: {fileID: -828058119201182623}
 --- !u!114 &1886794867248464250
@@ -294,7 +374,7 @@ MonoBehaviour:
   choices:
   - choiceText: True
     next: {fileID: 3432019784118387969}
-    isCorrect: 0
+    isCorrect: 1
     isTriviaQuestion: 1
     loadSceneOnSelect: 
     onSelected:
@@ -302,7 +382,7 @@ MonoBehaviour:
         m_Calls: []
   - choiceText: False
     next: {fileID: 3878817994781068419}
-    isCorrect: 1
+    isCorrect: 0
     isTriviaQuestion: 1
     loadSceneOnSelect: 
     onSelected:
@@ -310,7 +390,19 @@ MonoBehaviour:
         m_Calls: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: SpawnTimer
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3432019784118387969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,15 +417,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Host
   portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
-  speakerLine: I'm sorry to have to tell you this, but you are in fact, a spineless
-    creature. Better luck on the next question!
-  autoProgress: 0
-  autoDelay: 0.75
+  speakerLine: 'That is correct! Next question:'
+  autoProgress: 1
+  autoDelay: 5
   nextIfNoChoices: {fileID: -4147010288634922731}
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3516683403587056133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,10 +451,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Host
   portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
-  speakerLine: Get ready! Get steady! Because you only have a limited number of letters
-    to select before you're done!
+  speakerLine: 'Get ready! Get steady! Because this is a lightning round!
+
+'
   autoProgress: 1
-  autoDelay: 3
+  autoDelay: 5
   nextIfNoChoices: {fileID: -1408924202358289169}
   choices: []
   onEnter:
@@ -371,14 +475,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Host
   portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
-  speakerLine: 'That is correct! Next question:'
-  autoProgress: 0
-  autoDelay: 0
+  speakerLine: I'm sorry to have to tell you this, but you do, infact, have a spine.
+    Next question!
+  autoProgress: 1
+  autoDelay: 3
   nextIfNoChoices: {fileID: -4147010288634922731}
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: TakePoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6274995789337450677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +512,7 @@ MonoBehaviour:
   portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
   speakerLine: Wonderful! Let's begin!
   autoProgress: 1
-  autoDelay: 1
+  autoDelay: 5
   nextIfNoChoices: {fileID: 1886794867248464250}
   choices: []
   onEnter:
@@ -415,10 +532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Host
   portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
-  speakerLine: Now this next part is going to be a lighting round, so you're going
-    to be answering more than one question.
+  speakerLine: 'Now it''s time to try something different:'
   autoProgress: 1
-  autoDelay: 2
+  autoDelay: 5
   nextIfNoChoices: {fileID: 3516683403587056133}
   choices: []
   onEnter:

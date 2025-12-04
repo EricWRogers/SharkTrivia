@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rn1_Child1
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 9121839293005398823, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
   speakerLine: Let's hope that our contestant here is warmed up and ready to go,
     because we're raising the stakes and making this one worth even more points!
   autoProgress: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
   m_Name: Rn11
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
   speakerLine: Let's move on to our next minigame!
   autoProgress: 0
   autoDelay: 0.75
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: Rn4
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
   speakerLine: Well! Let's Begin!
   autoProgress: 1
   autoDelay: 3
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: Rn9
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
   speakerLine: Well that was fun, wasn't it folks!
   autoProgress: 1
   autoDelay: 5
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: Rn7
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
   speakerLine: That is correct! You would know, wouldn't you Mr. Mako?
   autoProgress: 1
   autoDelay: 5
@@ -130,7 +130,31 @@ MonoBehaviour:
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: StopTimer
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +181,7 @@ MonoBehaviour:
   m_Name: Rn8
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: Haha, good one! Unfortunately however, it is wrong.
   autoProgress: 1
   autoDelay: 5
@@ -165,7 +189,31 @@ MonoBehaviour:
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: TakePoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: StopTimer
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1628653037141088385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +227,7 @@ MonoBehaviour:
   m_Name: Rn6
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: I'm afraid that your is incorrect! Better luck next time!
   autoProgress: 1
   autoDelay: 5
@@ -187,7 +235,31 @@ MonoBehaviour:
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3773535178280251053, guid: 5f7c49aea58e05f4b9e32f1b4508e546, type: 3}
+        m_TargetAssemblyTypeName: DialoguePointsChange, Assembly-CSharp
+        m_MethodName: TakePoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: StopTimer
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1732500077030790063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +273,7 @@ MonoBehaviour:
   m_Name: Rn10
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 9121839293005398823, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
   speakerLine: Let's give our contestant a round of applause folks!
   autoProgress: 1
   autoDelay: 5
@@ -223,7 +295,7 @@ MonoBehaviour:
   m_Name: Rn2
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
   speakerLine: Do you have anything you'd like to tell the audience before we begin?
   autoProgress: 0
   autoDelay: 0.75
@@ -261,7 +333,7 @@ MonoBehaviour:
   m_Name: Rn3
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 9121839293005398823, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
   speakerLine: Woah, haha! Well there it is folks, the honest truth! Haha, we have
     fun here....
   autoProgress: 1
@@ -284,7 +356,7 @@ MonoBehaviour:
   m_Name: Rn2_Child1
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 9121839293005398823, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
   speakerLine: Aw, shucks. I'm blushing!
   autoProgress: 1
   autoDelay: 5
@@ -328,7 +400,7 @@ MonoBehaviour:
   m_Name: Rn5
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
   speakerLine: What's the fastest species of shark?
   autoProgress: 0
   autoDelay: 0.75
@@ -368,4 +440,16 @@ MonoBehaviour:
         m_Calls: []
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: SpawnTimer
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
