@@ -13,9 +13,8 @@ public class TriggerSceneMenu : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        menu.SetActive(false);
-        if (menu == null){
-            Debug.Log("KYS");
+        if (menu != null){
+            menu.SetActive(false);
         }
     }
 

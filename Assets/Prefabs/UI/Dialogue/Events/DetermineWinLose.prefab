@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4054880452131744966
+--- !u!1 &125139038428465968
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,55 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1252759965034531008}
-  - component: {fileID: 1641477418594199489}
+  - component: {fileID: 3808086167042975178}
+  - component: {fileID: 4170119745221949520}
   m_Layer: 0
-  m_Name: usrDecode
+  m_Name: DetermineWinLose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1252759965034531008
+--- !u!4 &3808086167042975178
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4054880452131744966}
+  m_GameObject: {fileID: 125139038428465968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 541.19684, y: 243.809, z: -2.8553605}
+  m_LocalPosition: {x: 875.2738, y: 467.531, z: 2.9481187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1641477418594199489
+--- !u!114 &4170119745221949520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4054880452131744966}
+  m_GameObject: {fileID: 125139038428465968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111928fdb025f3d4a939385bb20458a8, type: 3}
+  m_Script: {fileID: 11500000, guid: d2e5d8af926dbbb46b392046d1b06d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charAssignmentDisplay: []
-  secondOrderDisplay: []
-  confirmedAssignmentDisplay: []
-  encoding: 1
-  isRandomizing: 0
-  difficulty: 0
-  difficultyDebugMode: 0
-  isCountingGuesses: 0
-  maxGuesses: 6
-  numGuesses: 0
-  isLimitingCorrectness: 0
-  maxCorrectGuesses: 4
-  numCorrectGuesses: 0
-  additionalGuesses: 1
-  numOfRandLetters: 5
-  unassButtonsToEnable: 
+  nodeToWin: {fileID: 6183376929289672683, guid: a598996bf7dad4a48a302e2971611b42, type: 2}
+  nodeToLose: {fileID: 11159848865376017, guid: 59042ff384a113844a4118261fc764f8, type: 2}

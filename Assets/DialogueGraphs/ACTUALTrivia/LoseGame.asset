@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-318979925433594114
+--- !u!114 &-6366330290090040603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
-  m_Name: Rn1
+  m_Name: Rn2
   m_EditorClassIdentifier: 
   speakerName: Host
   portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
-  speakerLine: I'm so sorry, your time is up!
+  speakerLine: I hope that the next time someone scoops you out of the water, you
+    have better luck!
   autoProgress: 0
-  autoDelay: 3
-  nextIfNoChoices: {fileID: 7337893223161568243}
+  autoDelay: 5
+  nextIfNoChoices: {fileID: 0}
   choices: []
   onEnter:
     m_PersistentCalls:
@@ -32,10 +33,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6174fe4a7d4998478b926a21e26dff7, type: 3}
-  m_Name: TimesUpFinal
+  m_Name: LoseGame
   m_EditorClassIdentifier: 
-  entry: {fileID: 7337893223161568243}
---- !u!114 &7337893223161568243
+  entry: {fileID: 11159848865376017}
+--- !u!114 &11159848865376017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,28 +46,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
-  m_Name: Rn2
+  m_Name: Rn1
   m_EditorClassIdentifier: 
   speakerName: Host
-  portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
-  speakerLine: 'Don''t fret though, you could still have enough points to win! Let''s
-    look at the score:'
-  autoProgress: 0
-  autoDelay: 0.75
-  nextIfNoChoices: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
+  speakerLine: I'm sorry to say dear guest... But you Lost!
+  autoProgress: 1
+  autoDelay: 3
+  nextIfNoChoices: {fileID: -6366330290090040603}
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4170119745221949520, guid: 4999d86622cada5428c1478bb438f86d, type: 3}
-        m_TargetAssemblyTypeName: DetermineWinLose, Assembly-CSharp
-        m_MethodName: DetermineScore
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 200
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

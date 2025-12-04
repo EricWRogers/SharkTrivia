@@ -2,8 +2,15 @@ using UnityEngine;
 
 public class Dirt : MonoBehaviour
 {
+    public static int dirtRemaining = 0;
 
     //public SpriteRenderer dirt;
+    void Start(){
+        dirtRemaining++;
+        var col = GetComponent<Collider2D>();
+        if (col is PolygonCollider2D poly)
+            poly.SetPath(0, poly.GetPath(0)); 
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,6 +28,13 @@ public class Dirt : MonoBehaviour
             // Destroy(gameObject);
 
         }
+    }
+    void OnDestroy(){
+        dirtRemaining--;
+        ProgressBar pb = FindFirstObjectByType<ProgressBar>();
+        if (pb != null)
+            pb.Win();
+
     }
     void OnMouseDown()
     {

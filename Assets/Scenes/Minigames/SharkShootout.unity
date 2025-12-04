@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c508a735dc834547b7d913458a8b6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endgame: {fileID: 0}
+  endgame: {fileID: 1346186778}
   flashDuration: 0.2
   flashCount: 3
 --- !u!1 &165631096
@@ -947,7 +947,7 @@ MonoBehaviour:
   heart1: {fileID: 347040796}
   heart2: {fileID: 1702288994}
   heart3: {fileID: 838308401}
-  endgame: {fileID: 2823741684094042248}
+  endgame: {fileID: 1698415211}
 --- !u!1 &1326105026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1084,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326105026}
   m_CullTransparentMesh: 1
+--- !u!114 &1346186778 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6485272681576834346, guid: 380de6384f14fa84ba06c7a77be4fbef, type: 3}
+  m_PrefabInstance: {fileID: 2823741684094042247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87b1964982ed4144b1159cac99e7dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1628271498 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
@@ -1182,6 +1193,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 947336342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1698415211 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6485272681576834346, guid: 380de6384f14fa84ba06c7a77be4fbef, type: 3}
+  m_PrefabInstance: {fileID: 2823741684094042247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87b1964982ed4144b1159cac99e7dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1702288994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,7 +1674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
       propertyPath: timeOut.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
       propertyPath: timeOut.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1980,7 +2002,7 @@ PrefabInstance:
     - target: {fileID: 6485272681576834346, guid: 380de6384f14fa84ba06c7a77be4fbef, type: 3}
       propertyPath: winScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1845458255}
     - target: {fileID: 6485272681576834346, guid: 380de6384f14fa84ba06c7a77be4fbef, type: 3}
       propertyPath: takingdamage
       value: 
