@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDamping: 3
   m_AngularDamping: 0.05
   m_GravityScale: 2
@@ -175,4 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb7818bc8e003541ae3ed613be85be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life: 3
+  objectToDestroy: {fileID: 0}

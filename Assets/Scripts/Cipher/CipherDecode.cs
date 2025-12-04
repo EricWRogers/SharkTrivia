@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine.UI;
-using Unity.VisualScripting;
 
 //Originally Programmed by Samuel (Scott)
 
@@ -357,7 +355,10 @@ public class CipherDecode : MonoBehaviour
 
         // clearing the default letters
         for(char i = 'a'; i < 'z'; i++)
+        {
             confirmedCharAssignments[i] = '~';
+            charAssignments[i] = '~';
+        }
 
         switch (difficulty)
         {
@@ -456,6 +457,8 @@ public class CipherDecode : MonoBehaviour
         {
             UpdateGameMode();
             changeGuessNum(additionalGuesses);
+            numGuesses = 0;
+            numCorrectGuesses = 0;
         }
     }
     
