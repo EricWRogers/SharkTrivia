@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &21483568 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1641477418594199489, guid: 2e8f7f9649fc14ddeb8fdbaeb0d49b29, type: 3}
-  m_PrefabInstance: {fileID: 1356395258}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111928fdb025f3d4a939385bb20458a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &101543346
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,9 +278,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 21483568}
-        m_TargetAssemblyTypeName: CipherDecode, Assembly-CSharp
-        m_MethodName: ChangeGameMode
+      - m_Target: {fileID: 122982191}
+        m_TargetAssemblyTypeName: ChangeDifficulty, Assembly-CSharp
+        m_MethodName: ChangeMode
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -339,6 +328,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104113572}
   m_CullTransparentMesh: 1
+--- !u!1 &122982190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122982192}
+  - component: {fileID: 122982191}
+  m_Layer: 0
+  m_Name: DifficultyHelper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &122982191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122982190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5729e6b73c502f641a95630c1f7c2393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &122982192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122982190}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 413.45325, y: 201.4393, z: -0.018366568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &190526004
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,9 +951,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 21483568}
-        m_TargetAssemblyTypeName: CipherDecode, Assembly-CSharp
-        m_MethodName: ChangeGameMode
+      - m_Target: {fileID: 122982191}
+        m_TargetAssemblyTypeName: ChangeDifficulty, Assembly-CSharp
+        m_MethodName: ChangeMode
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1062,9 +1095,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 21483568}
-        m_TargetAssemblyTypeName: CipherDecode, Assembly-CSharp
-        m_MethodName: ChangeGameMode
+      - m_Target: {fileID: 122982191}
+        m_TargetAssemblyTypeName: ChangeDifficulty, Assembly-CSharp
+        m_MethodName: ChangeMode
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5072,3 +5105,4 @@ SceneRoots:
   - {fileID: 988771256}
   - {fileID: 1356395258}
   - {fileID: 5402031474171512349}
+  - {fileID: 122982192}
