@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine.UI;
-using Unity.VisualScripting;
 
 //Originally Programmed by Samuel (Scott)
 

@@ -73,9 +73,14 @@ public class WinScreen : MonoBehaviour
 
     public void ReturnButton()
     {
-        LevelManager.StaticResume();
-        LevelManager.LoadBackStage();   //temp for now
-
+        if (LevelManager.Instance.inMainLoop)
+        {
+            LevelManager.Instance.MainLoop();
+        }
+        else
+        {
+            LevelManager.LoadBackStage();
+        }
         //send player back to what ever scene they entered from.
     }
 
