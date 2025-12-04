@@ -37,6 +37,7 @@ public class CanvasPathFollwer : MonoBehaviour
             Transform targetWaypoint = waypoints[currentWaypointIndex + 1];
             // Move towards the target waypoint at the specified speed
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, moveSpeed * Time.deltaTime);
+            transform.rotation = targetWaypoint.rotation;
             // Check if reached the waypoint
             if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
             {
@@ -49,6 +50,7 @@ public class CanvasPathFollwer : MonoBehaviour
         // Reset to the starting waypoint
         currentWaypointIndex = 0;
         transform.position = waypoints[0].position;
+        transform.rotation = waypoints[0].rotation;
         movingForward = false;
     }
 }
