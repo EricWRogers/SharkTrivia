@@ -355,7 +355,10 @@ public class CipherDecode : MonoBehaviour
 
         // clearing the default letters
         for(char i = 'a'; i < 'z'; i++)
+        {
             confirmedCharAssignments[i] = '~';
+            charAssignments[i] = '~';
+        }
 
         switch (difficulty)
         {
