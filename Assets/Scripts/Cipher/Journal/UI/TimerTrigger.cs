@@ -3,7 +3,7 @@ using TMPro;
 public class TimerTrigger : MonoBehaviour
 {
     public GameObject timerM;
-    Timer timer;
+    public Timer timer;
 
     bool isTimeUp;
     bool isFinalRound;
@@ -19,14 +19,16 @@ public class TimerTrigger : MonoBehaviour
     }
     void Start()
     {
-        timerM = GameObject.Find("TimeManager");
-        timer = timerM.GetComponent<Timer>();
+        //timerM = GameObject.Find("TimeManager");
+        //timer = timerM.GetComponent<Timer>();
+
+        timer = FindFirstObjectByType<Timer>();
     }
 
     private void Update()
     {
 
-        if (!isTimeUp)
+        if (!isTimeUp && CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard)
         {
             //Debug.Log("Time has begun");
             //Debug.Log("time reamaining:" + timer.timeRemaining);
@@ -52,12 +54,26 @@ public class TimerTrigger : MonoBehaviour
             Instantiate(this.gameObject);
             
 
-            timerM = GameObject.Find("TimeManager");
-            timer = timerM.GetComponent<Timer>();
+            //timerM = GameObject.Find("TimeManager");
+            //timer = timerM.GetComponent<Timer>();
+            timer = FindFirstObjectByType<Timer>();
+
 
             if (_isFinalRound) isFinalRound = true;
 
-            StartTimer();
+            if(CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard)
+            {
+                StartTimer();
+            }
+            
+        }
+    }
+
+    public void FindTimer()
+    {
+        if(CipherDecode.instance.difficulty == CipherDecode.GameMode.Hard)
+        {
+            
         }
     }
 
@@ -65,6 +81,7 @@ public class TimerTrigger : MonoBehaviour
     {
         Debug.Log("Hello! I have been begun!");
 
+        timer = FindFirstObjectByType<Timer>();
         timer.timeRunning = true;  
     }
 
