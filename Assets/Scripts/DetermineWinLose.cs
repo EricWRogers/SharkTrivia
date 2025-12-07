@@ -8,8 +8,14 @@ public class DetermineWinLose : MonoBehaviour
     public void DetermineScore(int winThreshold)
     {
         gameObject.SetActive(true);
-        Instantiate(this.gameObject);
-        
+
+        if (gameObject == null)
+        {
+            Instantiate(gameObject);
+        }
+
+        Debug.Log("Determining score...");
+
         int points = ScoreManager.instance.score;
 
         var dm = DialogueManagerIntegrated.Instance;
@@ -17,10 +23,12 @@ public class DetermineWinLose : MonoBehaviour
 
         if (points >= winThreshold)
         {
+            Debug.Log("You win!");
             dm.JumpToNode(nodeToWin);
         }
         if (points < winThreshold)
         {
+            Debug.Log("You lose!");
             dm.JumpToNode(nodeToLose);
         }
     }
