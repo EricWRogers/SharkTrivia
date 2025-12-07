@@ -64,7 +64,7 @@ public class WinScreen : MonoBehaviour
         //TotalScore.instance.PlayerLost();
         winText.text = "you lose!";
 
-        winTime.text = "Out of Time!";
+        winTime.text = "Game Over!";
         winStat.text = "";
         //winScreen.SetActive(true);
         ShowWinScreen();    //show the win screen when the minigame is over
@@ -73,9 +73,14 @@ public class WinScreen : MonoBehaviour
 
     public void ReturnButton()
     {
-        LevelManager.StaticResume();
-        LevelManager.LoadBackStage();   //temp for now
-
+        if (LevelManager.Instance.inMainLoop)
+        {
+            LevelManager.Instance.MainLoop();
+        }
+        else
+        {
+            LevelManager.LoadBackStage();
+        }
         //send player back to what ever scene they entered from.
     }
 

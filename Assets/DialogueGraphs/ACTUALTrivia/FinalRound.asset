@@ -51,7 +51,7 @@ MonoBehaviour:
   speakerLine: Correct! I am so blind!
   autoProgress: 1
   autoDelay: 3
-  nextIfNoChoices: {fileID: 0}
+  nextIfNoChoices: {fileID: 1433402465215125144}
   choices: []
   onEnter:
     m_PersistentCalls:
@@ -140,6 +140,48 @@ MonoBehaviour:
   onEnter:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-4489302345601354781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn21
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
+  speakerLine: The only thing left to do is count up the score...
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: 0}
+  choices:
+  - choiceText: I'm ready...
+    next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4170119745221949520, guid: 4999d86622cada5428c1478bb438f86d, type: 3}
+          m_TargetAssemblyTypeName: DetermineWinLose, Assembly-CSharp
+          m_MethodName: DetermineScore
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 300
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-3327147485060108695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +199,7 @@ MonoBehaviour:
   speakerLine: Incorrect, I am so so blind!
   autoProgress: 1
   autoDelay: 3
-  nextIfNoChoices: {fileID: 0}
+  nextIfNoChoices: {fileID: 1433402465215125144}
   choices: []
   onEnter:
     m_PersistentCalls:
@@ -364,6 +406,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: clipcricket
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-430031200736095308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +542,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1433402465215125144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn20
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 21300000, guid: 690d8aec1fe537247b44d972ed197281, type: 3}
+  speakerLine: Well look at that! We made it to the end!
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: -4489302345601354781}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3695368298727369303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,7 +664,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9180230037335167234, guid: f123f9a0e2cd2bf4b9fa0828439b2cb7, type: 3}
         m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
-        m_MethodName: SpawnTimer
+        m_MethodName: SpawnTimerEvent
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -596,7 +672,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &5937822043769615910
 MonoBehaviour:

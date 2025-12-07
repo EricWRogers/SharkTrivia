@@ -11,10 +11,10 @@ public class GuessLetterMessager : MonoBehaviour
     public static char mostRecentChar;
 
 
-    // void Awake()
-    // {
-    //     OnEnter(); // this is very jank, ugly hack - Scott
-    // }
+    void Awake()
+    {
+        OnJournalEnter(); // this is very jank, ugly hack - Scott
+    }
 
     public void Open()
     {
@@ -24,7 +24,7 @@ public class GuessLetterMessager : MonoBehaviour
 
     public void OnJournalEnter()
     {
-        
+        //Debug.Log("Journal Enter called");
         
         bool maxGuessesIncurred = CipherDecode.instance.numGuesses == CipherDecode.instance.maxGuesses || CipherDecode.instance.numCorrectGuesses == CipherDecode.instance.maxCorrectGuesses;
 

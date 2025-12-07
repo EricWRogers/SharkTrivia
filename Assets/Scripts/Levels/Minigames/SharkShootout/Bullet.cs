@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class Bullet : MonoBehaviour
 {
@@ -8,9 +9,10 @@ public class Bullet : MonoBehaviour
     
     public float Speed = 5f;
     public float life = 1f;
+    public GameObject particles;
 
     // SFX for bullet
-    private string popSFXName = "Pop";
+
 
     void Start()
     {
@@ -33,7 +35,8 @@ public class Bullet : MonoBehaviour
             Pop(); 
 
             // SFX
-                AudioManager.instance.PlaySFX(popSFXName);   
+               GameObject particle = Instantiate(particles, transform.position, Quaternion.identity); 
+               particle.GetComponent<ParticleSystem>().Play();  
 
             Destroy(gameObject);
         } 
