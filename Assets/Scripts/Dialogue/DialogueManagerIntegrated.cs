@@ -117,8 +117,7 @@ public class DialogueManagerIntegrated : MonoBehaviour
         // DO NOT encode the speaker name
         string nameOut = node.speakerName;
 
-        // Still encode the body line
-        string lineOut = encode ? translator.Translate(node.speakerLine) : node.speakerLine;
+        string lineOut = EncodeOrFallback(node.speakerLine);
 
         // Push name + portrait
         ui.SetCharInfo(nameOut, node.portrait);
@@ -305,8 +304,8 @@ public class DialogueManagerIntegrated : MonoBehaviour
         {
             var choiceCopy = c; // capture for closure
             GameObject choiceButtonGO = ui.CreateChoiceButton(
-                encode ? translator.Translate(choiceCopy.choiceText) : choiceCopy.choiceText,
-                () => OnChoiceSelected(choiceCopy)
+            EncodeOrFallback(choiceCopy.choiceText),
+            () => OnChoiceSelected(choiceCopy)
             );
 
             if (choiceButtonGO != null)
@@ -463,6 +462,8 @@ public class DialogueManagerIntegrated : MonoBehaviour
     // -------------------------
 
     //Change visible choice text by index (0-based). Optionally encode & mutate node data
+    
+
     public void SetChoiceText(int index, string newText, bool encode = true)
     {
         if (current == null) return;
@@ -476,68 +477,56 @@ public class DialogueManagerIntegrated : MonoBehaviour
             current.choices[index].choiceText = newText;
         }
 
-        bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
-        string final = doEncode ? translator.Translate(newText) : newText;
-
-        _choiceLabels[index].text = final;
+        _choiceLabels[index].text = encode ? EncodeOrFallback(newText) : newText;
     }
 
-    //Replace all visible choice texts
-    public void SetAllChoiceTexts(IList<string> newTexts, bool encode = true)
-    {
-        if (current == null || newTexts == null) return;
-        int count = Mathf.Min(_choiceLabels.Count, newTexts.Count);
-        for (int i = 0; i < count; i++)
-            SetChoiceText(i, newTexts[i], encode);
-    }
-
-    //Re-translate visible choice labels using current cipher
-    public void RefreshChoiceTexts()
-    {
-        if (current == null || current.choices == null) return;
-
-        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
-
-        for (int i = 0; i < _choiceLabels.Count && i < current.choices.Length; i++)
-        {
-            string raw = current.choices[i]?.choiceText ?? "";
-            string final = encode ? translator.Translate(raw) : raw;
-            _choiceLabels[i].text = final;
-        }
-    }
-
-    //Set current node's body text. Optionally encode & mutate node data
     public void SetBodyText(string newText, bool encode = true, bool mutateNode = true)
     {
         var ui = DialogueController.Instance;
         if (ui == null) return;
 
-        if (mutateNode && current != null)
-            current.speakerLine = newText;
+        if (mutateNode && current != null) current.speakerLine = newText;
 
-        bool doEncode = encode && (CipherDecode.instance != null && CipherDecode.instance.encoding);
-        string final = doEncode ? translator.Translate(newText) : newText;
-
-        ui.SetDialogueText(final);
-
-        // ensure full visibility if in middle of typing
+        ui.SetDialogueText(encode ? EncodeOrFallback(newText) : newText);
         FinishTypingNow();
     }
 
-    //Re-apply encoding to the current node's body text
     public void RefreshBodyText()
     {
         var ui = DialogueController.Instance;
         if (ui == null || current == null) return;
 
-        string raw = current.speakerLine ?? "";
-        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
-        string final = encode ? translator.Translate(raw) : raw;
-
-        ui.SetDialogueText(final);
+        ui.SetDialogueText(EncodeOrFallback(current.speakerLine ?? ""));
         FinishTypingNow();
     }
 
+    public void RefreshChoiceTexts()
+    {
+        if (current == null || current.choices == null) return;
+
+        for (int i = 0; i < _choiceLabels.Count && i < current.choices.Length; i++)
+        {
+            string raw = current.choices[i]?.choiceText ?? "";
+            _choiceLabels[i].text = EncodeOrFallback(raw);
+        }
+    }
+
+
+    // Returns encoded text if encoding is ON and translator gives non-empty output,
+// otherwise returns the original text.
+    private string EncodeOrFallback(string raw)
+    {
+        bool encode = (CipherDecode.instance != null && CipherDecode.instance.encoding);
+        if (!encode || string.IsNullOrEmpty(raw)) return raw;
+
+        string enc = translator != null ? translator.Translate(raw) : raw;
+        return string.IsNullOrEmpty(enc) ? raw : enc;
+    }
+
+    //Set current node's body text. Optionally encode & mutate node data
+   
+
+   
     //refresh all
     public void RefreshAllTexts()
     {

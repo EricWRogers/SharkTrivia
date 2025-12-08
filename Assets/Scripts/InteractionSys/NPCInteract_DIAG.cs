@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 public class NPCInteract_DIAG : MonoBehaviour
@@ -11,145 +10,145 @@ public class NPCInteract_DIAG : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
 
     [Header("Prompt UI (optional)")]
-    public CanvasGroup promptGroup;   // Assign a small “Press E” panel in Canvas
-    public TMP_Text promptText;       // The TMP label inside it
-    [SerializeField] string promptMessage = "Press E to talk";
+    public CanvasGroup promptGroup;        // assign the panel with CanvasGroup
+    public TMP_Text promptText;
+    [TextArea] public string promptMessage = "Press E to talk";
 
-    [Header("Fallback Proximity (if trigger fails)")]
-    public bool useProximityFallback = true;
-    public float fallbackRadius = 1.8f;
-    public LayerMask playerMask;  // set to Player’s layer (or Everything)
+    [Header("Proximity (works even if triggers fail)")]
+    public bool useProximity = true;
+    public float radius = 2.0f;
+    public LayerMask playerMask;           // include Player layer
+    public string playerTag = "Player";
 
-    bool playerInTrigger = false;
-    Transform player;
+    // --- runtime ---
+    bool _playerInsideTrigger = false;
+    Transform _player;
+    float _nextTick;
 
     void Awake()
     {
+        Debug.Log($"[NPCInteract] Awake on {name}");
         var col = GetComponent<Collider2D>();
-        if (col == null) Debug.LogError("[NPCInteract] No Collider2D on NPC.");
-        else if (!col.isTrigger)
-        {
-            Debug.LogWarning("[NPCInteract] Collider2D is not set as Trigger. Setting it now.");
-            col.isTrigger = true;
-        }
+        if (col) col.isTrigger = true;     // ensure trigger
     }
 
-    void Start()
+    void OnEnable()
     {
-        // Find player
-        var p = GameObject.FindGameObjectWithTag("Player");
-        if (!p)
-        {
-            Debug.LogError("[NPCInteract] No object tagged 'Player' found in scene.");
-        }
-        else
-        {
-            player = p.transform;
-            var rb2d = p.GetComponent<Rigidbody2D>();
-            if (!rb2d) Debug.LogError("[NPCInteract] Player has no Rigidbody2D (required for 2D triggers).");
-            else if (!rb2d.simulated) Debug.LogError("[NPCInteract] Player Rigidbody2D is not simulated.");
-        }
-
-        // Validate Dialogue singletons
-        if (!DialogueController.Instance)
-            Debug.LogError("[NPCInteract] DialogueController.Instance is null (is there exactly one DialogueController in scene and Awake ran?).");
-        if (!DialogueManagerIntegrated.Instance)
-            Debug.LogError("[NPCInteract] DialogueManagerIntegrated.Instance is null (is the manager active in scene?).");
-
-        if (promptText) promptText.text = promptMessage;
-        SetPromptVisible(false);
+        Debug.Log($"[NPCInteract] OnEnable on {name}");
+        HidePromptImmediate();
     }
 
     void Update()
     {
-        bool inRange = playerInTrigger;
-
-        // Fallback if triggers aren’t firing
-        if (!inRange && useProximityFallback && player)
+        // heartbeat (1/sec)
+        if (Time.time >= _nextTick)
         {
-            var hit = Physics2D.OverlapCircle(transform.position, fallbackRadius, playerMask.value == 0 ? ~0 : playerMask);
-            inRange = hit && hit.CompareTag("Player");
+            _nextTick = Time.time + 1f;
+            bool panelOpenDbg = DialogueController.Instance &&
+                                DialogueController.Instance.dialoguePanel &&
+                                DialogueController.Instance.dialoguePanel.activeInHierarchy;
+            Debug.Log($"[NPCInteract] tick inRange={_playerInsideTrigger || (useProximity && ProximityCheck())} panelOpen={panelOpenDbg}");
         }
 
-        if (!inRange)
-        {
-            SetPromptVisible(false);
-            return;
-        }
+        bool panelOpen = DialogueController.Instance &&
+                        DialogueController.Instance.dialoguePanel &&
+                        DialogueController.Instance.dialoguePanel.activeInHierarchy;
 
-        // Don’t show prompt during dialogue
-        if (IsDialogueOpen())
-        {
-            SetPromptVisible(false);
-            return;
-        }
+        // compute range (triggers OR proximity)
+        bool inRange = _playerInsideTrigger || (useProximity && ProximityCheck());
 
-        SetPromptVisible(true);
+        // show/hide prompt – show only when panel is closed AND player is in range
+        SetPrompt(inRange && !panelOpen);
 
-        if (Input.GetKeyDown(interactKey))
+        // read E only when panel is closed and in range
+        if (!panelOpen && inRange && Input.GetKeyDown(interactKey))
         {
-            Debug.Log("[NPCInteract] E pressed. Starting conversation…");
+            Debug.Log("[NPCInteract] E pressed while in range");
             StartDialogue();
         }
     }
 
+    bool ProximityCheck()
+    {
+        if (_player == null)
+        {
+            var go = GameObject.FindGameObjectWithTag(playerTag);
+            if (go) _player = go.transform;
+        }
+        if (_player == null) return false;
+
+        float dist = Vector2.Distance(_player.position, transform.position);
+        return dist <= radius;
+    }
+
     void StartDialogue()
     {
+        if (!conversation) { Debug.LogWarning("[NPCInteract] No Conversation assigned."); return; }
         var dm = DialogueManagerIntegrated.Instance;
-        var dc = DialogueController.Instance;
-        if (!dm || !dc) { Debug.LogError("[NPCInteract] Dialogue singletons missing."); return; }
-        if (!conversation) { Debug.LogError("[NPCInteract] Conversation asset not assigned on NPC."); return; }
+        if (!dm) { Debug.LogError("[NPCInteract] DialogueManagerIntegrated.Instance is null"); return; }
 
+        HidePromptImmediate();
         if (optionalStartNode)
         {
-            Debug.Log("[NPCInteract] StartConversationAt(optional node).");
+            Debug.Log("[NPCInteract] StartConversationAt (specific node)");
             dm.StartConversationAt(conversation, optionalStartNode);
         }
         else
         {
-            Debug.Log("[NPCInteract] StartConversation(entry).");
+            Debug.Log("[NPCInteract] StartConversation (entry)");
             dm.StartConversation(conversation);
         }
     }
 
-    bool IsDialogueOpen()
-    {
-        var dc = DialogueController.Instance;
-        return dc && dc.dialoguePanel && dc.dialoguePanel.activeSelf;
-    }
-
-    void SetPromptVisible(bool show)
-    {
-        if (!promptGroup) return;
-        promptGroup.alpha = show ? 1f : 0f;
-        promptGroup.blocksRaycasts = show;
-        promptGroup.interactable = show;
-    }
-
+    // --- Trigger path (optional) ---
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            playerInTrigger = true;
-            Debug.Log("[NPCInteract] OnTriggerEnter2D: Player entered.");
-        }
+        if (!other.CompareTag(playerTag)) return;
+        _playerInsideTrigger = true;
+        _player = other.transform;
+        Debug.Log("[NPCInteract] OnTriggerEnter2D -> in range");
     }
-
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            playerInTrigger = false;
-            Debug.Log("[NPCInteract] OnTriggerExit2D: Player exited.");
-        }
+        if (!other.CompareTag(playerTag)) return;
+        _playerInsideTrigger = false;
+        if (_player == other.transform) _player = null;
+        Debug.Log("[NPCInteract] OnTriggerExit2D -> out of range");
     }
 
+    // --- Prompt helpers ---
+    void SetPrompt(bool visible)
+    {
+        if (!promptGroup) return;
+        if (visible)
+        {
+            if (!promptGroup.gameObject.activeSelf) promptGroup.gameObject.SetActive(true);
+            promptGroup.alpha = 1f;
+            promptGroup.interactable = false;
+            promptGroup.blocksRaycasts = false;
+            if (promptText) promptText.text = promptMessage;
+        }
+        else
+        {
+            promptGroup.alpha = 0f;
+            promptGroup.interactable = false;
+            promptGroup.blocksRaycasts = false;
+        }
+    }
+    void HidePromptImmediate()
+    {
+        if (!promptGroup) return;
+        promptGroup.alpha = 0f;
+        promptGroup.interactable = false;
+        promptGroup.blocksRaycasts = false;
+        // keep GO active; we only hide by alpha so parenting under a disabled object won’t break us
+        if (!promptGroup.gameObject.activeSelf) promptGroup.gameObject.SetActive(true);
+    }
+
+    // visualize proximity
     void OnDrawGizmosSelected()
     {
-        if (useProximityFallback)
-        {
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(transform.position, fallbackRadius);
-        }
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

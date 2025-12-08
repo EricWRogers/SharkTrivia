@@ -37,7 +37,7 @@ MonoBehaviour:
   speakerName: ???
   portrait: {fileID: 0}
   speakerLine: Sorry to hear it man, I hope it get's better!
-  autoProgress: 0
+  autoProgress: 1
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices: []

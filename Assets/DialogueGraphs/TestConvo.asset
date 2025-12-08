@@ -15,14 +15,13 @@ MonoBehaviour:
   speakerName: Contestant
   portrait: {fileID: 0}
   speakerLine: Are you ready shark?
-  autoProgress: 0
+  autoProgress: 1
   autoDelay: 0.75
-  nextIfNoChoices: {fileID: 0}
-  choices:
-  - choiceText: Yes
-    next: {fileID: 380490068634013866}
-  - choiceText: No
-    next: {fileID: 7764030827503490809}
+  nextIfNoChoices: {fileID: 380490068634013866}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,10 +50,13 @@ MonoBehaviour:
   speakerName: Contestant
   portrait: {fileID: 0}
   speakerLine: Great to hear!
-  autoProgress: 0
+  autoProgress: 1
   autoDelay: 0.75
-  nextIfNoChoices: {fileID: 0}
+  nextIfNoChoices: {fileID: 7764030827503490809}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7764030827503490809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +72,10 @@ MonoBehaviour:
   speakerName: ???
   portrait: {fileID: 0}
   speakerLine: Sorry to hear that
-  autoProgress: 0
+  autoProgress: 1
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
