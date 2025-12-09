@@ -28,6 +28,15 @@ public class VideoPlayerScript : MonoBehaviour
             videoPlayer = gameObject.AddComponent<VideoPlayer>();
             Debug.Log("VideoPlayer component added.");
         }
+        if (renderTexture != null)
+        {
+            videoPlayer.renderMode = VideoRenderMode.RenderTexture;
+            videoPlayer.targetTexture = renderTexture;
+        }
+        if (rawImageDisplay != null && renderTexture != null)
+        {
+            rawImageDisplay.texture = renderTexture;
+        }
     }
     //Select the video to play
     public void SelectVideoClip(int index)
@@ -45,26 +54,30 @@ public class VideoPlayerScript : MonoBehaviour
             Debug.LogWarning("Invalid video clip index.");
         }
     }
-    // Play the video and stop after a set duration if at the endpoint
     public IEnumerator PlayVideoAndStop()
     {
-        // Activate the RawImage to display the video
+        if (videoPlayer == null || rawImageDisplay == null)
+        {
+            Debug.LogError("VideoPlayer or RawImage not initialized!");
+            yield break;
+        }
+
         rawImageDisplay.gameObject.SetActive(true);
         isPlaying = true;
-        // Play the video for 5 seconds/Whatever the duration wanted is then stop.
+
+        videoPlayer.Prepare();
+        while (!videoPlayer.isPrepared)
+        {
+            yield return null;
+        }
         videoPlayer.Play();
         yield return new WaitForSeconds(playDuration);
         videoPlayer.Stop();
-        // Log when the video stops
-        Debug.Log("Video Stopped");
         isPlaying = false;
-        // Clear the RenderTexture when the object is disabled
-        if (isPlaying == false)
-        {
-            ClearOutRenderTexture(renderTexture);
-            Debug.Log("RenderTexture cleared.");
-            canvasPathFollwer.ResetPath();
-        }
+        rawImageDisplay.gameObject.SetActive(false); 
+        ClearOutRenderTexture(renderTexture);
+        Debug.Log("RenderTexture cleared.");
+        canvasPathFollwer.ResetPath();
     }
     public void ClearOutRenderTexture(RenderTexture renderTexture)
     {

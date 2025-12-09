@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 16a94c569a6325047b8fe2d91621c818
+guid: 6d82a57d473d57c4ba6f34f00771f8f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 347466557007229295
-    second: BowlingUI_0
+      213: 5860960629179667387
+    second: BowlingUIUPDATED_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BowlingUI_0
+      name: BowlingUIUPDATED_0
       rect:
         serializedVersion: 2
         x: 13
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f617ebd1ef272d400800000000000000
-      internalID: 347466557007229295
+      spriteID: bb3ddc8b3a0565150800000000000000
+      internalID: 5860960629179667387
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BowlingUI_0: 347466557007229295
+      BowlingUIUPDATED_0: 5860960629179667387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

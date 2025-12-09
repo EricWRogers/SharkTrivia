@@ -16,7 +16,7 @@ Shader "Custom/VHSEffect"
     {
         Tags
         {
-            "RenderType"="Opaque"
+            "RenderType"="Transparent"
         }
         LOD 100
 
