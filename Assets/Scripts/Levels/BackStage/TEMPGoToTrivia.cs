@@ -35,6 +35,11 @@ public class TEMPGoToTrivia : MonoBehaviour
         LevelManager.LoadSpecificScene("TriviaR3");
     }
 
+    public void TriviaFinal()
+    {
+        LevelManager.LoadSpecificScene("TriviaFinal");
+    }
+
     /// code from when this would only load one scene
     /*
     private void OnTriggerEnter2D(Collider2D other){

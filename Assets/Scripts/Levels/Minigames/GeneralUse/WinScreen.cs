@@ -39,7 +39,7 @@ public class WinScreen : MonoBehaviour
         if (points >= winThreshold)
         {
             winText.text = "YOU WIN!";
-            //TotalScore.instance.AddPoints(points);
+            TotalScore.instance.AddPoints(points);
         }
         if (points < winThreshold)
         {

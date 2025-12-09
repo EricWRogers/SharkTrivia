@@ -77,7 +77,7 @@ MonoBehaviour:
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
   choices:
-  - choiceText: People get insecure over the weirdest things.
+  - choiceText: What a weirdo...
     next: {fileID: 0}
     isCorrect: 0
     isTriviaQuestion: 0
