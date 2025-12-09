@@ -9075,11 +9075,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6281275341136810481, guid: 330f4197b47c04083866ff8715e10b46, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 985
+      value: 268
       objectReference: {fileID: 0}
     - target: {fileID: 6281275341136810481, guid: 330f4197b47c04083866ff8715e10b46, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1332
+      value: 1516
       objectReference: {fileID: 0}
     - target: {fileID: 6333564955833011933, guid: 330f4197b47c04083866ff8715e10b46, type: 3}
       propertyPath: guessLetter
