@@ -62,6 +62,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c17cd9a180e86fe4cb19c220f81057d2, type: 3}
     volume: 1
     pitch: 0
+  - name: clipcricket
+    clip: {fileID: 8300000, guid: 326b5094670a044f5b55b73c2f5653f4, type: 3}
+    volume: 1
+    pitch: 0
+  buttonClickSFX: ButtonClick
 --- !u!1 &2904660072689405551
 GameObject:
   m_ObjectHideFlags: 0
