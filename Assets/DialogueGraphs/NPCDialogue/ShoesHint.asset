@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1569327836013276471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn1
+  m_EditorClassIdentifier: 
+  speakerName: Glowbug
+  portrait: {fileID: 0}
+  speakerLine: It's hard to find shoes for our beloved host...
+  autoProgress: 1
+  autoDelay: 4
+  nextIfNoChoices: {fileID: 2462222791516639615}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6174fe4a7d4998478b926a21e26dff7, type: 3}
+  m_Name: ShoesHint
+  m_EditorClassIdentifier: 
+  entry: {fileID: -1569327836013276471}
+--- !u!114 &2462222791516639615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn2
+  m_EditorClassIdentifier: 
+  speakerName: Glowbug
+  portrait: {fileID: 0}
+  speakerLine: He keeps insisting that they're not big enough! Yesterday he demanded
+    them in a size EIGHTEEN!
+  autoProgress: 1
+  autoDelay: 6
+  nextIfNoChoices: {fileID: 3905435439386028236}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3905435439386028236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn3
+  m_EditorClassIdentifier: 
+  speakerName: Glowbug
+  portrait: {fileID: 0}
+  speakerLine: 'I think he''s self concious. '
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: 0}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []

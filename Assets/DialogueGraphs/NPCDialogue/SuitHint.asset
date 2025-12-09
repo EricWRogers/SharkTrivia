@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4783249866773293755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn3
+  m_EditorClassIdentifier: 
+  speakerName: Sea Bunny
+  portrait: {fileID: 0}
+  speakerLine: It's because he refuses to take off that silly diver's helmet!
+  autoProgress: 1
+  autoDelay: 3
+  nextIfNoChoices: {fileID: -1593463984020480630}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-1929859750987454404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn1
+  m_EditorClassIdentifier: 
+  speakerName: Sea Bunny
+  portrait: {fileID: 0}
+  speakerLine: That host looks professional on stage, but when the cameras stop rolling,
+    he's a mess!
+  autoProgress: 1
+  autoDelay: 6
+  nextIfNoChoices: {fileID: 2007997409231337292}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-1593463984020480630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn4
+  m_EditorClassIdentifier: 
+  speakerName: Sea Bunny
+  portrait: {fileID: 0}
+  speakerLine: He won't admit it, but I know that he must be blind as a bat in that
+    thing!
+  autoProgress: 0
+  autoDelay: 3
+  nextIfNoChoices: {fileID: 0}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6174fe4a7d4998478b926a21e26dff7, type: 3}
+  m_Name: SuitHint
+  m_EditorClassIdentifier: 
+  entry: {fileID: -1929859750987454404}
+--- !u!114 &2007997409231337292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn2
+  m_EditorClassIdentifier: 
+  speakerName: Sea Bunny
+  portrait: {fileID: 0}
+  speakerLine: He's constantly knocking over bins and bumping into door frames.
+  autoProgress: 1
+  autoDelay: 5
+  nextIfNoChoices: {fileID: -4783249866773293755}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
