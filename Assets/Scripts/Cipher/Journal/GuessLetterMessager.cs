@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,10 +11,38 @@ public class GuessLetterMessager : MonoBehaviour
 
     public static char mostRecentChar;
 
+    private bool dumbBool = false;
 
     void Awake()
     {
-        OnJournalEnter(); // this is very jank, ugly hack - Scott
+
+    }
+
+    void FixedUpdate()
+    {
+        if(CipherDecode.instance != null && !dumbBool)
+        {
+            OnJournalEnter(); // this is very jank, ugly hack - Scott
+
+            if (CipherDecode.instance.confirmedCharAssignments.ContainsValue(char.ToLower(letter[0])) || CipherDecode.instance.charAssignments.ContainsValue(char.ToLower(letter[0]))) // this is very jank, ugly hack - Scott
+            {
+                char i;
+                char ret = '~';
+
+                for(i = 'a'; i < 'z'; i++)
+                {
+                    if(CipherDecode.instance.confirmedCharAssignments[i] == char.ToLower(letter[0]) || CipherDecode.instance.charAssignments[i] == char.ToLower(letter[0]))
+                    {
+                        ret = i;
+                        break;
+                    }
+                }
+
+                transform.GetChild(0).GetComponent<TMP_Text>().text = $"{ret}";
+            } 
+
+            dumbBool = true;
+        }
     }
 
     public void Open()
@@ -35,7 +64,7 @@ public class GuessLetterMessager : MonoBehaviour
             //THIS LINE BELOW IS EXTREMELY SCUFFED ON SEVERAL LEVELS ; MAKE BETTER LATER - Scott
             if (transform.parent.parent.parent.GetChild(transform.parent.parent.parent.childCount - 1).name == "Debug_1" && maxGuessesIncurred)
             {
-                transform.parent.parent.parent.GetChild(transform.parent.parent.parent.childCount - 1).gameObject.SetActive(true);
+                transform.parent.parent.parent.GetChild(transform.parent.parent.parent.childCount - 1).GetComponent<TMP_Text>().enabled = true;//gameObject.SetActive(true);
             }
         }
         else
@@ -45,9 +74,10 @@ public class GuessLetterMessager : MonoBehaviour
 
         //THIS LINE BELOW IS ALSO EXTREMELY SCUFFED ; ALSO MAKE BETTER LATER - Scott
         if (transform.parent.parent.parent.GetChild(transform.parent.parent.parent.childCount - 1).name == "Debug_1" && !maxGuessesIncurred)
-            transform.parent.parent.parent.GetChild(transform.parent.parent.parent.childCount - 1).gameObject.SetActive(false);
+            transform.parent.parent.parent.GetChild(transform.parent.parent.parent.childCount - 1).GetComponent<TMP_Text>().enabled = false;
 
-    } 
+    }
+
     public void MiniMenuManager()
     {
         englishAlphabet.SetActive(false);

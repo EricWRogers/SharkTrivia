@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
 
 //Originally Programmed by Samuel (Scott)
 
@@ -459,6 +460,29 @@ public class CipherDecode : MonoBehaviour
             changeGuessNum(additionalGuesses);
             numGuesses = 0;
             numCorrectGuesses = 0;
+
+            GuessLetterMessager[] buttons = FindObjectsByType<GuessLetterMessager>(FindObjectsSortMode.None);
+            
+            foreach(GuessLetterMessager button in buttons)
+            {
+                if(!confirmedCharAssignments.ContainsValue(button.letter[0]))
+                    button.GetComponent<Button>().interactable = true;
+                
+            }
+
+            GameObject.Find("Debug_1").GetComponent<TMP_Text>().enabled = false;
+
+            // ButtonRename[] bigButtons = FindObjectsByType<ButtonRename>(FindObjectsSortMode.InstanceID);
+
+            // foreach(ButtonRename button in bigButtons)
+            // {
+            //     if (confirmedCharAssignments.ContainsValue(button.newKeyValue))
+            //     {
+            //         button.transform.GetChild(0).GetComponent<TMP_Text>().text = $"{confirmedCharAssignments[button.newKeyValue]}";
+            //     }
+            // }
+
+            
         }
     }
     
