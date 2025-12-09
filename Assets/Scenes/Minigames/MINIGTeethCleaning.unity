@@ -1826,6 +1826,7 @@ GameObject:
   - component: {fileID: 750208099}
   - component: {fileID: 750208098}
   - component: {fileID: 750208102}
+  - component: {fileID: 750208103}
   m_Layer: 0
   m_Name: Drill
   m_TagString: Drill
@@ -1990,6 +1991,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &750208103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750208097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &761880550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,6 +2149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857535211}
   - component: {fileID: 857535210}
+  - component: {fileID: 857535212}
   m_Layer: 0
   m_Name: ToothBrush
   m_TagString: Toothbrush
@@ -2174,6 +2188,18 @@ Transform:
   - {fileID: 1614910837}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &857535212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857535209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &866037079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,6 +2470,7 @@ GameObject:
   - component: {fileID: 988975610}
   - component: {fileID: 988975609}
   - component: {fileID: 988975611}
+  - component: {fileID: 988975612}
   m_Layer: 3
   m_Name: Pick
   m_TagString: Pick
@@ -2540,6 +2567,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &988975612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988975608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1057637194
 GameObject:
   m_ObjectHideFlags: 0
