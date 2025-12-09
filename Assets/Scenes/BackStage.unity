@@ -725,7 +725,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.749}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -7.500058}
+  m_AnchoredPosition: {x: 0, y: -61}
   m_SizeDelta: {x: 0, y: -14.999885}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263769341
@@ -3371,7 +3371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -88.71767}
+  m_AnchoredPosition: {x: 540, y: -88.74922}
   m_SizeDelta: {x: 1080, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &942692120
@@ -13451,7 +13451,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1396024427}
         m_TargetAssemblyTypeName: TEMPGoToTrivia, Assembly-CSharp
-        m_MethodName: TriviaR3
+        m_MethodName: TriviaFinal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
