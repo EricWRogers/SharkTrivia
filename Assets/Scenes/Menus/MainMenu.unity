@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 192679697}
   - component: {fileID: 192679699}
   - component: {fileID: 192679698}
+  - component: {fileID: 192679700}
   m_Layer: 5
   m_Name: Bubble2
   m_TagString: Untagged
@@ -583,6 +584,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192679696}
   m_CullTransparentMesh: 1
+--- !u!95 &192679700
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192679696}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1a7f23806ba8f544b98ce419662ceda, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &250045221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,8 +2250,8 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088510377}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
+  m_Alpha: 0
+  m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!95 &1088510383
@@ -2241,7 +2264,7 @@ Animator:
   m_GameObject: {fileID: 1088510377}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59d8ad4e7a55a644e9736c540c17586b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2878,6 +2901,7 @@ GameObject:
   - component: {fileID: 1256087128}
   - component: {fileID: 1256087130}
   - component: {fileID: 1256087129}
+  - component: {fileID: 1256087131}
   m_Layer: 5
   m_Name: Bubble3
   m_TagString: Untagged
@@ -2942,6 +2966,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256087127}
   m_CullTransparentMesh: 1
+--- !u!95 &1256087131
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256087127}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 864c798ae8952f64fad88cd886556013, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1264973341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9000093144367506686, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
@@ -3635,6 +3681,7 @@ GameObject:
   - component: {fileID: 1486296553}
   - component: {fileID: 1486296555}
   - component: {fileID: 1486296554}
+  - component: {fileID: 1486296556}
   m_Layer: 5
   m_Name: Bubble1
   m_TagString: Untagged
@@ -3699,6 +3746,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486296552}
   m_CullTransparentMesh: 1
+--- !u!95 &1486296556
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486296552}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6451bcd8dfdafd42b51b9e96ebd0e6b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1487587772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4207,6 +4276,7 @@ GameObject:
   - component: {fileID: 1634796446}
   - component: {fileID: 1634796448}
   - component: {fileID: 1634796447}
+  - component: {fileID: 1634796449}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -4271,6 +4341,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634796445}
   m_CullTransparentMesh: 1
+--- !u!95 &1634796449
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634796445}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5083fd73983768a4bb481e9236fde24c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1813705509
 GameObject:
   m_ObjectHideFlags: 0
