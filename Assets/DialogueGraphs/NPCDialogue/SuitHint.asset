@@ -64,7 +64,15 @@ MonoBehaviour:
   autoProgress: 0
   autoDelay: 3
   nextIfNoChoices: {fileID: 0}
-  choices: []
+  choices:
+  - choiceText: Interesting...
+    next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
   onEnter:
     m_PersistentCalls:
       m_Calls: []

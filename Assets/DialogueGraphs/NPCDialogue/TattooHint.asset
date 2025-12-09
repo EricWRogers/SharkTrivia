@@ -36,7 +36,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Axolotl
   portrait: {fileID: 0}
-  speakerLine: I heard a rumor that the boss has a HUGE tattoo across his back.
+  speakerLine: I heard a rumor that the boss has a HUGE tattoo!
   autoProgress: 1
   autoDelay: 5
   nextIfNoChoices: {fileID: -6702425007519253667}
@@ -75,7 +75,15 @@ MonoBehaviour:
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
-  choices: []
+  choices:
+  - choiceText: That must have hurt!
+    next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
   onEnter:
     m_PersistentCalls:
       m_Calls: []

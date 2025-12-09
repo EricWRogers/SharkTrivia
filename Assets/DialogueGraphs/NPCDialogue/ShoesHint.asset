@@ -76,7 +76,15 @@ MonoBehaviour:
   autoProgress: 0
   autoDelay: 0.75
   nextIfNoChoices: {fileID: 0}
-  choices: []
+  choices:
+  - choiceText: People get insecure over the weirdest things.
+    next: {fileID: 0}
+    isCorrect: 0
+    isTriviaQuestion: 0
+    loadSceneOnSelect: 
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
   onEnter:
     m_PersistentCalls:
       m_Calls: []
