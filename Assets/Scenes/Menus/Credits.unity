@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '3D Modeling, Animatoin &Sprite Artist:'
+  m_text: '3D Modeling, Animation & Sprite Artist:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 746e520fbb1a23643aa8bb6af27d5375, type: 2}
   m_sharedMaterial: {fileID: -6946219281666307428, guid: 746e520fbb1a23643aa8bb6af27d5375, type: 2}
