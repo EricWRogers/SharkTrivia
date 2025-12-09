@@ -24,15 +24,12 @@ public class ProgressBar : MonoBehaviour
     public SpriteRenderer background;
     public SpriteRenderer drill;
     
-
     //connecting to win screen
     public WinScreen winScreen;
 
     //colliders for teeth
     public Collider2D topTeeth;
     public Collider2D bottomTeeth;
-
-
 
     void Start()
     {
@@ -42,7 +39,6 @@ public class ProgressBar : MonoBehaviour
         toothBrush.sortingOrder = 3;
         drill.sortingOrder = 3;
         background.sortingOrder = 0;
-
 
         if (progressBar != null)
         {
@@ -58,44 +54,50 @@ public class ProgressBar : MonoBehaviour
             SetAlpha(cleanTeeth, 1f);
         }
     }
+
     void Update()
     {
-        
         Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         //Debug.Log("Mouse world position " + mouseWorldPos);
+
         if (Input.GetMouseButtonDown(0))
         {
-            if (IsMouseOver(mouseWorldPos)&& IsToothbrushActive())
+            if (IsMouseOver(mouseWorldPos) && IsToothbrushActive())
             {
                 isSwiping = true;
                 mousePosition = mouseWorldPos;
                 //Debug.Log("Started swipe");
             }
         }
+
         if (Input.GetMouseButton(0) && isSwiping)
         {
-            if(!IsMouseOver(mouseWorldPos))
-            {
-                isSwiping = false;
-                return;
-            }
+            
+            // if (!IsMouseOver(mouseWorldPos))
+            // {
+            //     isSwiping = false;
+            //     return;
+            // }
+
             float distance = Vector2.Distance(mousePosition, mouseWorldPos);
             //Debug.Log($"LastPos: {mousePosition} CurrentPos: {mouseWorldPos} Distance: {distance}");
             //Debug.Log("Distance moved " + distance);
-            if(distance > 0.2f)
+
+            if (distance > 0.2f)
             {
                 RegisterSwipe();
                 mousePosition = mouseWorldPos;
-
             }
-
         }
+
         if (Input.GetMouseButtonUp(0))
         {
             isSwiping = false;
         }
+
         UpdateTeethFade();
     }
+
     private void UpdateTeethFade()
     {
         if (dirtyTeeth != null && progressBar != null && progressBar.maxValue > 0)
@@ -106,14 +108,15 @@ public class ProgressBar : MonoBehaviour
             c.a = 1f - normalized;
             dirtyTeeth.color = c;
         }
-
     }
+
     private void SetAlpha(SpriteRenderer sprite, float alpha)
     {
         Color c = sprite.color;
         c.a = Mathf.Clamp01(alpha);
         sprite.color = c;
     }
+
     private bool IsMouseOver(Vector2 mouseWorldPos)
     {
         Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
@@ -123,6 +126,7 @@ public class ProgressBar : MonoBehaviour
         }
         return hit == topTeeth || hit == bottomTeeth;
     }
+
     private void RegisterSwipe()
     {
         if (swipeCount >= swipesAmount) return;
@@ -130,22 +134,23 @@ public class ProgressBar : MonoBehaviour
         swipeCount++;
         //Debug.Log("Swipe detected " + swipeCount);
 
-        if(progressBar != null)
+        if (progressBar != null)
         {
             progressBar.value = swipeCount;
         }
+
         //calculates percentage progress
         float percentage = ((float)swipeCount / swipesAmount) * 100;
         int roundedPercentage = Mathf.RoundToInt(percentage);
-      
 
-        if(roundedPercentage > lastPercentage)
+        if (roundedPercentage > lastPercentage)
         {
             int pointsToAward = roundedPercentage - lastPercentage;
             ScoreManager.instance.AddPoints(pointsToAward);
             lastPercentage = roundedPercentage;
         }
-        if(swipeCount>= swipesAmount)
+
+        if (swipeCount >= swipesAmount)
         {
             OnSwipeGoalReached();
         }
@@ -154,40 +159,40 @@ public class ProgressBar : MonoBehaviour
     private void OnSwipeGoalReached()
     {
         //Debug.Log("Swipe goal reached!");
-        
+
         //bonus points for 100% clean
-        if(lastPercentage == 100)
+        if (lastPercentage == 100)
         {
             Debug.Log("Perfect clean, bonus awarded");
             ScoreManager.instance.AddPoints(10);
         }
-        
-        if(TotalScore.instance != null){
+
+        if (TotalScore.instance != null)
+        {
             int finalPoints = ScoreManager.instance.GetScore();
             //TotalScore.instance.AddPoints(finalPoints);
             //This gets called when the bar reaches 100% and it detects a swipe
             //TotalScore also gets called in WinScreen.DisplayWinResults so it was doubling the score
         }
+
         Win();
     }
-   private bool IsToothbrushActive()
+
+    private bool IsToothbrushActive()
     {
         return ToolManager.ActiveToolName == "Toothbrush";
     }
 
     public void Win()
-{
-    bool cleaned = swipeCount >= swipesAmount;
-    bool noHoles = Holes.holesRemaining <= 0;
-    bool noDirt = Dirt.dirtRemaining <= 0;
-
-    if (cleaned && noHoles && noDirt)
     {
-        timer?.StopTimer();
-        winScreen.DisplayWinResults();
+        bool cleaned = swipeCount >= swipesAmount;
+        bool noHoles = Holes.holesRemaining <= 0;
+        bool noDirt = Dirt.dirtRemaining <= 0;
+
+        if (cleaned && noHoles && noDirt)
+        {
+            timer?.StopTimer();
+            winScreen.DisplayWinResults();
+        }
     }
-}
-
-
-
 }

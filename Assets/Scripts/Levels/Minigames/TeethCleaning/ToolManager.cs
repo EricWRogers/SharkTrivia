@@ -36,38 +36,41 @@ public class ToolManager : MonoBehaviour
         SetActiveTool(ActiveToolName); 
     }
 
-  
-    public static void SetActiveTool(string toolName)
+public static void SetActiveTool(string toolName)
+{
+    ToolManager instance = FindObjectOfType<ToolManager>();
+    if (instance == null) return;
+
+    string prevTool = ActiveToolName;
+
+    if (prevTool != toolName)
     {
     
-        ToolManager instance = FindObjectOfType<ToolManager>();
-        if (instance == null) return; 
-
-        if (ActiveToolName != toolName)
+        if (instance.toolObjects.ContainsKey(prevTool))
         {
-            
-            if (instance.toolObjects.ContainsKey(ActiveToolName))
-            {
-                instance.toolObjects[ActiveToolName].SetActive(false);
-            }
+            instance.toolObjects[prevTool].SetActive(false);
 
-            
-            ActiveToolName = toolName;
-
-            
-            if (instance.toolObjects.ContainsKey(ActiveToolName))
-            {
-                instance.toolObjects[ActiveToolName].SetActive(true);
-            }
-            
-            Debug.Log("Tool switched to: " + ActiveToolName);
-        } 
-        else if (!instance.toolObjects[toolName].activeInHierarchy)
-        {
-            
-             instance.toolObjects[toolName].SetActive(true);
+            var col = instance.toolObjects[prevTool].GetComponent<ToolCollisionToggle>();
+            if (col != null)
+                col.EnableColliders(false);
         }
+
+    
+        ActiveToolName = toolName;
+
+        if (instance.toolObjects.ContainsKey(ActiveToolName))
+        {
+            instance.toolObjects[ActiveToolName].SetActive(true);
+
+            var col = instance.toolObjects[ActiveToolName].GetComponent<ToolCollisionToggle>();
+            if (col != null)
+                col.EnableColliders(true);
+        }
+
+        Debug.Log("Tool switched to: " + ActiveToolName);
     }
+}
+
 
     
     void Update()
