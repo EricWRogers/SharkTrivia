@@ -90,7 +90,7 @@ public class CipherDecode : MonoBehaviour
                 UnRandomizeLetters();
 
             unassButtonsToEnable = new List<bool>{false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,
-                                                  false,false,false,false,false,false,false,false};
+                                                  false,false,false,false,false,false,false,false,false};
 
             SceneManager.activeSceneChanged += OnActiveSceneChanged;
 
