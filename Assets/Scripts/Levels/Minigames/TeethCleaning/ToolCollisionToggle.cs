@@ -2,16 +2,32 @@ using UnityEngine;
 
 public class ToolCollisionToggle : MonoBehaviour
 {
-    private Collider2D[] colliders;
+    [Header("Which tools can affect this object?")]
+    public bool worksWithToothbrush;
+    public bool worksWithPick;
+    public bool worksWithDrill;
+
+    private Collider2D col;
 
     void Awake()
     {
-        colliders = GetComponentsInChildren<Collider2D>(true);
+        col = GetComponent<Collider2D>();
     }
 
-    public void EnableColliders(bool enabled)
+    void Start()
     {
-        foreach (var col in colliders)
-            col.enabled = enabled;
+        UpdateColliderState();
+    }
+
+    public void UpdateColliderState()
+    {
+        if (ToolManager.ActiveToolName == "Toothbrush")
+            col.enabled = worksWithToothbrush;
+
+        else if (ToolManager.ActiveToolName == "Pick")
+            col.enabled = worksWithPick;
+
+        else if (ToolManager.ActiveToolName == "Drill")
+            col.enabled = worksWithDrill;
     }
 }
