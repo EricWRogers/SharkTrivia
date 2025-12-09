@@ -23,6 +23,62 @@ MonoBehaviour:
   onEnter:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-8172618598499782918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn6
+  m_EditorClassIdentifier: 
+  speakerName: Host
+  portrait: {fileID: 9121839293005398823, guid: 4a230a214e59fcf4c8749cbe2408d358, type: 3}
+  speakerLine: Goodbye, Mr. Mako! It has been an honor....
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: -7133181987039559891}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-7133181987039559891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn7
+  m_EditorClassIdentifier: 
+  speakerName: ???
+  portrait: {fileID: 0}
+  speakerLine: 
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: 0}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4170119745221949520, guid: 4999d86622cada5428c1478bb438f86d, type: 3}
+        m_TargetAssemblyTypeName: DetermineWinLose, Assembly-CSharp
+        m_MethodName: EnableLoseScreen
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1120924609213012341, guid: 398cea4ddae2b6c4fb8186759a5ba728, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-6366330290090040603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,9 +174,9 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: But it seems that - for now at least - this is goodbye. But I want
     to thank you for playing anyway!
-  autoProgress: 0
-  autoDelay: 0.75
-  nextIfNoChoices: {fileID: 0}
+  autoProgress: 1
+  autoDelay: 6
+  nextIfNoChoices: {fileID: -8172618598499782918}
   choices: []
   onEnter:
     m_PersistentCalls:

@@ -15,8 +15,8 @@ MonoBehaviour:
   speakerName: Host
   portrait: {fileID: 1554696514040456654, guid: 94d3895df3134cb49a5455c8bb536f7d, type: 3}
   speakerLine: 'You won! Congratulations! '
-  autoProgress: 0
-  autoDelay: 0.75
+  autoProgress: 1
+  autoDelay: 4
   nextIfNoChoices: {fileID: 4410901502776644448}
   choices: []
   onEnter:
@@ -37,13 +37,47 @@ MonoBehaviour:
   speakerName: Host
   portrait: {fileID: 21300000, guid: 66fa7c3cbc027094a877505b1ead1598, type: 3}
   speakerLine: Well Mr. Mako... I have the results...
-  autoProgress: 0
+  autoProgress: 1
   autoDelay: 5
   nextIfNoChoices: {fileID: -5603381413958411918}
   choices: []
   onEnter:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-2720870821782975079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9968cdb259200a47ab6dcb7b22aeae7, type: 3}
+  m_Name: Rn6
+  m_EditorClassIdentifier: 
+  speakerName: ???
+  portrait: {fileID: 0}
+  speakerLine: 
+  autoProgress: 0
+  autoDelay: 0.75
+  nextIfNoChoices: {fileID: 0}
+  choices: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4170119745221949520, guid: 4999d86622cada5428c1478bb438f86d, type: 3}
+        m_TargetAssemblyTypeName: DetermineWinLose, Assembly-CSharp
+        m_MethodName: EnableWinScreen
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1676567356991550927, guid: 922d2465ec20f72438ca414253943be7, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +132,7 @@ MonoBehaviour:
     in the ocean, tell a friend about us! Thank you for playing SHARK TRIVIA!
   autoProgress: 0
   autoDelay: 0.75
-  nextIfNoChoices: {fileID: 0}
+  nextIfNoChoices: {fileID: -2720870821782975079}
   choices: []
   onEnter:
     m_PersistentCalls:

@@ -36,6 +36,11 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    public void OpenCredits()
+    {
+        LevelManager.LoadSpecificScene("Credits");
+    }
+
     public void TheGearButton()
     {
         LevelManager.LoadSettingMenu();

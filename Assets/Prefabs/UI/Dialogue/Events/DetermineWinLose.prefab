@@ -45,4 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeToWin: {fileID: 6183376929289672683, guid: a598996bf7dad4a48a302e2971611b42, type: 2}
+  winScreen: {fileID: 821641541508261845, guid: 538d9523f3f157b4ba2f32beb447740f, type: 3}
   nodeToLose: {fileID: 11159848865376017, guid: 59042ff384a113844a4118261fc764f8, type: 2}
+  loseScreen: {fileID: 6158417283982381940, guid: 3a17c53d6ab50744a81f41728e1f1599, type: 3}

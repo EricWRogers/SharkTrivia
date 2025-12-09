@@ -8171,13 +8171,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4170119745221949520, guid: 4999d86622cada5428c1478bb438f86d, type: 3}
-      propertyPath: nodeToWin
+      propertyPath: winScreen
       value: 
-      objectReference: {fileID: 6183376929289672683, guid: a598996bf7dad4a48a302e2971611b42, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4170119745221949520, guid: 4999d86622cada5428c1478bb438f86d, type: 3}
-      propertyPath: nodeToLose
+      propertyPath: loseScreen
       value: 
-      objectReference: {fileID: 11159848865376017, guid: 59042ff384a113844a4118261fc764f8, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
