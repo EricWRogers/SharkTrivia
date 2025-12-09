@@ -81,19 +81,7 @@ MonoBehaviour:
   choices: []
   onEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: clipcricket
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &-7278055386564224267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,8 +152,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 6205810418347891534, guid: c7f003710dc6f5e4da883cc22bfac4b2, type: 3}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1201578122441744875, guid: 2df48f0b17087407e88cd6de089026bf, type: 3}
+        m_TargetAssemblyTypeName: AudioHelper, Assembly-CSharp
         m_MethodName: PlaySFX
         m_Mode: 5
         m_Arguments:
@@ -435,6 +423,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
         m_MethodName: StopTimer
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1201578122441744875, guid: 2df48f0b17087407e88cd6de089026bf, type: 3}
+        m_TargetAssemblyTypeName: AudioHelper, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
