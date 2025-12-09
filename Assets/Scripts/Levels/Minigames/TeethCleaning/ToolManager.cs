@@ -3,94 +3,69 @@ using System.Collections.Generic;
 
 public class ToolManager : MonoBehaviour
 {
-    
     [Header("Tool GameObjects")]
-    
     public GameObject toothbrushToolObject;
     public GameObject pickToolObject;
     public GameObject drillToolObject;
 
     
-    public static string ActiveToolName { get; private set; } 
+    public static string ActiveToolName { get; private set; }
+
     private const string ToothbrushName = "Toothbrush";
     private const string PickName = "Pick";
     private const string DrillName = "Drill";
 
-     
     private Dictionary<string, GameObject> toolObjects;
-
 
     void Awake()
     {
-   
         toolObjects = new Dictionary<string, GameObject>
         {
             { ToothbrushName, toothbrushToolObject },
-            { PickName, pickToolObject },
-            { DrillName, drillToolObject }
+            { PickName,       pickToolObject },
+            { DrillName,      drillToolObject }
         };
 
         
         ActiveToolName = ToothbrushName;
-    
-        SetActiveTool(ActiveToolName); 
+        SetActiveTool(ActiveToolName);
     }
 
-public static void SetActiveTool(string toolName)
-{
-    ToolManager instance = FindObjectOfType<ToolManager>();
-    if (instance == null) return;
 
-    string prevTool = ActiveToolName;
-
-    if (prevTool != toolName)
+    public static void SetActiveTool(string toolName)
     {
-    
-        if (instance.toolObjects.ContainsKey(prevTool))
-        {
-            instance.toolObjects[prevTool].SetActive(false);
+        ToolManager instance = FindObjectOfType<ToolManager>();
+        if (instance == null) return;
 
-            var col = instance.toolObjects[prevTool].GetComponent<ToolCollisionToggle>();
-            if (col != null)
-                col.EnableColliders(false);
-        }
+        
+        if (instance.toolObjects.ContainsKey(ActiveToolName))
+            instance.toolObjects[ActiveToolName].SetActive(false);
 
-    
+        
         ActiveToolName = toolName;
 
+    
         if (instance.toolObjects.ContainsKey(ActiveToolName))
-        {
             instance.toolObjects[ActiveToolName].SetActive(true);
 
-            var col = instance.toolObjects[ActiveToolName].GetComponent<ToolCollisionToggle>();
-            if (col != null)
-                col.EnableColliders(true);
-        }
+        
+        ToolCollisionToggle[] allTargets = FindObjectsOfType<ToolCollisionToggle>();
+        foreach (var t in allTargets)
+            t.UpdateColliderState();
 
         Debug.Log("Tool switched to: " + ActiveToolName);
     }
-}
 
 
-    
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.Alpha1)) 
-        {
-            SetActiveTool(ToothbrushName); 
-        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            SetActiveTool(ToothbrushName);
 
-         
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) 
-        {
-            SetActiveTool(PickName); 
-        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            SetActiveTool(PickName);
 
-        
-        else if (Input.GetKeyDown(KeyCode.Alpha3)) 
-        {
-            SetActiveTool(DrillName); 
-        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+            SetActiveTool(DrillName);
     }
 }

@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 46683569}
   - component: {fileID: 46683568}
   - component: {fileID: 46683567}
+  - component: {fileID: 46683571}
   m_Layer: 0
   m_Name: Holes (1)
   m_TagString: Untagged
@@ -268,6 +269,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &46683571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46683566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worksWithToothbrush: 0
+  worksWithPick: 0
+  worksWithDrill: 1
 --- !u!1 &80905026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1197,7 @@ GameObject:
   - component: {fileID: 471384711}
   - component: {fileID: 471384710}
   - component: {fileID: 471384709}
+  - component: {fileID: 471384713}
   m_Layer: 0
   m_Name: Holes (2)
   m_TagString: Untagged
@@ -1318,6 +1335,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &471384713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471384708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worksWithToothbrush: 0
+  worksWithPick: 0
+  worksWithDrill: 1
 --- !u!1 &554066560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,7 +1858,6 @@ GameObject:
   - component: {fileID: 750208099}
   - component: {fileID: 750208098}
   - component: {fileID: 750208102}
-  - component: {fileID: 750208103}
   m_Layer: 0
   m_Name: Drill
   m_TagString: Drill
@@ -1991,18 +2022,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &750208103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750208097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &761880550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,7 +2168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 857535211}
   - component: {fileID: 857535210}
-  - component: {fileID: 857535212}
   m_Layer: 0
   m_Name: ToothBrush
   m_TagString: Toothbrush
@@ -2188,18 +2206,6 @@ Transform:
   - {fileID: 1614910837}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &857535212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857535209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &866037079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,7 +2476,6 @@ GameObject:
   - component: {fileID: 988975610}
   - component: {fileID: 988975609}
   - component: {fileID: 988975611}
-  - component: {fileID: 988975612}
   m_Layer: 3
   m_Name: Pick
   m_TagString: Pick
@@ -2567,18 +2572,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &988975612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988975608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1057637194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2591,6 +2584,7 @@ GameObject:
   - component: {fileID: 1057637195}
   - component: {fileID: 1057637197}
   - component: {fileID: 1057637198}
+  - component: {fileID: 1057637199}
   m_Layer: 0
   m_Name: Holes
   m_TagString: Untagged
@@ -2728,6 +2722,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.9874464, y: 1.8835074}
   m_EdgeRadius: 0
+--- !u!114 &1057637199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057637194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worksWithToothbrush: 0
+  worksWithPick: 0
+  worksWithDrill: 1
 --- !u!114 &1058189571 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8021443534964240177, guid: 118936e9574aea245a9d93138930e126, type: 3}
@@ -3890,6 +3899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1793037912}
   - component: {fileID: 1793037911}
+  - component: {fileID: 1793037913}
   m_Layer: 3
   m_Name: TopTeeth_hitBox
   m_TagString: Untagged
@@ -3958,6 +3968,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2058059311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1793037913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793037910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worksWithToothbrush: 1
+  worksWithPick: 0
+  worksWithDrill: 0
 --- !u!1 &1796016836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,6 +3993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1796016838}
   - component: {fileID: 1796016837}
+  - component: {fileID: 1796016839}
   m_Layer: 3
   m_Name: bottomTeeth
   m_TagString: Untagged
@@ -4036,6 +4062,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2058059311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1796016839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796016836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08969a10de277c24db90d6ed87df6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worksWithToothbrush: 1
+  worksWithPick: 0
+  worksWithDrill: 0
 --- !u!1 &1998961819
 GameObject:
   m_ObjectHideFlags: 0
