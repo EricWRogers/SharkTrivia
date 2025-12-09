@@ -26,7 +26,6 @@ public class Gutter : MonoBehaviour
             {
                 manager.ResetBall();
                 manager.CountPinsDown();
-                manager.NewRound();
                 manager.ResetPins();
             }
         }
